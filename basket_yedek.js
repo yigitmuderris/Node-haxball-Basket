@@ -372,15 +372,36 @@ Room.create({
 
             })
 
+            if (room.players.length > 4) {
+                winners.forEach(pId => {
+                    room.setPlayerTeam(pId, 1); // kazananlar kırmızı takımda
+                })
 
-            winners.forEach(pId => {
-                room.setPlayerTeam(pId, 1); // kazananlar kırmızı takımda
-            })
+                losers.forEach(pId => {
+                    room.setPlayerTeam(pId, 0); // kaybedenler handleBalance öncesi specte
+                    queue.push(pId);
+                })
 
-            losers.forEach(pId => {
-                room.setPlayerTeam(pId, 0); // kaybedenler handleBalance öncesi specte
-                queue.push(pId);
-            })
+            } else {
+
+                const ids = room.players.map(p => p.id);
+
+                // Fisher-Yates karıştırma
+                for (let i = ids.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [ids[i], ids[j]] = [ids[j], ids[i]];
+                }
+
+                // Tek sayıda oyuncuda fazla kalan oyuncu hep aynı takıma gitmesin diye başlangıç takımı da rastgele
+                const firstTeam = Math.random() < 0.5 ? 1 : 2;
+
+                ids.forEach((id, i) => {
+                    const team = (i % 2 === 0) ? firstTeam : (firstTeam === 1 ? 2 : 1);
+                    room.setPlayerTeam(id, team);
+                });
+
+
+            }
 
             var result = "";
             var color = 0xFFFF00;
@@ -535,7 +556,7 @@ Room.create({
             // ŞUT çekilen konum ve son topa dokulan konum aynı mı?
             let score = { scoreBlue, scoreRed }
 
-            const result = scoreCheck(touchedballX, touchedballY,yspeed, team, lasttouchedPlayer, score)
+            const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
 
             scoreBlue = result.scoreBlue;
             scoreRed = result.scoreRed;

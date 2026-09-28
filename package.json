@@ -1,0 +1,24 @@
+{
+  "name": "basket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "basket.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-haxball": "^2.3.1",
+    "pg": "^8.23.0",
+    "react": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.5.1"
+  }
+}

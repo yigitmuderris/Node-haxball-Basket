@@ -131,7 +131,7 @@ const PREFIX_WORDS = [
     "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm","skerm","sikerm","annanabasarim","annnei","bnecericem"
+    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem"
 ];
 
 function normalize(text) {
@@ -735,7 +735,6 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
 const AFK_TIME_LIMIT = 20000;       // 20 saniye hareketsizlik = kick
 const WARN_TIME_LIMIT = 15000;      // 15 saniye hareketsizlik = uyarı
 const AFK_CHECK_INTERVAL = 1000;    // en fazla saniyede bir kontrol et
-const AFK_POSITION_EPSILON = 0.5;   // küçük fizik titremelerini tolere et
 
 function checkAfkPlayers(roomPlayersData, afkTracker, lastCheckRef) {
 
@@ -762,34 +761,47 @@ function checkAfkPlayers(roomPlayersData, afkTracker, lastCheckRef) {
         const tracked = afkTracker.get(p.id);
 
         if (!tracked) {
-            afkTracker.set(p.id, { x: p.x, y: p.y, lastMovedAt: now });
-            return;
-        }
-
-        const dx = Math.abs(p.x - tracked.x);
-        const dy = Math.abs(p.y - tracked.y);
-
-        if (dx > AFK_POSITION_EPSILON || dy > AFK_POSITION_EPSILON) {
-            // Hareket etmiş -> zamanlayıcıyı resetle
-            afkTracker.set(p.id, { x: p.x, y: p.y, lastMovedAt: now });
-            return;
-        }
-
-        if (now - tracked.lastMovedAt >= WARN_TIME_LIMIT) {
-            kicks.push({
-                playerId: p.id,
-                reason: "",
-                warning: "Hareket etmezsen 5 saniye içinde kickleneceksin!",
-                kick: false
+            afkTracker.set(p.id, {
+                x: p.x,
+                y: p.y,
+                lastInputAt: now,
+                lastWarningSecond: null
             });
+            return;
+        }
+
+
+        const afkTime = now - tracked.lastInputAt;
+
+
+        // 15 saniye input yoksa bir kere uyar
+
+
+        if (afkTime >= WARN_TIME_LIMIT) {
+
+            const remainingSeconds = Math.ceil(
+                (AFK_TIME_LIMIT - afkTime) / 1000
+            );
+
+            // Sadece saniye değiştiğinde mesaj gönder
+            if (tracked.lastWarningSecond !== remainingSeconds) {
+                kicks.push({
+                    playerId: p.id,
+                    reason: "",
+                    warning: `Hareket etmezsen ${remainingSeconds} saniye içinde kickleneceksin!`,
+                    kick: false
+                });
+
+                tracked.lastWarningSecond = remainingSeconds;
+            }
 
         }
 
-        // Konum aynı kalmış, süreyi kontrol et
-        if (now - tracked.lastMovedAt >= AFK_TIME_LIMIT) {
+        // 20 saniye afk kalmış süreyi kontrol et
+        if (afkTime >= AFK_TIME_LIMIT) {
             kicks.push({
                 playerId: p.id,
-                reason: "30 saniye hareketsiz kaldığınız için atıldınız (AFK)",
+                reason: "20 saniye hareketsiz kaldığınız için atıldınız (AFK)",
                 warning: "",
                 kick: true
             });

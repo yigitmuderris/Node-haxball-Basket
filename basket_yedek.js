@@ -50,7 +50,7 @@ try {
 
 Room.create({
     name: "🗑️ BASKET 3V3 🗑️",
-    showInRoomList: true,
+    showInRoomList: false,
     noPlayer: true,
     maxPlayerCount: 9,
     token: tokenForRoom,
@@ -155,7 +155,19 @@ Room.create({
 
         }
 
+
         /*---------------------------------------------------------------------------------------------------------*/
+
+        room.onPlayerInputChange = (id, value, customData) => {
+            const tracked = afkTracker.get(id);
+
+            if (!tracked) {
+                return;
+            }
+
+            tracked.lastInputAt = Date.now();
+            tracked.warned = false;
+        };
 
         room.onPlayerJoin = (player) => {
 
@@ -649,6 +661,9 @@ Room.create({
 
 
         }
+
+
+
 
     }
 

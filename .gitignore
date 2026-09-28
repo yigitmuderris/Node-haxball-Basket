@@ -1,6 +1,6 @@
 .env
-tokens.txt
-used_tokens.txt
+.tokens.txt
+.used_tokens.txt
 *.log
 coverage/
 node_modules/

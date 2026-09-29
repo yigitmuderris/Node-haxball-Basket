@@ -1,19 +1,15 @@
+// ═══════════ 1) DIŞARIDA KALANLAR: require'lar ve yardımcılar ═══════════
+
 require('dotenv').config();
-const { on } = require('cluster');
+const path = require("path");
 const { log } = require('console');
 const fs = require("fs");
-
+const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = require("node-haxball")();
+const { balanceTeams, hasBannedWord, controlSpam, scoreCheck, checkAfkPlayers, resetStates } = require('./services/gameLogic');
 const { migrate } = require('./db/migrate');
-migrate()
-    .then(() => console.log("DB hazır"))
-    .catch(err => { console.error("Migration hatası:", err); process.exit(1); });
-    
 
-const TOKENS_FILE = "tokens.txt";
-const USED_TOKENS_FILE = "used_tokens.txt";
+const sessions = new Map();
 
-
-// Tokenları oku ve trim yap (tırnakları koru)
 function readTokens(file) {
     return fs.readFileSync(file, "utf8")
         .split("\n")
@@ -21,38 +17,40 @@ function readTokens(file) {
         .filter(Boolean);
 }
 
-let tokens = readTokens(TOKENS_FILE);
-let usedTokens = fs.existsSync(USED_TOKENS_FILE) ? readTokens(USED_TOKENS_FILE) : [];
+// ═══════════ 2) main() BURADA BAŞLIYOR ═══════════
+async function main() {
 
-// Kullanılmamış token bul
-let dynamicToken = tokens.find(t => !usedTokens.includes(t));
+    await migrate();
+    console.log("DB hazır");
 
-if (!dynamicToken) {
-    console.error("TOKEN KALMADI!");
-    process.exit(0);
-}
+    // ── token işleri (mevcut kodun, hiç değişmeden) ──
+    const DATA_DIR = process.env.DATA_DIR || "data";
+    const TOKENS_FILE = path.join(DATA_DIR, "tokens.txt");
+    const USED_TOKENS_FILE = path.join(DATA_DIR, "used_tokens.txt");
 
-// Token'ı Room.create'a tırnaksız ver
-let tokenForRoom = dynamicToken.replace(/^"+|"+$/g, "");
+    let tokens = readTokens(TOKENS_FILE);
+    let usedTokens = fs.existsSync(USED_TOKENS_FILE) ? readTokens(USED_TOKENS_FILE) : [];
+    let dynamicToken = tokens.find(t => !usedTokens.includes(t));
 
-// used_tokens.txt'ye tırnaklı kaydet
-usedTokens.push(dynamicToken);
-fs.writeFileSync(USED_TOKENS_FILE, usedTokens.join("\n") + "\n");
+    if (!dynamicToken) {
+        console.error("TOKEN KALMADI!");
+        process.exit(0);
+    }
 
-console.log("Alınan token:", tokenForRoom);
+    let tokenForRoom = dynamicToken.replace(/^"+|"+$/g, "");
+    usedTokens.push(dynamicToken);
+    fs.writeFileSync(USED_TOKENS_FILE, usedTokens.join("\n") + "\n");
+    console.log("Alınan token:", tokenForRoom);
 
-const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = require("node-haxball")();
-const { balanceTeams, hasBannedWord, controlSpam, scoreCheck, checkAfkPlayers, resetStates } = require('./services/gameLogic');
-
-const BASKET = fs.readFileSync("maps/basket.hbs", "utf8");
-
-let Basket;
-try {
-    Basket = Utils.parseStadium(BASKET); // Stadium objesi
-    console.log("Stadium objesi hazır!");
-} catch (err) {
-    console.error("Stadium parse hatası:", err);
-}
+    // ── harita (mevcut kodun) ──
+    const BASKET = fs.readFileSync("maps/basket.hbs", "utf8");
+    let Basket;
+    try {
+        Basket = Utils.parseStadium(BASKET);
+        console.log("Stadium objesi hazır!");
+    } catch (err) {
+        console.error("Stadium parse hatası:", err);
+    }
 
 Room.create({
     name: "🗑️ BASKET 3V3 🗑️",
@@ -673,4 +671,13 @@ Room.create({
 
     }
 
+});
+
+}// ═══════════ main() BURADA BİTİYOR ═══════════
+
+
+// ═══════════ 3) main'i çalıştır ═══════════
+main().catch(err => {
+    console.error("Başlatma hatası:", err);
+    process.exit(1);
 });

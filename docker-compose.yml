@@ -10,6 +10,23 @@ services:
       - "127.0.0.1:5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U haxball -d haxball"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  bot:
+    build: .
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://haxball:${DB_PASSWORD}@db:5432/haxball
+      DATA_DIR: /data
+    volumes:
+      - ./data:/data
 
 volumes:
   pgdata:

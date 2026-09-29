@@ -1,0 +1,8 @@
+node_modules
+.git
+.env
+data
+tokens.txt
+used_tokens.txt
+coverage
+*.db

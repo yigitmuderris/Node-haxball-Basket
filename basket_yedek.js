@@ -7,6 +7,7 @@ const fs = require("fs");
 const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = require("node-haxball")();
 const { balanceTeams, hasBannedWord, controlSpam, scoreCheck, checkAfkPlayers, resetStates } = require('./services/gameLogic');
 const { migrate } = require('./db/migrate');
+const userService = require('./services/userService');
 
 const sessions = new Map();
 
@@ -52,626 +53,728 @@ async function main() {
         console.error("Stadium parse hatası:", err);
     }
 
-Room.create({
-    name: "🗑️ BASKET 3V3 🗑️",
-    showInRoomList: true,
-    noPlayer: true,
-    maxPlayerCount: 9,
-    token: tokenForRoom,
-    stadium: Basket,
-    geo: { code: "TR", lat: 39.9198, lon: 32.8543 },
-}, {
-    storage: {
-        player_name: "wxyz-abcd",
-        avatar: "👽"
-    },
-    onOpen: (room) => {
-        console.log("Room opened!");
-        console.log("Alınan Token:", dynamicToken);
+    Room.create({
+        name: "🗑️ BASKET 3V3 🗑️",
+        showInRoomList: false,
+        noPlayer: true,
+        maxPlayerCount: 9,
+        token: tokenForRoom,
+        stadium: Basket,
+        geo: { code: "TR", lat: 39.9198, lon: 32.8543 },
+    }, {
+        storage: {
+            player_name: "wxyz-abcd",
+            avatar: "👽"
+        },
+        onOpen: (room) => {
+            console.log("Room opened!");
+            console.log("Alınan Token:", dynamicToken);
 
 
-        room.fakeSetTeamsLock(true);
+            room.fakeSetTeamsLock(true);
 
-        try {
-            room.setCurrentStadium(Basket); // Burada stadium kesin yüklenecek
-            console.log("Basket map başarıyla yüklendi!");
-        } catch (err) {
-            console.error("Stadium yükleme hatası:", err);
-        }
-        const stadium = room.stadium;
+            try {
+                room.setCurrentStadium(Basket); // Burada stadium kesin yüklenecek
+                console.log("Basket map başarıyla yüklendi!");
+            } catch (err) {
+                console.error("Stadium yükleme hatası:", err);
+            }
+            const stadium = room.stadium;
 
-        room.sendAnnouncement("Hello " + room.name);
-        room.onAfterRoomLink = (roomLink) => {
-            console.log("room link:", roomLink);
-        };
-
-
-
-
-        room.setScoreLimit(0);
-        room.setTimeLimit(0);
+            room.sendAnnouncement("Hello " + room.name);
+            room.onAfterRoomLink = (roomLink) => {
+                console.log("room link:", roomLink);
+            };
 
 
 
-        const mutedPlayerIds = [];
+
+            room.setScoreLimit(0);
+            room.setTimeLimit(0);
 
 
-        // ---------- KOMUT PARSING: onBeforeOperationReceived ----------
-        room.onBeforeOperationReceived = (type, msg, globalFrameNo, clientFrameNo) => {
-            const CHAT_TYPE = 4;
-            if (type === CHAT_TYPE) {
 
-                const playerId = msg.byId;
-                const text = (msg && msg.text) ? String(msg.text) : "";
+            const mutedPlayerIds = [];
 
-                // Mute kontrolü
-                if (mutedPlayerIds.includes(playerId)) {
-                    return false;
+
+            // ---------- KOMUT PARSING: onBeforeOperationReceived ----------
+            room.onBeforeOperationReceived = (type, msg, globalFrameNo, clientFrameNo) => {
+
+                const commandCooldown = new Map();
+
+
+
+                const CHAT_TYPE = 4;
+                if (type === CHAT_TYPE) {
+
+                    const playerId = msg.byId;
+                    const text = (msg && msg.text) ? String(msg.text) : "";
+
+
+
+                    const [cmd, ...args] = text.trim().split(/\s+/);
+
+                    if (cmd === "!kayit" || cmd === "!giris") {
+                        const p = room.getPlayer(playerId);
+                        if (!p) return false;
+
+                        // Şifre denemelerini yavaşlat
+                        const now = Date.now();
+                        if (now - (commandCooldown.get(playerId) || 0) < 3000) {
+                            room.sendAnnouncement("⏳ Biraz bekle.", playerId, 0xFF0000);
+                            return false;
+                        }
+                        commandCooldown.set(playerId, now);
+
+                        (async () => {
+                            try {
+                                let res;
+                                if (cmd === "!kayit") {
+                                    const password = args[0];
+
+                                    res = !password
+                                        ? {
+                                            ok: false,
+                                            error: "Kullanım: !kayit şifre"
+                                        }
+                                        : await userService.register(
+                                            p.auth,
+                                            password
+                                        );
+
+                                } else {
+                                    const password = args[0];
+
+                                    res = !password
+                                        ? {
+                                            ok: false,
+                                            error: "Kullanım: !giris şifre"
+                                        }
+                                        : await userService.login(
+                                            p.auth,
+                                            password
+                                        );
+                                }
+
+                                if (res.ok) sessions.set(playerId, res.user);
+                                if (room.getPlayer(playerId)) {
+                                    room.sendAnnouncement(
+                                        res.ok ? `✅ Başarılı!` : `❌ ${res.error}`,
+                                        playerId, res.ok ? 0x00FF00 : 0xFF0000
+                                    );
+                                }
+                            } catch (err) {
+                                console.error("Komut hatası:", err);
+                            }
+                        })();
+
+                        return false;   // mesaj sohbette görünmesin, şifre gizli kalsın
+
+                    }
+
+                    // Mute kontrolü
+                    if (mutedPlayerIds.includes(playerId)) {
+                        return false;
+                    }
+
+                    // 🛑 GELİŞMİŞ CÜMLE İÇİ KÜFÜR KONTROLÜ
+                    if (hasBannedWord(text)) {
+                        room.sendAnnouncement("❌ Mesajınız küfür veya hakaret içerdiği için engellendi!", playerId, 0xFF0000);
+                        return false; // Küfürlü mesajı engelle
+                    }
+
+                    const { announcement, messageSendStatus } = controlSpam(playerId)
+
+                    if (!messageSendStatus) {
+
+                        room.sendAnnouncement(announcement, playerId, 0xFF0000);
+                        return messageSendStatus
+                    }
+                    // Küfür ve Spam testlerini geçen normal chat mesajlarının 
+                    // oyunda sorunsuz görünmesi için true dönüyoruz.
+                    return true;
                 }
 
-                // 🛑 GELİŞMİŞ CÜMLE İÇİ KÜFÜR KONTROLÜ
-                if (hasBannedWord(text)) {
-                    room.sendAnnouncement("❌ Mesajınız küfür veya hakaret içerdiği için engellendi!", playerId, 0xFF0000);
-                    return false; // Küfürlü mesajı engelle
-                }
-
-                const { announcement, messageSendStatus } = controlSpam(playerId)
-
-                if (!messageSendStatus) {
-
-                    room.sendAnnouncement(announcement, playerId, 0xFF0000);
-                    return messageSendStatus
-                }
-                // Küfür ve Spam testlerini geçen normal chat mesajlarının 
-                // oyunda sorunsuz görünmesi için true dönüyoruz.
                 return true;
+            };
+
+
+            let queue = [];
+            let isGameRunning = false;
+            let training = false;
+
+            /* ----------------------- Destek fonksiyonları-------------------------------------------------------------*/
+            function getPlayerList() {
+
+                return room.players
+                    .map(p => room.getPlayer(p.id))
+                    .filter(Boolean)
+
             }
 
-            return true;
-        };
+            function handleBalance() {
 
+                const roomPlayers = getPlayerList();
+                const { moves, updatedQueue } = balanceTeams(queue, roomPlayers, 3);
 
-        let queue = [];
-        let isGameRunning = false;
-        let training = false;
+                moves.forEach(
+                    m => {
+                        room.setPlayerTeam(m.playerId, m.teamId)
+                    }
+                )
 
-        /* ----------------------- Destek fonksiyonları-------------------------------------------------------------*/
-        function getPlayerList() {
+                queue = updatedQueue;
 
-            return room.players
-                .map(p => room.getPlayer(p.id))
-                .filter(Boolean)
-
-        }
-
-        function handleBalance() {
-
-            const roomPlayers = getPlayerList();
-            const { moves, updatedQueue } = balanceTeams(queue, roomPlayers, 3);
-
-            moves.forEach(
-                m => {
-                    room.setPlayerTeam(m.playerId, m.teamId)
-                }
-            )
-
-            queue = updatedQueue;
-
-        }
-
-
-        /*---------------------------------------------------------------------------------------------------------*/
-
-        room.onPlayerInputChange = (id, value, customData) => {
-            const tracked = afkTracker.get(id);
-
-            if (!tracked) {
-                return;
             }
 
-            tracked.lastInputAt = Date.now();
-            tracked.warned = false;
-        };
+            function addStatsFor(playerId, stats) {
+                const user = sessions.get(playerId);
+                if (!user) return;
+                userService.addStats(user.id, stats)
+                    .catch(err => console.error("addStats hatası:", err));
+            }
 
-        room.onPlayerJoin = (player) => {
 
-            log("oyuna katıldı: " + player.name)
-            setTimeout(() => {
-                room.sendAnnouncement(`${player.name} Hoşgeldin`, player.id);
-                queue.push(player.id);
+            /*---------------------------------------------------------------------------------------------------------*/
 
-                if (isGameRunning && queue.find(p => p === player.id)) {
 
-                    room.sendAnnouncement("Oyun oynanıyor sıranın gelmesini bekle...", player.id, 0x999999)
+            room.onPlayerInputChange = (id, value, customData) => {
+                const tracked = afkTracker.get(id);
+
+                if (!tracked) {
+                    return;
+                }
+
+                tracked.lastInputAt = Date.now();
+                tracked.warned = false;
+            };
+
+            room.onPlayerJoin = (player) => {
+
+                log("oyuna katıldı: " + player.name)
+
+                if (player.auth) {
+                    userService.findOrCreateByAuth(player.auth)
+                        .then(user => {
+                            sessions.set(player.id, user);
+                            if (!room.getPlayer(player.id)) return;   // bu arada çıkmış olabilir
+                            room.sendAnnouncement(
+                                user.registered
+                                    ? `✅ Otomatik giriş yapıldı.`
+                                    : "Hesabını kalıcı yapmak için !kayit şifre yaz.",
+                                player.id,
+                                user.registered ? 0x00FF00 : 0x999999
+                            );
+                        })
+                        .catch(err => console.error("findOrCreateByAuth hatası:", err));
+                } else {
+                    console.warn("auth boş geldi:", player.name);
                 }
 
 
 
-                handleBalance();
 
-                if (room.players.length === 1 && !isGameRunning) {
+                setTimeout(() => {
+                    room.sendAnnouncement(`${player.name} Hoşgeldin`, player.id);
+                    queue.push(player.id);
 
-                    room.sendAnnouncement("Oyunun başlaması için en az iki oyuncu gerek", null, 0x999999);
-                    room.sendAnnouncement("Antrenman başlıyor...", null, 0x999999)
+                    if (isGameRunning && queue.find(p => p === player.id)) {
+
+                        room.sendAnnouncement("Oyun oynanıyor sıranın gelmesini bekle...", player.id, 0x999999)
+                    }
+
+
+
+                    handleBalance();
+
+                    if (room.players.length === 1 && !isGameRunning) {
+
+                        room.sendAnnouncement("Oyunun başlaması için en az iki oyuncu gerek", null, 0x999999);
+                        room.sendAnnouncement("Antrenman başlıyor...", null, 0x999999)
+                        training = true;
+                        room.stopGame();
+
+                        setTimeout(() => {
+                            room.startGame();
+                        }, 3500);
+                    }
+                    if (room.players.length > 1 && !isGameRunning) {
+
+                        room.stopGame();
+                        setTimeout(() => {
+                            room.startGame();
+                        }, 3500);
+
+                    }
+                }, 20);
+            }
+
+            room.onPlayerLeave = (player) => {
+
+
+
+                log("oyundan ayrıldı: " + player.name)
+
+                sessions.delete(player.id);
+                
+
+                queue = queue.filter(p => p !== player.id);
+                afkTracker.delete(player.id);
+
+                roomPlayers = getPlayerList();
+
+                const result = balanceTeams(queue, roomPlayers, 3, true)
+
+                if (result && Array.isArray(result.moves)) {
+                    result.moves.forEach(move => {
+                        room.setPlayerTeam(move.playerId, move.teamId);
+                    });
+                }
+                if (result && typeof result.announcement === "string" && result.announcement.trim() !== "") {
+                    room.sendAnnouncement(result.announcement, null, 0x00FF00);
+                }
+
+
+                if (result.shouldStopGame) {
+                    room.stopGame();
+                }
+
+                if (room.players.length === 0) room.stopGame();
+
+
+                if (room.players.length === 1) {
+
                     training = true;
                     room.stopGame();
 
                     setTimeout(() => {
                         room.startGame();
                     }, 3500);
-                }
-                if (room.players.length > 1 && !isGameRunning) {
 
-                    room.stopGame();
+
+                }
+
+
+            }
+
+
+            var touchedballX = 0;
+            var touchedballY = 0;
+            var shootedballX = 0;
+            var shootedballY = 0;
+
+            var lastShooter = null;
+
+
+            let gameTimeout = 0;
+            let warnTimeoutLastTen = 0;
+            let warnTimeoutOne = 0;
+
+            let lasttouchedPlayer = 0;
+            let interactingPlayerId = null;
+            let lastscoringTeam = null;
+
+            var scoreRed = 0;
+            var scoreBlue = 0;
+            var drawEND = false;
+            var gameTime = 120000;
+            var warnTimeOne = 60000;
+            var warnTimeLastTenSec = 110000;
+
+            room.onGameStart = function (playerId) {
+
+
+                resetStates();
+
+                if (!training) isGameRunning = true;
+
+
+
+                setTimeout(() => {
+                    handleBalance();
+                }, 100);
+
+
+                if (gameTimeout) clearTimeout(gameTimeout);
+                if (warnTimeoutOne) clearTimeout(warnTimeoutOne);
+                if (warnTimeoutLastTen) clearTimeout(warnTimeoutLastTen);
+
+
+
+                warnTimeoutOne = setTimeout(() => {
+
+                    room.sendAnnouncement("SON 1 dk...", null, 0XFF007F);
+
+
+                }, warnTimeOne);
+
+
+                warnTimeoutLastTen = setTimeout(() => {
+
+                    room.sendAnnouncement("SON 10 sn...", null, "bold", 0XFF007F);
+
+
+                }, warnTimeLastTenSec);
+
+                if (!training) room.sendAnnouncement("🗑️ OYUN BAŞLADI. SÜRE 2 DK 🗑️", null, 0xFFD700)
+                gameTimeout = setTimeout(() => {
+
+                    if (scoreBlue != scoreRed) {
+
+
+                        room.stopGame();
+                    } else {
+
+                        drawEND = true;
+                        room.sendAnnouncement(`NORMAL SÜRE BERABERE BİTTİ. skor: ${scoreRed} vs ${scoreBlue}`, null, 0X808080);
+                        room.sendAnnouncement("ATAN KAZANIR!", null, 0XFFD700);
+                    }
+
+                }, gameTime);
+
+            }
+
+            room.onGameStop = function (winningTeamId) {
+
+                isGameRunning = false;
+                let losers = [];
+                let winners = [];
+                potaTemasFlagi = false;
+
+
+                if (room.players.length === 1) {
+
+                    room.sendAnnouncement("Antrenman başlıyor...", null, 0x999999);
+                    training = true;
+
+
                     setTimeout(() => {
                         room.startGame();
                     }, 3500);
 
                 }
-            }, 20);
-        }
+                // Kazanan kaybeden takımları belirle
 
-        room.onPlayerLeave = (player) => {
+                room.players.forEach(rawPlayer => {
 
+                    const p = room.getPlayer(rawPlayer.id);
+                    if (p && p.team) {
 
+                        if (scoreRed > scoreBlue && p.team.id === 2) {
 
-            log("oyundan ayrıldı: " + player.name)
+                            losers.push(p.id) // MAVİ KAYBETTİ
+                        } else if (scoreBlue > scoreRed && p.team.id === 1) {
 
-            queue = queue.filter(p => p !== player.id);
-            afkTracker.delete(player.id);
+                            losers.push(p.id); // KIRMIZI KAYBETTİ
+                        }
 
-            roomPlayers = getPlayerList();
+                    }
 
-            const result = balanceTeams(queue, roomPlayers, 3, true)
-
-            if (result && Array.isArray(result.moves)) {
-                result.moves.forEach(move => {
-                    room.setPlayerTeam(move.playerId, move.teamId);
                 });
-            }
-            if (result && typeof result.announcement === "string" && result.announcement.trim() !== "") {
-                room.sendAnnouncement(result.announcement, null, 0x00FF00);
-            }
 
 
-            if (result.shouldStopGame) {
-                room.stopGame();
-            }
+                room.players.forEach(rawPlayer => {
 
-            if (room.players.length === 0) room.stopGame();
+                    const p = room.getPlayer(rawPlayer.id);
+                    if (p && p.team) {
 
+                        if (scoreRed > scoreBlue && p.team.id === 1) {
 
-            if (room.players.length === 1) {
+                            winners.push(p.id) // KIRMIZI KAZANDI
 
-                training = true;
-                room.stopGame();
+                        } else if (scoreBlue > scoreRed && p.team.id === 2) {
 
-                setTimeout(() => {
-                    room.startGame();
-                }, 3500);
+                            winners.push(p.id); // MAVİ KAZANDI
+                        }
 
+                    }
 
-            }
+                })
 
+                if (room.players.length > 4) {
+                    winners.forEach(pId => {
+                        room.setPlayerTeam(pId, 1); // kazananlar kırmızı takımda
+                    })
 
-        }
+                    losers.forEach(pId => {
+                        room.setPlayerTeam(pId, 0); // kaybedenler handleBalance öncesi specte
+                        queue.push(pId);
+                    })
 
-
-        var touchedballX = 0;
-        var touchedballY = 0;
-        var shootedballX = 0;
-        var shootedballY = 0;
-
-        var lastShooter = null;
-
-
-        let gameTimeout = 0;
-        let warnTimeoutLastTen = 0;
-        let warnTimeoutOne = 0;
-
-        let lasttouchedPlayer = 0;
-        let interactingPlayerId = null;
-        let lastscoringTeam = null;
-
-        var scoreRed = 0;
-        var scoreBlue = 0;
-        var drawEND = false;
-        var gameTime = 120000;
-        var warnTimeOne = 60000;
-        var warnTimeLastTenSec = 110000;
-
-        room.onGameStart = function (playerId) {
-
-
-            resetStates();
-
-            if (!training) isGameRunning = true;
-
-
-
-            setTimeout(() => {
-                handleBalance();
-            }, 100);
-
-
-            if (gameTimeout) clearTimeout(gameTimeout);
-            if (warnTimeoutOne) clearTimeout(warnTimeoutOne);
-            if (warnTimeoutLastTen) clearTimeout(warnTimeoutLastTen);
-
-
-
-            warnTimeoutOne = setTimeout(() => {
-
-                room.sendAnnouncement("SON 1 dk...", null, 0XFF007F);
-
-
-            }, warnTimeOne);
-
-
-            warnTimeoutLastTen = setTimeout(() => {
-
-                room.sendAnnouncement("SON 10 sn...", null, "bold", 0XFF007F);
-
-
-            }, warnTimeLastTenSec);
-
-            if (!training) room.sendAnnouncement("🗑️ OYUN BAŞLADI. SÜRE 2 DK 🗑️", null, 0xFFD700)
-            gameTimeout = setTimeout(() => {
-
-                if (scoreBlue != scoreRed) {
-                    room.stopGame();
                 } else {
 
-                    drawEND = true;
-                    room.sendAnnouncement(`NORMAL SÜRE BERABERE BİTTİ. skor: ${scoreRed} vs ${scoreBlue}`, null, 0X808080);
-                    room.sendAnnouncement("ATAN KAZANIR!", null, 0XFFD700);
+                    const ids = room.players.map(p => p.id);
+
+                    // Fisher-Yates karıştırma
+                    for (let i = ids.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [ids[i], ids[j]] = [ids[j], ids[i]];
+                    }
+
+                    // Tek sayıda oyuncuda fazla kalan oyuncu hep aynı takıma gitmesin diye başlangıç takımı da rastgele
+                    const firstTeam = Math.random() < 0.5 ? 1 : 2;
+
+                    ids.forEach((id, i) => {
+                        const team = (i % 2 === 0) ? firstTeam : (firstTeam === 1 ? 2 : 1);
+                        room.setPlayerTeam(id, team);
+                    });
+
+
                 }
 
-            }, gameTime);
+                var result = "";
+                var color = 0xFFFF00;
 
-        }
+                if (scoreBlue > scoreRed) {
+                    result = "MAVI TAKIM KAZANDI";
+                    color = 0x3399FF;
+                }
+                if (scoreBlue < scoreRed) {
+                    result = "KIRMIZI TAKIM KAZANDI";
+                    color = 0xFF0000;
+                }
 
-        room.onGameStop = function (winningTeamId) {
+                if (!training) room.sendAnnouncement(`${result}  SKOR : ${scoreRed} vs ${scoreBlue}`, null, color);
 
-            isGameRunning = false;
-            let losers = [];
-            let winners = [];
-            potaTemasFlagi = false;
-
-
-            if (room.players.length === 1) {
-
-                room.sendAnnouncement("Antrenman başlıyor...", null, 0x999999);
-                training = true;
-
+                // reset
+                drawEND = false;
+                scoreBlue = 0;
+                scoreRed = 0;
+                if (gameTimeout) clearTimeout(gameTimeout);
+                if (warnTimeoutOne) clearTimeout(warnTimeoutOne);
+                if (warnTimeoutLastTen) clearTimeout(warnTimeoutLastTen);
 
                 setTimeout(() => {
-                    room.startGame();
-                }, 3500);
+
+                    // Takımları dengeleyen fonksiyonu çağırıyoruz
+                    handleBalance();
+
+                    if (room.players.length >= 2) {
+                        room.sendAnnouncement("YENİ OYUN BAŞLIYOR...", null, 0x00E5FF);
+                        training = false;
+
+                        // Dengeleme yapıldıktan 3 saniye sonra oyunu başlat
+                        setTimeout(() => {
+
+                            room.startGame();
+
+                        }, 3000);
+
+                    }
+
+                }, 100); // 100 milisaniyelik güvenli bekleme süresi
 
             }
-            // Kazanan kaybeden takımları belirle
 
-            room.players.forEach(rawPlayer => {
+            room.onPlayerBallKick = function (playerId) {
+                var player = room.getPlayer(playerId);
 
-                const p = room.getPlayer(rawPlayer.id);
-                if (p && p.team) {
+                const ball = room.getDisc(0);
+                if (!ball) return;
 
-                    if (scoreRed > scoreBlue && p.team.id === 2) {
 
-                        losers.push(p.id) // MAVİ KAYBETTİ
-                    } else if (scoreBlue > scoreRed && p.team.id === 1) {
 
-                        losers.push(p.id); // KIRMIZI KAYBETTİ
+                // topun x kordinatı
+                shootedballX = ball.h.x;
+                shootedballY = ball.h.y;
+
+                // son vuran oyuncu
+                lastShooter = player;
+
+                log("lastShooter: " + lastShooter);
+                log("Şut Çekildi - X: " + shootedballX + " | Oyuncu: " + player.name);
+
+            };
+
+
+            const TUM_POTA_SEGMENT_IDS = new Set([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 16])
+            let TOP_DISC_ID = 0;
+            let potaTemasFlagi = false;
+            let oyuncuPlayerId = null;
+
+            // 1. TOPUN POTA SEGMENTLERİNDEN BİRİNE ÇARPMASI
+            room.onCollisionDiscVsSegment = function (discId, discPlayerId, segmentId) {
+                // Çarpan nesne top ise (discId === 0)
+                if (discId === TOP_DISC_ID) {
+                    // Eğer çarptığı segment bizim pota listemizde varsa
+                    if (TUM_POTA_SEGMENT_IDS.has(segmentId)) {
+                        if (!potaTemasFlagi) {
+                            potaTemasFlagi = true;
+                        }
                     }
+                }
+            };
 
+            room.onCollisionDiscVsDisc = (discId1, discPlayerId1, discId2, discPlayerId2) => {
+
+                let interactingPlayerId = null;
+
+                // 1. Durum: İlk disk top (0) ve ikinci disk bir oyuncuya ait (discPlayerId2 boş değil)
+                if (discId1 === 0 && discPlayerId2 !== null && discPlayerId2 !== undefined) {
+                    interactingPlayerId = discPlayerId2;
+                }
+                // 2. Durum: İkinci disk top (0) ve ilk disk bir oyuncuya ait (discPlayerId1 boş değil)
+                else if (discId2 === 0 && discPlayerId1 !== null && discPlayerId1 !== undefined) {
+                    interactingPlayerId = discPlayerId1;
                 }
 
-            });
+
+                if (interactingPlayerId === null) return;
+
+                lasttouchedPlayer = room.getPlayer(interactingPlayerId);
+
+                const ball = room.getDisc(0);
+                if (!ball) return;
 
 
-            room.players.forEach(rawPlayer => {
 
-                const p = room.getPlayer(rawPlayer.id);
-                if (p && p.team) {
+                // topun x kordinatı
+                touchedballX = ball.h.x;
+                touchedballY = ball.h.y;
 
-                    if (scoreRed > scoreBlue && p.team.id === 1) {
 
-                        winners.push(p.id) // KIRMIZI KAZANDI
 
-                    } else if (scoreBlue > scoreRed && p.team.id === 2) {
 
-                        winners.push(p.id); // MAVİ KAZANDI
-                    }
-
+                // Top bir oyuncuya çarptıysa ve öncesinde pota bayrağı kalktıysa
+                // Rebound kontrolü: SADECE bu çarpışma gerçek bir top-oyuncu teması ise
+                if (potaTemasFlagi) {
+                    room.sendAnnouncement(`🗑️ REBOUND! ${lasttouchedPlayer.name}`, null, 0xE67E22, "small-bold", 0);
+                    potaTemasFlagi = false;
                 }
 
-            })
 
-            if (room.players.length > 4) {
-                winners.forEach(pId => {
-                    room.setPlayerTeam(pId, 1); // kazananlar kırmızı takımda
-                })
+            }
 
-                losers.forEach(pId => {
-                    room.setPlayerTeam(pId, 0); // kaybedenler handleBalance öncesi specte
-                    queue.push(pId);
-                })
+            /* --- sayı --- */
+            room.onTeamGoal = function (team) {
 
-            } else {
 
-                const ids = room.players.map(p => p.id);
+                potaTemasFlagi = false;
 
-                // Fisher-Yates karıştırma
-                for (let i = ids.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [ids[i], ids[j]] = [ids[j], ids[i]];
+                if (!lasttouchedPlayer) {
+                    lasttouchedPlayer = {
+                        name: "Bilinmeyen Oyuncu",
+                        team: team, // Sayıyı atan takımın rengini veriyoruz ki hata çıkmasın
+                        team: { M: team } // .team.M kullanan versiyonlar için yedek
+                    };
                 }
 
-                // Tek sayıda oyuncuda fazla kalan oyuncu hep aynı takıma gitmesin diye başlangıç takımı da rastgele
-                const firstTeam = Math.random() < 0.5 ? 1 : 2;
 
-                ids.forEach((id, i) => {
-                    const team = (i % 2 === 0) ? firstTeam : (firstTeam === 1 ? 2 : 1);
-                    room.setPlayerTeam(id, team);
+                log("X konumu:" + touchedballX);
+                log(lasttouchedPlayer.team.M);
+                log(lasttouchedPlayer.team);
+                const scoredBall = room.getDisc(0);
+                if (!scoredBall) return;
+
+                // ball.A.y bize yspeed değerini verir
+                let yspeed = scoredBall.A.y;
+
+                lastscoringTeam = team;
+
+
+                // ŞUT çekilen konum ve son topa dokulan konum aynı mı?
+                let score = { scoreBlue, scoreRed }
+
+                const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
+
+                scoreBlue = result.scoreBlue;
+                scoreRed = result.scoreRed;
+
+
+
+                result.announcement.forEach(a => {
+                    room.sendAnnouncement(a.message, a.target, a.color, a.messageType, a.messageSound);
                 });
 
 
-            }
+                //  BERABERE BİTEN NORMAL SÜREDE SAYI ATILIRSA
 
-            var result = "";
-            var color = 0xFFFF00;
-
-            if (scoreBlue > scoreRed) {
-                result = "MAVI TAKIM KAZANDI";
-                color = 0x3399FF;
-            }
-            if (scoreBlue < scoreRed) {
-                result = "KIRMIZI TAKIM KAZANDI";
-                color = 0xFF0000;
-            }
-
-            if (!training) room.sendAnnouncement(`${result}  SKOR : ${scoreRed} vs ${scoreBlue}`, null, color);
-
-            // reset
-            drawEND = false;
-            scoreBlue = 0;
-            scoreRed = 0;
-            if (gameTimeout) clearTimeout(gameTimeout);
-            if (warnTimeoutOne) clearTimeout(warnTimeoutOne);
-            if (warnTimeoutLastTen) clearTimeout(warnTimeoutLastTen);
-
-            setTimeout(() => {
-
-                // Takımları dengeleyen fonksiyonu çağırıyoruz
-                handleBalance();
-
-                if (room.players.length >= 2) {
-                    room.sendAnnouncement("YENİ OYUN BAŞLIYOR...", null, 0x00E5FF);
-                    training = false;
-
-                    // Dengeleme yapıldıktan 3 saniye sonra oyunu başlat
-                    setTimeout(() => {
-
-                        room.startGame();
-
-                    }, 3000);
-
-                }
-
-            }, 100); // 100 milisaniyelik güvenli bekleme süresi
-
-        }
-
-        room.onPlayerBallKick = function (playerId) {
-            var player = room.getPlayer(playerId);
-
-            const ball = room.getDisc(0);
-            if (!ball) return;
+                if (drawEND && scoreBlue != scoreRed) {
 
 
+                    if (lasttouchedPlayer.team.M == team) {
+                        room.sendAnnouncement(`${lasttouchedPlayer.name} maçı kazandıran sayıyı atıyor!`, null, 0xFFD700)
+                        room.stopGame();
 
-            // topun x kordinatı
-            shootedballX = ball.h.x;
-            shootedballY = ball.h.y;
-
-            // son vuran oyuncu
-            lastShooter = player;
-
-            log("lastShooter: " + lastShooter);
-            log("Şut Çekildi - X: " + shootedballX + " | Oyuncu: " + player.name);
-
-        };
-
-
-        const TUM_POTA_SEGMENT_IDS = new Set([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 16])
-        let TOP_DISC_ID = 0;
-        let potaTemasFlagi = false;
-        let oyuncuPlayerId = null;
-
-        // 1. TOPUN POTA SEGMENTLERİNDEN BİRİNE ÇARPMASI
-        room.onCollisionDiscVsSegment = function (discId, discPlayerId, segmentId) {
-            // Çarpan nesne top ise (discId === 0)
-            if (discId === TOP_DISC_ID) {
-                // Eğer çarptığı segment bizim pota listemizde varsa
-                if (TUM_POTA_SEGMENT_IDS.has(segmentId)) {
-                    if (!potaTemasFlagi) {
-                        potaTemasFlagi = true;
                     }
-                }
-            }
-        };
 
-        room.onCollisionDiscVsDisc = (discId1, discPlayerId1, discId2, discPlayerId2) => {
-
-            let interactingPlayerId = null;
-
-            // 1. Durum: İlk disk top (0) ve ikinci disk bir oyuncuya ait (discPlayerId2 boş değil)
-            if (discId1 === 0 && discPlayerId2 !== null && discPlayerId2 !== undefined) {
-                interactingPlayerId = discPlayerId2;
-            }
-            // 2. Durum: İkinci disk top (0) ve ilk disk bir oyuncuya ait (discPlayerId1 boş değil)
-            else if (discId2 === 0 && discPlayerId1 !== null && discPlayerId1 !== undefined) {
-                interactingPlayerId = discPlayerId1;
-            }
-
-
-            if (interactingPlayerId === null) return;
-
-            lasttouchedPlayer = room.getPlayer(interactingPlayerId);
-
-            const ball = room.getDisc(0);
-            if (!ball) return;
-
-
-
-            // topun x kordinatı
-            touchedballX = ball.h.x;
-            touchedballY = ball.h.y;
-
-
-
-
-            // Top bir oyuncuya çarptıysa ve öncesinde pota bayrağı kalktıysa
-            // Rebound kontrolü: SADECE bu çarpışma gerçek bir top-oyuncu teması ise
-            if (potaTemasFlagi) {
-                room.sendAnnouncement(`🗑️ REBOUND! ${lasttouchedPlayer.name}`, null, 0xE67E22, "small-bold", 0);
-                potaTemasFlagi = false;
-            }
-
-
-        }
-
-        /* --- sayı --- */
-        room.onTeamGoal = function (team) {
-
-
-            potaTemasFlagi = false;
-
-            if (!lasttouchedPlayer) {
-                lasttouchedPlayer = {
-                    name: "Bilinmeyen Oyuncu",
-                    team: team, // Sayıyı atan takımın rengini veriyoruz ki hata çıkmasın
-                    team: { M: team } // .team.M kullanan versiyonlar için yedek
-                };
-            }
-
-
-            log("X konumu:" + touchedballX);
-            log(lasttouchedPlayer.team.M);
-            log(lasttouchedPlayer.team);
-            const scoredBall = room.getDisc(0);
-            if (!scoredBall) return;
-
-            // ball.A.y bize yspeed değerini verir
-            let yspeed = scoredBall.A.y;
-
-            lastscoringTeam = team;
-
-
-            // ŞUT çekilen konum ve son topa dokulan konum aynı mı?
-            let score = { scoreBlue, scoreRed }
-
-            const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
-
-            scoreBlue = result.scoreBlue;
-            scoreRed = result.scoreRed;
-
-
-
-            result.announcement.forEach(a => {
-                room.sendAnnouncement(a.message, a.target, a.color, a.messageType, a.messageSound);
-            });
-
-
-            //  BERABERE BİTEN NORMAL SÜREDE SAYI ATILIRSA
-
-            if (drawEND && scoreBlue != scoreRed) {
-
-
-                if (lasttouchedPlayer.team.M == team) {
-                    room.sendAnnouncement(`${lasttouchedPlayer.name} maçı kazandıran sayıyı atıyor!`, null, 0xFFD700)
+                    drawEND = false;
                     room.stopGame();
-
                 }
 
-                drawEND = false;
-                room.stopGame();
+                resetStates();
+
             }
 
-            resetStates();
-
-        }
 
 
-
-        room.onPositionsReset = () => {
+            room.onPositionsReset = () => {
 
 
 
-            setTimeout(() => {
+                setTimeout(() => {
 
-                potaTemasFlagi = false;
-                // Eğer bir takım gol attıysa ve konum değişikliği bekliyorsak
-                if (lastscoringTeam !== null) {
+                    potaTemasFlagi = false;
+                    // Eğer bir takım gol attıysa ve konum değişikliği bekliyorsak
+                    if (lastscoringTeam !== null) {
 
-                    if (lastscoringTeam === 1) { // Kırmızı gol attıysa -> Top Maviye yakın
-                        room.setDiscProperties(0, { x: 400, y: -215, xspeed: 0, yspeed: 0 });
+                        if (lastscoringTeam === 1) { // Kırmızı gol attıysa -> Top Maviye yakın
+                            room.setDiscProperties(0, { x: 400, y: -215, xspeed: 0, yspeed: 0 });
+                        }
+                        else if (lastscoringTeam === 2) { // Mavi gol attıysa -> Top Kırmızıya yakın
+                            room.setDiscProperties(0, { x: -400, y: -215, xspeed: 0, yspeed: 0 });
+                        }
+
+                        // İşlem bitti, hafızayı temizliyoruz
+                        lastscoringTeam = null;
                     }
-                    else if (lastscoringTeam === 2) { // Mavi gol attıysa -> Top Kırmızıya yakın
-                        room.setDiscProperties(0, { x: -400, y: -215, xspeed: 0, yspeed: 0 });
-                    }
+                }, 5);
+            }
 
-                    // İşlem bitti, hafızayı temizliyoruz
-                    lastscoringTeam = null;
-                }
-            }, 5);
+
+            const afkTracker = new Map();
+            const afkLastCheck = { value: 0 };
+
+            room.onGameTick = () => {
+
+
+                // Room'dan sade veri çıkar (gameLogic room'u hiç bilmesin)
+                const roomPlayersData = room.players
+                    .map(rawPlayer => {
+                        const player = room.getPlayer(rawPlayer.id);
+                        if (!player) return null;
+
+                        const disc = room.getPlayerDisc(player.id);
+                        if (!disc) return null;
+
+                        return {
+                            id: player.id,
+                            teamId: player.team ? player.team.id : 0,
+                            x: disc.h.x,
+                            y: disc.h.y
+                        };
+                    })
+                    .filter(Boolean);
+
+                const kicks = checkAfkPlayers(roomPlayersData, afkTracker, afkLastCheck);
+
+                kicks.forEach(({ playerId, reason, warning, kick }) => {
+
+                    room.sendAnnouncement(warning, playerId, 0xFF0000, "bold", 2);
+
+                    if (kick) room.kickPlayer(playerId, reason, false);
+                });
+
+
+
+            }
+
+
+
+
         }
 
-
-        const afkTracker = new Map();
-        const afkLastCheck = { value: 0 };
-
-        room.onGameTick = () => {
-
-
-            // Room'dan sade veri çıkar (gameLogic room'u hiç bilmesin)
-            const roomPlayersData = room.players
-                .map(rawPlayer => {
-                    const player = room.getPlayer(rawPlayer.id);
-                    if (!player) return null;
-
-                    const disc = room.getPlayerDisc(player.id);
-                    if (!disc) return null;
-
-                    return {
-                        id: player.id,
-                        teamId: player.team ? player.team.id : 0,
-                        x: disc.h.x,
-                        y: disc.h.y
-                    };
-                })
-                .filter(Boolean);
-
-            const kicks = checkAfkPlayers(roomPlayersData, afkTracker, afkLastCheck);
-
-            kicks.forEach(({ playerId, reason, warning, kick }) => {
-
-                room.sendAnnouncement(warning, playerId, 0xFF0000, "bold", 2);
-
-                if (kick) room.kickPlayer(playerId, reason, false);
-            });
-
-
-
-        }
-
-
-
-
-    }
-
-});
+    });
 
 }// ═══════════ main() BURADA BİTİYOR ═══════════
 

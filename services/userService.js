@@ -1,107 +1,300 @@
+
 // İş mantığı: şifre hash'leme, doğrulama, kurallar, transaction yönetimi.
+
 const crypto = require("crypto");
 const { promisify } = require("util");
 const { pool, withTransaction, isUniqueViolation } = require("../db");
 const userRepo = require("../repositories/userRepository");
 
 const scrypt = promisify(crypto.scrypt);
+
 const MIN_PASSWORD_LENGTH = 4;
 
-/* ---------------- şifre yardımcıları ---------------- */
+/* ---------------- Şifre yardımcıları ---------------- */
+
+/**
+ * Şifreyi güvenli şekilde hash'ler.
+ *
+ * Sonuç:
+ * salt:hash
+ */
 async function hashPassword(password) {
     const salt = crypto.randomBytes(16).toString("hex");
-    const hash = (await scrypt(password, salt, 64)).toString("hex");
+
+    const hash = (
+        await scrypt(password, salt, 64)
+    ).toString("hex");
+
     return `${salt}:${hash}`;
 }
 
+/**
+ * Girilen şifreyi kayıtlı hash ile karşılaştırır.
+ */
 async function verifyPassword(password, stored) {
     if (!stored) return false;
+
     const [salt, hash] = stored.split(":");
+
+    if (!salt || !hash) {
+        return false;
+    }
+
     const test = await scrypt(password, salt, 64);
-    return crypto.timingSafeEqual(Buffer.from(hash, "hex"), test);
+
+    const storedBuffer = Buffer.from(hash, "hex");
+
+    if (storedBuffer.length !== test.length) {
+        return false;
+    }
+
+    return crypto.timingSafeEqual(storedBuffer, test);
 }
 
-const fail = (error) => ({ ok: false, error });
-const success = (user) => ({ ok: true, user });
+/**
+ * Aynı şifrenin ikinci kez kullanılmasını kontrol etmek için
+ * deterministik bir key üretir.
+ *
+ * ÖNEMLİ:
+ * Bu değer gerçek şifre değildir.
+ * password_hash'ten farklı olarak aynı şifre her zaman
+ * aynı password_key'i üretir.
+ */
+function createPasswordKey(password) {
+    return crypto
+        .createHash("sha256")
+        .update(password, "utf8")
+        .digest("hex");
+}
 
-/* ---------------- servis ---------------- */
+/* ---------------- Sonuç yardımcıları ---------------- */
 
-/** Odaya girişte: auth biliniyorsa hesabı getir, yoksa misafir hesap aç. */
-function findOrCreateByAuth(auth, name) {
+const fail = (error) => ({
+    ok: false,
+    error
+});
+
+const success = (user) => ({
+    ok: true,
+    user
+});
+
+/* ---------------- Servis ---------------- */
+
+/**
+ * Oyuncu odaya girdiğinde:
+ *
+ * auth kayıtlıysa mevcut kullanıcıyı getirir.
+ * auth kayıtlı değilse misafir kullanıcı oluşturur.
+ */
+function findOrCreateByAuth(auth) {
     return withTransaction(async (tx) => {
-        // Aynı auth için eşzamanlı çift kayıt olmasın
+        // Aynı auth için eşzamanlı iki kullanıcı oluşmasını engeller.
         await userRepo.lockAuth(tx, auth);
 
         const existing = await userRepo.findByAuth(tx, auth);
+
         if (existing) {
-            return userRepo.touch(tx, existing.id, name);
+            await userRepo.touch(tx, existing.id);
+            return existing;
         }
 
-        const user = await userRepo.insertUser(tx, name);
-        await userRepo.insertAuth(tx, auth, user.id);
+        // Odaya ilk kez giren oyuncu için misafir hesap.
+        const user = await userRepo.insertUser(tx);
+
+        await userRepo.insertAuth(
+            tx,
+            auth,
+            user.id
+        );
+
         return user;
     });
 }
 
-/** !kayit şifre */
-async function register(auth, name, password) {
+
+/**
+ * !kayit şifre
+ *
+ * Örnek:
+ * !kayit 1234
+ *
+ * Oyuncunun mevcut misafir hesabını kayıtlı hesaba dönüştürür.
+ */
+async function register(auth, password) {
+    // Şifre kontrolü
     if (!password || password.length < MIN_PASSWORD_LENGTH) {
-        return fail(`Şifre en az ${MIN_PASSWORD_LENGTH} karakter olmalı.`);
+        return fail(
+            `Şifre en az ${MIN_PASSWORD_LENGTH} karakter olmalı.`
+        );
     }
 
     const passwordHash = await hashPassword(password);
+    const passwordKey = createPasswordKey(password);
 
     try {
         return await withTransaction(async (tx) => {
-            const user = await userRepo.findByAuth(tx, auth);
-            if (!user) return fail("Hesap bulunamadı, odaya tekrar gir.");
-            if (user.registered) return fail("Zaten kayıtlısın.");
 
-            const taken = await userRepo.findRegisteredByName(tx, name);
-            if (taken) {
-                return fail("Bu isimle kayıtlı bir hesap var. Sen ise !giris isim şifre yaz.");
+            // Oyuncunun mevcut hesabını bul.
+            const user = await userRepo.findByAuth(
+                tx,
+                auth
+            );
+
+            if (!user) {
+                return fail(
+                    "Hesap bulunamadı, odaya tekrar gir."
+                );
             }
 
-            const updated = await userRepo.markRegistered(tx, user.id, name, passwordHash);
+            // Zaten kayıtlıysa tekrar kayıt olamaz.
+            if (user.registered) {
+                return fail(
+                    "Zaten kayıtlısın."
+                );
+            }
+
+            // Aynı şifre başka hesapta kullanılıyor mu?
+            const passwordTaken =
+                await userRepo.findRegisteredByPasswordKey(
+                    tx,
+                    passwordKey
+                );
+
+            if (passwordTaken) {
+                return fail(
+                    "Bu şifre zaten kullanılıyor. Başka bir şifre seç."
+                );
+            }
+
+            // Misafir hesabını kayıtlı hesaba çevir.
+            const updated =
+                await userRepo.markRegistered(
+                    tx,
+                    user.id,
+                    passwordHash,
+                    passwordKey
+                );
+
             return success(updated);
         });
+
     } catch (err) {
-        // Pre-check ile insert arasındaki yarış durumu
+
+        // UNIQUE constraint yarış durumunu yakala.
         if (isUniqueViolation(err)) {
-            return fail("Bu isimle kayıtlı bir hesap var. Sen ise !giris isim şifre yaz.");
+            return fail(
+                "Bu şifre zaten kullanılıyor. Başka bir şifre seç."
+            );
         }
+
         throw err;
     }
 }
 
-/** !giris isim şifre -> yeni auth'u kayıtlı hesaba bağla. */
-function login(auth, name, password) {
+
+/**
+ * !giris şifre
+ *
+ * Örnek:
+ * !giris 1234
+ *
+ * Oyuncunun auth'ını o şifreye sahip kayıtlı hesaba bağlar.
+ */
+function login(auth, password) {
     return withTransaction(async (tx) => {
-        const target = await userRepo.findRegisteredByName(tx, name, { forUpdate: true });
 
-        if (!target || !(await verifyPassword(password, target.password_hash))) {
-            return fail("İsim veya şifre hatalı.");
+        if (!password) {
+            return fail(
+                "Şifre girmelisin. Kullanım: !giris şifre"
+            );
         }
 
-        const current = await userRepo.findByAuth(tx, auth);
+        const passwordKey =
+            createPasswordKey(password);
+
+        // Şifreye sahip kayıtlı hesabı bul.
+        const target =
+            await userRepo.findRegisteredByPasswordKey(
+                tx,
+                passwordKey,
+                { forUpdate: true }
+            );
+
+        if (!target) {
+            return fail(
+                "Şifre hatalı veya böyle bir hesap yok."
+            );
+        }
+
+        // Oyuncunun şu anda bağlı olduğu hesap.
+        const current =
+            await userRepo.findByAuth(
+                tx,
+                auth
+            );
+
+        // Zaten aynı hesaba bağlı.
         if (current && current.id === target.id) {
-            return fail("Zaten bu hesaba giriş yapmışsın.");
+            return fail(
+                "Zaten bu hesaba giriş yapmışsın."
+            );
         }
 
-        await userRepo.moveAuth(tx, auth, target.id);
+        // Auth'ı kayıtlı hesaba taşı.
+        await userRepo.moveAuth(
+            tx,
+            auth,
+            target.id
+        );
 
-        // Misafir hesabın istatistiklerini kayıtlı hesaba aktar, misafiri sil
+        /**
+         * Oyuncu login yapmadan önce misafir hesaptaysa,
+         * misafir hesabındaki istatistikleri kayıtlı hesaba aktar.
+         */
         if (current && !current.registered) {
-            await userRepo.addStats(tx, target.id, current);
-            await userRepo.deleteById(tx, current.id);
+
+            await userRepo.addStats(
+                tx,
+                target.id,
+                current
+            );
+
+            await userRepo.deleteById(
+                tx,
+                current.id
+            );
         }
 
-        return success(await userRepo.findById(tx, target.id));
+        // Güncel kayıtlı hesabı döndür.
+        return success(
+            await userRepo.findById(
+                tx,
+                target.id
+            )
+        );
     });
 }
 
+
+/**
+ * Oyun sonunda istatistik eklemek için.
+ */
 function addStats(userId, stats) {
-    return userRepo.addStats(pool, userId, stats);
+    return userRepo.addStats(
+        pool,
+        userId,
+        stats
+    );
 }
 
-module.exports = { findOrCreateByAuth, register, login, addStats };
+
+/* ---------------- Export ---------------- */
+
+module.exports = {
+    findOrCreateByAuth,
+    register,
+    login,
+    addStats
+};
+

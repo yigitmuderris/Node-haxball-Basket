@@ -3,6 +3,12 @@ const { on } = require('cluster');
 const { log } = require('console');
 const fs = require("fs");
 
+const { migrate } = require('./db/migrate');
+migrate()
+    .then(() => console.log("DB hazır"))
+    .catch(err => { console.error("Migration hatası:", err); process.exit(1); });
+    
+
 const TOKENS_FILE = "tokens.txt";
 const USED_TOKENS_FILE = "used_tokens.txt";
 
@@ -50,7 +56,7 @@ try {
 
 Room.create({
     name: "🗑️ BASKET 3V3 🗑️",
-    showInRoomList: false,
+    showInRoomList: true,
     noPlayer: true,
     maxPlayerCount: 9,
     token: tokenForRoom,

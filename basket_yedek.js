@@ -227,12 +227,7 @@ async function main() {
 
             }
 
-            function addStatsFor(playerId, stats) {
-                const user = sessions.get(playerId);
-                if (!user) return;
-                userService.addStats(user.id, stats)
-                    .catch(err => console.error("addStats hatası:", err));
-            }
+            
 
 
             /*---------------------------------------------------------------------------------------------------------*/
@@ -675,7 +670,7 @@ async function main() {
                 // ŞUT çekilen konum ve son topa dokulan konum aynı mı?
                 let score = { scoreBlue, scoreRed }
 
-                const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
+                const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score, lasttouchedPlayer.id, sessions )
 
                 scoreBlue = result.scoreBlue;
                 scoreRed = result.scoreRed;

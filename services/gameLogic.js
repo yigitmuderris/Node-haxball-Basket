@@ -1,6 +1,5 @@
 
-const userService = require('./services/userService');
-
+const userService = require("./userService");
 
 function getLiveTeams(roomPlayers) {
     let redCount = 0;
@@ -124,7 +123,7 @@ const EXACT_WORDS = new Set([
     "gotu", "pipi", "kuku", "bok", "mal", "it", "itoglu", "salak", "slak", "slaak",
     "orsp", "ursp", "aptal", "sokuk", "ucube", "pclik", "aptaloc", "pasatoc", "aptaloe", "pasatoe", "susoc", "malmk", "malamk", "yazmaanneiskeirmn", "kafasiz", "kafasız",
     "benannenisikim", "siktiler", "salaksinb", "anasi", "osovbucoco", "bacina", "it", "enigi", "bacini", "deseyim", "valideni", "anmnnnenui", "bogharim",
-    "anana","karini","anen","allahin","peygamberin","annen","amcik"
+    "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik"
 
 ]);
 
@@ -134,7 +133,7 @@ const PREFIX_WORDS = [
     "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem","skm"
+    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm"
 ];
 
 function normalize(text) {
@@ -212,7 +211,15 @@ function controlSpam(playerId) {
 
 
 
-function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score) {
+function addStatsFor(playerId, stats, sessions) {
+    const user = sessions.get(playerId);
+    if (!user) return;
+    userService.addStats(user.id, stats)
+        .catch(err => console.error("addStats hatası:", err));
+}
+
+
+function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score, playerId, sessions) {
 
     let announcement = [];
     let { scoreRed, scoreBlue } = score;
@@ -285,6 +292,10 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
+
+
+        addStatsFor(playerId, { two_pt_made: 1 }, sessions);
+
         return { announcement, scoreRed, scoreBlue }
     }
 
@@ -314,6 +325,8 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
+
+        addStatsFor(playerId, { three_pt_made: 1 },sessions);
         return { announcement, scoreRed, scoreBlue }
 
 
@@ -383,6 +396,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
+
+        addStatsFor(playerId, { two_pt_made: 1 },sessions);
+
         return { announcement, scoreRed, scoreBlue }
     }
 
@@ -412,6 +428,8 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                 messageSound: 1
             }
         )
+
+        addStatsFor(playerId, { three_pt_made: 1 },sessions);
 
         return { announcement, scoreRed, scoreBlue }
     }
@@ -454,6 +472,8 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                 messageSound: 1
             }
         )
+
+        addStatsFor(playerId, { three_pt_own_basket: 1 },sessions);
 
         return { announcement, scoreRed, scoreBlue }
 
@@ -567,7 +587,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                 messageSound: 1
             }
         )
-
+        addStatsFor(playerId, { two_pt_own_basket: 1 },sessions);
         return { announcement, scoreRed, scoreBlue }
     }
 
@@ -606,6 +626,8 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                 messageSound: 1
             }
         )
+
+        addStatsFor(playerId, { three_pt_own_basket: 1 },sessions);
 
         return { announcement, scoreRed, scoreBlue }
     }
@@ -719,6 +741,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                 messageSound: 1
             }
         )
+
+
+        addStatsFor(playerId, { two_pt_own_basket: 1 }),sessions;
 
         return { announcement, scoreRed, scoreBlue }
     }

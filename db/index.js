@@ -25,4 +25,4 @@ const isUniqueViolation = (err) => err && err.code === "23505";
 
 
 
-module.exports = { pool, withTransaction, isUniqueViolation, init };
+module.exports = { pool, withTransaction, isUniqueViolation };

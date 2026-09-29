@@ -1,4 +1,7 @@
 
+const userService = require('./services/userService');
+
+
 function getLiveTeams(roomPlayers) {
     let redCount = 0;
     let blueCount = 0;
@@ -121,7 +124,7 @@ const EXACT_WORDS = new Set([
     "gotu", "pipi", "kuku", "bok", "mal", "it", "itoglu", "salak", "slak", "slaak",
     "orsp", "ursp", "aptal", "sokuk", "ucube", "pclik", "aptaloc", "pasatoc", "aptaloe", "pasatoe", "susoc", "malmk", "malamk", "yazmaanneiskeirmn", "kafasiz", "kafasız",
     "benannenisikim", "siktiler", "salaksinb", "anasi", "osovbucoco", "bacina", "it", "enigi", "bacini", "deseyim", "valideni", "anmnnnenui", "bogharim",
-    "anana"
+    "anana","karini","anen","allahin","peygamberin","annen","amcik"
 
 ]);
 
@@ -131,7 +134,7 @@ const PREFIX_WORDS = [
     "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem"
+    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem","skm"
 ];
 
 function normalize(text) {
@@ -727,8 +730,6 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
 
 
 // --- AFK KONTROLÜ (room.onOpen içindeki diğer değişkenlerin yanına) ---
-
-
 
 
 

@@ -608,26 +608,7 @@ async function main() {
 
             }
 
-            room.onPlayerBallKick = function (playerId) {
-                var player = room.getPlayer(playerId);
-
-                const ball = room.getDisc(0);
-                if (!ball) return;
-
-
-
-                // topun x kordinatı
-                shootedballX = ball.h.x;
-                shootedballY = ball.h.y;
-
-                // son vuran oyuncu
-                lastShooter = player;
-
-                log("lastShooter: " + lastShooter);
-                log("Şut Çekildi - X: " + shootedballX + " | Oyuncu: " + player.name);
-
-            };
-
+            
 
             const TUM_POTA_SEGMENT_IDS = new Set([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 16])
             let TOP_DISC_ID = 0;

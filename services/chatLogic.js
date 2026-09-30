@@ -107,14 +107,13 @@ function buildEloAnnouncements(results) {
     });
 }
 
-/** Elo puanına göre rütbe renkleri döndürür */
 function getEloRankColor(elo) {
     if (!elo) return 0xFFFFFF; // Elo verisi yoksa varsayılan beyaz
     
     if (elo >= 1800) return 0x00FF7F; // 1800+     : Zümrüt (Büyüleyici Yeşil)
     if (elo >= 1500) return 0x00FFFF; // 1500-1799 : Elmas (Canlı Turkuaz/Siyan)
     if (elo >= 1200) return 0xFFD700; // 1200-1499 : Altın (Parlak Altın Sarısı)
-    if (elo >= 900)  return 0xC0C0C0; // 900-1199  : Gümüş (Gümüş Grisi)
+    if (elo >= 900)  return 0xE5E8E8; // 900-1199  : Gümüş (Cıvıl Cıvıl Parlak Platin/Gümüş) ✨
     return 0xCD7F32;                  // 0-899    : Bronz (Sıcak Bakır/Bronz)
 }
 

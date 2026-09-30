@@ -4,10 +4,15 @@ require('dotenv').config();
 const path = require("path");
 const { log } = require('console');
 const fs = require("fs");
+
+
 const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = require("node-haxball")();
-const { balanceTeams, hasBannedWord, controlSpam, scoreCheck, checkAfkPlayers, resetStates } = require('./services/gameLogic');
 const { migrate } = require('./db/migrate');
+
+const { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates, addMatchPoints, buildMatchEntries } = require('./services/gameLogic');
+const { buildEloAnnouncements, buildChatAnnouncement, hasBannedWord, controlSpam } = require('./services/chatLogic')
 const userService = require('./services/userService');
+
 
 const sessions = new Map();
 
@@ -95,13 +100,11 @@ async function main() {
 
 
             const mutedPlayerIds = [];
+            const commandCooldown = new Map();
 
 
             // ---------- KOMUT PARSING: onBeforeOperationReceived ----------
             room.onBeforeOperationReceived = (type, msg, globalFrameNo, clientFrameNo) => {
-
-                const commandCooldown = new Map();
-
 
 
                 const CHAT_TYPE = 4;
@@ -192,7 +195,19 @@ async function main() {
                     }
                     // Küfür ve Spam testlerini geçen normal chat mesajlarının 
                     // oyunda sorunsuz görünmesi için true dönüyoruz.
-                    return true;
+                    if (text.startsWith("!")) return true;
+
+                    const p = room.getPlayer(playerId);
+                    if (!p) return false;
+
+                    const a = buildChatAnnouncement({
+                        name: p.name,
+                        teamId: p.team ? p.team.id : 0,
+                        user: sessions.get(playerId),
+                        text,
+                    });
+                    room.sendAnnouncement(a.message, null, a.color, "normal", 1);
+                    return false;
                 }
 
                 return true;
@@ -227,7 +242,33 @@ async function main() {
 
             }
 
-            
+            const matchPoints = new Map();   // playerId -> bu maçtaki net skor katkısı
+
+            function addStatsFor(playerId, stats) {
+                const user = sessions.get(playerId);
+                if (!user) return;
+                userService.addStats(user.id, stats)
+                    .catch((err) => console.error("addStats hatası:", err));
+            }
+
+            function finishMatch(winnerIds, loserIds) {
+                const winners = buildMatchEntries(winnerIds, sessions, matchPoints);
+                const losers = buildMatchEntries(loserIds, sessions, matchPoints);
+                matchPoints.clear();
+
+                userService.recordMatch({ winners, losers })
+                    .then((results) => {
+                        if (!results) return;
+                        const inRoom = results.filter((r) => room.getPlayer(r.playerId));
+                        inRoom.forEach((r) => sessions.set(r.playerId, r.user));
+                        buildEloAnnouncements(inRoom).forEach((a) =>
+                            room.sendAnnouncement(a.message, a.playerId, a.color)
+                        );
+                    })
+                    .catch((err) => console.error("recordMatch hatası:", err));
+            }
+
+
 
 
             /*---------------------------------------------------------------------------------------------------------*/
@@ -256,7 +297,7 @@ async function main() {
                             room.sendAnnouncement(
                                 user.registered
                                     ? `✅ Otomatik giriş yapıldı.`
-                                    : "Hesabını kalıcı yapmak için !kayit şifre yaz.",
+                                    : "Hesabını kalıcı yapmak için !kayit şifre yaz veya hesabın varsa !giris şifre",
                                 player.id,
                                 user.registered ? 0x00FF00 : 0x999999
                             );
@@ -310,8 +351,9 @@ async function main() {
 
                 log("oyundan ayrıldı: " + player.name)
 
+                commandCooldown.delete(player.id);
                 sessions.delete(player.id);
-                
+
 
                 queue = queue.filter(p => p !== player.id);
                 afkTracker.delete(player.id);
@@ -380,6 +422,7 @@ async function main() {
 
 
                 resetStates();
+                matchPoints.clear();
 
                 if (!training) isGameRunning = true;
 
@@ -485,6 +528,10 @@ async function main() {
                     }
 
                 })
+
+                if (!training && scoreRed !== scoreBlue) {
+                    finishMatch(winners, losers);
+                }
 
                 if (room.players.length > 4) {
                     winners.forEach(pId => {
@@ -670,7 +717,7 @@ async function main() {
                 // ŞUT çekilen konum ve son topa dokulan konum aynı mı?
                 let score = { scoreBlue, scoreRed }
 
-                const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score, lasttouchedPlayer.id, sessions )
+                const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
 
                 scoreBlue = result.scoreBlue;
                 scoreRed = result.scoreRed;
@@ -680,6 +727,12 @@ async function main() {
                 result.announcement.forEach(a => {
                     room.sendAnnouncement(a.message, a.target, a.color, a.messageType, a.messageSound);
                 });
+
+
+                if (!training && result.stat && lasttouchedPlayer.id !== undefined) {
+                    addStatsFor(lasttouchedPlayer.id, { [result.stat]: 1 });
+                    addMatchPoints(matchPoints, lasttouchedPlayer.id, result.stat);
+                }
 
 
                 //  BERABERE BİTEN NORMAL SÜREDE SAYI ATILIRSA

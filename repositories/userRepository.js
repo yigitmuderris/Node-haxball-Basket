@@ -45,6 +45,27 @@ async function findById(db, id) {
     return rows[0] || null;
 }
 
+async function findByIdsForUpdate(db, ids) {
+    const { rows } = await db.query(
+        `SELECT * FROM users WHERE id = ANY($1::bigint[]) ORDER BY id FOR UPDATE`,
+        [ids]
+    );
+    return rows;
+}
+
+async function applyMatchResult(db, id, { eloDelta, win, loss }) {
+    const { rows } = await db.query(
+        `UPDATE users
+            SET elo = GREATEST(elo + $2, 0),
+                wins = wins + $3,
+                losses = losses + $4
+          WHERE id = $1
+      RETURNING *`,
+        [id, eloDelta, win, loss]
+    );
+    return rows[0];
+}
+
 
 /**
  * password_key ile kayıtlı kullanıcıyı bulur.
@@ -217,6 +238,7 @@ module.exports = {
     lockAuth,
     findByAuth,
     findById,
+    findByIdsForUpdate,
     findRegisteredByPasswordKey,
     insertUser,
     insertAuth,
@@ -224,6 +246,7 @@ module.exports = {
     touch,
     markRegistered,
     addStats,
+    applyMatchResult,
     deleteById,
 };
 

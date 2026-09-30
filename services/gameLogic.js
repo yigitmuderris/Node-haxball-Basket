@@ -1,5 +1,5 @@
 
-const userService = require("./userService");
+const { STAT_POINTS, formatTag, getRank } = require('./eloLogic');
 
 function getLiveTeams(roomPlayers) {
     let redCount = 0;
@@ -117,109 +117,9 @@ function balanceTeams(queue, roomPlayers, maxPerTeam = 3, isLeave = false) {
 
 }
 
-// Kısa/belirsiz kelimeler: sadece TAM kelime olarak eşleşir (ek almış halleri de yaz)
-const EXACT_WORDS = new Set([
-    "sik", "siktir", "sikerim", "sikeyim", "sikik", "oe", "oc", "pic", "pij", "got", "goto",
-    "gotu", "pipi", "kuku", "bok", "mal", "it", "itoglu", "salak", "slak", "slaak",
-    "orsp", "ursp", "aptal", "sokuk", "ucube", "pclik", "aptaloc", "pasatoc", "aptaloe", "pasatoe", "susoc", "malmk", "malamk", "yazmaanneiskeirmn", "kafasiz", "kafasız",
-    "benannenisikim", "siktiler", "salaksinb", "anasi", "osovbucoco", "bacina", "it", "enigi", "bacini", "deseyim", "valideni", "anmnnnenui", "bogharim",
-    "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik"
-
-]);
-
-// Uzun ve belirsizliği düşük kökler: kelime BU İLE BAŞLIYORSA yakalar (ekleri de kapsar)
-const PREFIX_WORDS = [
-    "orospu", "oruspu", "yarrak", "kahpe", "gavat", "pezevenk", "gerizekali",
-    "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
-    "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
-    "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm"
-];
-
-function normalize(text) {
-    return text
-        .toLowerCase()
-        .replace(/ı/g, "i").replace(/ğ/g, "g").replace(/ü/g, "u")
-        .replace(/ş/g, "s").replace(/ö/g, "o").replace(/ç/g, "c")
-        .replace(/[^a-z0-9\s]/g, "");   // boşlukları KORU
-}
-
-function hasBannedWord(text) {
-    if (!text) return false;
-
-    const words = normalize(text).split(/\s+/).filter(Boolean);
-
-    return words.some(word =>
-        EXACT_WORDS.has(word) ||
-        PREFIX_WORDS.some(root => word.startsWith(root))
-    );
-
-}
-// 🛑 FLOODING (SPAM) KONTROLÜ 
 
 
-const lastMessageTime = new Map();
-
-const spamStrikes = new Map();       // oyuncu -> ihlal sayısı
-const lastStrikeTime = new Map();    // oyuncu -> son ihlal zamanı
-
-const BASE_COOLDOWN = 1000;          // başlangıç bekleme süresi (ms)
-const COOLDOWN_STEP = 2000;          // her ihlalde eklenecek süre (ms)
-const MAX_COOLDOWN = 20000;          // üst sınır (ms)
-const STRIKE_RESET_TIME = 60000;     // bu kadar süre temiz kalırsa ihlaller sıfırlanır (ms)
-
-function controlSpam(playerId) {
-
-    let announcement = "";
-    let messageSendStatus = true;
-    const now = Date.now();
-
-    // Uzun süre spam yapmadıysa ihlalleri sıfırla
-    const lastStrike = lastStrikeTime.get(playerId) || 0;
-    if (now - lastStrike > STRIKE_RESET_TIME) {
-        spamStrikes.set(playerId, 0);
-    }
-
-    const strikes = spamStrikes.get(playerId) || 0;
-    const cooldown = Math.min(BASE_COOLDOWN + strikes * COOLDOWN_STEP, MAX_COOLDOWN);
-    const lastTime = lastMessageTime.get(playerId) || 0;
-    const elapsed = now - lastTime;
-
-    if (elapsed < cooldown) {
-        // Yeni ihlal kaydet
-        spamStrikes.set(playerId, strikes + 1);
-        lastStrikeTime.set(playerId, now);
-
-        const newCooldown = Math.min(BASE_COOLDOWN + (strikes + 1) * COOLDOWN_STEP, MAX_COOLDOWN);
-        const remaining = Math.ceil((cooldown - elapsed) / 1000);
-
-        announcement = `Spam yapma! Bir dahaki spamda bekleme süren ${Math.ceil(newCooldown / 1000)} saniyeye çıktı. (${remaining} sn daha bekle)`;
-
-        messageSendStatus = false;
-    } else {
-
-        lastMessageTime.set(playerId, now);
-
-    }
-
-
-
-    return { announcement, messageSendStatus }
-
-}
-
-
-
-
-function addStatsFor(playerId, stats, sessions) {
-    const user = sessions.get(playerId);
-    if (!user) return;
-    userService.addStats(user.id, stats)
-        .catch(err => console.error("addStats hatası:", err));
-}
-
-
-function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score, playerId, sessions) {
+function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score) {
 
     let announcement = [];
     let { scoreRed, scoreBlue } = score;
@@ -294,9 +194,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
 
 
 
-        addStatsFor(playerId, { two_pt_made: 1 }, sessions);
+       
 
-        return { announcement, scoreRed, scoreBlue }
+        return { announcement, scoreRed, scoreBlue, stat: "two_pt_made" }
     }
 
     // kırmızı takım için üçlük
@@ -326,8 +226,8 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         )
 
 
-        addStatsFor(playerId, { three_pt_made: 1 },sessions);
-        return { announcement, scoreRed, scoreBlue }
+        
+        return { announcement, scoreRed, scoreBlue, stat: "three_pt_made" }
 
 
     }
@@ -397,9 +297,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         )
 
 
-        addStatsFor(playerId, { two_pt_made: 1 },sessions);
+        
 
-        return { announcement, scoreRed, scoreBlue }
+         return { announcement, scoreRed, scoreBlue, stat: "two_pt_made" }
     }
 
 
@@ -429,9 +329,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
-        addStatsFor(playerId, { three_pt_made: 1 },sessions);
+       
 
-        return { announcement, scoreRed, scoreBlue }
+        return { announcement, scoreRed, scoreBlue, stat: "three_pt_made" }
     }
 
 
@@ -473,9 +373,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
-        addStatsFor(playerId, { three_pt_own_basket: 1 },sessions);
+        
 
-        return { announcement, scoreRed, scoreBlue }
+        return { announcement, scoreRed, scoreBlue, stat: "three_pt_own_basket" }
 
 
     }
@@ -587,8 +487,8 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                 messageSound: 1
             }
         )
-        addStatsFor(playerId, { two_pt_own_basket: 1 },sessions);
-        return { announcement, scoreRed, scoreBlue }
+    
+        return { announcement, scoreRed, scoreBlue, stat: "two_pt_own_basket" }
     }
 
     // mavi takım için üçlük
@@ -627,9 +527,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
-        addStatsFor(playerId, { three_pt_own_basket: 1 },sessions);
+        
 
-        return { announcement, scoreRed, scoreBlue }
+        return { announcement, scoreRed, scoreBlue, stat: "three_pt_own_basket" }
     }
 
     // mavi takım için ikilik 
@@ -743,9 +643,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         )
 
 
-        addStatsFor(playerId, { two_pt_own_basket: 1 }),sessions;
+        
 
-        return { announcement, scoreRed, scoreBlue }
+        return { announcement, scoreRed, scoreBlue, stat: "two_pt_own_basket" }
     }
 
 
@@ -859,4 +759,23 @@ function resetStates() {
 }
 
 
-module.exports = { balanceTeams, getLiveTeams, hasBannedWord, controlSpam, scoreCheck, checkAfkPlayers, resetStates }
+/** Bu maça katkı puanını ekler. matchPoints: Map(playerId -> puan) */
+function addMatchPoints(matchPoints, playerId, stat) {
+    const points = STAT_POINTS[stat];
+    if (!points) return;
+    matchPoints.set(playerId, (matchPoints.get(playerId) || 0) + points);
+}
+
+/** Oyuncu id'lerini recordMatch'in beklediği kayıtlara çevirir (oturumu olmayan atlanır). */
+function buildMatchEntries(playerIds, sessions, matchPoints) {
+    return playerIds
+        .map((playerId) => {
+            const user = sessions.get(playerId);
+            return user ? { userId: user.id, playerId, points: matchPoints.get(playerId) || 0 } : null;
+        })
+        .filter(Boolean);
+}
+
+
+
+module.exports = { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates,addMatchPoints, buildMatchEntries }

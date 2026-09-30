@@ -60,7 +60,7 @@ async function main() {
 
     Room.create({
         name: "🗑️ BASKET 3V3 🗑️",
-        showInRoomList: false,
+        showInRoomList: true,
         noPlayer: true,
         maxPlayerCount: 9,
         token: tokenForRoom,
@@ -533,7 +533,7 @@ async function main() {
                     finishMatch(winners, losers);
                 }
 
-                if (room.players.length > 4) {
+                if (room.players.length > 6) {
                     winners.forEach(pId => {
                         room.setPlayerTeam(pId, 1); // kazananlar kırmızı takımda
                     })

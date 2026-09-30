@@ -2,13 +2,19 @@
 // İş mantığı: şifre hash'leme, doğrulama, kurallar, transaction yönetimi.
 
 const crypto = require("crypto");
+require("dotenv").config();
 const { promisify } = require("util");
+const scrypt = promisify(crypto.scrypt);
 const { pool, withTransaction, isUniqueViolation } = require("../db");
+
+const eloLogic = require("./eloLogic");
+
+
 const userRepo = require("../repositories/userRepository");
 
-const scrypt = promisify(crypto.scrypt);
 
-const MIN_PASSWORD_LENGTH = 4;
+
+const MIN_PASSWORD_LENGTH = 6;
 
 /* ---------------- Şifre yardımcıları ---------------- */
 
@@ -60,11 +66,13 @@ async function verifyPassword(password, stored) {
  * password_hash'ten farklı olarak aynı şifre her zaman
  * aynı password_key'i üretir.
  */
-function createPasswordKey(password) {
-    return crypto
-        .createHash("sha256")
-        .update(password, "utf8")
-        .digest("hex");
+const PEPPER = process.env.PASSWORD_PEPPER;
+if (!PEPPER || PEPPER.length < 16) {
+    throw new Error("PASSWORD_PEPPER .env içinde tanımlı olmalı (en az 16 karakter)");
+}
+
+async function createPasswordKey(password) {
+    return (await scrypt(password, PEPPER, 32)).toString("hex");
 }
 
 /* ---------------- Sonuç yardımcıları ---------------- */
@@ -113,6 +121,9 @@ function findOrCreateByAuth(auth) {
 }
 
 
+
+
+
 /**
  * !kayit şifre
  *
@@ -130,7 +141,7 @@ async function register(auth, password) {
     }
 
     const passwordHash = await hashPassword(password);
-    const passwordKey = createPasswordKey(password);
+    const passwordKey = await createPasswordKey(password);
 
     try {
         return await withTransaction(async (tx) => {
@@ -211,7 +222,7 @@ function login(auth, password) {
         }
 
         const passwordKey =
-            createPasswordKey(password);
+            await createPasswordKey(password);
 
         // Şifreye sahip kayıtlı hesabı bul.
         const target =
@@ -277,6 +288,8 @@ function login(auth, password) {
 }
 
 
+
+
 /**
  * Oyun sonunda istatistik eklemek için.
  */
@@ -289,12 +302,63 @@ function addStats(userId, stats) {
 }
 
 
+/**
+ * Maç sonucunu tek transaction'da yazar: elo + wins/losses.
+ * winners / losers: [{ userId, playerId, points }]
+ * Elo yazılmadıysa null döner.
+ */
+async function recordMatch({ winners, losers }) {
+    const seen = new Set();
+    const dedupe = (list) => list.filter((e) => {
+        const key = String(e.userId);
+        if (seen.has(key)) return false;   // aynı hesap iki sekmeyle girdiyse bir kez say
+        seen.add(key);
+        return true;
+    });
+    const w = dedupe(winners);
+    const l = dedupe(losers);
+
+    if (w.length < eloLogic.MIN_PLAYERS_PER_TEAM || l.length < eloLogic.MIN_PLAYERS_PER_TEAM) {
+        return null;
+    }
+
+    return withTransaction(async (tx) => {
+        const rows = await userRepo.findByIdsForUpdate(tx, [...w, ...l].map((e) => e.userId));
+        const byId = new Map(rows.map((r) => [String(r.id), r]));
+
+        // Elo ve maç sayısı anlık görüntüden değil, kilitli güncel satırdan alınır
+        const enrich = (list) => list
+            .filter((e) => byId.has(String(e.userId)))
+            .map((e) => {
+                const u = byId.get(String(e.userId));
+                return { ...e, elo: u.elo, games: u.wins + u.losses };
+            });
+
+        const changes = eloLogic.calculateMatch({ winners: enrich(w), losers: enrich(l) });
+
+        const results = [];
+        for (const c of changes) {
+            const user = await userRepo.applyMatchResult(tx, c.userId, {
+                eloDelta: c.delta,
+                win: c.result === "win" ? 1 : 0,
+                loss: c.result === "loss" ? 1 : 0,
+            });
+            results.push({ playerId: c.playerId, oldElo: c.elo, newElo: c.newElo, delta: c.delta, user });
+        }
+        return results;
+    });
+}
+
+
 /* ---------------- Export ---------------- */
 
 module.exports = {
     findOrCreateByAuth,
     register,
     login,
-    addStats
+    verifyPassword,
+    addStats,
+    recordMatch,
+
 };
 

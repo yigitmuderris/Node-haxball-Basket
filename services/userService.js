@@ -289,11 +289,13 @@ function login(auth, password) {
 
 
 async function updateUsername(id, username) {
-    return userRepo.updateUsername(
-        db,
-        id,
-        username
-    );
+    return withTransaction(async (tx) => {
+        return userRepo.updateUsername(
+            tx,
+            id,
+            username
+        );
+    });
 }
 
 
@@ -310,7 +312,9 @@ function addStats(userId, stats) {
 
 
 async function getLeaderboard(limit = 5) {
-    return userRepo.getLeaderboard(db, limit);
+    return withTransaction(async (tx) => {
+        return userRepo.getLeaderboard(tx, limit);
+    });
 }
 
 
@@ -421,7 +425,7 @@ module.exports = {
     addStats,
     getLeaderboard,
     recordMatch,
-    
+
 
 };
 

@@ -777,5 +777,31 @@ function buildMatchEntries(playerIds, sessions, matchPoints) {
 }
 
 
+function createParticipationTracker({ windowMs = 60000, now = Date.now } = {}) {
+    const eligible = new Set();
+    let active = false;
+    let startedAt = 0;
 
-module.exports = { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates,addMatchPoints, buildMatchEntries }
+    const inWindow = () => active && now() - startedAt <= windowMs;
+
+    return {
+        // Maç başlarken takımlarda olan oyuncular
+        start(playerIdsOnTeams) {
+            eligible.clear();
+            active = true;
+            startedAt = now();
+            playerIdsOnTeams.forEach((id) => eligible.add(id));
+        },
+        // onPlayerTeamChange: ilk dakika içinde takıma girenler de dahil olur
+        teamChanged(playerId, teamId) {
+            if ((teamId === 1 || teamId === 2) && inWindow()) eligible.add(playerId);
+        },
+        stop() { active = false; },
+        isEligible(playerId) { return eligible.has(playerId); },
+        filter(playerIds) { return playerIds.filter((id) => eligible.has(id)); },
+    };
+}
+
+
+
+module.exports = { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates,addMatchPoints, buildMatchEntries,createParticipationTracker }

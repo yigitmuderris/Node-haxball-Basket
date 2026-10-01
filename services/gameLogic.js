@@ -76,7 +76,7 @@ function balanceTeams(queue, roomPlayers, maxPerTeam = 3, isLeave = false) {
                 // Oyuncuyu boş takıma transfer et
                 moves.push({ playerId: highestIdPlayer.id, teamId: emptyTeamId });
 
-                announcement = `${highestIdPlayer.name}, karşı boşaldığı için karşı takıma aktarıldı.`;
+                announcement = `${highestIdPlayer.name}, karşı takım boşaldığı için karşı takıma aktarıldı.`;
                 shouldStopGame = false; // Oyun devam etsin
             } else {
                 // Sahada sadece 1 kişi kaldıysa (1v0) oyunu durdur ve seyirciye al

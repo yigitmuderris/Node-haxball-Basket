@@ -9,8 +9,20 @@ const fs = require("fs");
 const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = require("node-haxball")();
 const { migrate } = require('./db/migrate');
 
-const { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates, addMatchPoints, buildMatchEntries } = require('./services/gameLogic');
-const { buildEloAnnouncements, buildChatAnnouncement, hasBannedWord, controlSpam } = require('./services/chatLogic')
+const { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates, addMatchPoints, buildMatchEntries, createParticipationTracker } = require('./services/gameLogic');
+const { buildEloAnnouncements,
+    buildChatAnnouncement,
+    hasBannedWord,
+    controlSpam,
+    buildStatsAnnouncement,
+    buildRankAnnouncement,
+    buildVsAnnouncement,
+    buildAccountCommandAnnouncement,
+    buildAccountCommandUsage,
+    buildCommandCooldownAnnouncement,
+    buildHelpAnnouncement,
+    buildLeaderboardAnnouncement } = require('./services/chatLogic')
+
 const userService = require('./services/userService');
 
 
@@ -118,61 +130,284 @@ async function main() {
                     const [cmd, ...args] = text.trim().split(/\s+/);
 
                     if (cmd === "!kayit" || cmd === "!giris") {
+
                         const p = room.getPlayer(playerId);
                         if (!p) return false;
 
                         // Şifre denemelerini yavaşlat
                         const now = Date.now();
+
                         if (now - (commandCooldown.get(playerId) || 0) < 3000) {
-                            room.sendAnnouncement("⏳ Biraz bekle.", playerId, 0xFF0000);
+
+                            const announcement =
+                                buildCommandCooldownAnnouncement();
+
+                            room.sendAnnouncement(
+                                announcement.message,
+                                playerId,
+                                announcement.color
+                            );
+
                             return false;
                         }
+
                         commandCooldown.set(playerId, now);
 
                         (async () => {
+
                             try {
-                                let res;
-                                if (cmd === "!kayit") {
-                                    const password = args[0];
 
-                                    res = !password
-                                        ? {
-                                            ok: false,
-                                            error: "Kullanım: !kayit şifre"
-                                        }
-                                        : await userService.register(
-                                            p.auth,
-                                            password
-                                        );
+                                const password = args[0];
 
-                                } else {
-                                    const password = args[0];
+                                // Şifre girilmemiş
+                                if (!password) {
 
-                                    res = !password
-                                        ? {
-                                            ok: false,
-                                            error: "Kullanım: !giris şifre"
-                                        }
-                                        : await userService.login(
-                                            p.auth,
-                                            password
-                                        );
+                                    const announcement =
+                                        buildAccountCommandUsage(cmd);
+
+                                    room.sendAnnouncement(
+                                        announcement.message,
+                                        playerId,
+                                        announcement.color
+                                    );
+
+                                    return;
                                 }
 
-                                if (res.ok) sessions.set(playerId, res.user);
+                                let res;
+
+                                if (cmd === "!kayit") {
+
+                                    res = await userService.register(
+                                        p.auth,
+                                        password
+                                    );
+
+                                } else {
+
+                                    res = await userService.login(
+                                        p.auth,
+                                        password
+                                    );
+                                }
+
+                                // Başarılı giriş/kayıt sonrası
+                                // session'ı güncelle
+                                if (res.ok) {
+                                    sessions.set(playerId, res.user);
+                                }
+
+                                if (room.getPlayer(playerId)) {
+
+                                    const announcement =
+                                        buildAccountCommandAnnouncement(
+                                            cmd,
+                                            res
+                                        );
+
+                                    room.sendAnnouncement(
+                                        announcement.message,
+                                        playerId,
+                                        announcement.color
+                                    );
+                                }
+
+                            } catch (err) {
+
+                                console.error(
+                                    `${cmd} komut hatası:`,
+                                    err
+                                );
+
+                                if (room.getPlayer(playerId)) {
+
+                                    room.sendAnnouncement(
+                                        "❌ İşlem sırasında bir hata oluştu.",
+                                        playerId,
+                                        0xFF0000
+                                    );
+                                }
+                            }
+
+                        })();
+
+                        // Şifre hiçbir zaman normal chatte görünmez
+                        return false;
+                    }
+
+                    // ============================================================
+                    // İSTATİSTİK KOMUTLARI
+                    // ============================================================
+
+                    if (cmd === "!stats") {
+
+                        const user = sessions.get(playerId);
+
+                        const result = buildStatsAnnouncement(user);
+
+                        room.sendAnnouncement(
+                            result.message,
+                            playerId,
+                            result.color,
+                            "small-bold",
+                            1
+                        );
+
+                        return false;
+                    }
+
+
+                    if (cmd === "!rank") {
+
+                        const user = sessions.get(playerId);
+
+                        const result = buildRankAnnouncement(user);
+
+                        room.sendAnnouncement(
+                            result.message,
+                            playerId,
+                            result.color,
+                            "small-bold",
+                            1
+                        );
+
+                        return false;
+                    }
+
+
+                    if (cmd === "!vs") {
+
+                        const p = room.getPlayer(playerId);
+
+                        if (!p) return false;
+
+                        const targetName = args.join(" ").trim();
+
+                        if (!targetName) {
+
+                            room.sendAnnouncement(
+                                "❌ Kullanım: !vs oyuncu",
+                                playerId,
+                                0xFF0000
+                            );
+
+                            return false;
+                        }
+
+                        // İsim eşleşmesi
+                        const target = room.players
+                            .map(p => room.getPlayer(p.id))
+                            .filter(Boolean)
+                            .find(
+                                p =>
+                                    p.name.toLowerCase() ===
+                                    targetName.toLowerCase()
+                            );
+
+                        if (!target) {
+
+                            room.sendAnnouncement(
+                                `❌ "${targetName}" adlı oyuncu odada bulunamadı.`,
+                                playerId,
+                                0xFF0000
+                            );
+
+                            return false;
+                        }
+
+                        const user1 = sessions.get(playerId);
+                        const user2 = sessions.get(target.id);
+
+                        const result = buildVsAnnouncement(
+                            user1,
+                            user2,
+                            p.name,
+                            target.name
+                        );
+
+                        room.sendAnnouncement(
+                            result.message,
+                            playerId,
+                            result.color,
+                            "small-bold",
+                            1
+                        );
+
+                        return false;
+                    }
+
+                    // ============================================================
+                    // SIRALAMA KOMUTLARI
+                    // ============================================================
+
+
+                    if (
+                        cmd === "!leaderboard" ||
+                        cmd === "!leaderbord" ||
+                        cmd === "!lb" ||
+                        cmd === "!lider"
+                    ) {
+                        const p = room.getPlayer(playerId);
+                        if (!p) return false;
+
+                        let limit = Number(args[0]) || 10;
+
+                        // 1-10 arasında tut
+                        limit = Math.min(Math.max(limit, 1), 10);
+
+                        (async () => {
+                            try {
+                                const players =
+                                    await userService.getLeaderboard(limit);
+
+                                const result =
+                                    buildLeaderboardAnnouncement(players);
+
                                 if (room.getPlayer(playerId)) {
                                     room.sendAnnouncement(
-                                        res.ok ? `✅ Başarılı!` : `❌ ${res.error}`,
-                                        playerId, res.ok ? 0x00FF00 : 0xFF0000
+                                        result.message,
+                                        playerId,
+                                        result.color,
+                                        "small-bold",
+                                        1
                                     );
                                 }
                             } catch (err) {
-                                console.error("Komut hatası:", err);
+                                console.error(
+                                    "!leaderboard komut hatası:",
+                                    err
+                                );
+
+                                if (room.getPlayer(playerId)) {
+                                    room.sendAnnouncement(
+                                        "❌ Leaderboard alınırken bir hata oluştu.",
+                                        playerId,
+                                        0xFF0000
+                                    );
+                                }
                             }
                         })();
 
-                        return false;   // mesaj sohbette görünmesin, şifre gizli kalsın
+                        return false;
+                    }
 
+
+                    // ============================================================
+                    // HELP KOMUTLARI
+                    // ============================================================
+
+                    if (cmd === "!help" || cmd === "!yardım" || cmd === "!komutlar") {
+                        const announcement = buildHelpAnnouncement();
+
+                        room.sendAnnouncement(
+                            announcement.message,
+                            playerId,
+                            announcement.color,
+                            "small-bold",
+                            1
+                        );
+
+                        return false;
                     }
 
                     // Mute kontrolü
@@ -243,6 +478,7 @@ async function main() {
             }
 
             const matchPoints = new Map();   // playerId -> bu maçtaki net skor katkısı
+            const participation = createParticipationTracker({ windowMs: 60000 });
 
             function addStatsFor(playerId, stats) {
                 const user = sessions.get(playerId);
@@ -273,6 +509,11 @@ async function main() {
 
             /*---------------------------------------------------------------------------------------------------------*/
 
+            room.onPlayerTeamChange = (id, teamId) => {
+
+                participation.teamChanged(id, teamId);
+            }
+
 
             room.onPlayerInputChange = (id, value, customData) => {
                 const tracked = afkTracker.get(id);
@@ -291,18 +532,35 @@ async function main() {
 
                 if (player.auth) {
                     userService.findOrCreateByAuth(player.auth)
-                        .then(user => {
+                        .then(async user => {
+
+                            if (player.name && player.name.trim()) {
+                                user = await userService.updateUsername(
+                                    user.id,
+                                    player.name.trim()
+                                );
+                            }
+
                             sessions.set(player.id, user);
-                            if (!room.getPlayer(player.id)) return;   // bu arada çıkmış olabilir
+
+                            if (!room.getPlayer(player.id)) return;
+
                             room.sendAnnouncement(
                                 user.registered
                                     ? `✅ Otomatik giriş yapıldı.`
                                     : "Hesabını kalıcı yapmak için !kayit şifre yaz veya hesabın varsa !giris şifre",
                                 player.id,
-                                user.registered ? 0x00FF00 : 0x999999
+                                user.registered
+                                    ? 0x00FF00
+                                    : 0x999999
                             );
                         })
-                        .catch(err => console.error("findOrCreateByAuth hatası:", err));
+                        .catch(err =>
+                            console.error(
+                                "findOrCreateByAuth hatası:",
+                                err
+                            )
+                        );
                 } else {
                     console.warn("auth boş geldi:", player.name);
                 }
@@ -424,13 +682,22 @@ async function main() {
                 resetStates();
                 matchPoints.clear();
 
+
+
                 if (!training) isGameRunning = true;
 
 
 
                 setTimeout(() => {
                     handleBalance();
+
+                    participation.start(
+                        getPlayerList().filter((p) => p.team && p.team.id !== 0).map((p) => p.id)
+                    );
                 }, 100);
+
+
+
 
 
                 if (gameTimeout) clearTimeout(gameTimeout);
@@ -474,11 +741,14 @@ async function main() {
 
             room.onGameStop = function (winningTeamId) {
 
+
+
                 isGameRunning = false;
                 let losers = [];
                 let winners = [];
                 potaTemasFlagi = false;
 
+                participation.stop();
 
                 if (room.players.length === 1) {
 
@@ -529,8 +799,16 @@ async function main() {
 
                 })
 
+
                 if (!training && scoreRed !== scoreBlue) {
-                    finishMatch(winners, losers);
+                    finishMatch(participation.filter(winners), participation.filter(losers));
+
+                    // İsteğe bağlı: geç girenlere bilgi ver
+                    [...winners, ...losers]
+                        .filter((id) => !participation.isEligible(id))
+                        .forEach((id) =>
+                            room.sendAnnouncement("ℹ️ Maça geç katıldığın için bu maç ELO'na etki etmedi.", id, 0x999999)
+                        );
                 }
 
                 if (room.players.length > 6) {
@@ -608,7 +886,7 @@ async function main() {
 
             }
 
-            
+
 
             const TUM_POTA_SEGMENT_IDS = new Set([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 16])
             let TOP_DISC_ID = 0;

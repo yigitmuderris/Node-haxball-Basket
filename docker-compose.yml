@@ -1,4 +1,5 @@
 services:
+
   db:
     image: postgres:16
     restart: unless-stopped
@@ -12,12 +13,12 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U haxball -d haxball" ]
+      test: ["CMD-SHELL", "pg_isready -U haxball -d haxball"]
       interval: 5s
       timeout: 3s
       retries: 10
 
-  bot:
+  bot1:
     build: .
     env_file:
       - .env
@@ -29,7 +30,21 @@ services:
       DATABASE_URL: postgres://haxball:${DB_PASSWORD}@db:5432/haxball
       DATA_DIR: /data
     volumes:
-      - ./data:/data
+      - ./data/bot1:/data
+
+  bot2:
+    build: .
+    env_file:
+      - .env
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://haxball:${DB_PASSWORD}@db:5432/haxball
+      DATA_DIR: /data
+    volumes:
+      - ./data/bot2:/data
 
 volumes:
   pgdata:

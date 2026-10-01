@@ -8,7 +8,7 @@ const EXACT_WORDS = new Set([
     "gotu", "pipi", "kuku", "bok", "mal", "it", "itoglu", "salak", "slak", "slaak",
     "orsp", "ursp", "aptal", "sokuk", "ucube", "pclik", "aptaloc", "pasatoc", "aptaloe", "pasatoe", "susoc", "malmk", "malamk", "yazmaanneiskeirmn", "kafasiz", "kafasız",
     "benannenisikim", "siktiler", "salaksinb", "anasi", "osovbucoco", "bacina", "it", "enigi", "bacini", "deseyim", "valideni", "anmnnnenui", "bogharim",
-    "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik"
+    "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik","sikicem"
 
 ]);
 
@@ -18,7 +18,7 @@ const PREFIX_WORDS = [
     "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm"
+    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm","skcem","skcm"
 ];
 
 function normalize(text) {
@@ -110,10 +110,12 @@ function buildEloAnnouncements(results) {
 function getEloRankColor(elo) {
     if (!elo) return 0xFFFFFF; // Elo verisi yoksa varsayılan beyaz
     
-    if (elo >= 1800) return 0x00FF7F; // 1800+     : Zümrüt (Büyüleyici Yeşil)
+    if (elo >= 1500) return 0x00FF7F; // 1800+     : Zümrüt (Büyüleyici Yeşil)
     if (elo >= 1500) return 0x00FFFF; // 1500-1799 : Elmas (Canlı Turkuaz/Siyan)
-    if (elo >= 1200) return 0xFFD700; // 1200-1499 : Altın (Parlak Altın Sarısı)
-    if (elo >= 900)  return 0xE5E8E8; // 900-1199  : Gümüş (Cıvıl Cıvıl Parlak Platin/Gümüş) ✨
+    if (elo >= 1150) return 0xFFD700; // 1200-1499 : Altın (Parlak Altın Sarısı)
+    if (elo >= 1000)  return 0xE5E8E8; // 900-1199  : Gümüş (Cıvıl Cıvıl Parlak Platin/Gümüş) ✨
+    if (elo >= 850)  return 0xCD7F32;                  // 0-899    : Bronz (Sıcak Bakır/Bronz)
+
     return 0xCD7F32;                  // 0-899    : Bronz (Sıcak Bakır/Bronz)
 }
 

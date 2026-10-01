@@ -288,6 +288,13 @@ function login(auth, password) {
 }
 
 
+async function updateUsername(id, username) {
+    return userRepo.updateUsername(
+        db,
+        id,
+        username
+    );
+}
 
 
 /**
@@ -302,6 +309,11 @@ function addStats(userId, stats) {
 }
 
 
+async function getLeaderboard(limit = 5) {
+    return userRepo.getLeaderboard(db, limit);
+}
+
+
 /**
  * Maç sonucunu tek transaction'da yazar: elo + wins/losses.
  * winners / losers: [{ userId, playerId, points }]
@@ -309,45 +321,93 @@ function addStats(userId, stats) {
  */
 async function recordMatch({ winners, losers }) {
     const seen = new Set();
+
     const dedupe = (list) => list.filter((e) => {
         const key = String(e.userId);
-        if (seen.has(key)) return false;   // aynı hesap iki sekmeyle girdiyse bir kez say
+
+        if (seen.has(key)) return false;
+
         seen.add(key);
         return true;
     });
+
     const w = dedupe(winners);
     const l = dedupe(losers);
 
-    if (w.length < eloLogic.MIN_PLAYERS_PER_TEAM || l.length < eloLogic.MIN_PLAYERS_PER_TEAM) {
+    if (
+        w.length < eloLogic.MIN_PLAYERS_PER_TEAM ||
+        l.length < eloLogic.MIN_PLAYERS_PER_TEAM
+    ) {
         return null;
     }
 
     return withTransaction(async (tx) => {
-        const rows = await userRepo.findByIdsForUpdate(tx, [...w, ...l].map((e) => e.userId));
-        const byId = new Map(rows.map((r) => [String(r.id), r]));
 
-        // Elo ve maç sayısı anlık görüntüden değil, kilitli güncel satırdan alınır
-        const enrich = (list) => list
-            .filter((e) => byId.has(String(e.userId)))
-            .map((e) => {
-                const u = byId.get(String(e.userId));
-                return { ...e, elo: u.elo, games: u.wins + u.losses };
-            });
+        const rows = await userRepo.findByIdsForUpdate(
+            tx,
+            [...w, ...l].map((e) => e.userId)
+        );
 
-        const changes = eloLogic.calculateMatch({ winners: enrich(w), losers: enrich(l) });
+        const byId = new Map(
+            rows.map((r) => [String(r.id), r])
+        );
+
+        // DB'deki kilitlenmiş güncel değerlerden Elo + maç sayısı alınır
+        const enrich = (list) =>
+            list
+                .filter((e) => byId.has(String(e.userId)))
+                .map((e) => {
+                    const u = byId.get(String(e.userId));
+
+                    return {
+                        ...e,
+                        elo: u.elo,
+                        games: u.wins + u.losses
+                    };
+                });
+
+        const changes = eloLogic.calculateMatch({
+            winners: enrich(w),
+            losers: enrich(l)
+        });
 
         const results = [];
+
         for (const c of changes) {
-            const user = await userRepo.applyMatchResult(tx, c.userId, {
-                eloDelta: c.delta,
-                win: c.result === "win" ? 1 : 0,
-                loss: c.result === "loss" ? 1 : 0,
+
+            const isWin = c.result === "win";
+
+            const user = await userRepo.applyMatchResult(
+                tx,
+                c.userId,
+                {
+                    eloDelta: c.delta,
+
+                    win: isWin ? 1 : 0,
+                    loss: isWin ? 0 : 1,
+
+                    // 🔥 STREAK
+                    winStreak: isWin ? 1 : 0
+                }
+            );
+
+            results.push({
+                playerId: c.playerId,
+                oldElo: c.elo,
+                newElo: c.newElo,
+                delta: c.delta,
+
+                // stats komutlarında kullanabilmek için
+                user
             });
-            results.push({ playerId: c.playerId, oldElo: c.elo, newElo: c.newElo, delta: c.delta, user });
         }
+
         return results;
     });
 }
+
+
+
 
 
 /* ---------------- Export ---------------- */
@@ -356,9 +416,12 @@ module.exports = {
     findOrCreateByAuth,
     register,
     login,
+    updateUsername,
     verifyPassword,
     addStats,
+    getLeaderboard,
     recordMatch,
+    
 
 };
 

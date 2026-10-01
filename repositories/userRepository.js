@@ -53,19 +53,79 @@ async function findByIdsForUpdate(db, ids) {
     return rows;
 }
 
-async function applyMatchResult(db, id, { eloDelta, win, loss }) {
+async function applyMatchResult(
+    db,
+    id,
+    { eloDelta, win, loss, winStreak }
+) {
     const { rows } = await db.query(
         `UPDATE users
             SET elo = GREATEST(elo + $2, 0),
+
                 wins = wins + $3,
-                losses = losses + $4
+                losses = losses + $4,
+
+                win_streak = CASE
+                    WHEN $5 = 1
+                        THEN win_streak + 1
+                    ELSE 0
+                END,
+
+                best_win_streak = CASE
+                    WHEN $5 = 1
+                        THEN GREATEST(best_win_streak, win_streak + 1)
+                    ELSE best_win_streak
+                END
+
           WHERE id = $1
       RETURNING *`,
-        [id, eloDelta, win, loss]
+        [
+            id,
+            eloDelta,
+            win,
+            loss,
+            winStreak
+        ]
     );
+
     return rows[0];
 }
 
+async function updateUsername(db, id, username) {
+    const { rows } = await db.query(
+        `UPDATE users
+            SET username = $2
+          WHERE id = $1
+      RETURNING *`,
+        [id, username]
+    );
+
+    return rows[0];
+}
+
+async function getLeaderboard(db, limit = 10) {
+    const safeLimit = Math.min(
+        Math.max(Number(limit) || 10, 1),
+        10
+    );
+
+    const { rows } = await db.query(
+        `SELECT
+            id,
+            auth,
+            username,
+            elo,
+            wins,
+            losses
+         FROM users
+         WHERE registered = TRUE
+         ORDER BY elo DESC, wins DESC, id ASC
+         LIMIT $1`,
+        [safeLimit]
+    );
+
+    return rows;
+}
 
 /**
  * password_key ile kayıtlı kullanıcıyı bulur.
@@ -248,5 +308,7 @@ module.exports = {
     addStats,
     applyMatchResult,
     deleteById,
+    getLeaderboard,
+    updateUsername
 };
 

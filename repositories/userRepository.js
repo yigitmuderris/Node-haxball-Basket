@@ -112,7 +112,6 @@ async function getLeaderboard(db, limit = 10) {
     const { rows } = await db.query(
         `SELECT
             id,
-            auth,
             username,
             elo,
             wins,

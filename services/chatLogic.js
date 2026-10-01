@@ -386,7 +386,7 @@ function buildLeaderboardAnnouncement(players) {
         const losses = Number(player.losses) || 0;
 
         return (
-            `${prefix} ${player.name || "Oyuncu"} — ` +
+            `${prefix} ${player.username || "Oyuncu"} — ` +
             `${elo} ELO | ${wins}W-${losses}L`
         );
     });
@@ -399,7 +399,6 @@ function buildLeaderboardAnnouncement(players) {
         color: 0xFFD700
     };
 }
-
 
 
 module.exports = {

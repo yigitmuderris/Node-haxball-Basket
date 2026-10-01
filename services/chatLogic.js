@@ -361,44 +361,48 @@ function buildLeaderboardAnnouncement(players) {
     if (!Array.isArray(players) || players.length === 0) {
         return {
             message:
-                `🏆 ELO LEADERBOARD\n` +
-                `━━━━━━━━━━━━━━\n` +
-                `Henüz kayıtlı oyuncu bulunmuyor.`,
+                `╔════════════════════╗\n` +
+                `║   🏆 LEADERBOARD   ║\n` +
+                `╠════════════════════╣\n` +
+                `║ Kayıtlı oyuncu yok. ║\n` +
+                `╚════════════════════╝`,
             color: 0xFFD700
         };
     }
 
-    const medals = [
-        "🥇",
-        "🥈",
-        "🥉"
-    ];
+    const medals = ["🥇", "🥈", "🥉"];
 
     const lines = players.map((player, index) => {
         const position = index + 1;
+        const prefix = medals[index] || `${position}.`;
 
-        const prefix =
-            medals[index] ||
-            `${position}️⃣`;
-
+        const username = player.username || "Oyuncu";
         const elo = Number(player.elo) || 0;
         const wins = Number(player.wins) || 0;
         const losses = Number(player.losses) || 0;
 
         return (
-            `${prefix} ${player.username || "Oyuncu"} — ` +
-            `${elo} ELO | ${wins}W-${losses}L`
+            `║ ${prefix} ${username} — ${elo} ELO ` +
+            `${wins}W-${losses}L`
         );
     });
 
     return {
         message:
-            `🏆 ELO LEADERBOARD\n` +
-            `━━━━━━━━━━━━━━\n` +
-            lines.join("\n"),
+            `╔════════════════════╗\n` +
+            `║   🏆 LEADERBOARD   ║\n` +
+            `╠════════════════════╣\n` +
+            lines.join("\n") +
+            `\n╚════════════════════╝`,
         color: 0xFFD700
     };
 }
+
+
+
+
+
+
 
 
 module.exports = {

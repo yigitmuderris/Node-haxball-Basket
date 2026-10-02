@@ -668,7 +668,7 @@ async function main() {
                 queue = queue.filter(p => p !== player.id);
                 afkTracker.delete(player.id);
 
-                roomPlayers = getPlayerList();
+                const roomPlayers = getPlayerList();
 
                 const result = balanceTeams(queue, roomPlayers, 3, true)
 
@@ -764,7 +764,7 @@ async function main() {
 
                 warnTimeoutLastTen = setTimeout(() => {
 
-                    room.sendAnnouncement("SON 10 sn...", null, "bold", 0XFF007F);
+                    room.sendAnnouncement("SON 10 sn...", null, 0XFF007F,"bold");
 
 
                 }, warnTimeLastTenSec);
@@ -986,7 +986,7 @@ async function main() {
                 const shotY = touchedballY ?? scoredBall.h.y;
                 const yspeed = scoredBall.A.y;
 
-                if (!scoredBall) return;
+                
 
 
 
@@ -1009,7 +1009,7 @@ async function main() {
                 });
 
 
-                if (!training && result.stat && lasttouchedPlayer.id !== undefined) {
+                if (!training && result.stat && lasttouchedPlayer?.id !== undefined) {
                     addStatsFor(lasttouchedPlayer.id, { [result.stat]: 1 });
                     addMatchPoints(matchPoints, lasttouchedPlayer.id, result.stat);
                 }

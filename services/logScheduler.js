@@ -1,6 +1,6 @@
 const cron = require("node-cron");
 const { gitPushLogs } = require("./gitPush");
-const { logGit } = require("./log");
+const { logGit } = require("./logLogic");
 
 cron.schedule("0 0 * * *", async () => {
     try {

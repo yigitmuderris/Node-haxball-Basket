@@ -48,14 +48,14 @@ services:
       - ./logs:/app/logs
 
   log-pusher:
-    build: .
-    restart: unless-stopped
-    volumes:
-      - ./:/app
-      - /app/node_modules
-      - ${HOME}/.ssh/id_ed25519:/root/.ssh/id_ed25519:ro
-      - ${HOME}/.ssh/known_hosts:/root/.ssh/known_hosts:ro
-    command: ["node", "services/logScheduler.js"]
+  build: .
+  restart: unless-stopped
+  volumes:
+    - ./:/app
+    - /app/node_modules
+    - ${HOME}/.ssh/id_ed25519_logbot:/root/.ssh/id_ed25519:ro
+    - ${HOME}/.ssh/known_hosts:/root/.ssh/known_hosts:ro
+  command: ["node", "services/logScheduler.js"]
 
 volumes:
   pgdata:

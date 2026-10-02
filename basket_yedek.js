@@ -9,7 +9,7 @@ const fs = require("fs");
 const { OperationType, VariableType, ConnectionState, AllowFlags, Direction, CollisionFlags, CameraFollow, BackgroundType, GamePlayState, BanEntryType, Callback, Utils, Room, Replay, Query, Library, RoomConfig, Plugin, Renderer, Errors, Language, EventFactory, Impl } = require("node-haxball")();
 const { migrate } = require('./db/migrate');
 
-const { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates, addMatchPoints, buildMatchEntries, createParticipationTracker } = require('./services/gameLogic');
+const { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, addMatchPoints, buildMatchEntries, createParticipationTracker } = require('./services/gameLogic');
 const { buildEloAnnouncements,
     buildChatAnnouncement,
     hasBannedWord,
@@ -135,7 +135,11 @@ async function main() {
 
 
 
-                    const [cmd, ...args] = text.trim().split(/\s+/);
+                    const normalizeCmd = (s) =>
+                        s.toLowerCase().replace(/ı/g, "i").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                    const [rawCmd, ...args] = text.trim().split(/\s+/);
+                    const cmd = normalizeCmd(rawCmd);
 
                     if (cmd === "!kayit" || cmd === "!giris") {
 
@@ -418,6 +422,12 @@ async function main() {
                         return false;
                     }
 
+                    // Komuta benzeyen ama tanınmayan mesajlar herkese gitmesin
+                    if (/^!\p{L}+/u.test(rawCmd)) {
+                        room.sendAnnouncement("❓ Bilinmeyen komut. Komutlar için: !help", playerId, 0x999999);
+                        return false;
+                    }
+
                     // Mute kontrolü
                     if (mutedPlayerIds.includes(playerId)) {
                         return false;
@@ -436,9 +446,7 @@ async function main() {
                         room.sendAnnouncement(announcement, playerId, 0xFF0000);
                         return messageSendStatus
                     }
-                    // Küfür ve Spam testlerini geçen normal chat mesajlarının 
-                    // oyunda sorunsuz görünmesi için true dönüyoruz.
-                    if (text.startsWith("!")) return true;
+                    
 
                     const p = room.getPlayer(playerId);
                     if (!p) return false;
@@ -519,6 +527,32 @@ async function main() {
                     .catch((err) => console.error("recordMatch hatası:", err));
             }
 
+
+            var touchedballX = null;
+            var touchedballY = null;
+            let lasttouchedPlayer = null;
+            const touchHistory = [];   // son dokunuşlar, hata ayıklama için
+
+            function registerTouch(playerId, source) {
+                const p = room.getPlayer(playerId);
+                const ball = room.getDisc(0);
+                if (!p || !p.team || p.team.id === 0 || !ball) return false;
+
+                // Canlı nesne değil, o anki görüntü
+                lasttouchedPlayer = { id: p.id, name: p.name, team: { M: p.team.id } };
+                touchedballX = ball.h.x;
+                touchedballY = ball.h.y;
+                touchHistory.push({ name: p.name, x: Math.round(ball.h.x), source });
+                if (touchHistory.length > 5) touchHistory.shift();
+                return true;
+            }
+
+            function resetTouchState() {
+                lasttouchedPlayer = null;
+                touchedballX = null;
+                touchedballY = null;
+                touchHistory.length = 0;
+            }
 
 
 
@@ -671,20 +705,15 @@ async function main() {
             }
 
 
-            var touchedballX = 0;
-            var touchedballY = 0;
-            var shootedballX = 0;
-            var shootedballY = 0;
 
-            var lastShooter = null;
 
 
             let gameTimeout = 0;
             let warnTimeoutLastTen = 0;
             let warnTimeoutOne = 0;
 
-            let lasttouchedPlayer = 0;
-            let interactingPlayerId = null;
+
+
             let lastscoringTeam = null;
 
             var scoreRed = 0;
@@ -697,7 +726,8 @@ async function main() {
             room.onGameStart = function (playerId) {
 
 
-                resetStates();
+                resetTouchState();
+                lastscoringTeam = null;
                 matchPoints.clear();
 
 
@@ -927,57 +957,19 @@ async function main() {
             };
 
             room.onCollisionDiscVsDisc = (discId1, discPlayerId1, discId2, discPlayerId2) => {
+                let playerId = null;
+                if (discId1 === 0 && discPlayerId2 != null) playerId = discPlayerId2;
+                else if (discId2 === 0 && discPlayerId1 != null) playerId = discPlayerId1;
+                if (playerId === null) return;
+                if (!registerTouch(playerId, "çarpışma")) return;
 
-                let interactingPlayerId = null;
-
-                const ballIsDisc1 = discId1 === 0;
-                const ballIsDisc2 = discId2 === 0;
-
-                console.log(
-                    `[COLLISION]`,
-                    `d1=${discId1}`,
-                    `p1=${discPlayerId1}`,
-                    `d2=${discId2}`,
-                    `p2=${discPlayerId2}`,
-                    `ballIsDisc1=${ballIsDisc1}`,
-                    `ballIsDisc2=${ballIsDisc2}`
-                );
-
-                // 1. Durum: İlk disk top (0) ve ikinci disk bir oyuncuya ait (discPlayerId2 boş değil)
-                if (discId1 === 0 && discPlayerId2 !== null && discPlayerId2 !== undefined) {
-                    interactingPlayerId = discPlayerId2;
-                }
-                // 2. Durum: İkinci disk top (0) ve ilk disk bir oyuncuya ait (discPlayerId1 boş değil)
-                else if (discId2 === 0 && discPlayerId1 !== null && discPlayerId1 !== undefined) {
-                    interactingPlayerId = discPlayerId1;
-                }
-
-
-                if (interactingPlayerId === null) return;
-
-                lasttouchedPlayer = room.getPlayer(interactingPlayerId);
-
-                const ball = room.getDisc(0);
-                if (!ball) return;
-
-
-
-                // topun x kordinatı
-                touchedballX = ball.h.x;
-                touchedballY = ball.h.y;
-
-
-
-
-                // Top bir oyuncuya çarptıysa ve öncesinde pota bayrağı kalktıysa
-                // Rebound kontrolü: SADECE bu çarpışma gerçek bir top-oyuncu teması ise
                 if (potaTemasFlagi) {
                     room.sendAnnouncement(`🗑️ REBOUND! ${lasttouchedPlayer.name}`, null, 0xE67E22, "small-bold", 0);
                     potaTemasFlagi = false;
                 }
+            };
 
-
-            }
+            room.onPlayerBallKick = (playerId) => { registerTouch(playerId, "vuruş"); };
 
             /* --- sayı --- */
             room.onTeamGoal = function (team) {
@@ -985,23 +977,19 @@ async function main() {
 
                 potaTemasFlagi = false;
 
-                if (!lasttouchedPlayer) {
-                    lasttouchedPlayer = {
-                        name: "Bilinmeyen Oyuncu",
-                        team: team, // Sayıyı atan takımın rengini veriyoruz ki hata çıkmasın
-                        team: { M: team } // .team.M kullanan versiyonlar için yedek
-                    };
-                }
-
-
-                log("X konumu:" + touchedballX);
-                log(lasttouchedPlayer.team.M);
-                log(lasttouchedPlayer.team);
                 const scoredBall = room.getDisc(0);
                 if (!scoredBall) return;
 
-                // ball.A.y bize yspeed değerini verir
-                let yspeed = scoredBall.A.y;
+                // Dokunuş kaydı yoksa gol atan takıma "bilinmeyen oyuncu" yazılır, konum olarak topun şu anki yeri kullanılır
+                const shooter = lasttouchedPlayer || { name: "Bilinmeyen Oyuncu", team: { M: team } };
+                const shotX = touchedballX ?? scoredBall.h.x;
+                const shotY = touchedballY ?? scoredBall.h.y;
+                const yspeed = scoredBall.A.y;
+
+                if (!scoredBall) return;
+
+
+
 
                 lastscoringTeam = team;
 
@@ -1009,7 +997,7 @@ async function main() {
                 // ŞUT çekilen konum ve son topa dokulan konum aynı mı?
                 let score = { scoreBlue, scoreRed }
 
-                const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
+                const result = scoreCheck(shotX, shotY, yspeed, team, shooter, score)
 
                 scoreBlue = result.scoreBlue;
                 scoreRed = result.scoreRed;
@@ -1042,7 +1030,11 @@ async function main() {
                     room.stopGame();
                 }
 
-                resetStates();
+                logGame(`SAYI takım=${team} oyuncu=${shooter.name}#${shooter.id ?? "-"} stat=${result.stat ?? "-"} ` +
+                    `x=${Math.round(shotX)} y=${Math.round(shotY)} vy=${yspeed.toFixed(2)} skor=${scoreRed}-${scoreBlue} ` +
+                    `sonDokunuşlar=${touchHistory.slice(-3).map((t) => `${t.name}(${t.source})`).join(">")}`);
+
+                resetTouchState();
 
             }
 

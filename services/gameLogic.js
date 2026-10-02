@@ -746,17 +746,7 @@ function checkAfkPlayers(roomPlayersData, afkTracker, lastCheckRef) {
 }
 
 
-function resetStates() {
-    touchedballX = null;
-    touchedballY = null;
-    shootedballX = null;
-    shootedballY = null;
-    lasttouchedPlayer = null;
-    lastShooter = null;
-    potaTemasFlagi = false;
-    yspeed = null;
 
-}
 
 
 /** Bu maça katkı puanını ekler. matchPoints: Map(playerId -> puan) */
@@ -804,4 +794,4 @@ function createParticipationTracker({ windowMs = 60000, now = Date.now } = {}) {
 
 
 
-module.exports = { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, resetStates,addMatchPoints, buildMatchEntries,createParticipationTracker }
+module.exports = { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers,addMatchPoints, buildMatchEntries,createParticipationTracker }

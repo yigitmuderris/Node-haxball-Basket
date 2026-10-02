@@ -1,25 +1,26 @@
-// gitPush.js
-const simpleGit = require('simple-git');
-const path = require('path');
+const { simpleGit } = require("simple-git");
 
-const git = simpleGit(); // proje root klasöründe çalışacak
+const git = simpleGit({ baseDir: "/app" });
 
 async function gitPushLogs() {
-  try {
-    const logDir = path.join(__dirname, "logs");
-    await git.add(logDir);
-    const status = await git.status();
+    try {
+        await git.add("logs");
 
-    if (status.staged.length === 0) {
-      console.log("Push için yeni log yok.");
-      return;
+        const status = await git.status();
+
+        if (status.staged.length === 0) {
+            console.log("Push için yeni log yok.");
+            return false;
+        }
+
+        await git.commit("Auto log update");
+        await git.push("origin", "main");
+
+        return true;
+    } catch (err) {
+        console.error("Git hatası:", err);
+        return false;
     }
-
-    await git.commit("Auto log update");
-    await git.push("origin", "main"); // branch adını değiştir
-  } catch (err) {
-    console.error("Git hatası:", err);
-  }
 }
 
 module.exports = { gitPushLogs };

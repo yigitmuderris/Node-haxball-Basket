@@ -1,0 +1,12 @@
+[3.10.2026 00:01:22] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[115] kaybeden=[105] sayılan=[115,105]
+[3.10.2026 00:01:22] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[3.10.2026 00:02:42] SAYI takım=1 oyuncu=onüç#105 stat=three_pt_made x=-224 y=32 vy=7.34 skor=3-0 sonDokunuşlar=𝙎𝙥𝙮(vuruş)>𝙎𝙥𝙮(çarpışma)>onüç(vuruş)
+[3.10.2026 00:03:25] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[105] kaybeden=[115] sayılan=[105,115]
+[3.10.2026 00:03:25] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[3.10.2026 00:03:47] SAYI takım=1 oyuncu=𝙎𝙥𝙮#115 stat=two_pt_made x=85 y=65 vy=-4.51 skor=2-0 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[3.10.2026 00:04:36] SAYI takım=2 oyuncu=onüç#105 stat=three_pt_made x=241 y=-242 vy=8.95 skor=2-3 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>onüç(çarpışma)>onüç(vuruş)
+[3.10.2026 00:05:28] MAÇ BİTTİ skor=2-3 antrenman=false kazanan=[105] kaybeden=[115] sayılan=[105,115]
+[3.10.2026 00:05:28] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[3.10.2026 00:06:31] SAYI takım=1 oyuncu=𝙎𝙥𝙮#115 stat=two_pt_made x=443 y=168 vy=-4.98 skor=2-0 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[3.10.2026 00:07:09] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[] kaybeden=[105] sayılan=[105]
+[3.10.2026 00:07:15] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]

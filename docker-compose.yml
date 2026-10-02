@@ -13,7 +13,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U haxball -d haxball"]
+      test: [ "CMD-SHELL", "pg_isready -U haxball -d haxball" ]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -31,6 +31,7 @@ services:
       DATA_DIR: /data
     volumes:
       - ./data/bot1:/data
+      - ./logs:/app/logs
 
   bot2:
     build: .
@@ -45,6 +46,16 @@ services:
       DATA_DIR: /data
     volumes:
       - ./data/bot2:/data
+      - ./logs:/app/logs
 
 volumes:
   pgdata:
+
+    log-pusher:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+      - ${HOME}/.ssh/id_ed25519:/root/.ssh/id_ed25519:ro
+      - ${HOME}/.ssh/known_hosts:/root/.ssh/known_hosts:ro
+    command: [ "node", "services/logScheduler.js" ]

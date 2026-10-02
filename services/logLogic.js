@@ -1,13 +1,9 @@
 // log.js
 const fs = require("fs");
 const path = require("path");
-const cron = require("node-cron");
-
-const { gitPushLogs } = require("./gitPush");
-const { log } = require("console");
 
 
-const LOG_DIR = path.join(__dirname, "logs");
+const LOG_DIR = path.join(__dirname, "..", "logs");
 
 // Logs klasörü yoksa oluştur
 if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR);
@@ -52,14 +48,7 @@ function write(message, type = "general") {
 
 }
 
-cron.schedule("0 0 * * *", async () => {
-    try {
-        const pushed = await gitPushLogs();
-        logGit(pushed ? "Otomatik push başarılı." : "Push edilecek yeni log yok.");
-    } catch (err) {
-        logGit(`Otomatik push başarısız: ${err.message}`);
-    }
-}, { timezone: "Europe/Berlin" });
+
 
 // Özel fonksiyonlar
 function logChat(message) {

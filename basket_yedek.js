@@ -26,6 +26,14 @@ const { buildEloAnnouncements,
 const userService = require('./services/userService');
 
 
+const { logChat,
+    logJoin,
+    logLeave,
+    logGame,
+    logError,
+    logGit } = require('./services/logLogic');
+
+
 const sessions = new Map();
 
 function readTokens(file) {
@@ -72,7 +80,7 @@ async function main() {
 
     Room.create({
         name: "🗑️ BASKET 3V3 🗑️",
-        showInRoomList: true,
+        showInRoomList: false,
         noPlayer: true,
         maxPlayerCount: 9,
         token: tokenForRoom,
@@ -442,6 +450,8 @@ async function main() {
                         text,
                     });
                     room.sendAnnouncement(a.message, null, a.color, "normal", 1);
+
+                    logChat(`${p.name}#${playerId}: ${text}`);
                     return false;
                 }
 
@@ -494,12 +504,17 @@ async function main() {
 
                 userService.recordMatch({ winners, losers })
                     .then((results) => {
-                        if (!results) return;
+                        if (!results) { logGame("ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok"); return; }
+                        results.forEach((r) => logGame(
+                            `ELO kullanıcı=${r.user.id} ${r.oldElo}->${r.newElo} (${r.delta > 0 ? "+" : ""}${r.delta})`
+                        ));
                         const inRoom = results.filter((r) => room.getPlayer(r.playerId));
                         inRoom.forEach((r) => sessions.set(r.playerId, r.user));
                         buildEloAnnouncements(inRoom).forEach((a) =>
                             room.sendAnnouncement(a.message, a.playerId, a.color)
                         );
+
+
                     })
                     .catch((err) => console.error("recordMatch hatası:", err));
             }
@@ -528,7 +543,9 @@ async function main() {
 
             room.onPlayerJoin = (player) => {
 
-                log("oyuna katıldı: " + player.name)
+                log("oyuna katıldı: " + player.name);
+                logJoin(`${player.name} odaya katıldı.`);
+
 
                 if (player.auth) {
                     userService.findOrCreateByAuth(player.auth)
@@ -608,6 +625,7 @@ async function main() {
 
 
                 log("oyundan ayrıldı: " + player.name)
+                logLeave(`${player.name} odadan ayrıldı.`);
 
                 commandCooldown.delete(player.id);
                 sessions.delete(player.id);
@@ -741,8 +759,6 @@ async function main() {
 
             room.onGameStop = function (winningTeamId) {
 
-
-
                 isGameRunning = false;
                 let losers = [];
                 let winners = [];
@@ -798,6 +814,10 @@ async function main() {
                     }
 
                 })
+
+
+                logGame(`MAÇ BİTTİ skor=${scoreRed}-${scoreBlue} antrenman=${training} ` +
+                    `kazanan=[${winners}] kaybeden=[${losers}] sayılan=[${participation.filter([...winners, ...losers])}]`);
 
 
                 if (!training && scoreRed !== scoreBlue) {
@@ -909,6 +929,19 @@ async function main() {
             room.onCollisionDiscVsDisc = (discId1, discPlayerId1, discId2, discPlayerId2) => {
 
                 let interactingPlayerId = null;
+
+                const ballIsDisc1 = discId1 === 0;
+                const ballIsDisc2 = discId2 === 0;
+
+                console.log(
+                    `[COLLISION]`,
+                    `d1=${discId1}`,
+                    `p1=${discPlayerId1}`,
+                    `d2=${discId2}`,
+                    `p2=${discPlayerId2}`,
+                    `ballIsDisc1=${ballIsDisc1}`,
+                    `ballIsDisc2=${ballIsDisc2}`
+                );
 
                 // 1. Durum: İlk disk top (0) ve ikinci disk bir oyuncuya ait (discPlayerId2 boş değil)
                 if (discId1 === 0 && discPlayerId2 !== null && discPlayerId2 !== undefined) {

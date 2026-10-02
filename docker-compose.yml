@@ -1,8 +1,42 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: haxball
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PASSWORD_PEPPER: ${PASSWORD_PEPPER}
+      POSTGRES_DB: haxball
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U haxball -d haxball"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  bot1:
+    build: .
+    env_file:
+      - .env
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://haxball:${DB_PASSWORD}@db:5432/haxball
+      DATA_DIR: /data
+    volumes:
+      - ./data/bot1:/data
+      - ./logs:/app/logs
+
   bot2:
     build: .
     env_file:
       - .env
-    restart: "unless-stopped"
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
@@ -22,5 +56,5 @@
       - ${HOME}/.ssh/known_hosts:/root/.ssh/known_hosts:ro
     command: ["node", "services/logScheduler.js"]
 
-  volumes:
+volumes:
   pgdata:

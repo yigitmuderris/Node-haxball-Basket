@@ -80,7 +80,7 @@ async function main() {
 
     Room.create({
         name: "🗑️ BASKET 3V3 🗑️",
-        showInRoomList: false,
+        showInRoomList: true,
         noPlayer: true,
         maxPlayerCount: 9,
         token: tokenForRoom,

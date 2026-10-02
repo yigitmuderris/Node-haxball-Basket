@@ -623,7 +623,7 @@ async function main() {
                     room.sendAnnouncement(`${player.name} Hoşgeldin`, player.id);
                     queue.push(player.id);
 
-                    if (isGameRunning && queue.find(p => p === player.id)) {
+                    if (isGameRunning && queue.find(p => p === player.id)&& room.players.length > 6) {
 
                         room.sendAnnouncement("Oyun oynanıyor sıranın gelmesini bekle...", player.id, 0x999999)
                     }

@@ -1,0 +1,777 @@
+[2.10.2026 11:30:29] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 12:22:27] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 12:22:59] SAYI takım=2 oyuncu=TAAŞŞUK-I TALAT VE FİTNAT#3 stat=two_pt_own_basket x=-660 y=252 vy=-10.99 skor=0-2 sonDokunuşlar=TAAŞŞUK-I TALAT VE FİTNAT(çarpışma)>TAAŞŞUK-I TALAT VE FİTNAT(vuruş)>TAAŞŞUK-I TALAT VE FİTNAT(çarpışma)
+[2.10.2026 12:24:21] SAYI takım=1 oyuncu=TAAŞŞUK-I TALAT VE FİTNAT#3 stat=two_pt_made x=389 y=37 vy=2.17 skor=2-2 sonDokunuşlar=TAAŞŞUK-I TALAT VE FİTNAT(vuruş)>TAAŞŞUK-I TALAT VE FİTNAT(çarpışma)>TAAŞŞUK-I TALAT VE FİTNAT(vuruş)
+[2.10.2026 12:25:25] MAÇ BİTTİ skor=2-2 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 13:03:20] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 13:25:43] SAYI takım=1 oyuncu=Sinek#5 stat=two_pt_made x=486 y=183 vy=5.44 skor=2-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 13:25:46] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[5] kaybeden=[] sayılan=[5]
+[2.10.2026 13:28:04] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 13:38:44] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 13:39:44] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=450 y=40 vy=6.80 skor=2-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:40:03] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 13:40:47] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[7] kaybeden=[8] sayılan=[7,8]
+[2.10.2026 13:40:47] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:41:13] SAYI takım=1 oyuncu=Willian#7 stat=two_pt_own_basket x=174 y=-319 vy=5.25 skor=2-0 sonDokunuşlar=Willian(vuruş)>Willian(vuruş)>Willian(vuruş)
+[2.10.2026 13:41:44] SAYI takım=1 oyuncu=we#8 stat=three_pt_made x=-378 y=-373 vy=-4.07 skor=5-0 sonDokunuşlar=OLDGUY(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:42:07] SAYI takım=1 oyuncu=we#8 stat=three_pt_made x=-103 y=136 vy=6.66 skor=8-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:42:20] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=519 y=-334 vy=6.37 skor=10-0 sonDokunuşlar=OLDGUY(vuruş)>we(vuruş)>we(çarpışma)
+[2.10.2026 13:42:50] MAÇ BİTTİ skor=10-0 antrenman=false kazanan=[8] kaybeden=[9] sayılan=[8,9]
+[2.10.2026 13:42:50] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:43:32] SAYI takım=2 oyuncu=we#8 stat=two_pt_made x=-492 y=111 vy=-5.39 skor=0-2 sonDokunuşlar=OLDGUY(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:44:53] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[8] kaybeden=[9] sayılan=[8,9]
+[2.10.2026 13:44:53] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:46:21] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=601 y=226 vy=-7.64 skor=2-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:46:56] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[8] kaybeden=[9] sayılan=[8,9]
+[2.10.2026 13:46:56] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:47:04] SAYI takım=1 oyuncu=OLDGUY#9 stat=two_pt_made x=4 y=31 vy=7.71 skor=2-0 sonDokunuşlar=OLDGUY(çarpışma)>OLDGUY(vuruş)
+[2.10.2026 13:48:04] SAYI takım=2 oyuncu=we#8 stat=two_pt_made x=-481 y=-416 vy=8.41 skor=2-2 sonDokunuşlar=asddsaa(çarpışma)>asddsaa(vuruş)>we(çarpışma)
+[2.10.2026 13:49:01] MAÇ BİTTİ skor=5-2 antrenman=false kazanan=[9,10] kaybeden=[8] sayılan=[9,10,8]
+[2.10.2026 13:49:01] SAYI takım=1 oyuncu=OLDGUY#9 stat=three_pt_made x=-207 y=-435 vy=-4.74 skor=0-0 sonDokunuşlar=we(vuruş)>OLDGUY(çarpışma)>OLDGUY(vuruş)
+[2.10.2026 13:49:01] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:49:33] SAYI takım=2 oyuncu=asddsaa#10 stat=two_pt_made x=-565 y=-119 vy=3.33 skor=0-2 sonDokunuşlar=asddsaa(çarpışma)>asddsaa(çarpışma)>asddsaa(çarpışma)
+[2.10.2026 13:49:45] SAYI takım=2 oyuncu=asddsaa#10 stat=two_pt_made x=-603 y=-413 vy=7.06 skor=0-4 sonDokunuşlar=we(vuruş)>we(vuruş)>asddsaa(çarpışma)
+[2.10.2026 13:51:04] MAÇ BİTTİ skor=0-4 antrenman=false kazanan=[10] kaybeden=[8,11] sayılan=[10,8,11]
+[2.10.2026 13:51:04] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:54:49] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[8] kaybeden=[11] sayılan=[8,11]
+[2.10.2026 13:54:49] SAYI takım=2 oyuncu=we#8 stat=two_pt_made x=-486 y=-221 vy=8.72 skor=0-0 sonDokunuşlar=we(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:54:49] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:55:57] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=629 y=32 vy=-13.28 skor=2-0 sonDokunuşlar=we(vuruş)>iker(çarpışma)>we(vuruş)
+[2.10.2026 13:56:16] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=346 y=20 vy=4.63 skor=4-0 sonDokunuşlar=we(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:56:25] SAYI takım=1 oyuncu=iker#11 stat=two_pt_own_basket x=572 y=-225 vy=5.51 skor=6-0 sonDokunuşlar=we(vuruş)>iker(çarpışma)
+[2.10.2026 13:56:52] MAÇ BİTTİ skor=6-0 antrenman=false kazanan=[8] kaybeden=[11] sayılan=[8,11]
+[2.10.2026 13:56:52] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:57:50] SAYI takım=1 oyuncu=iker#11 stat=two_pt_made x=558 y=-219 vy=5.51 skor=2-0 sonDokunuşlar=we(vuruş)>iker(vuruş)>iker(çarpışma)
+[2.10.2026 13:58:55] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[11,13] kaybeden=[8] sayılan=[11,8]
+[2.10.2026 13:58:55] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 13:59:03] SAYI takım=2 oyuncu=iker#11 stat=two_pt_made x=-8 y=129 vy=5.74 skor=0-2 sonDokunuşlar=iker(çarpışma)>iker(vuruş)
+[2.10.2026 13:59:23] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=16 y=-278 vy=3.38 skor=2-2 sonDokunuşlar=we(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:59:41] SAYI takım=2 oyuncu=we#8 stat=two_pt_own_basket x=-582 y=7 vy=-4.96 skor=2-4 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 13:59:49] SAYI takım=2 oyuncu=iker#11 stat=two_pt_made x=-525 y=-321 vy=2.12 skor=2-6 sonDokunuşlar=iker(vuruş)>iker(çarpışma)
+[2.10.2026 13:59:59] SAYI takım=2 oyuncu=Wesley Sneijder#15 stat=two_pt_own_basket x=-287 y=-340 vy=7.28 skor=2-8 sonDokunuşlar=we(vuruş)>iker(vuruş)>Wesley Sneijder(çarpışma)
+[2.10.2026 14:00:58] MAÇ BİTTİ skor=2-8 antrenman=false kazanan=[11,14] kaybeden=[8] sayılan=[11,14,8]
+[2.10.2026 14:00:58] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:01:42] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=482 y=227 vy=-5.29 skor=2-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:02:15] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=500 y=206 vy=-9.87 skor=4-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:02:55] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=583 y=133 vy=-12.89 skor=6-0 sonDokunuşlar=we(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:03:01] MAÇ BİTTİ skor=6-0 antrenman=false kazanan=[8] kaybeden=[11,14] sayılan=[8,11,14]
+[2.10.2026 14:03:01] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:04:26] SAYI takım=2 oyuncu=anonymous.#18 stat=two_pt_own_basket x=-552 y=-236 vy=5.33 skor=0-2 sonDokunuşlar=beşir(vuruş)>we(vuruş)>anonymous.(çarpışma)
+[2.10.2026 14:05:04] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[14,8] kaybeden=[11,18] sayılan=[14,8,11,18]
+[2.10.2026 14:05:04] ELO kullanıcı=102 1000->1019 (+19)
+[2.10.2026 14:05:04] ELO kullanıcı=1 1039->1050 (+11)
+[2.10.2026 14:05:04] ELO kullanıcı=99 1000->981 (-19)
+[2.10.2026 14:05:04] ELO kullanıcı=106 1000->981 (-19)
+[2.10.2026 14:07:14] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[14,18] kaybeden=[8] sayılan=[14,18,8]
+[2.10.2026 14:07:14] SAYI takım=2 oyuncu=beşir#14 stat=two_pt_made x=-579 y=224 vy=-7.56 skor=0-0 sonDokunuşlar=beşir(çarpışma)>beşir(çarpışma)>beşir(vuruş)
+[2.10.2026 14:07:14] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:07:48] SAYI takım=2 oyuncu=we#8 stat=two_pt_made x=-508 y=-228 vy=1.68 skor=0-2 sonDokunuşlar=beşir(çarpışma)>beşir(vuruş)>we(çarpışma)
+[2.10.2026 14:08:18] SAYI takım=2 oyuncu=beşir#14 stat=two_pt_made x=-497 y=-56 vy=8.48 skor=0-4 sonDokunuşlar=beşir(çarpışma)>beşir(çarpışma)>beşir(vuruş)
+[2.10.2026 14:09:17] MAÇ BİTTİ skor=0-4 antrenman=false kazanan=[14,8] kaybeden=[19,20] sayılan=[14,8,19]
+[2.10.2026 14:09:17] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:10:30] SAYI takım=2 oyuncu=tural#20 stat=two_pt_made x=-235 y=-9 vy=8.42 skor=0-2 sonDokunuşlar=tural(çarpışma)>tural(çarpışma)>tural(vuruş)
+[2.10.2026 14:11:20] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[8,20] kaybeden=[21] sayılan=[8,20,21]
+[2.10.2026 14:11:20] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:13:17] SAYI takım=2 oyuncu=tural#20 stat=two_pt_own_basket x=-449 y=-71 vy=8.54 skor=0-2 sonDokunuşlar=redox(vuruş)>tural(çarpışma)>tural(vuruş)
+[2.10.2026 14:13:23] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[21] kaybeden=[20,8] sayılan=[21,20,8]
+[2.10.2026 14:13:23] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:13:51] SAYI takım=1 oyuncu=redox#21 stat=two_pt_own_basket x=511 y=-461 vy=7.54 skor=2-0 sonDokunuşlar=redox(çarpışma)>redox(vuruş)>redox(çarpışma)
+[2.10.2026 14:14:16] SAYI takım=1 oyuncu=redox#21 stat=two_pt_own_basket x=194 y=-15 vy=-15.44 skor=4-0 sonDokunuşlar=we(vuruş)>redox(çarpışma)>redox(vuruş)
+[2.10.2026 14:14:59] SAYI takım=2 oyuncu=redox#21 stat=three_pt_made x=209 y=-375 vy=5.53 skor=4-3 sonDokunuşlar=redox(çarpışma)>redox(vuruş)>redox(vuruş)
+[2.10.2026 14:15:26] MAÇ BİTTİ skor=4-3 antrenman=false kazanan=[20,8] kaybeden=[21] sayılan=[20,8,21]
+[2.10.2026 14:15:26] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:15:50] SAYI takım=2 oyuncu=tural#20 stat=two_pt_own_basket x=-376 y=124 vy=-6.51 skor=0-2 sonDokunuşlar=tural(çarpışma)>tural(çarpışma)>tural(vuruş)
+[2.10.2026 14:15:59] SAYI takım=2 oyuncu=we#8 stat=two_pt_made x=-400 y=20 vy=1.86 skor=0-4 sonDokunuşlar=we(vuruş)
+[2.10.2026 14:17:29] MAÇ BİTTİ skor=0-4 antrenman=false kazanan=[8,22] kaybeden=[20,21] sayılan=[8,22,20,21]
+[2.10.2026 14:17:29] ELO kullanıcı=1 1050->1064 (+14)
+[2.10.2026 14:17:29] ELO kullanıcı=110 1000->1014 (+14)
+[2.10.2026 14:17:29] ELO kullanıcı=108 1000->981 (-19)
+[2.10.2026 14:17:29] ELO kullanıcı=109 1000->981 (-19)
+[2.10.2026 14:18:06] SAYI takım=1 oyuncu=we#8 stat=two_pt_made x=644 y=-388 vy=5.31 skor=2-0 sonDokunuşlar=we(vuruş)>redox(vuruş)>we(çarpışma)
+[2.10.2026 14:18:21] SAYI takım=1 oyuncu=we#8 stat=three_pt_made x=-266 y=38 vy=2.95 skor=5-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:19:00] SAYI takım=1 oyuncu=tural#20 stat=three_pt_own_basket x=-131 y=172 vy=2.45 skor=8-0 sonDokunuşlar=tural(vuruş)>tural(çarpışma)>tural(vuruş)
+[2.10.2026 14:19:16] SAYI takım=1 oyuncu=we#8 stat=three_pt_made x=-4 y=59 vy=7.13 skor=11-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:19:30] SAYI takım=1 oyuncu=we#8 stat=three_pt_made x=-105 y=63 vy=4.11 skor=14-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:19:32] MAÇ BİTTİ skor=14-0 antrenman=false kazanan=[22,8] kaybeden=[20] sayılan=[22,8,20]
+[2.10.2026 14:19:32] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:19:57] SAYI takım=1 oyuncu=tural#20 stat=two_pt_made x=240 y=135 vy=-6.53 skor=2-0 sonDokunuşlar=Eski(vuruş)>AuK(çarpışma)>tural(vuruş)
+[2.10.2026 14:20:46] SAYI takım=2 oyuncu=tural#20 stat=two_pt_own_basket x=-579 y=-222 vy=6.91 skor=2-2 sonDokunuşlar=we(çarpışma)>we(vuruş)>tural(çarpışma)
+[2.10.2026 14:22:28] MAÇ BİTTİ skor=4-2 antrenman=false kazanan=[20,23] kaybeden=[22,8] sayılan=[20,23,22,8]
+[2.10.2026 14:22:28] SAYI takım=1 oyuncu=AuK#22 stat=two_pt_own_basket x=289 y=165 vy=-4.73 skor=0-0 sonDokunuşlar=we(vuruş)>AuK(çarpışma)>AuK(vuruş)
+[2.10.2026 14:22:28] ELO kullanıcı=108 981->1004 (+23)
+[2.10.2026 14:22:28] ELO kullanıcı=46 1000->1023 (+23)
+[2.10.2026 14:22:28] ELO kullanıcı=110 1014->991 (-23)
+[2.10.2026 14:22:28] ELO kullanıcı=1 1064->1050 (-14)
+[2.10.2026 14:22:44] SAYI takım=2 oyuncu=AuK#22 stat=three_pt_own_basket x=98 y=-383 vy=5.62 skor=0-3 sonDokunuşlar=Eski(vuruş)>we(çarpışma)>AuK(vuruş)
+[2.10.2026 14:24:31] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[8,23] kaybeden=[20,22,24] sayılan=[8,23,20,22]
+[2.10.2026 14:24:31] ELO kullanıcı=1 1050->1061 (+11)
+[2.10.2026 14:24:31] ELO kullanıcı=46 1023->1041 (+18)
+[2.10.2026 14:24:31] ELO kullanıcı=108 1004->986 (-18)
+[2.10.2026 14:24:31] ELO kullanıcı=110 991->973 (-18)
+[2.10.2026 14:25:33] SAYI takım=1 oyuncu=we#8 stat=two_pt_own_basket x=560 y=23 vy=-14.56 skor=2-0 sonDokunuşlar=we(çarpışma)>we(vuruş)>we(vuruş)
+[2.10.2026 14:26:20] SAYI takım=1 oyuncu=beşir#24 stat=three_pt_own_basket x=-54 y=-413 vy=9.64 skor=5-0 sonDokunuşlar=we(vuruş)>beşir(çarpışma)>beşir(vuruş)
+[2.10.2026 14:26:34] MAÇ BİTTİ skor=5-0 antrenman=false kazanan=[23,25] kaybeden=[8,26,27] sayılan=[23,25,8]
+[2.10.2026 14:26:34] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:26:53] SAYI takım=2 oyuncu=we#8 stat=three_pt_made x=309 y=221 vy=5.54 skor=0-3 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:27:39] SAYI takım=1 oyuncu=Si'#26 stat=three_pt_made x=-173 y=108 vy=6.69 skor=3-3 sonDokunuşlar=Si'(çarpışma)>Si'(çarpışma)>Si'(vuruş)
+[2.10.2026 14:28:22] SAYI takım=2 oyuncu=Si'#26 stat=two_pt_own_basket x=-377 y=231 vy=-11.05 skor=3-5 sonDokunuşlar=we(vuruş)>Si'(çarpışma)>Si'(vuruş)
+[2.10.2026 14:28:37] MAÇ BİTTİ skor=3-5 antrenman=false kazanan=[8] kaybeden=[25,26] sayılan=[8,25,26]
+[2.10.2026 14:28:37] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:30:42] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[8,25] kaybeden=[26] sayılan=[8,25,26]
+[2.10.2026 14:30:42] SAYI takım=2 oyuncu=we#8 stat=two_pt_made x=-217 y=129 vy=5.92 skor=0-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 14:30:42] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:32:00] SAYI takım=1 oyuncu=Motive#25 stat=two_pt_made x=370 y=-140 vy=5.50 skor=2-0 sonDokunuşlar=Si'(vuruş)>we(çarpışma)>Motive(çarpışma)
+[2.10.2026 14:32:45] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[25,8] kaybeden=[26] sayılan=[25,8,26]
+[2.10.2026 14:32:45] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:33:59] SAYI takım=2 oyuncu=Si'#26 stat=three_pt_made x=149 y=150 vy=8.04 skor=0-3 sonDokunuşlar=Motive(vuruş)>Si'(çarpışma)>Si'(vuruş)
+[2.10.2026 14:34:48] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[26] kaybeden=[25] sayılan=[26,25]
+[2.10.2026 14:34:48] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:35:36] SAYI takım=2 oyuncu=Motive#25 stat=three_pt_made x=460 y=35 vy=5.31 skor=0-3 sonDokunuşlar=Motive(çarpışma)>Motive(çarpışma)>Motive(vuruş)
+[2.10.2026 14:36:51] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[25] kaybeden=[26] sayılan=[25,26]
+[2.10.2026 14:36:51] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:37:31] SAYI takım=2 oyuncu=Motive#25 stat=two_pt_made x=-253 y=228 vy=6.85 skor=0-2 sonDokunuşlar=Motive(vuruş)>Motive(çarpışma)>Motive(vuruş)
+[2.10.2026 14:37:46] SAYI takım=1 oyuncu=Si'#26 stat=two_pt_made x=440 y=191 vy=-2.30 skor=2-2 sonDokunuşlar=Motive(çarpışma)>Si'(çarpışma)>Si'(vuruş)
+[2.10.2026 14:38:38] SAYI takım=1 oyuncu=Si'#26 stat=three_pt_made x=-357 y=-4 vy=5.38 skor=5-2 sonDokunuşlar=Motive(vuruş)>Si'(çarpışma)>Si'(vuruş)
+[2.10.2026 14:38:48] SAYI takım=1 oyuncu=Motive#25 stat=two_pt_own_basket x=566 y=-503 vy=10.70 skor=7-2 sonDokunuşlar=Motive(çarpışma)>Motive(vuruş)>Motive(çarpışma)
+[2.10.2026 14:38:54] MAÇ BİTTİ skor=7-2 antrenman=false kazanan=[26] kaybeden=[25] sayılan=[26,25]
+[2.10.2026 14:38:54] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:39:02] SAYI takım=2 oyuncu=Motive#25 stat=two_pt_own_basket x=-50 y=144 vy=4.39 skor=0-2 sonDokunuşlar=Si'(çarpışma)>Si'(vuruş)>Motive(çarpışma)
+[2.10.2026 14:40:02] SAYI takım=1 oyuncu=Motive#25 stat=three_pt_made x=-53 y=20 vy=4.25 skor=3-2 sonDokunuşlar=Motive(çarpışma)>Motive(vuruş)>Motive(vuruş)
+[2.10.2026 14:40:57] MAÇ BİTTİ skor=3-2 antrenman=false kazanan=[25] kaybeden=[26] sayılan=[25,26]
+[2.10.2026 14:40:57] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:42:59] SAYI takım=1 oyuncu=Si'#26 stat=two_pt_own_basket x=574 y=-42 vy=2.06 skor=2-0 sonDokunuşlar=Motive(çarpışma)>Motive(vuruş)>Si'(çarpışma)
+[2.10.2026 14:43:00] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[25] kaybeden=[26] sayılan=[25,26]
+[2.10.2026 14:43:00] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:45:49] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[26,28] kaybeden=[25] sayılan=[26,28,25]
+[2.10.2026 14:45:49] SAYI takım=1 oyuncu=Si'#26 stat=two_pt_made x=447 y=270 vy=-2.37 skor=0-0 sonDokunuşlar=Si'(çarpışma)>Si'(çarpışma)>Si'(vuruş)
+[2.10.2026 14:45:49] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:48:14] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[28] kaybeden=[25] sayılan=[28,25]
+[2.10.2026 14:48:14] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_made x=-480 y=62 vy=6.11 skor=0-0 sonDokunuşlar=Motive(vuruş)>Etooo(çarpışma)>Etooo(vuruş)
+[2.10.2026 14:48:14] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:48:32] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_made x=-444 y=248 vy=-5.11 skor=0-2 sonDokunuşlar=Motive(vuruş)>Motive(çarpışma)>Etooo(vuruş)
+[2.10.2026 14:49:19] SAYI takım=1 oyuncu=Etooo#28 stat=two_pt_own_basket x=496 y=203 vy=-8.87 skor=2-2 sonDokunuşlar=Motive(vuruş)>Etooo(çarpışma)>Etooo(vuruş)
+[2.10.2026 14:52:37] MAÇ BİTTİ skor=2-4 antrenman=false kazanan=[28] kaybeden=[25] sayılan=[28,25]
+[2.10.2026 14:52:37] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_made x=-103 y=-32 vy=2.29 skor=0-0 sonDokunuşlar=Etooo(vuruş)>Motive(çarpışma)>Etooo(vuruş)
+[2.10.2026 14:52:37] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:53:33] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_made x=-426 y=155 vy=-4.50 skor=0-2 sonDokunuşlar=Etooo(çarpışma)>Etooo(vuruş)>Etooo(vuruş)
+[2.10.2026 14:54:40] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[28,30] kaybeden=[25,29] sayılan=[28,25,29]
+[2.10.2026 14:54:40] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:55:57] SAYI takım=2 oyuncu=Etooo#28 stat=three_pt_made x=15 y=13 vy=7.41 skor=0-3 sonDokunuşlar=Etooo(çarpışma)>Etooo(çarpışma)>Etooo(vuruş)
+[2.10.2026 14:56:43] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[28,30] kaybeden=[25] sayılan=[28,30,25]
+[2.10.2026 14:56:43] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:57:09] SAYI takım=2 oyuncu=Etooo#28 stat=three_pt_made x=68 y=100 vy=2.10 skor=0-3 sonDokunuşlar=Etooo(çarpışma)>Etooo(çarpışma)>Etooo(vuruş)
+[2.10.2026 14:57:31] SAYI takım=1 oyuncu=ATATURK#30 stat=three_pt_own_basket x=-253 y=-204 vy=8.10 skor=3-3 sonDokunuşlar=Etooo(vuruş)>ATATURK(çarpışma)>ATATURK(vuruş)
+[2.10.2026 14:58:50] MAÇ BİTTİ skor=3-5 antrenman=false kazanan=[28,30] kaybeden=[25] sayılan=[28,30,25]
+[2.10.2026 14:58:50] SAYI takım=2 oyuncu=ATATURK#30 stat=two_pt_made x=-565 y=-236 vy=5.56 skor=0-0 sonDokunuşlar=Etooo(çarpışma)>Etooo(vuruş)>ATATURK(çarpışma)
+[2.10.2026 14:58:50] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 14:59:07] SAYI takım=2 oyuncu=ATATURK#30 stat=two_pt_own_basket x=-518 y=-232 vy=5.85 skor=0-2 sonDokunuşlar=ATATURK(vuruş)>ATATURK(çarpışma)>ATATURK(vuruş)
+[2.10.2026 14:59:14] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[28] kaybeden=[] sayılan=[28]
+[2.10.2026 15:00:34] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_made x=-529 y=-224 vy=4.79 skor=0-2 sonDokunuşlar=Etooo(çarpışma)>Etooo(vuruş)>Etooo(çarpışma)
+[2.10.2026 15:00:45] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_made x=-555 y=-172 vy=5.56 skor=0-4 sonDokunuşlar=Etooo(çarpışma)>Etooo(vuruş)>Etooo(çarpışma)
+[2.10.2026 15:00:59] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_made x=-566 y=-150 vy=3.72 skor=0-6 sonDokunuşlar=Etooo(çarpışma)>Etooo(çarpışma)>Etooo(çarpışma)
+[2.10.2026 15:01:17] MAÇ BİTTİ skor=0-6 antrenman=true kazanan=[28] kaybeden=[] sayılan=[28]
+[2.10.2026 15:01:26] SAYI takım=1 oyuncu=Etooo#28 stat=two_pt_made x=2 y=79 vy=7.53 skor=2-0 sonDokunuşlar=Etooo(çarpışma)>Etooo(vuruş)
+[2.10.2026 15:03:17] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_own_basket x=-529 y=-252 vy=5.39 skor=2-2 sonDokunuşlar=Etooo(vuruş)>Etooo(vuruş)>Etooo(çarpışma)
+[2.10.2026 15:03:26] MAÇ BİTTİ skor=2-4 antrenman=true kazanan=[] kaybeden=[28] sayılan=[28]
+[2.10.2026 15:03:26] SAYI takım=2 oyuncu=Etooo#28 stat=two_pt_own_basket x=-400 y=25 vy=1.87 skor=0-0 sonDokunuşlar=Etooo(vuruş)
+[2.10.2026 15:03:37] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 15:29:14] SAYI takım=1 oyuncu=.Nomad#2 stat=two_pt_made x=618 y=184 vy=-9.89 skor=2-0 sonDokunuşlar=.Nomad(çarpışma)>.Nomad(çarpışma)>.Nomad(vuruş)
+[2.10.2026 15:29:57] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 15:47:03] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 15:57:49] SAYI takım=1 oyuncu=ronaldo#3 stat=two_pt_made x=363 y=225 vy=5.80 skor=2-0 sonDokunuşlar=ronaldo(vuruş)>ronaldo(çarpışma)>ronaldo(vuruş)
+[2.10.2026 15:58:49] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 16:21:07] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 16:22:26] SAYI takım=2 oyuncu=𝙎𝙥𝙮#5 stat=two_pt_made x=-136 y=-431 vy=10.84 skor=0-2 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 16:23:10] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[5] kaybeden=[4] sayılan=[5,4]
+[2.10.2026 16:23:10] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 16:24:12] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 16:25:19] SAYI takım=1 oyuncu=𝙎𝙥𝙮#5 stat=two_pt_made x=658 y=191 vy=-6.95 skor=2-0 sonDokunuşlar=𝙎𝙥𝙮(vuruş)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)
+[2.10.2026 16:25:41] SAYI takım=1 oyuncu=𝙎𝙥𝙮#5 stat=three_pt_made x=-148 y=168 vy=5.54 skor=5-0 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 16:26:16] MAÇ BİTTİ skor=5-0 antrenman=true kazanan=[5] kaybeden=[] sayılan=[5]
+[2.10.2026 16:26:54] SAYI takım=2 oyuncu=𝙎𝙥𝙮#5 stat=two_pt_made x=-272 y=118 vy=6.04 skor=0-2 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 16:27:04] SAYI takım=2 oyuncu=𝙎𝙥𝙮#5 stat=two_pt_made x=-532 y=222 vy=-5.47 skor=0-4 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 16:27:15] SAYI takım=2 oyuncu=𝙎𝙥𝙮#5 stat=two_pt_made x=-454 y=64 vy=7.61 skor=0-6 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 16:27:19] MAÇ BİTTİ skor=0-6 antrenman=true kazanan=[5] kaybeden=[7] sayılan=[5]
+[2.10.2026 16:27:49] SAYI takım=1 oyuncu=çakmak gazı#7 stat=two_pt_own_basket x=645 y=74 vy=-11.36 skor=2-0 sonDokunuşlar=çakmak gazı(çarpışma)>çakmak gazı(çarpışma)>çakmak gazı(vuruş)
+[2.10.2026 16:29:22] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[5] kaybeden=[7] sayılan=[5,7]
+[2.10.2026 16:29:22] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 16:29:43] SAYI takım=2 oyuncu=𝙎𝙥𝙮#5 stat=two_pt_made x=-442 y=171 vy=-4.32 skor=0-2 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 16:30:56] SAYI takım=2 oyuncu=𝙎𝙥𝙮#5 stat=two_pt_made x=-574 y=115 vy=-0.09 skor=0-4 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 16:31:12] SAYI takım=1 oyuncu=çakmak gazı#7 stat=two_pt_made x=558 y=176 vy=-5.96 skor=2-4 sonDokunuşlar=çakmak gazı(çarpışma)>çakmak gazı(vuruş)>çakmak gazı(vuruş)
+[2.10.2026 16:31:25] MAÇ BİTTİ skor=2-4 antrenman=false kazanan=[5] kaybeden=[7,8] sayılan=[5,7]
+[2.10.2026 16:31:25] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 16:32:33] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 16:33:47] SAYI takım=1 oyuncu=çakmak gazı#7 stat=two_pt_own_basket x=608 y=203 vy=-9.26 skor=2-0 sonDokunuşlar=çakmak gazı(çarpışma)>çakmak gazı(çarpışma)>çakmak gazı(vuruş)
+[2.10.2026 16:33:56] SAYI takım=1 oyuncu=çakmak gazı#7 stat=two_pt_own_basket x=400 y=83 vy=7.59 skor=4-0 sonDokunuşlar=çakmak gazı(çarpışma)>çakmak gazı(çarpışma)>çakmak gazı(vuruş)
+[2.10.2026 16:34:36] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[] kaybeden=[7] sayılan=[7]
+[2.10.2026 16:34:41] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 16:44:41] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 16:46:41] SAYI takım=2 oyuncu=Kuantum#33 stat=three_pt_made x=244 y=-204 vy=8.54 skor=0-3 sonDokunuşlar=xsxs(vuruş)>Kuantum(çarpışma)>Kuantum(vuruş)
+[2.10.2026 16:46:44] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[33] kaybeden=[32] sayılan=[33,32]
+[2.10.2026 16:46:44] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 16:47:03] SAYI takım=1 oyuncu=Kuantum#33 stat=two_pt_made x=626 y=24 vy=-11.34 skor=2-0 sonDokunuşlar=Kuantum(vuruş)>Kuantum(vuruş)>Kuantum(vuruş)
+[2.10.2026 16:48:06] SAYI takım=1 oyuncu=Kuantum#33 stat=two_pt_made x=580 y=229 vy=-9.63 skor=4-0 sonDokunuşlar=Kuantum(çarpışma)>Kuantum(çarpışma)>Kuantum(vuruş)
+[2.10.2026 16:48:47] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[33,34] kaybeden=[32] sayılan=[33,32]
+[2.10.2026 16:48:47] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 16:48:59] SAYI takım=2 oyuncu=we#34 stat=three_pt_made x=416 y=0 vy=5.14 skor=0-3 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 16:49:22] SAYI takım=1 oyuncu=Kuantum#33 stat=three_pt_made x=-323 y=229 vy=5.81 skor=3-3 sonDokunuşlar=Kuantum(çarpışma)>Kuantum(çarpışma)>Kuantum(vuruş)
+[2.10.2026 16:51:53] MAÇ BİTTİ skor=6-3 antrenman=false kazanan=[33] kaybeden=[34] sayılan=[33,34]
+[2.10.2026 16:51:53] SAYI takım=1 oyuncu=Kuantum#33 stat=three_pt_made x=-541 y=-23 vy=5.07 skor=0-0 sonDokunuşlar=Kuantum(çarpışma)>Kuantum(çarpışma)>Kuantum(vuruş)
+[2.10.2026 16:51:53] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 16:52:06] SAYI takım=1 oyuncu=Kuantum#33 stat=two_pt_made x=84 y=-110 vy=7.05 skor=2-0 sonDokunuşlar=Kuantum(çarpışma)>Kuantum(çarpışma)>Kuantum(vuruş)
+[2.10.2026 16:52:49] SAYI takım=2 oyuncu=we#34 stat=three_pt_made x=336 y=-427 vy=4.12 skor=2-3 sonDokunuşlar=Kuantum(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 16:53:33] SAYI takım=2 oyuncu=we#34 stat=two_pt_made x=-570 y=-270 vy=6.08 skor=2-5 sonDokunuşlar=we(çarpışma)>we(vuruş)>we(çarpışma)
+[2.10.2026 16:53:56] MAÇ BİTTİ skor=2-5 antrenman=false kazanan=[34] kaybeden=[33] sayılan=[34,33]
+[2.10.2026 16:53:56] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 16:54:10] SAYI takım=2 oyuncu=we#34 stat=three_pt_made x=517 y=-80 vy=2.53 skor=0-3 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 16:55:29] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[] kaybeden=[33] sayılan=[33]
+[2.10.2026 16:55:50] SAYI takım=2 oyuncu=Kuantum#33 stat=two_pt_made x=-613 y=74 vy=-11.23 skor=0-2 sonDokunuşlar=Kuantum(çarpışma)>Kuantum(çarpışma)>Kuantum(vuruş)
+[2.10.2026 16:56:07] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 17:03:28] SAYI takım=1 oyuncu=conate#9 stat=two_pt_made x=508 y=152 vy=-7.38 skor=2-0 sonDokunuşlar=conate(vuruş)>conate(çarpışma)>conate(vuruş)
+[2.10.2026 17:04:29] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[9] kaybeden=[] sayılan=[9]
+[2.10.2026 17:06:49] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 17:08:20] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 17:09:05] SAYI takım=2 oyuncu=conate#36 stat=two_pt_made x=-647 y=51 vy=-11.16 skor=0-2 sonDokunuşlar=Peace(çarpışma)>conate(çarpışma)>conate(vuruş)
+[2.10.2026 17:10:08] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[36] kaybeden=[] sayılan=[36]
+[2.10.2026 17:11:59] SAYI takım=2 oyuncu=conate#36 stat=two_pt_own_basket x=-515 y=130 vy=6.09 skor=0-2 sonDokunuşlar=conate(vuruş)>conate(çarpışma)>conate(vuruş)
+[2.10.2026 17:12:11] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[] kaybeden=[36] sayılan=[36]
+[2.10.2026 17:12:23] SAYI takım=1 oyuncu=conate#36 stat=two_pt_made x=557 y=162 vy=6.36 skor=2-0 sonDokunuşlar=conate(vuruş)>conate(çarpışma)>conate(vuruş)
+[2.10.2026 17:13:14] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 17:38:37] SAYI takım=2 oyuncu=shadow#37 stat=two_pt_own_basket x=-255 y=172 vy=2.51 skor=0-2 sonDokunuşlar=shadow(çarpışma)>shadow(vuruş)>shadow(vuruş)
+[2.10.2026 17:38:45] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[] kaybeden=[37] sayılan=[37]
+[2.10.2026 17:38:50] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 17:54:09] SAYI takım=1 oyuncu=furky047#38 stat=two_pt_made x=288 y=119 vy=-9.05 skor=2-0 sonDokunuşlar=furky047(vuruş)>furky047(çarpışma)>furky047(vuruş)
+[2.10.2026 17:54:37] SAYI takım=1 oyuncu=furky047#38 stat=two_pt_made x=405 y=284 vy=-7.88 skor=4-0 sonDokunuşlar=furky047(çarpışma)>furky047(çarpışma)>furky047(vuruş)
+[2.10.2026 17:56:00] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[38] kaybeden=[] sayılan=[38]
+[2.10.2026 17:56:25] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 18:33:57] SAYI takım=2 oyuncu=Sinek#39 stat=three_pt_own_basket x=444 y=-121 vy=3.75 skor=0-3 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 18:34:14] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[] kaybeden=[39] sayılan=[39]
+[2.10.2026 18:34:26] SAYI takım=2 oyuncu=Sinek#39 stat=two_pt_made x=-548 y=-216 vy=4.72 skor=0-2 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(çarpışma)
+[2.10.2026 18:34:28] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[39] kaybeden=[40] sayılan=[39,40]
+[2.10.2026 18:35:17] SAYI takım=1 oyuncu=BBQman#40 stat=three_pt_made x=-526 y=-64 vy=7.13 skor=3-0 sonDokunuşlar=BBQman(çarpışma)>BBQman(çarpışma)>BBQman(vuruş)
+[2.10.2026 18:36:31] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[40] kaybeden=[39] sayılan=[40,39]
+[2.10.2026 18:36:31] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 18:38:28] SAYI takım=1 oyuncu=Sinek#39 stat=two_pt_made x=17 y=1 vy=6.27 skor=2-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 18:38:34] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[39] kaybeden=[40] sayılan=[39,40]
+[2.10.2026 18:38:34] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 18:39:55] SAYI takım=2 oyuncu=Sinek#39 stat=two_pt_made x=-374 y=102 vy=-12.73 skor=0-2 sonDokunuşlar=Sinek(çarpışma)>Sinek(vuruş)>Sinek(vuruş)
+[2.10.2026 18:40:11] SAYI takım=1 oyuncu=we#41 stat=two_pt_made x=339 y=241 vy=4.09 skor=2-2 sonDokunuşlar=Sinek(çarpışma)>Sinek(vuruş)>we(vuruş)
+[2.10.2026 18:40:45] MAÇ BİTTİ skor=5-2 antrenman=false kazanan=[41] kaybeden=[39] sayılan=[41,39]
+[2.10.2026 18:40:45] SAYI takım=1 oyuncu=we#41 stat=three_pt_made x=-231 y=37 vy=6.22 skor=0-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 18:40:45] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 18:40:58] SAYI takım=2 oyuncu=Sinek#39 stat=two_pt_made x=-426 y=229 vy=6.35 skor=0-2 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 18:41:23] SAYI takım=1 oyuncu=656#42 stat=three_pt_made x=-398 y=233 vy=2.21 skor=3-2 sonDokunuşlar=656(çarpışma)>656(çarpışma)>656(vuruş)
+[2.10.2026 18:41:35] SAYI takım=2 oyuncu=we#41 stat=three_pt_own_basket x=332 y=-73 vy=5.39 skor=3-5 sonDokunuşlar=656(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 18:42:34] SAYI takım=1 oyuncu=we#41 stat=two_pt_made x=535 y=162 vy=-5.02 skor=5-5 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 18:42:58] MAÇ BİTTİ skor=7-5 antrenman=false kazanan=[41,42] kaybeden=[39] sayılan=[41,42,39]
+[2.10.2026 18:42:58] SAYI takım=1 oyuncu=Sinek#39 stat=two_pt_own_basket x=533 y=-360 vy=8.37 skor=0-0 sonDokunuşlar=we(çarpışma)>we(vuruş)>Sinek(vuruş)
+[2.10.2026 18:42:58] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 18:44:18] SAYI takım=1 oyuncu=Sinek#39 stat=two_pt_own_basket x=360 y=-262 vy=7.96 skor=2-0 sonDokunuşlar=Sinek(vuruş)>we(vuruş)>Sinek(vuruş)
+[2.10.2026 18:44:51] SAYI takım=1 oyuncu=656#42 stat=two_pt_made x=436 y=-199 vy=4.14 skor=4-0 sonDokunuşlar=we(çarpışma)>we(vuruş)>656(çarpışma)
+[2.10.2026 18:45:01] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[41,42] kaybeden=[39] sayılan=[41,42,39]
+[2.10.2026 18:45:01] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 18:46:54] SAYI takım=2 oyuncu=Sinek#39 stat=two_pt_made x=-573 y=-230 vy=4.96 skor=0-2 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(çarpışma)
+[2.10.2026 18:47:04] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[39,42] kaybeden=[41,43,44] sayılan=[39,42,41,43,44]
+[2.10.2026 18:47:04] ELO kullanıcı=94 1000->1026 (+26)
+[2.10.2026 18:47:04] ELO kullanıcı=127 1000->1016 (+16)
+[2.10.2026 18:47:04] ELO kullanıcı=1 1061->1048 (-13)
+[2.10.2026 18:47:04] ELO kullanıcı=128 1000->979 (-21)
+[2.10.2026 18:47:04] ELO kullanıcı=27 1000->979 (-21)
+[2.10.2026 18:53:16] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[43,42] kaybeden=[39,41,44] sayılan=[43,42,39,41,44]
+[2.10.2026 18:53:16] SAYI takım=1 oyuncu=Burak Cengo#43 stat=three_pt_made x=-166 y=145 vy=2.51 skor=0-0 sonDokunuşlar=Burak Cengo(çarpışma)>Burak Cengo(çarpışma)>Burak Cengo(vuruş)
+[2.10.2026 18:53:16] ELO kullanıcı=128 979->1005 (+26)
+[2.10.2026 18:53:16] ELO kullanıcı=127 1016->1032 (+16)
+[2.10.2026 18:53:16] ELO kullanıcı=94 1026->1005 (-21)
+[2.10.2026 18:53:16] ELO kullanıcı=1 1048->1035 (-13)
+[2.10.2026 18:53:16] ELO kullanıcı=27 979->958 (-21)
+[2.10.2026 18:54:07] SAYI takım=1 oyuncu=656#42 stat=three_pt_made x=-341 y=-153 vy=3.05 skor=3-0 sonDokunuşlar=Sinek(vuruş)>656(çarpışma)>656(vuruş)
+[2.10.2026 18:54:27] SAYI takım=2 oyuncu=we#41 stat=two_pt_made x=-547 y=-130 vy=5.25 skor=3-2 sonDokunuşlar=we(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 18:55:19] MAÇ BİTTİ skor=3-2 antrenman=false kazanan=[44,42] kaybeden=[39,41] sayılan=[44,42,39,41]
+[2.10.2026 18:55:19] ELO kullanıcı=27 958->974 (+16)
+[2.10.2026 18:55:19] ELO kullanıcı=127 1032->1059 (+27)
+[2.10.2026 18:55:19] ELO kullanıcı=94 1005->978 (-27)
+[2.10.2026 18:55:19] ELO kullanıcı=1 1035->1025 (-10)
+[2.10.2026 18:55:43] SAYI takım=2 oyuncu=656#42 stat=two_pt_made x=-291 y=177 vy=5.71 skor=0-2 sonDokunuşlar=656(çarpışma)>656(çarpışma)>656(vuruş)
+[2.10.2026 18:56:04] SAYI takım=1 oyuncu=Sinek#39 stat=two_pt_made x=219 y=-96 vy=8.76 skor=2-2 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 18:56:12] SAYI takım=2 oyuncu=656#42 stat=three_pt_made x=394 y=-13 vy=6.89 skor=2-5 sonDokunuşlar=656(çarpışma)>656(çarpışma)>656(vuruş)
+[2.10.2026 18:57:07] SAYI takım=1 oyuncu=𝔖𝔲𝔟𝔩𝔦𝔪𝔦𝔫𝔞𝔩#44 stat=three_pt_made x=-278 y=-470 vy=8.91 skor=5-5 sonDokunuşlar=Sinek(vuruş)>𝔖𝔲𝔟𝔩𝔦𝔪𝔦𝔫𝔞𝔩(çarpışma)>𝔖𝔲𝔟𝔩𝔦𝔪𝔦𝔫𝔞𝔩(vuruş)
+[2.10.2026 18:57:24] MAÇ BİTTİ skor=8-5 antrenman=false kazanan=[44,39,46] kaybeden=[41,42] sayılan=[44,39,41,42]
+[2.10.2026 18:57:24] SAYI takım=1 oyuncu=𝔖𝔲𝔟𝔩𝔦𝔪𝔦𝔫𝔞𝔩#44 stat=three_pt_made x=-576 y=-522 vy=1.93 skor=0-0 sonDokunuşlar=Sinek(vuruş)>𝔖𝔲𝔟𝔩𝔦𝔪𝔦𝔫𝔞𝔩(çarpışma)>𝔖𝔲𝔟𝔩𝔦𝔪𝔦𝔫𝔞𝔩(vuruş)
+[2.10.2026 18:57:24] ELO kullanıcı=27 974->1001 (+27)
+[2.10.2026 18:57:24] ELO kullanıcı=94 978->999 (+21)
+[2.10.2026 18:57:24] ELO kullanıcı=1 1025->1007 (-18)
+[2.10.2026 18:57:24] ELO kullanıcı=127 1059->1041 (-18)
+[2.10.2026 19:01:18] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[41,47,48] kaybeden=[44,39,42] sayılan=[41,44,39,42]
+[2.10.2026 19:01:18] SAYI takım=2 oyuncu=656#42 stat=two_pt_own_basket x=-442 y=133 vy=4.65 skor=0-0 sonDokunuşlar=we(vuruş)>656(çarpışma)>656(vuruş)
+[2.10.2026 19:01:18] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:03:07] SAYI takım=1 oyuncu=we#41 stat=three_pt_made x=-23 y=-5 vy=3.30 skor=3-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 19:03:20] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=34 y=172 vy=3.68 skor=5-0 sonDokunuşlar=𝔖𝔲𝔟𝔩𝔦𝔪𝔦𝔫𝔞𝔩(vuruş)>mejunia(çarpışma)>mejunia(vuruş)
+[2.10.2026 19:03:21] MAÇ BİTTİ skor=5-0 antrenman=false kazanan=[47] kaybeden=[44] sayılan=[47,44]
+[2.10.2026 19:03:21] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:05:02] SAYI takım=1 oyuncu=we#50 stat=two_pt_made x=546 y=-249 vy=3.45 skor=2-0 sonDokunuşlar=mejunia(çarpışma)>mejunia(vuruş)>we(çarpışma)
+[2.10.2026 19:05:24] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[47,50] kaybeden=[44] sayılan=[47,50,44]
+[2.10.2026 19:05:24] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:06:39] SAYI takım=1 oyuncu=we#50 stat=three_pt_made x=-47 y=85 vy=3.90 skor=3-0 sonDokunuşlar=toyonata(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 19:07:27] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[47,50,53] kaybeden=[51,52] sayılan=[47,50,51]
+[2.10.2026 19:07:27] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:09:14] SAYI takım=2 oyuncu=we#50 stat=two_pt_made x=-465 y=-300 vy=5.50 skor=0-2 sonDokunuşlar=mejunia(çarpışma)>mejunia(vuruş)>we(çarpışma)
+[2.10.2026 19:09:30] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[50,47] kaybeden=[53] sayılan=[50,47,53]
+[2.10.2026 19:09:30] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:10:40] SAYI takım=1 oyuncu=Kel Kazım#53 stat=two_pt_own_basket x=474 y=261 vy=-7.33 skor=2-0 sonDokunuşlar=mejunia(vuruş)>Kel Kazım(çarpışma)>Kel Kazım(vuruş)
+[2.10.2026 19:11:26] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=648 y=220 vy=-6.06 skor=4-0 sonDokunuşlar=mejunia(çarpışma)>mejunia(vuruş)>mejunia(vuruş)
+[2.10.2026 19:11:33] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[47] kaybeden=[53] sayılan=[47,53]
+[2.10.2026 19:11:33] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:12:21] SAYI takım=1 oyuncu=we#54 stat=three_pt_made x=-344 y=-28 vy=6.53 skor=3-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 19:12:39] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=566 y=-386 vy=6.51 skor=5-0 sonDokunuşlar=we(çarpışma)>we(vuruş)>mejunia(çarpışma)
+[2.10.2026 19:13:30] SAYI takım=2 oyuncu=Kel Kazım#53 stat=three_pt_made x=245 y=-349 vy=2.65 skor=5-3 sonDokunuşlar=tedesco(çarpışma)>tedesco(vuruş)>Kel Kazım(vuruş)
+[2.10.2026 19:13:37] MAÇ BİTTİ skor=5-3 antrenman=false kazanan=[47,54] kaybeden=[53,56] sayılan=[47,54,53]
+[2.10.2026 19:13:37] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:15:19] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=596 y=37 vy=-13.43 skor=2-0 sonDokunuşlar=mejunia(çarpışma)>mejunia(çarpışma)>mejunia(vuruş)
+[2.10.2026 19:15:40] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[47,53] kaybeden=[54] sayılan=[47,53,54]
+[2.10.2026 19:15:40] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:17:11] SAYI takım=1 oyuncu=we#54 stat=three_pt_made x=-69 y=-194 vy=3.20 skor=3-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 19:17:43] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[47,54] kaybeden=[53] sayılan=[47,54,53]
+[2.10.2026 19:17:43] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:17:52] SAYI takım=2 oyuncu=mejunia#47 stat=two_pt_made x=-530 y=-223 vy=5.04 skor=0-2 sonDokunuşlar=mejunia(vuruş)>mejunia(çarpışma)>mejunia(çarpışma)
+[2.10.2026 19:18:15] SAYI takım=2 oyuncu=we#54 stat=two_pt_made x=-587 y=174 vy=-5.38 skor=0-4 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 19:18:26] SAYI takım=1 oyuncu=we#54 stat=three_pt_own_basket x=-491 y=-566 vy=6.35 skor=3-4 sonDokunuşlar=Kel Kazım(çarpışma)>Kel Kazım(vuruş)>we(vuruş)
+[2.10.2026 19:19:46] MAÇ BİTTİ skor=3-4 antrenman=false kazanan=[47,54] kaybeden=[53,57] sayılan=[47,54,53]
+[2.10.2026 19:19:46] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:20:11] SAYI takım=1 oyuncu=we#54 stat=two_pt_made x=529 y=-257 vy=5.77 skor=2-0 sonDokunuşlar=Kel Kazım(çarpışma)>Kel Kazım(vuruş)>we(çarpışma)
+[2.10.2026 19:21:49] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[53,54] kaybeden=[47] sayılan=[53,54,47]
+[2.10.2026 19:21:49] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:27:19] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[53,58] kaybeden=[47,60] sayılan=[53,58,47]
+[2.10.2026 19:27:19] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_own_basket x=278 y=69 vy=-8.14 skor=0-0 sonDokunuşlar=we(çarpışma)>we(vuruş)>mejunia(vuruş)
+[2.10.2026 19:27:19] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:29:45] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[58,47] kaybeden=[60,53] sayılan=[58,47,60,53]
+[2.10.2026 19:29:45] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=549 y=206 vy=-3.10 skor=0-0 sonDokunuşlar=Kel Kazım(vuruş)>we(vuruş)>mejunia(vuruş)
+[2.10.2026 19:29:45] ELO kullanıcı=1 1007->1016 (+9)
+[2.10.2026 19:29:45] ELO kullanıcı=130 1000->1025 (+25)
+[2.10.2026 19:29:45] ELO kullanıcı=138 1000->980 (-20)
+[2.10.2026 19:29:45] ELO kullanıcı=134 1000->980 (-20)
+[2.10.2026 19:30:42] SAYI takım=2 oyuncu=Kel Kazım#53 stat=two_pt_own_basket x=-5 y=51 vy=6.68 skor=0-2 sonDokunuşlar=we(çarpışma)>Kel Kazım(çarpışma)>Kel Kazım(vuruş)
+[2.10.2026 19:31:48] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[60,58] kaybeden=[47,53] sayılan=[60,58,47,53]
+[2.10.2026 19:31:48] ELO kullanıcı=138 980->1000 (+20)
+[2.10.2026 19:31:48] ELO kullanıcı=1 1016->1028 (+12)
+[2.10.2026 19:31:48] ELO kullanıcı=130 1025->1005 (-20)
+[2.10.2026 19:31:48] ELO kullanıcı=134 980->960 (-20)
+[2.10.2026 19:34:12] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[60] kaybeden=[58,47] sayılan=[60,58,47]
+[2.10.2026 19:34:12] SAYI takım=1 oyuncu=malaka#60 stat=two_pt_made x=160 y=92 vy=5.28 skor=0-0 sonDokunuşlar=malaka(vuruş)>we(vuruş)>malaka(vuruş)
+[2.10.2026 19:34:12] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:34:23] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=76 y=-125 vy=8.78 skor=2-0 sonDokunuşlar=malaka(çarpışma)>malaka(çarpışma)>mejunia(vuruş)
+[2.10.2026 19:35:03] SAYI takım=1 oyuncu=we#58 stat=two_pt_made x=131 y=76 vy=6.55 skor=4-0 sonDokunuşlar=malaka(vuruş)>we(çarpışma)>we(vuruş)
+[2.10.2026 19:35:24] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=559 y=-56 vy=7.54 skor=6-0 sonDokunuşlar=mejunia(çarpışma)>malaka(çarpışma)>mejunia(vuruş)
+[2.10.2026 19:36:03] SAYI takım=1 oyuncu=we#58 stat=two_pt_made x=649 y=84 vy=-11.61 skor=8-0 sonDokunuşlar=we(çarpışma)>we(çarpışma)>we(vuruş)
+[2.10.2026 19:36:16] MAÇ BİTTİ skor=8-0 antrenman=false kazanan=[47,58] kaybeden=[60] sayılan=[47,58,60]
+[2.10.2026 19:36:16] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:39:19] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[47] kaybeden=[60] sayılan=[47,60]
+[2.10.2026 19:39:19] SAYI takım=1 oyuncu=mejunia#47 stat=three_pt_made x=-171 y=-523 vy=-2.47 skor=0-0 sonDokunuşlar=malaka(vuruş)>mejunia(çarpışma)>mejunia(vuruş)
+[2.10.2026 19:39:19] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 19:39:32] SAYI takım=2 oyuncu=malaka#60 stat=three_pt_made x=157 y=-136 vy=8.42 skor=0-3 sonDokunuşlar=malaka(çarpışma)>malaka(çarpışma)>malaka(vuruş)
+[2.10.2026 19:40:52] SAYI takım=1 oyuncu=mejunia#47 stat=two_pt_made x=536 y=-211 vy=1.77 skor=2-3 sonDokunuşlar=mejunia(vuruş)>mejunia(vuruş)>mejunia(vuruş)
+[2.10.2026 19:40:59] MAÇ BİTTİ skor=2-3 antrenman=true kazanan=[] kaybeden=[47] sayılan=[47]
+[2.10.2026 19:41:35] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 19:55:48] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 19:57:30] SAYI takım=1 oyuncu=Vous sentez si bon#11 stat=two_pt_made x=577 y=200 vy=-9.38 skor=2-0 sonDokunuşlar=Vous sentez si bon(çarpışma)>Vous sentez si bon(vuruş)>Vous sentez si bon(çarpışma)
+[2.10.2026 19:57:53] SAYI takım=2 oyuncu=symbi#61 stat=two_pt_own_basket x=-609 y=61 vy=-6.26 skor=0-2 sonDokunuşlar=symbi(vuruş)>symbi(çarpışma)>symbi(vuruş)
+[2.10.2026 19:58:09] SAYI takım=1 oyuncu=Vous sentez si bon#11 stat=two_pt_made x=349 y=215 vy=2.18 skor=4-0 sonDokunuşlar=Vous sentez si bon(çarpışma)>Vous sentez si bon(çarpışma)>Vous sentez si bon(vuruş)
+[2.10.2026 19:58:43] SAYI takım=1 oyuncu=symbi#61 stat=two_pt_made x=259 y=-80 vy=5.08 skor=2-2 sonDokunuşlar=symbi(vuruş)>symbi(vuruş)>symbi(vuruş)
+[2.10.2026 19:58:44] SAYI takım=1 oyuncu=Vous sentez si bon#11 stat=three_pt_made x=-129 y=173 vy=6.58 skor=7-0 sonDokunuşlar=Vous sentez si bon(çarpışma)>Vous sentez si bon(çarpışma)>Vous sentez si bon(vuruş)
+[2.10.2026 19:58:44] MAÇ BİTTİ skor=2-2 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 19:59:14] MAÇ BİTTİ skor=7-0 antrenman=true kazanan=[11] kaybeden=[12] sayılan=[11]
+[2.10.2026 19:59:43] SAYI takım=2 oyuncu=Vous sentez si bon#11 stat=two_pt_own_basket x=-407 y=208 vy=3.59 skor=0-2 sonDokunuşlar=Vous sentez si bon(çarpışma)>Vous sentez si bon(çarpışma)>Vous sentez si bon(vuruş)
+[2.10.2026 20:00:27] SAYI takım=1 oyuncu=Vous sentez si bon#11 stat=two_pt_made x=221 y=125 vy=5.66 skor=2-2 sonDokunuşlar=Vous sentez si bon(çarpışma)>Vous sentez si bon(vuruş)>Vous sentez si bon(vuruş)
+[2.10.2026 20:00:46] MAÇ BİTTİ skor=2-2 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 20:01:11] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[62] kaybeden=[61] sayılan=[62,61]
+[2.10.2026 20:01:11] SAYI takım=1 oyuncu=Zeynom#62 stat=two_pt_made x=556 y=91 vy=4.44 skor=0-0 sonDokunuşlar=symbi(çarpışma)>symbi(vuruş)>Zeynom(çarpışma)
+[2.10.2026 20:01:11] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:04:11] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[61,63] kaybeden=[62] sayılan=[61,63,62]
+[2.10.2026 20:04:11] SAYI takım=1 oyuncu=nightklands#63 stat=two_pt_made x=545 y=-190 vy=4.66 skor=0-0 sonDokunuşlar=nightklands(vuruş)>symbi(vuruş)>nightklands(çarpışma)
+[2.10.2026 20:04:11] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:06:03] SAYI takım=1 oyuncu=Zeynom#62 stat=two_pt_made x=362 y=99 vy=2.27 skor=2-0 sonDokunuşlar=symbi(vuruş)>Zeynom(çarpışma)>Zeynom(vuruş)
+[2.10.2026 20:06:14] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[61,62] kaybeden=[63] sayılan=[61,62,63]
+[2.10.2026 20:06:14] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:06:50] SAYI takım=1 oyuncu=Zeynom#62 stat=two_pt_made x=618 y=23 vy=-13.39 skor=2-0 sonDokunuşlar=Zeynom(çarpışma)>Zeynom(çarpışma)>Zeynom(vuruş)
+[2.10.2026 20:07:33] SAYI takım=1 oyuncu=symbi#61 stat=three_pt_made x=-522 y=-256 vy=2.79 skor=5-0 sonDokunuşlar=nightklands(vuruş)>symbi(çarpışma)>symbi(vuruş)
+[2.10.2026 20:08:17] MAÇ BİTTİ skor=5-0 antrenman=false kazanan=[61,62] kaybeden=[63] sayılan=[61,62,63]
+[2.10.2026 20:08:17] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:09:05] SAYI takım=2 oyuncu=symbi#61 stat=three_pt_made x=0 y=42 vy=6.72 skor=0-3 sonDokunuşlar=Zeynom(çarpışma)>Zeynom(vuruş)>symbi(vuruş)
+[2.10.2026 20:10:18] SAYI takım=2 oyuncu=nightklands#63 stat=two_pt_own_basket x=-279 y=238 vy=-4.46 skor=0-5 sonDokunuşlar=Zeynom(çarpışma)>nightklands(çarpışma)>nightklands(vuruş)
+[2.10.2026 20:10:21] MAÇ BİTTİ skor=0-5 antrenman=false kazanan=[61] kaybeden=[62,63] sayılan=[61,62,63]
+[2.10.2026 20:10:21] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:10:38] SAYI takım=1 oyuncu=Zeynom#62 stat=two_pt_own_basket x=382 y=-278 vy=9.28 skor=2-0 sonDokunuşlar=Zeynom(vuruş)>Zeynom(çarpışma)>Zeynom(vuruş)
+[2.10.2026 20:10:47] SAYI takım=1 oyuncu=nightklands#63 stat=two_pt_made x=655 y=107 vy=-12.75 skor=4-0 sonDokunuşlar=nightklands(çarpışma)>nightklands(çarpışma)>nightklands(vuruş)
+[2.10.2026 20:11:32] SAYI takım=1 oyuncu=Zeynom#62 stat=two_pt_own_basket x=628 y=72 vy=-10.09 skor=6-0 sonDokunuşlar=nightklands(çarpışma)>Zeynom(çarpışma)>Zeynom(vuruş)
+[2.10.2026 20:11:48] SAYI takım=1 oyuncu=Zeynom#62 stat=two_pt_own_basket x=203 y=-318 vy=6.23 skor=8-0 sonDokunuşlar=symbi(çarpışma)>symbi(vuruş)>Zeynom(çarpışma)
+[2.10.2026 20:11:57] SAYI takım=1 oyuncu=nightklands#63 stat=two_pt_made x=400 y=31 vy=7.47 skor=10-0 sonDokunuşlar=nightklands(çarpışma)>nightklands(vuruş)>nightklands(vuruş)
+[2.10.2026 20:12:24] MAÇ BİTTİ skor=10-0 antrenman=false kazanan=[63,61] kaybeden=[62,64] sayılan=[63,61,62]
+[2.10.2026 20:12:24] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:14:48] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[64,63] kaybeden=[61,62,65] sayılan=[64,63,61,62]
+[2.10.2026 20:14:48] SAYI takım=2 oyuncu=symbi#61 stat=two_pt_own_basket x=-577 y=-218 vy=5.58 skor=0-0 sonDokunuşlar=symbi(çarpışma)>symbi(çarpışma)>symbi(çarpışma)
+[2.10.2026 20:14:48] ELO kullanıcı=144 1000->1018 (+18)
+[2.10.2026 20:14:48] ELO kullanıcı=40 1061->1072 (+11)
+[2.10.2026 20:14:48] ELO kullanıcı=140 1000->982 (-18)
+[2.10.2026 20:14:48] ELO kullanıcı=142 1000->982 (-18)
+[2.10.2026 20:14:59] SAYI takım=2 oyuncu=asd#65 stat=two_pt_own_basket x=-333 y=-326 vy=9.16 skor=0-2 sonDokunuşlar=sahte 9(çarpışma)>sahte 9(vuruş)>asd(çarpışma)
+[2.10.2026 20:15:12] SAYI takım=2 oyuncu=nightklands#63 stat=three_pt_made x=424 y=-23 vy=3.64 skor=0-5 sonDokunuşlar=nightklands(çarpışma)>nightklands(çarpışma)>nightklands(vuruş)
+[2.10.2026 20:16:01] SAYI takım=2 oyuncu=symbi#61 stat=two_pt_own_basket x=-421 y=-371 vy=10.13 skor=0-7 sonDokunuşlar=sahte 9(vuruş)>symbi(çarpışma)>symbi(vuruş)
+[2.10.2026 20:16:51] MAÇ BİTTİ skor=0-7 antrenman=false kazanan=[63] kaybeden=[61,66] sayılan=[63,61]
+[2.10.2026 20:16:51] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:17:04] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=191 y=206 vy=7.63 skor=2-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 20:18:39] SAYI takım=2 oyuncu=nightklands#63 stat=two_pt_own_basket x=-630 y=15 vy=-2.80 skor=2-2 sonDokunuşlar=Sinek(çarpışma)>bujjy(vuruş)>nightklands(vuruş)
+[2.10.2026 20:19:04] MAÇ BİTTİ skor=5-2 antrenman=false kazanan=[66,63,68] kaybeden=[61,67] sayılan=[66,63,61,67]
+[2.10.2026 20:19:04] SAYI takım=1 oyuncu=Sinek#66 stat=three_pt_made x=-91 y=32 vy=5.62 skor=0-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 20:19:04] ELO kullanıcı=94 999->1021 (+22)
+[2.10.2026 20:19:04] ELO kullanıcı=40 1072->1080 (+8)
+[2.10.2026 20:19:04] ELO kullanıcı=140 982->965 (-17)
+[2.10.2026 20:19:04] ELO kullanıcı=146 1000->983 (-17)
+[2.10.2026 20:19:19] SAYI takım=2 oyuncu=symbi#61 stat=two_pt_own_basket x=-640 y=105 vy=-5.56 skor=0-2 sonDokunuşlar=fırtar(vuruş)>fırtar(çarpışma)>symbi(çarpışma)
+[2.10.2026 20:21:07] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[66,68] kaybeden=[63,61] sayılan=[66,68,63,61]
+[2.10.2026 20:21:07] ELO kullanıcı=94 1021->1042 (+21)
+[2.10.2026 20:21:07] ELO kullanıcı=147 1000->1021 (+21)
+[2.10.2026 20:21:07] ELO kullanıcı=40 1080->1068 (-12)
+[2.10.2026 20:21:07] ELO kullanıcı=140 965->944 (-21)
+[2.10.2026 20:23:11] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[61,66] kaybeden=[68,69] sayılan=[61,66,68,69]
+[2.10.2026 20:23:11] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_own_basket x=185 y=-306 vy=7.57 skor=0-0 sonDokunuşlar=symbi(çarpışma)>symbi(vuruş)>fırtar(çarpışma)
+[2.10.2026 20:23:11] ELO kullanıcı=140 944->965 (+21)
+[2.10.2026 20:23:11] ELO kullanıcı=94 1042->1063 (+21)
+[2.10.2026 20:23:11] ELO kullanıcı=147 1021->1000 (-21)
+[2.10.2026 20:23:11] ELO kullanıcı=148 1000->979 (-21)
+[2.10.2026 20:24:33] SAYI takım=2 oyuncu=emme manifoldu#69 stat=three_pt_made x=151 y=205 vy=6.61 skor=0-3 sonDokunuşlar=emme manifoldu(çarpışma)>emme manifoldu(çarpışma)>emme manifoldu(vuruş)
+[2.10.2026 20:24:58] SAYI takım=2 oyuncu=emme manifoldu#69 stat=three_pt_made x=380 y=-32 vy=5.25 skor=0-6 sonDokunuşlar=fırtar(çarpışma)>fırtar(vuruş)>emme manifoldu(vuruş)
+[2.10.2026 20:25:14] MAÇ BİTTİ skor=0-6 antrenman=false kazanan=[68,69] kaybeden=[61,66,70] sayılan=[68,69,61,66]
+[2.10.2026 20:25:14] ELO kullanıcı=147 1000->1016 (+16)
+[2.10.2026 20:25:14] ELO kullanıcı=148 979->1006 (+27)
+[2.10.2026 20:25:14] ELO kullanıcı=140 965->944 (-21)
+[2.10.2026 20:25:14] ELO kullanıcı=94 1063->1042 (-21)
+[2.10.2026 20:25:57] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_made x=464 y=-358 vy=8.60 skor=2-0 sonDokunuşlar=symbi(çarpışma)>symbi(vuruş)>fırtar(vuruş)
+[2.10.2026 20:27:17] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[61,68] kaybeden=[66,69] sayılan=[61,68,66,69]
+[2.10.2026 20:27:17] ELO kullanıcı=140 944->961 (+17)
+[2.10.2026 20:27:17] ELO kullanıcı=147 1016->1044 (+28)
+[2.10.2026 20:27:17] ELO kullanıcı=94 1042->1019 (-23)
+[2.10.2026 20:27:17] ELO kullanıcı=148 1006->983 (-23)
+[2.10.2026 20:27:36] SAYI takım=1 oyuncu=emme manifoldu#69 stat=three_pt_made x=-374 y=169 vy=2.64 skor=3-0 sonDokunuşlar=fırtar(vuruş)>emme manifoldu(çarpışma)>emme manifoldu(vuruş)
+[2.10.2026 20:28:50] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=396 y=60 vy=-9.52 skor=5-0 sonDokunuşlar=fırtar(vuruş)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 20:29:06] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-541 y=-523 vy=8.02 skor=5-2 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(çarpışma)
+[2.10.2026 20:29:20] MAÇ BİTTİ skor=5-2 antrenman=false kazanan=[66,69,71] kaybeden=[68,61] sayılan=[66,69,68,61]
+[2.10.2026 20:29:20] ELO kullanıcı=94 1019->1038 (+19)
+[2.10.2026 20:29:20] ELO kullanıcı=148 983->1004 (+21)
+[2.10.2026 20:29:20] ELO kullanıcı=147 1044->1029 (-15)
+[2.10.2026 20:29:20] ELO kullanıcı=140 961->936 (-25)
+[2.10.2026 20:29:58] SAYI takım=2 oyuncu=fırtar#68 stat=three_pt_own_basket x=422 y=196 vy=5.35 skor=0-3 sonDokunuşlar=nightklands(vuruş)>Sinek(vuruş)>fırtar(vuruş)
+[2.10.2026 20:31:24] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[69,66,74] kaybeden=[68,61,72] sayılan=[69,66,68,61,72]
+[2.10.2026 20:31:24] ELO kullanıcı=148 1004->1023 (+19)
+[2.10.2026 20:31:24] ELO kullanıcı=94 1038->1050 (+12)
+[2.10.2026 20:31:24] ELO kullanıcı=147 1029->1010 (-19)
+[2.10.2026 20:31:24] ELO kullanıcı=140 936->917 (-19)
+[2.10.2026 20:31:24] ELO kullanıcı=40 1068->1056 (-12)
+[2.10.2026 20:31:45] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_made x=547 y=-184 vy=4.30 skor=2-0 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(çarpışma)
+[2.10.2026 20:32:02] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_own_basket x=436 y=-331 vy=1.72 skor=4-0 sonDokunuşlar=fırtar(vuruş)>symbi(çarpışma)>Sinek(çarpışma)
+[2.10.2026 20:33:27] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[68,61,69] kaybeden=[66,74,72] sayılan=[68,61,69,66,74,72]
+[2.10.2026 20:33:27] ELO kullanıcı=147 1010->1039 (+29)
+[2.10.2026 20:33:27] ELO kullanıcı=140 917->934 (+17)
+[2.10.2026 20:33:27] ELO kullanıcı=148 1023->1040 (+17)
+[2.10.2026 20:33:27] ELO kullanıcı=94 1050->1036 (-14)
+[2.10.2026 20:33:27] ELO kullanıcı=111 1000->977 (-23)
+[2.10.2026 20:33:27] ELO kullanıcı=40 1056->1042 (-14)
+[2.10.2026 20:35:51] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[66,69,68] kaybeden=[61,74,72] sayılan=[66,69,68,61,74,72]
+[2.10.2026 20:35:51] SAYI takım=2 oyuncu=Motive#74 stat=two_pt_own_basket x=-562 y=-402 vy=6.54 skor=0-0 sonDokunuşlar=fırtar(çarpışma)>fırtar(vuruş)>Motive(çarpışma)
+[2.10.2026 20:35:51] ELO kullanıcı=94 1036->1046 (+10)
+[2.10.2026 20:35:51] ELO kullanıcı=148 1040->1057 (+17)
+[2.10.2026 20:35:51] ELO kullanıcı=147 1039->1056 (+17)
+[2.10.2026 20:35:51] ELO kullanıcı=140 934->917 (-17)
+[2.10.2026 20:35:51] ELO kullanıcı=111 977->960 (-17)
+[2.10.2026 20:35:51] ELO kullanıcı=40 1042->1032 (-10)
+[2.10.2026 20:36:17] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=560 y=-232 vy=1.75 skor=2-0 sonDokunuşlar=symbi(vuruş)>Sinek(çarpışma)>Sinek(çarpışma)
+[2.10.2026 20:37:32] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_made x=431 y=-456 vy=7.28 skor=4-0 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(çarpışma)
+[2.10.2026 20:37:54] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[66,69,68] kaybeden=[77,61,74] sayılan=[66,69,68,77,61,74]
+[2.10.2026 20:37:54] ELO kullanıcı=94 1046->1056 (+10)
+[2.10.2026 20:37:54] ELO kullanıcı=148 1057->1068 (+11)
+[2.10.2026 20:37:54] ELO kullanıcı=147 1056->1073 (+17)
+[2.10.2026 20:37:54] ELO kullanıcı=153 1000->985 (-15)
+[2.10.2026 20:37:54] ELO kullanıcı=140 917->908 (-9)
+[2.10.2026 20:37:54] ELO kullanıcı=111 960->945 (-15)
+[2.10.2026 20:38:14] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_made x=520 y=-342 vy=6.37 skor=2-0 sonDokunuşlar=physic1(vuruş)>fırtar(vuruş)>fırtar(çarpışma)
+[2.10.2026 20:38:54] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=565 y=224 vy=-8.78 skor=4-0 sonDokunuşlar=emme manifoldu(vuruş)>koyun(çarpışma)>Sinek(vuruş)
+[2.10.2026 20:39:57] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[66,69,68] kaybeden=[78,61,79] sayılan=[66,69,68,78,61,79]
+[2.10.2026 20:39:57] ELO kullanıcı=94 1056->1066 (+10)
+[2.10.2026 20:39:57] ELO kullanıcı=148 1068->1079 (+11)
+[2.10.2026 20:39:57] ELO kullanıcı=147 1073->1089 (+16)
+[2.10.2026 20:39:57] ELO kullanıcı=139 1000->985 (-15)
+[2.10.2026 20:39:57] ELO kullanıcı=140 908->899 (-9)
+[2.10.2026 20:39:57] ELO kullanıcı=154 1000->985 (-15)
+[2.10.2026 20:40:49] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_made x=393 y=-402 vy=7.66 skor=2-0 sonDokunuşlar=physic1(çarpışma)>physic1(vuruş)>fırtar(vuruş)
+[2.10.2026 20:41:00] SAYI takım=2 oyuncu=physic1#78 stat=three_pt_made x=469 y=-246 vy=5.60 skor=2-3 sonDokunuşlar=fırtar(çarpışma)>fırtar(vuruş)>physic1(vuruş)
+[2.10.2026 20:41:50] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=539 y=-198 vy=4.61 skor=4-3 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(çarpışma)
+[2.10.2026 20:42:00] MAÇ BİTTİ skor=4-3 antrenman=false kazanan=[66,69,68] kaybeden=[79,78] sayılan=[66,69,68,79,78]
+[2.10.2026 20:42:00] ELO kullanıcı=94 1066->1076 (+10)
+[2.10.2026 20:42:00] ELO kullanıcı=148 1079->1090 (+11)
+[2.10.2026 20:42:00] ELO kullanıcı=147 1089->1099 (+10)
+[2.10.2026 20:42:00] ELO kullanıcı=154 985->967 (-18)
+[2.10.2026 20:42:00] ELO kullanıcı=139 985->974 (-11)
+[2.10.2026 20:42:13] SAYI takım=1 oyuncu=physic1#78 stat=two_pt_made x=494 y=46 vy=7.65 skor=2-0 sonDokunuşlar=emme manifoldu(çarpışma)>emme manifoldu(çarpışma)>physic1(vuruş)
+[2.10.2026 20:42:29] SAYI takım=1 oyuncu=physic1#78 stat=two_pt_made x=184 y=190 vy=2.12 skor=4-0 sonDokunuşlar=emme manifoldu(çarpışma)>physic1(çarpışma)>physic1(vuruş)
+[2.10.2026 20:44:03] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[66,78] kaybeden=[79,68,69] sayılan=[66,78,79,68,69]
+[2.10.2026 20:44:03] ELO kullanıcı=94 1076->1086 (+10)
+[2.10.2026 20:44:03] ELO kullanıcı=139 974->1001 (+27)
+[2.10.2026 20:44:03] ELO kullanıcı=154 967->945 (-22)
+[2.10.2026 20:44:03] ELO kullanıcı=147 1099->1086 (-13)
+[2.10.2026 20:44:03] ELO kullanıcı=148 1090->1077 (-13)
+[2.10.2026 20:44:11] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_own_basket x=467 y=136 vy=-5.03 skor=2-0 sonDokunuşlar=Sinek(vuruş)>fırtar(vuruş)
+[2.10.2026 20:45:17] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-124 y=-484 vy=1.98 skor=2-2 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(vuruş)
+[2.10.2026 20:45:47] SAYI takım=1 oyuncu=emme manifoldu#69 stat=three_pt_made x=-544 y=-365 vy=-3.27 skor=5-2 sonDokunuşlar=koyun(vuruş)>emme manifoldu(çarpışma)>emme manifoldu(vuruş)
+[2.10.2026 20:45:59] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=619 y=118 vy=-8.99 skor=7-2 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 20:46:06] MAÇ BİTTİ skor=7-2 antrenman=false kazanan=[66,69] kaybeden=[79,68,85] sayılan=[66,69,79,68]
+[2.10.2026 20:46:06] ELO kullanıcı=94 1086->1095 (+9)
+[2.10.2026 20:46:06] ELO kullanıcı=148 1077->1087 (+10)
+[2.10.2026 20:46:06] ELO kullanıcı=154 945->929 (-16)
+[2.10.2026 20:46:06] ELO kullanıcı=147 1086->1076 (-10)
+[2.10.2026 20:48:37] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[66,69,85] kaybeden=[79,68] sayılan=[66,69,85,79,68]
+[2.10.2026 20:48:37] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_own_basket x=-295 y=-219 vy=8.08 skor=0-0 sonDokunuşlar=fırtar(çarpışma)>ssssssssssss(çarpışma)>fırtar(vuruş)
+[2.10.2026 20:48:37] ELO kullanıcı=94 1095->1105 (+10)
+[2.10.2026 20:48:37] ELO kullanıcı=148 1087->1097 (+10)
+[2.10.2026 20:48:37] ELO kullanıcı=157 1000->1017 (+17)
+[2.10.2026 20:48:37] ELO kullanıcı=154 929->912 (-17)
+[2.10.2026 20:48:37] ELO kullanıcı=147 1076->1066 (-10)
+[2.10.2026 20:49:20] SAYI takım=1 oyuncu=ssssssssssss#85 stat=two_pt_made x=549 y=-137 vy=5.68 skor=2-0 sonDokunuşlar=emme manifoldu(vuruş)>ssssssssssss(çarpışma)>ssssssssssss(vuruş)
+[2.10.2026 20:50:05] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=619 y=117 vy=-9.64 skor=4-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 20:50:40] SAYI takım=1 oyuncu=Sinek#66 stat=two_pt_made x=538 y=-172 vy=4.68 skor=6-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(vuruş)>Sinek(çarpışma)
+[2.10.2026 20:50:40] MAÇ BİTTİ skor=6-0 antrenman=false kazanan=[69,66] kaybeden=[79,68] sayılan=[69,66,79,68]
+[2.10.2026 20:50:40] ELO kullanıcı=148 1097->1103 (+6)
+[2.10.2026 20:50:40] ELO kullanıcı=94 1105->1115 (+10)
+[2.10.2026 20:50:40] ELO kullanıcı=154 912->898 (-14)
+[2.10.2026 20:50:40] ELO kullanıcı=147 1066->1058 (-8)
+[2.10.2026 20:51:58] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-326 y=-518 vy=1.78 skor=0-2 sonDokunuşlar=koyun(çarpışma)>koyun(vuruş)>fırtar(çarpışma)
+[2.10.2026 20:52:43] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[79,68] kaybeden=[69,66] sayılan=[79,68,69,66]
+[2.10.2026 20:52:43] ELO kullanıcı=154 898->918 (+20)
+[2.10.2026 20:52:43] ELO kullanıcı=147 1058->1078 (+20)
+[2.10.2026 20:52:43] ELO kullanıcı=148 1103->1087 (-16)
+[2.10.2026 20:52:43] ELO kullanıcı=94 1115->1099 (-16)
+[2.10.2026 20:53:03] SAYI takım=1 oyuncu=koyun#79 stat=two_pt_own_basket x=550 y=-158 vy=-5.95 skor=2-0 sonDokunuşlar=koyun(vuruş)>fırtar(vuruş)>koyun(vuruş)
+[2.10.2026 20:53:57] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_made x=522 y=-272 vy=5.65 skor=4-0 sonDokunuşlar=fırtar(çarpışma)>koyun(vuruş)>fırtar(çarpışma)
+[2.10.2026 20:54:46] MAÇ BİTTİ skor=4-0 antrenman=false kazanan=[68] kaybeden=[79] sayılan=[68,79]
+[2.10.2026 20:54:46] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:55:20] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_own_basket x=-437 y=200 vy=-5.04 skor=0-2 sonDokunuşlar=fırtar(çarpışma)>fırtar(vuruş)>fırtar(vuruş)
+[2.10.2026 20:56:49] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[79] kaybeden=[68] sayılan=[79,68]
+[2.10.2026 20:56:49] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 20:58:24] SAYI takım=1 oyuncu=fırtar#68 stat=two_pt_made x=542 y=-652 vy=8.39 skor=2-0 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(çarpışma)
+[2.10.2026 20:58:32] SAYI takım=2 oyuncu=koyun#79 stat=three_pt_made x=400 y=58 vy=3.30 skor=2-3 sonDokunuşlar=koyun(çarpışma)>koyun(vuruş)
+[2.10.2026 20:58:53] MAÇ BİTTİ skor=2-3 antrenman=false kazanan=[79] kaybeden=[68] sayılan=[79,68]
+[2.10.2026 20:58:53] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:01:50] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[68] kaybeden=[79] sayılan=[68,79]
+[2.10.2026 21:01:50] SAYI takım=1 oyuncu=fırtar#68 stat=three_pt_made x=-257 y=148 vy=1.94 skor=0-0 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(vuruş)
+[2.10.2026 21:01:50] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:05:02] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 21:05:30] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-248 y=-251 vy=1.90 skor=0-2 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(vuruş)
+[2.10.2026 21:05:39] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-556 y=-242 vy=2.10 skor=0-4 sonDokunuşlar=fırtar(çarpışma)>fırtar(vuruş)>fırtar(çarpışma)
+[2.10.2026 21:05:52] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-536 y=-230 vy=5.06 skor=0-6 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(çarpışma)
+[2.10.2026 21:06:01] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-562 y=-351 vy=7.51 skor=0-8 sonDokunuşlar=fırtar(vuruş)>fırtar(vuruş)>fırtar(çarpışma)
+[2.10.2026 21:06:35] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-189 y=110 vy=6.99 skor=0-10 sonDokunuşlar=fırtar(çarpışma)>fırtar(çarpışma)>fırtar(vuruş)
+[2.10.2026 21:06:44] SAYI takım=2 oyuncu=fırtar#68 stat=two_pt_made x=-537 y=-262 vy=5.82 skor=0-12 sonDokunuşlar=fırtar(vuruş)>fırtar(çarpışma)
+[2.10.2026 21:06:45] MAÇ BİTTİ skor=0-12 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 21:38:12] SAYI takım=1 oyuncu=desire#87 stat=two_pt_made x=425 y=-54 vy=-7.90 skor=2-0 sonDokunuşlar=desire(çarpışma)>desire(vuruş)>desire(vuruş)
+[2.10.2026 21:38:23] SAYI takım=1 oyuncu=desire#87 stat=two_pt_made x=514 y=-217 vy=4.75 skor=4-0 sonDokunuşlar=desire(vuruş)>desire(çarpışma)
+[2.10.2026 21:38:36] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[87] kaybeden=[88] sayılan=[87,88]
+[2.10.2026 21:42:16] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[87,89] kaybeden=[88] sayılan=[87,88]
+[2.10.2026 21:42:16] SAYI takım=1 oyuncu=desire#87 stat=two_pt_made x=489 y=-219 vy=6.47 skor=0-0 sonDokunuşlar=desire(vuruş)>desire(çarpışma)>desire(vuruş)
+[2.10.2026 21:42:16] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:42:34] SAYI takım=2 oyuncu=nlv123456#88 stat=three_pt_made x=271 y=-357 vy=9.02 skor=0-3 sonDokunuşlar=BİLGEADAMREİS(vuruş)>nlv123456(çarpışma)>nlv123456(vuruş)
+[2.10.2026 21:43:05] SAYI takım=1 oyuncu=nlv123456#88 stat=three_pt_own_basket x=-426 y=183 vy=8.65 skor=3-3 sonDokunuşlar=desire(vuruş)>nlv123456(çarpışma)>nlv123456(vuruş)
+[2.10.2026 21:44:43] MAÇ BİTTİ skor=3-6 antrenman=false kazanan=[88] kaybeden=[87,89] sayılan=[88,87,89]
+[2.10.2026 21:44:43] SAYI takım=2 oyuncu=nlv123456#88 stat=three_pt_made x=216 y=68 vy=6.50 skor=0-0 sonDokunuşlar=desire(çarpışma)>desire(çarpışma)>nlv123456(vuruş)
+[2.10.2026 21:44:43] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:46:03] SAYI takım=2 oyuncu=desire#87 stat=three_pt_own_basket x=220 y=-235 vy=4.14 skor=0-3 sonDokunuşlar=nlv123456(çarpışma)>nlv123456(vuruş)>desire(çarpışma)
+[2.10.2026 21:46:28] SAYI takım=1 oyuncu=desire#87 stat=two_pt_made x=546 y=172 vy=6.00 skor=2-3 sonDokunuşlar=nlv123456(vuruş)>nlv123456(çarpışma)>desire(vuruş)
+[2.10.2026 21:46:46] MAÇ BİTTİ skor=2-3 antrenman=false kazanan=[88] kaybeden=[87] sayılan=[88,87]
+[2.10.2026 21:46:46] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:48:22] SAYI takım=2 oyuncu=desire#87 stat=two_pt_made x=-319 y=9 vy=1.99 skor=0-2 sonDokunuşlar=nlv123456(vuruş)>nlv123456(vuruş)>desire(vuruş)
+[2.10.2026 21:48:49] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[87] kaybeden=[88,90] sayılan=[87,88]
+[2.10.2026 21:48:49] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:51:13] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[88,87] kaybeden=[90] sayılan=[88,87,90]
+[2.10.2026 21:51:13] SAYI takım=1 oyuncu=nlv123456#88 stat=two_pt_made x=428 y=-174 vy=1.87 skor=0-0 sonDokunuşlar=desire(çarpışma)>desire(vuruş)>nlv123456(vuruş)
+[2.10.2026 21:51:13] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:51:34] SAYI takım=2 oyuncu=ANANAS#90 stat=two_pt_made x=-157 y=-194 vy=8.73 skor=0-2 sonDokunuşlar=desire(vuruş)>ANANAS(çarpışma)>ANANAS(vuruş)
+[2.10.2026 21:52:39] SAYI takım=2 oyuncu=ANANAS#90 stat=two_pt_made x=-250 y=-1 vy=-1.69 skor=0-4 sonDokunuşlar=ANANAS(vuruş)>ANANAS(çarpışma)>ANANAS(vuruş)
+[2.10.2026 21:53:16] MAÇ BİTTİ skor=0-4 antrenman=false kazanan=[90,87] kaybeden=[88] sayılan=[90,87,88]
+[2.10.2026 21:53:16] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:55:01] SAYI takım=2 oyuncu=ANANAS#90 stat=two_pt_made x=-545 y=26 vy=2.25 skor=0-2 sonDokunuşlar=ANANAS(vuruş)>ANANAS(çarpışma)>ANANAS(vuruş)
+[2.10.2026 21:55:19] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[90] kaybeden=[88,87] sayılan=[90,88,87]
+[2.10.2026 21:55:19] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 21:56:27] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 21:57:53] SAYI takım=2 oyuncu=ANANAS#90 stat=two_pt_made x=-5 y=138 vy=-5.92 skor=0-2 sonDokunuşlar=ANANAS(vuruş)>ANANAS(çarpışma)>ANANAS(vuruş)
+[2.10.2026 21:58:30] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[90] kaybeden=[] sayılan=[90]
+[2.10.2026 21:59:04] SAYI takım=2 oyuncu=ANANAS#90 stat=two_pt_made x=-284 y=-181 vy=1.85 skor=0-2 sonDokunuşlar=ANANAS(çarpışma)>ANANAS(çarpışma)>ANANAS(vuruş)
+[2.10.2026 22:00:34] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[90] kaybeden=[] sayılan=[90]
+[2.10.2026 22:17:57] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 22:41:10] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 22:41:46] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 22:45:17] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 22:45:40] SAYI takım=2 oyuncu=𝙎𝙥𝙮#94 stat=two_pt_made x=-204 y=148 vy=6.77 skor=0-2 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 22:47:20] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[94,96] kaybeden=[93,95,97] sayılan=[94,96,93,95]
+[2.10.2026 22:47:20] ELO kullanıcı=55 1020->1044 (+24)
+[2.10.2026 22:47:20] ELO kullanıcı=167 1000->1015 (+15)
+[2.10.2026 22:47:20] ELO kullanıcı=165 1000->981 (-19)
+[2.10.2026 22:47:20] ELO kullanıcı=166 1000->981 (-19)
+[2.10.2026 22:47:35] SAYI takım=2 oyuncu=BBQman#93 stat=three_pt_made x=9 y=132 vy=5.50 skor=0-3 sonDokunuşlar=BBQman(çarpışma)>BBQman(çarpışma)>BBQman(vuruş)
+[2.10.2026 22:49:23] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[95] kaybeden=[96,98] sayılan=[95,96,98]
+[2.10.2026 22:49:23] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 22:49:36] SAYI takım=1 oyuncu=cAMCI#95 stat=three_pt_own_basket x=-221 y=43 vy=5.73 skor=3-0 sonDokunuşlar=kluydxjchgvjbksadas(çarpışma)>arcura(vuruş)>cAMCI(çarpışma)
+[2.10.2026 22:50:54] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[96] kaybeden=[] sayılan=[96]
+[2.10.2026 22:51:07] SAYI takım=1 oyuncu=arcura#96 stat=two_pt_made x=524 y=143 vy=-10.93 skor=2-0 sonDokunuşlar=arcura(vuruş)>arcura(çarpışma)>arcura(vuruş)
+[2.10.2026 22:51:30] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 22:52:43] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 22:56:32] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 22:58:05] SAYI takım=2 oyuncu=emrecolak#101 stat=three_pt_made x=534 y=-49 vy=-1.26 skor=0-3 sonDokunuşlar=emrecolak(vuruş)>emrecolak(çarpışma)>emrecolak(vuruş)
+[2.10.2026 22:58:35] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[101] kaybeden=[100] sayılan=[101,100]
+[2.10.2026 22:58:35] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 22:59:08] SAYI takım=1 oyuncu=emrecolak#101 stat=three_pt_own_basket x=-78 y=117 vy=9.10 skor=3-0 sonDokunuşlar=BABAPRO31(vuruş)>emrecolak(çarpışma)>emrecolak(vuruş)
+[2.10.2026 22:59:17] SAYI takım=2 oyuncu=emrecolak#101 stat=three_pt_made x=394 y=-3 vy=1.46 skor=3-3 sonDokunuşlar=emrecolak(çarpışma)>emrecolak(çarpışma)>emrecolak(vuruş)
+[2.10.2026 23:00:00] SAYI takım=1 oyuncu=emrecolak#101 stat=two_pt_own_basket x=540 y=-225 vy=6.13 skor=5-3 sonDokunuşlar=BABAPRO31(vuruş)>BABAPRO31(çarpışma)>emrecolak(çarpışma)
+[2.10.2026 23:00:38] MAÇ BİTTİ skor=5-3 antrenman=false kazanan=[100,102] kaybeden=[101,103] sayılan=[100,102,101]
+[2.10.2026 23:00:38] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:04:19] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[100,103] kaybeden=[101,102] sayılan=[100,103,101,102]
+[2.10.2026 23:04:19] SAYI takım=1 oyuncu=Gt#103 stat=two_pt_made x=447 y=155 vy=-11.87 skor=0-0 sonDokunuşlar=emrecolak(vuruş)>Gt(çarpışma)>Gt(vuruş)
+[2.10.2026 23:04:19] ELO kullanıcı=170 1000->1015 (+15)
+[2.10.2026 23:04:19] ELO kullanıcı=173 1000->1025 (+25)
+[2.10.2026 23:04:19] ELO kullanıcı=171 1000->980 (-20)
+[2.10.2026 23:04:19] ELO kullanıcı=172 1000->980 (-20)
+[2.10.2026 23:04:40] SAYI takım=2 oyuncu=Gt#103 stat=two_pt_own_basket x=-552 y=207 vy=-7.84 skor=0-2 sonDokunuşlar=Gt(çarpışma)>BABAPRO31(vuruş)>Gt(vuruş)
+[2.10.2026 23:04:43] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[100] kaybeden=[] sayılan=[100]
+[2.10.2026 23:04:47] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 23:10:05] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 23:12:52] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[104] kaybeden=[105,106] sayılan=[104,105]
+[2.10.2026 23:12:52] SAYI takım=2 oyuncu=onüç#105 stat=two_pt_own_basket x=-179 y=23 vy=4.83 skor=0-0 sonDokunuşlar=Zanshin(çarpışma)>Zanshin(vuruş)>onüç(çarpışma)
+[2.10.2026 23:12:52] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:14:35] SAYI takım=2 oyuncu=onüç#105 stat=two_pt_own_basket x=-161 y=-9 vy=3.04 skor=0-2 sonDokunuşlar=malaka(çarpışma)>Zanshin(vuruş)>onüç(çarpışma)
+[2.10.2026 23:14:43] SAYI takım=1 oyuncu=malaka#107 stat=three_pt_made x=-465 y=-111 vy=5.03 skor=3-2 sonDokunuşlar=malaka(çarpışma)>malaka(çarpışma)>malaka(vuruş)
+[2.10.2026 23:14:55] MAÇ BİTTİ skor=3-2 antrenman=false kazanan=[105,107] kaybeden=[104,106] sayılan=[105,104,106]
+[2.10.2026 23:14:55] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:14:59] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 23:15:21] SAYI takım=1 oyuncu=𝙎𝙥𝙮#14 stat=two_pt_made x=226 y=165 vy=5.10 skor=2-0 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:16:15] SAYI takım=2 oyuncu=onüç#105 stat=two_pt_own_basket x=-536 y=83 vy=3.01 skor=0-2 sonDokunuşlar=onüç(çarpışma)>onüç(vuruş)>onüç(çarpışma)
+[2.10.2026 23:16:31] SAYI takım=2 oyuncu=adem#106 stat=two_pt_own_basket x=-599 y=-392 vy=7.41 skor=0-4 sonDokunuşlar=Zanshin(çarpışma)>Zanshin(vuruş)>adem(çarpışma)
+[2.10.2026 23:16:39] SAYI takım=2 oyuncu=adem#106 stat=two_pt_own_basket x=-637 y=163 vy=-6.46 skor=0-6 sonDokunuşlar=emrecolak(vuruş)>adem(çarpışma)>adem(vuruş)
+[2.10.2026 23:16:59] MAÇ BİTTİ skor=0-6 antrenman=false kazanan=[104,107] kaybeden=[105,106,108] sayılan=[104,107,105,106]
+[2.10.2026 23:16:59] ELO kullanıcı=172 980->1001 (+21)
+[2.10.2026 23:16:59] ELO kullanıcı=138 1000->1021 (+21)
+[2.10.2026 23:16:59] ELO kullanıcı=174 1000->979 (-21)
+[2.10.2026 23:16:59] ELO kullanıcı=175 1000->979 (-21)
+[2.10.2026 23:17:03] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[14] kaybeden=[] sayılan=[14]
+[2.10.2026 23:19:01] SAYI takım=1 oyuncu=Jeremy Doku#109 stat=two_pt_made x=649 y=-370 vy=6.12 skor=2-0 sonDokunuşlar=Jeremy Doku(çarpışma)>Jeremy Doku(çarpışma)>Jeremy Doku(çarpışma)
+[2.10.2026 23:19:02] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[106,109] kaybeden=[105,110] sayılan=[106,109,105,110]
+[2.10.2026 23:19:02] ELO kullanıcı=175 979->994 (+15)
+[2.10.2026 23:19:02] ELO kullanıcı=176 1000->1025 (+25)
+[2.10.2026 23:19:02] ELO kullanıcı=174 979->959 (-20)
+[2.10.2026 23:19:02] ELO kullanıcı=177 1000->980 (-20)
+[2.10.2026 23:19:25] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[14] kaybeden=[] sayılan=[14]
+[2.10.2026 23:19:25] SAYI takım=2 oyuncu=𝙎𝙥𝙮#14 stat=three_pt_made x=88 y=-42 vy=-2.67 skor=0-0 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:20:23] SAYI takım=2 oyuncu=adem#106 stat=three_pt_made x=325 y=-157 vy=4.54 skor=0-3 sonDokunuşlar=adem(çarpışma)>Swhs(vuruş)>adem(vuruş)
+[2.10.2026 23:20:32] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 23:21:05] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[110,106] kaybeden=[109,105] sayılan=[110,106,109,105]
+[2.10.2026 23:21:05] ELO kullanıcı=177 980->995 (+15)
+[2.10.2026 23:21:05] ELO kullanıcı=175 994->1019 (+25)
+[2.10.2026 23:21:05] ELO kullanıcı=176 1025->1005 (-20)
+[2.10.2026 23:21:05] ELO kullanıcı=174 959->939 (-20)
+[2.10.2026 23:22:12] SAYI takım=1 oyuncu=Swhs#110 stat=two_pt_made x=153 y=-21 vy=4.01 skor=2-0 sonDokunuşlar=onüç(vuruş)>onüç(çarpışma)>Swhs(çarpışma)
+[2.10.2026 23:23:08] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[109,110] kaybeden=[106,105] sayılan=[109,110,106,105]
+[2.10.2026 23:23:08] ELO kullanıcı=176 1005->1019 (+14)
+[2.10.2026 23:23:08] ELO kullanıcı=177 995->1018 (+23)
+[2.10.2026 23:23:08] ELO kullanıcı=175 1019->1000 (-19)
+[2.10.2026 23:23:08] ELO kullanıcı=174 939->920 (-19)
+[2.10.2026 23:23:50] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 23:24:38] SAYI takım=2 oyuncu=xxxxxxxxxxxxxxxxxxxxxxxxx#16 stat=two_pt_own_basket x=-257 y=201 vy=-6.44 skor=0-2 sonDokunuşlar=xxxxxxxxxxxxxxxxxxxxxxxxx(vuruş)>xxxxxxxxxxxxxxxxxxxxxxxxx(çarpışma)>xxxxxxxxxxxxxxxxxxxxxxxxx(vuruş)
+[2.10.2026 23:25:53] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[15,18] kaybeden=[16,17] sayılan=[15,16,17]
+[2.10.2026 23:25:53] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:27:36] SAYI takım=1 oyuncu=zencırrrrrr#15 stat=two_pt_made x=223 y=-15 vy=4.69 skor=2-0 sonDokunuşlar=xxxxxxxxxxxxxxxxxxxxxxxxx(çarpışma)>xxxxxxxxxxxxxxxxxxxxxxxxx(vuruş)>zencırrrrrr(vuruş)
+[2.10.2026 23:27:56] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[17,15] kaybeden=[18,16] sayılan=[17,15,18,16]
+[2.10.2026 23:27:56] ELO kullanıcı=180 1000->1015 (+15)
+[2.10.2026 23:27:56] ELO kullanıcı=178 1000->1025 (+25)
+[2.10.2026 23:27:56] ELO kullanıcı=181 1000->980 (-20)
+[2.10.2026 23:27:56] ELO kullanıcı=179 1000->980 (-20)
+[2.10.2026 23:30:16] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[105,110] kaybeden=[106,111] sayılan=[105,110,106,111]
+[2.10.2026 23:30:16] SAYI takım=2 oyuncu=onüç#105 stat=two_pt_made x=-435 y=120 vy=2.22 skor=0-0 sonDokunuşlar=adem(çarpışma)>adem(vuruş)>onüç(çarpışma)
+[2.10.2026 23:30:16] ELO kullanıcı=174 920->948 (+28)
+[2.10.2026 23:30:16] ELO kullanıcı=177 1018->1035 (+17)
+[2.10.2026 23:30:16] ELO kullanıcı=175 1000->978 (-22)
+[2.10.2026 23:30:16] ELO kullanıcı=176 1019->997 (-22)
+[2.10.2026 23:31:43] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[15,18,19] kaybeden=[16,17] sayılan=[15,18,19,16,17]
+[2.10.2026 23:31:43] SAYI takım=1 oyuncu=Sinek#19 stat=two_pt_made x=366 y=233 vy=4.96 skor=0-0 sonDokunuşlar=Nellson Beyefendi(vuruş)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:31:43] ELO kullanıcı=178 1025->1038 (+13)
+[2.10.2026 23:31:43] ELO kullanıcı=181 980->993 (+13)
+[2.10.2026 23:31:43] ELO kullanıcı=94 1099->1112 (+13)
+[2.10.2026 23:31:43] ELO kullanıcı=179 980->962 (-18)
+[2.10.2026 23:31:43] ELO kullanıcı=180 1015->997 (-18)
+[2.10.2026 23:32:12] SAYI takım=1 oyuncu=Nellson Beyefendi#18 stat=two_pt_made x=516 y=-261 vy=5.30 skor=2-0 sonDokunuşlar=Nellson Beyefendi(çarpışma)>Nellson Beyefendi(çarpışma)>Nellson Beyefendi(çarpışma)
+[2.10.2026 23:32:14] SAYI takım=1 oyuncu=adem#106 stat=two_pt_own_basket x=620 y=11 vy=-10.35 skor=2-0 sonDokunuşlar=onüç(çarpışma)>onüç(çarpışma)>adem(vuruş)
+[2.10.2026 23:32:19] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[105,110] kaybeden=[106,111] sayılan=[105,110,106,111]
+[2.10.2026 23:32:20] ELO kullanıcı=174 948->968 (+20)
+[2.10.2026 23:32:20] ELO kullanıcı=177 1035->1055 (+20)
+[2.10.2026 23:32:20] ELO kullanıcı=175 978->958 (-20)
+[2.10.2026 23:32:20] ELO kullanıcı=176 997->977 (-20)
+[2.10.2026 23:33:31] SAYI takım=2 oyuncu=Sinek#19 stat=three_pt_made x=255 y=-273 vy=6.08 skor=2-3 sonDokunuşlar=Sinek(çarpışma)>Sinek(vuruş)>Sinek(vuruş)
+[2.10.2026 23:33:46] MAÇ BİTTİ skor=2-3 antrenman=false kazanan=[19] kaybeden=[18] sayılan=[19,18]
+[2.10.2026 23:33:46] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:34:04] SAYI takım=1 oyuncu=adem#106 stat=two_pt_made x=226 y=-115 vy=9.20 skor=2-0 sonDokunuşlar=Jeremy Doku(vuruş)>adem(çarpışma)>adem(vuruş)
+[2.10.2026 23:34:23] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[110,106] kaybeden=[111,105] sayılan=[110,106,111,105]
+[2.10.2026 23:34:23] ELO kullanıcı=177 1055->1069 (+14)
+[2.10.2026 23:34:23] ELO kullanıcı=175 958->981 (+23)
+[2.10.2026 23:34:23] ELO kullanıcı=176 977->959 (-18)
+[2.10.2026 23:34:23] ELO kullanıcı=174 968->950 (-18)
+[2.10.2026 23:34:45] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 23:34:51] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[] kaybeden=[] sayılan=[]
+[2.10.2026 23:35:33] SAYI takım=1 oyuncu=Sinek#112 stat=two_pt_made x=554 y=-139 vy=4.20 skor=2-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(çarpışma)
+[2.10.2026 23:36:00] SAYI takım=2 oyuncu=onüç#105 stat=two_pt_own_basket x=-475 y=-16 vy=-2.28 skor=2-2 sonDokunuşlar=adem(vuruş)>onüç(çarpışma)>onüç(vuruş)
+[2.10.2026 23:37:30] MAÇ BİTTİ skor=4-2 antrenman=false kazanan=[111,105,112] kaybeden=[110,106] sayılan=[111,105,112,110,106]
+[2.10.2026 23:37:30] SAYI takım=1 oyuncu=Jeremy Doku#111 stat=two_pt_made x=569 y=-223 vy=6.08 skor=0-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(vuruş)>Jeremy Doku(çarpışma)
+[2.10.2026 23:37:30] ELO kullanıcı=176 959->983 (+24)
+[2.10.2026 23:37:30] ELO kullanıcı=174 950->966 (+16)
+[2.10.2026 23:37:30] ELO kullanıcı=94 1112->1126 (+14)
+[2.10.2026 23:37:30] ELO kullanıcı=177 1069->1048 (-21)
+[2.10.2026 23:37:30] ELO kullanıcı=175 981->960 (-21)
+[2.10.2026 23:39:32] SAYI takım=1 oyuncu=Sinek#112 stat=three_pt_made x=-92 y=35 vy=1.97 skor=3-0 sonDokunuşlar=adem(vuruş)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:39:33] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[111,112] kaybeden=[110,106,105] sayılan=[111,112,110,106,105]
+[2.10.2026 23:39:33] ELO kullanıcı=176 983->995 (+12)
+[2.10.2026 23:39:33] ELO kullanıcı=94 1126->1138 (+12)
+[2.10.2026 23:39:33] ELO kullanıcı=177 1048->1032 (-16)
+[2.10.2026 23:39:33] ELO kullanıcı=175 960->944 (-16)
+[2.10.2026 23:39:33] ELO kullanıcı=174 966->950 (-16)
+[2.10.2026 23:39:54] SAYI takım=1 oyuncu=Sinek#112 stat=two_pt_made x=628 y=89 vy=-11.74 skor=2-0 sonDokunuşlar=onüç(vuruş)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:40:05] SAYI takım=1 oyuncu=Jeremy Doku#111 stat=two_pt_own_basket x=429 y=-492 vy=7.27 skor=4-0 sonDokunuşlar=Jeremy Doku(vuruş)>Jeremy Doku(çarpışma)>Jeremy Doku(vuruş)
+[2.10.2026 23:40:22] SAYI takım=1 oyuncu=Sinek#112 stat=two_pt_made x=594 y=170 vy=-9.35 skor=6-0 sonDokunuşlar=Pk(vuruş)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:41:16] SAYI takım=1 oyuncu=onüç#105 stat=two_pt_made x=376 y=144 vy=-10.31 skor=8-0 sonDokunuşlar=Sinek(çarpışma)>onüç(çarpışma)>onüç(vuruş)
+[2.10.2026 23:41:26] SAYI takım=1 oyuncu=Sinek#112 stat=two_pt_made x=534 y=-306 vy=6.10 skor=10-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(vuruş)>Sinek(çarpışma)
+[2.10.2026 23:41:37] MAÇ BİTTİ skor=10-0 antrenman=false kazanan=[112,105] kaybeden=[110] sayılan=[112,105,110]
+[2.10.2026 23:41:37] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:42:20] SAYI takım=1 oyuncu=Sinek#112 stat=three_pt_made x=-323 y=172 vy=1.69 skor=3-0 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:42:32] SAYI takım=2 oyuncu=Swhs#110 stat=three_pt_made x=475 y=-256 vy=7.75 skor=3-3 sonDokunuşlar=Sinek(vuruş)>Swhs(çarpışma)>Swhs(vuruş)
+[2.10.2026 23:42:46] SAYI takım=2 oyuncu=Swhs#110 stat=three_pt_made x=472 y=-328 vy=5.02 skor=3-6 sonDokunuşlar=Sinek(vuruş)>Swhs(çarpışma)>Swhs(vuruş)
+[2.10.2026 23:43:00] SAYI takım=1 oyuncu=onüç#105 stat=two_pt_made x=446 y=-336 vy=6.18 skor=5-6 sonDokunuşlar=Sinek(çarpışma)>Sinek(vuruş)>onüç(çarpışma)
+[2.10.2026 23:43:40] MAÇ BİTTİ skor=5-6 antrenman=false kazanan=[110] kaybeden=[112,105] sayılan=[110,112,105]
+[2.10.2026 23:43:40] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:45:13] SAYI takım=2 oyuncu=onüç#105 stat=two_pt_own_basket x=-498 y=226 vy=-4.88 skor=0-2 sonDokunuşlar=onüç(çarpışma)>Sinek(çarpışma)>onüç(vuruş)
+[2.10.2026 23:45:43] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[110,112] kaybeden=[105] sayılan=[110,112,105]
+[2.10.2026 23:45:43] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:46:56] SAYI takım=2 oyuncu=Sinek#112 stat=two_pt_made x=-139 y=-100 vy=8.81 skor=0-2 sonDokunuşlar=onüç(çarpışma)>onüç(vuruş)>Sinek(vuruş)
+[2.10.2026 23:47:32] SAYI takım=2 oyuncu=Sinek#112 stat=three_pt_made x=277 y=12 vy=7.28 skor=0-5 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:47:46] MAÇ BİTTİ skor=0-5 antrenman=false kazanan=[112] kaybeden=[105,110] sayılan=[112,105,110]
+[2.10.2026 23:47:46] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:52:46] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[105,112,115] kaybeden=[110,114] sayılan=[105,112,110]
+[2.10.2026 23:52:46] SAYI takım=1 oyuncu=onüç#105 stat=two_pt_made x=510 y=-425 vy=8.11 skor=0-0 sonDokunuşlar=Swhs(vuruş)>onüç(çarpışma)>onüç(çarpışma)
+[2.10.2026 23:52:46] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:53:47] SAYI takım=2 oyuncu=𝙎𝙥𝙮#115 stat=two_pt_own_basket x=-293 y=154 vy=5.91 skor=0-2 sonDokunuşlar=Sinek(vuruş)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:54:15] SAYI takım=2 oyuncu=Sinek#112 stat=two_pt_made x=-607 y=85 vy=-10.33 skor=0-4 sonDokunuşlar=Sinek(çarpışma)>𝙎𝙥𝙮(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:54:29] SAYI takım=1 oyuncu=Swhs#110 stat=two_pt_own_basket x=397 y=-382 vy=7.66 skor=2-4 sonDokunuşlar=onüç(çarpışma)>onüç(vuruş)>Swhs(vuruş)
+[2.10.2026 23:54:48] SAYI takım=1 oyuncu=𝙎𝙥𝙮#115 stat=two_pt_made x=494 y=85 vy=-5.37 skor=4-4 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:55:12] MAÇ BİTTİ skor=7-4 antrenman=false kazanan=[105,115] kaybeden=[112] sayılan=[105,115,112]
+[2.10.2026 23:55:12] SAYI takım=1 oyuncu=𝙎𝙥𝙮#115 stat=three_pt_made x=-114 y=149 vy=6.76 skor=0-0 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:55:12] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:55:40] SAYI takım=2 oyuncu=Sinek#112 stat=three_pt_made x=335 y=65 vy=6.09 skor=0-3 sonDokunuşlar=𝙎𝙥𝙮(vuruş)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:55:59] SAYI takım=2 oyuncu=Sinek#112 stat=three_pt_made x=203 y=-16 vy=4.99 skor=0-6 sonDokunuşlar=Sinek(çarpışma)>Sinek(çarpışma)>Sinek(vuruş)
+[2.10.2026 23:56:23] SAYI takım=1 oyuncu=𝙎𝙥𝙮#115 stat=three_pt_made x=-324 y=74 vy=4.27 skor=3-6 sonDokunuşlar=𝙎𝙥𝙮(vuruş)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:57:15] MAÇ BİTTİ skor=3-6 antrenman=false kazanan=[112] kaybeden=[105,115] sayılan=[112,105,115]
+[2.10.2026 23:57:15] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:57:28] SAYI takım=1 oyuncu=𝙎𝙥𝙮#115 stat=two_pt_made x=386 y=254 vy=-2.75 skor=2-0 sonDokunuşlar=𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:58:30] SAYI takım=1 oyuncu=𝙎𝙥𝙮#115 stat=three_pt_made x=-338 y=-147 vy=8.12 skor=5-0 sonDokunuşlar=𝙎𝙥𝙮(vuruş)>𝙎𝙥𝙮(çarpışma)>𝙎𝙥𝙮(vuruş)
+[2.10.2026 23:59:19] MAÇ BİTTİ skor=5-0 antrenman=false kazanan=[115] kaybeden=[105] sayılan=[115,105]
+[2.10.2026 23:59:19] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.10.2026 23:59:46] SAYI takım=1 oyuncu=onüç#105 stat=two_pt_own_basket x=592 y=200 vy=-11.61 skor=2-0 sonDokunuşlar=onüç(çarpışma)>onüç(çarpışma)>onüç(vuruş)

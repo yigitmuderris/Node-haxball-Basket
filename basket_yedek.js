@@ -875,7 +875,7 @@ async function main() {
 
 
                 logGame(`MAÇ BİTTİ skor=${scoreRed}-${scoreBlue} antrenman=${training} ` +
-                    `kazanan=[${winners}] kaybeden=[${losers}] sayılan=[${participation.filter([...winners, ...losers])}]`);
+                    `kazanan=[${winners.forEach(p => room.getPlayer(p).name)}] kaybeden=[${losers.forEach(p => room.getPlayer(p).name)}] sayılan=[${participation.filter([...winners, ...losers])}]`);
 
 
                 if (!training && scoreRed !== scoreBlue) {

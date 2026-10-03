@@ -486,7 +486,60 @@ describe('scoreCheck testleri', () => {
 
     });
 
-    test('6. mavi takım için üçlük', () => {
+    test('6. kırmızı takım için ikilik , SMAÇ', () => {
+
+
+        const touchedballX = 15.0;
+        const touchedballY = 10.0;
+
+
+
+        const yspeed = 10.5;
+        const team = 1;
+
+        const lasttouchedPlayer = {
+            name: "Oyuncu",
+            team: 1, // Sayıyı atan takımın rengini veriyoruz ki hata çıkmasın
+            team: { M: 1 } // .team.M kullanan versiyonlar için yedek
+        };
+
+        const scoreRed = 0;
+        const scoreBlue = 0;
+
+        score = { scoreBlue, scoreRed };
+
+
+        const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
+
+
+
+        expect(result.announcement).toEqual([
+            {
+                message: `${lasttouchedPlayer.name} SMAÇ! 🔥`,
+                target: null,
+                color: 0x4169E1 ,
+                messageType: "small-bold",
+                messageSound: 2
+            },
+
+            {
+                message: `Skor : ${scoreRed + 2} vs ${scoreBlue}`,
+                target: null,
+                color: 0xEEEEEE,
+                messageType: "normal",
+                messageSound: 1
+            }
+
+        ]
+        );
+
+
+
+
+
+    });
+
+    test('7. mavi takım için üçlük', () => {
 
 
         const touchedballX = 15.0;
@@ -539,7 +592,7 @@ describe('scoreCheck testleri', () => {
 
     });
 
-    test('7. mavi takım için ikilik, normal şut ', () => {
+    test('8. mavi takım için ikilik, normal şut ', () => {
 
 
         const touchedballX = -10.0;
@@ -591,7 +644,7 @@ describe('scoreCheck testleri', () => {
 
 
     });
-    test('8. mavi takım için ikilik, normal dokunuş ', () => {
+    test('9. mavi takım için ikilik, normal dokunuş ', () => {
 
 
         const touchedballX = -10.0;
@@ -644,7 +697,7 @@ describe('scoreCheck testleri', () => {
 
     });
 
-    test('9. mavi takım için ikilik, turnike ', () => {
+    test('10. mavi takım için ikilik, turnike ', () => {
 
 
         const touchedballX = -15.0;
@@ -697,7 +750,7 @@ describe('scoreCheck testleri', () => {
 
     });
 
-    test('10. mavi takım için ikilik, yspeed sıfırsa ', () => {
+    test('11. mavi takım için ikilik, yspeed sıfırsa ', () => {
 
 
         const touchedballX = -15.0;
@@ -731,6 +784,59 @@ describe('scoreCheck testleri', () => {
                 color: 0xFFFF00,
                 messageType: "small-bold",
                 messageSound: 1
+            },
+
+            {
+                message: `Skor : ${scoreRed} vs ${scoreBlue + 2}`,
+                target: null,
+                color: 0xEEEEEE,
+                messageType: "normal",
+                messageSound: 1
+            }
+
+        ]
+        );
+
+
+
+
+
+    });
+
+    test('12. mavi takım için ikilik, SMAÇ ', () => {
+
+
+        const touchedballX = -15.0;
+        const touchedballY = -10.0;
+
+
+
+        const yspeed = 10.5;
+        const team = 2;
+
+        const lasttouchedPlayer = {
+            name: "Oyuncu",
+            team: 2, // Sayıyı atan takımın rengini veriyoruz ki hata çıkmasın
+            team: { M: 2 } // .team.M kullanan versiyonlar için yedek
+        };
+
+        const scoreRed = 0;
+        const scoreBlue = 0;
+
+        score = { scoreBlue, scoreRed };
+
+
+        const result = scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score)
+
+
+
+        expect(result.announcement).toEqual([
+            {
+                message: `${lasttouchedPlayer.name} SMAÇ! 🔥`,
+                target: null,
+                color: 0x4169E1,
+                messageType: "small-bold",
+                messageSound: 2
             },
 
             {

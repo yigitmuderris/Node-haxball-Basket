@@ -22,7 +22,7 @@ const { buildEloAnnouncements,
     buildCommandCooldownAnnouncement,
     buildHelpAnnouncement,
     buildLeaderboardAnnouncement } = require('./services/chatLogic')
-
+const eloLogic = require('./services/eloLogic');
 const userService = require('./services/userService');
 
 
@@ -446,7 +446,7 @@ async function main() {
                         room.sendAnnouncement(announcement, playerId, 0xFF0000);
                         return messageSendStatus
                     }
-                    
+
 
                     const p = room.getPlayer(playerId);
                     if (!p) return false;
@@ -525,6 +525,16 @@ async function main() {
 
                     })
                     .catch((err) => console.error("recordMatch hatası:", err));
+            }
+
+            function isRankedMatch() {
+                const redCount = room.players.filter(p => p.team?.id === 1).length;
+                const blueCount = room.players.filter(p => p.team?.id === 2).length;
+
+                return (
+                    redCount >= eloLogic.MIN_PLAYERS_PER_TEAM &&
+                    blueCount >= eloLogic.MIN_PLAYERS_PER_TEAM
+                );
             }
 
 
@@ -623,7 +633,7 @@ async function main() {
                     room.sendAnnouncement(`${player.name} Hoşgeldin`, player.id);
                     queue.push(player.id);
 
-                    if (isGameRunning && queue.find(p => p === player.id)&& room.players.length > 6) {
+                    if (isGameRunning && queue.find(p => p === player.id) && room.players.length > 6) {
 
                         room.sendAnnouncement("Oyun oynanıyor sıranın gelmesini bekle...", player.id, 0x999999)
                     }
@@ -634,9 +644,7 @@ async function main() {
 
                     if (room.players.length === 1 && !isGameRunning) {
 
-                        room.sendAnnouncement("Oyunun başlaması için en az iki oyuncu gerek", null, 0x999999);
-                        room.sendAnnouncement("Antrenman başlıyor...", null, 0x999999)
-                        training = true;
+                        
                         room.stopGame();
 
                         setTimeout(() => {
@@ -691,7 +699,6 @@ async function main() {
 
                 if (room.players.length === 1) {
 
-                    training = true;
                     room.stopGame();
 
                     setTimeout(() => {
@@ -730,21 +737,42 @@ async function main() {
                 lastscoringTeam = null;
                 matchPoints.clear();
 
-
-
-                if (!training) isGameRunning = true;
-
-
+                isGameRunning = true;
 
                 setTimeout(() => {
                     handleBalance();
 
+                    // Maçın 2v2 veya daha büyük olup olmadığını burada kesinleştir
+                    training = !isRankedMatch();
+
                     participation.start(
                         getPlayerList().filter((p) => p.team && p.team.id !== 0).map((p) => p.id)
                     );
+
+
+                    if (!training) {
+                        room.sendAnnouncement(
+                            "🏆 DERECELİ MAÇ BAŞLADI! ELO AKTİF🏆 SÜRE 2 DK",
+                            null,
+                            0xFFD700
+                        );
+
+                    } else {
+
+                        room.sendAnnouncement(
+                            "🏀 OYUNCU SAYISI 4 KİŞİDEN AZ... 🏀",
+                            null,
+                            0x999999
+                        );
+                        room.sendAnnouncement(
+                            "🏀 ANTRENMAN MAÇI BAŞLADI! ELO ETKİLENMEYECEK 🏀 SÜRE 2 DK",
+                            null,
+                            0x999999
+                        );
+                    }
+
+
                 }, 100);
-
-
 
 
 
@@ -764,12 +792,12 @@ async function main() {
 
                 warnTimeoutLastTen = setTimeout(() => {
 
-                    room.sendAnnouncement("SON 10 sn...", null, 0XFF007F,"bold");
+                    room.sendAnnouncement("SON 10 sn...", null, 0XFF007F, "bold");
 
 
                 }, warnTimeLastTenSec);
 
-                if (!training) room.sendAnnouncement("🗑️ OYUN BAŞLADI. SÜRE 2 DK 🗑️", null, 0xFFD700)
+                
                 gameTimeout = setTimeout(() => {
 
                     if (scoreBlue != scoreRed) {
@@ -799,7 +827,7 @@ async function main() {
                 if (room.players.length === 1) {
 
                     room.sendAnnouncement("Antrenman başlıyor...", null, 0x999999);
-                    training = true;
+                    
 
 
                     setTimeout(() => {
@@ -921,8 +949,7 @@ async function main() {
 
                     if (room.players.length >= 2) {
                         room.sendAnnouncement("YENİ OYUN BAŞLIYOR...", null, 0x00E5FF);
-                        training = false;
-
+                        
                         // Dengeleme yapıldıktan 3 saniye sonra oyunu başlat
                         setTimeout(() => {
 
@@ -986,7 +1013,7 @@ async function main() {
                 const shotY = touchedballY ?? scoredBall.h.y;
                 const yspeed = scoredBall.A.y;
 
-                
+
 
 
 

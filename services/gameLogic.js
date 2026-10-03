@@ -133,7 +133,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         if (yspeed > 0) {
             // Top yukarıdan aşağıya inerek potaya girdi (Şut / İki Sayı)
 
-            if (touchedballY <= -71) {
+            if (touchedballY <= -71 && yspeed <= 10) {
 
                 announcement.push(
                     {
@@ -145,7 +145,23 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                     }
                 )
 
-            } else {
+            } else if (yspeed > 10) {
+
+                announcement.push(
+                    {
+                        message: `${lasttouchedPlayer.name} SMAÇ! 🔥`,
+                        target: null,
+                        color: 0x4169E1,
+                        messageType: "small-bold",
+                        messageSound: 2
+                    }
+
+                )
+
+
+            }
+
+            else if (yspeed <= 10) {
                 announcement.push(
                     {
                         message: `${lasttouchedPlayer.name} şık bir şutla İKİ SAYI atıyor! 🏀`,
@@ -194,7 +210,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
 
 
 
-       
+
 
         return { announcement, scoreRed, scoreBlue, stat: "two_pt_made" }
     }
@@ -226,7 +242,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         )
 
 
-        
+
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_made" }
 
 
@@ -240,7 +256,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
 
         if (yspeed > 0) {
             // Top yukarıdan aşağıya inerek potaya girdi (Şut / İki Sayı)
-            if (touchedballY <= -71) {
+            if (touchedballY <= -71 && yspeed <= 10) {
                 announcement.push(
                     {
                         message: `${lasttouchedPlayer.name} bitirici dokunuş. İki sayı! 🏀`,
@@ -251,7 +267,21 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                     }
                 )
 
-            } else {
+            } else if (yspeed > 10) {
+
+                announcement.push(
+                    {
+                        message: `${lasttouchedPlayer.name} SMAÇ! 🔥`,
+                        target: null,
+                        color: 0x4169E1,
+                        messageType: "small-bold",
+                        messageSound: 2
+                    }
+
+                )
+
+            }
+            else if (yspeed <= 10) {
                 announcement.push(
                     {
                         message: `${lasttouchedPlayer.name} şık bir şutla İKİ SAYI atıyor! 🏀`,
@@ -297,9 +327,9 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         )
 
 
-        
 
-         return { announcement, scoreRed, scoreBlue, stat: "two_pt_made" }
+
+        return { announcement, scoreRed, scoreBlue, stat: "two_pt_made" }
     }
 
 
@@ -329,7 +359,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
-       
+
 
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_made" }
     }
@@ -373,7 +403,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
-        
+
 
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_own_basket" }
 
@@ -487,7 +517,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
                 messageSound: 1
             }
         )
-    
+
         return { announcement, scoreRed, scoreBlue, stat: "two_pt_own_basket" }
     }
 
@@ -527,7 +557,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
             }
         )
 
-        
+
 
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_own_basket" }
     }
@@ -643,7 +673,7 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         )
 
 
-        
+
 
         return { announcement, scoreRed, scoreBlue, stat: "two_pt_own_basket" }
     }
@@ -794,4 +824,4 @@ function createParticipationTracker({ windowMs = 60000, now = Date.now } = {}) {
 
 
 
-module.exports = { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers,addMatchPoints, buildMatchEntries,createParticipationTracker }
+module.exports = { balanceTeams, getLiveTeams, scoreCheck, checkAfkPlayers, addMatchPoints, buildMatchEntries, createParticipationTracker }

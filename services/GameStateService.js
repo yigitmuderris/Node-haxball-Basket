@@ -255,5 +255,5 @@ class GameStateService extends EventEmitter {
 }
 
 
-module.exports = GameStateService;
+module.exports = new GameStateService();
 

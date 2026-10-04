@@ -34,9 +34,9 @@ const { logChat,
     logGit } = require('./services/logLogic');
 
 
-const GameStateService = require("./services/GameStateService");
+const gameState = require("./services/GameStateService");
 
-const gameState = new GameStateService();
+require("./controller/server");
 
 
 const sessions = new Map();
@@ -85,7 +85,7 @@ async function main() {
 
     Room.create({
         name: "🗑️ BASKET 3V3 🗑️",
-        showInRoomList: true,
+        showInRoomList: false,
         noPlayer: true,
         maxPlayerCount: 9,
         token: tokenForRoom,
@@ -103,7 +103,7 @@ async function main() {
             gameState.setRoomInfo({
                 name: room.name,
                 playerCount: room.players.length,
-                maxPlayers: maxPlayerCount
+                maxPlayers: 9
 
             })
 

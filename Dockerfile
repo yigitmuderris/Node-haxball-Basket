@@ -15,6 +15,8 @@ COPY db ./db
 COPY migrations ./migrations
 COPY repositories ./repositories
 COPY services ./services
+COPY controller ./controller
+
 COPY maps ./maps
 
 CMD ["node", "basket_yedek.js"]

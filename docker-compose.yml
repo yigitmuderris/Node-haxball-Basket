@@ -32,6 +32,8 @@ services:
     volumes:
       - ./data/bot1:/data
       - ./logs:/app/logs
+    ports:
+      - "3000:3000"
 
   bot2:
     build: .
@@ -47,6 +49,8 @@ services:
     volumes:
       - ./data/bot2:/data
       - ./logs:/app/logs
+    ports:
+      - "3001:3000"
 
   log-pusher:
     build: .

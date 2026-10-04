@@ -34,6 +34,11 @@ const { logChat,
     logGit } = require('./services/logLogic');
 
 
+const GameStateService = require("./services/GameStateService");
+
+const gameState = new GameStateService();
+
+
 const sessions = new Map();
 
 function readTokens(file) {
@@ -94,6 +99,13 @@ async function main() {
         onOpen: (room) => {
             console.log("Room opened!");
             console.log("Alınan Token:", dynamicToken);
+
+            gameState.setRoomInfo({
+                name: room.name,
+                playerCount: room.players.length,
+                maxPlayers: maxPlayerCount
+
+            })
 
 
             room.fakeSetTeamsLock(true);
@@ -493,6 +505,8 @@ async function main() {
 
                 queue = updatedQueue;
 
+                gameState.setQueue(queue);
+
             }
 
             const matchPoints = new Map();   // playerId -> bu maçtaki net skor katkısı
@@ -552,6 +566,16 @@ async function main() {
                 lasttouchedPlayer = { id: p.id, name: p.name, team: { M: p.team.id } };
                 touchedballX = ball.h.x;
                 touchedballY = ball.h.y;
+
+                gameState.setLastTouch({
+                    playerId: lasttouchedPlayer.id,
+                    playerName: lasttouchedPlayer.name,
+                    teamId: lasttouchedPlayer.team.M,
+                    x: touchedballX,
+                    y: touchedballY,
+                    source: source
+                })
+
                 touchHistory.push({ name: p.name, x: Math.round(ball.h.x), source });
                 if (touchHistory.length > 5) touchHistory.shift();
                 return true;
@@ -633,6 +657,8 @@ async function main() {
                     room.sendAnnouncement(`${player.name} Hoşgeldin`, player.id);
                     queue.push(player.id);
 
+                    gameState.setQueue(queue);
+
                     if (isGameRunning && queue.find(p => p === player.id) && room.players.length > 6) {
 
                         room.sendAnnouncement("Oyun oynanıyor sıranın gelmesini bekle...", player.id, 0x999999)
@@ -644,7 +670,7 @@ async function main() {
 
                     if (room.players.length === 1 && !isGameRunning) {
 
-                        
+
                         room.stopGame();
 
                         setTimeout(() => {
@@ -674,6 +700,8 @@ async function main() {
 
 
                 queue = queue.filter(p => p !== player.id);
+
+                gameState.setQueue(queue);
                 afkTracker.delete(player.id);
 
                 const roomPlayers = getPlayerList();
@@ -772,6 +800,12 @@ async function main() {
                     }
 
 
+                    gameState.startGame({
+                        mode: training ? "training" : "ranked",
+                        durationMs: gameTime
+                    });
+
+
                 }, 100);
 
 
@@ -797,7 +831,7 @@ async function main() {
 
                 }, warnTimeLastTenSec);
 
-                
+
                 gameTimeout = setTimeout(() => {
 
                     if (scoreBlue != scoreRed) {
@@ -807,6 +841,8 @@ async function main() {
                     } else {
 
                         drawEND = true;
+                        gameState.setDrawEnd(true);
+
                         room.sendAnnouncement(`NORMAL SÜRE BERABERE BİTTİ. skor: ${scoreRed} vs ${scoreBlue}`, null, 0X808080);
                         room.sendAnnouncement("ATAN KAZANIR!", null, 0XFFD700);
                     }
@@ -816,6 +852,9 @@ async function main() {
             }
 
             room.onGameStop = function (winningTeamId) {
+
+
+                gameState.stopGame();
 
                 isGameRunning = false;
                 let losers = [];
@@ -827,7 +866,7 @@ async function main() {
                 if (room.players.length === 1) {
 
                     room.sendAnnouncement("Antrenman başlıyor...", null, 0x999999);
-                    
+
 
 
                     setTimeout(() => {
@@ -872,6 +911,7 @@ async function main() {
                     }
 
                 })
+
 
 
                 logGame(`MAÇ BİTTİ skor=${scoreRed}-${scoreBlue} antrenman=${training} ` +
@@ -949,7 +989,7 @@ async function main() {
 
                     if (room.players.length >= 2) {
                         room.sendAnnouncement("YENİ OYUN BAŞLIYOR...", null, 0x00E5FF);
-                        
+
                         // Dengeleme yapıldıktan 3 saniye sonra oyunu başlat
                         setTimeout(() => {
 
@@ -1014,10 +1054,6 @@ async function main() {
                 const yspeed = scoredBall.A.y;
 
 
-
-
-
-
                 lastscoringTeam = team;
 
 
@@ -1029,7 +1065,16 @@ async function main() {
                 scoreBlue = result.scoreBlue;
                 scoreRed = result.scoreRed;
 
+                gameState.setScore(scoreRed, scoreBlue);
 
+                gameState.setLastScore({
+                    teamId: team,
+                    playerId: lasttouchedPlayer?.id ?? null,
+                    playerName: lasttouchedPlayer?.name ?? null,
+                    stat: result.stat ?? null,
+                    x: shotX,
+                    y: shotY
+                });
 
                 result.announcement.forEach(a => {
                     room.sendAnnouncement(a.message, a.target, a.color, a.messageType, a.messageSound);
@@ -1057,9 +1102,14 @@ async function main() {
                     room.stopGame();
                 }
 
+
+
+
                 logGame(`SAYI takım=${team} oyuncu=${shooter.name}#${shooter.id ?? "-"} stat=${result.stat ?? "-"} ` +
                     `x=${Math.round(shotX)} y=${Math.round(shotY)} vy=${yspeed.toFixed(2)} skor=${scoreRed}-${scoreBlue} ` +
                     `sonDokunuşlar=${touchHistory.slice(-3).map((t) => `${t.name}(${t.source})`).join(">")}`);
+
+
 
                 resetTouchState();
 
@@ -1094,6 +1144,8 @@ async function main() {
             const afkTracker = new Map();
             const afkLastCheck = { value: 0 };
 
+            let lastStatePublish = 0;
+
             room.onGameTick = () => {
 
 
@@ -1108,12 +1160,26 @@ async function main() {
 
                         return {
                             id: player.id,
+                            name: player.name ? player.name : "Bilinmeyen Oyuncu",
                             teamId: player.team ? player.team.id : 0,
                             x: disc.h.x,
                             y: disc.h.y
                         };
                     })
                     .filter(Boolean);
+
+
+                const now = Date.now();
+
+                if (now - lastStatePublish >= 50) {
+                    gameState.updatePlayers(roomPlayersData);
+                    lastStatePublish = now;
+                }
+
+                const ball = room.getDisc(0);
+
+                if (ball) gameState.updateBall(ball.h.x, ball.h.y);
+
 
                 const kicks = checkAfkPlayers(roomPlayersData, afkTracker, afkLastCheck);
 

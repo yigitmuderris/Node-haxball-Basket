@@ -101,6 +101,7 @@ function formatTag(elo) {
 
 module.exports = {
     START_ELO,
+    MIN_ELO,
     MIN_PLAYERS_PER_TEAM,
     STAT_POINTS,
     calculateMatch,

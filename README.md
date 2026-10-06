@@ -122,7 +122,7 @@ The in-game chat system provides:
 
 ---
 
-## 🔄 Match & ELO Flow
+#### 🔄 Match & ELO Flow
 
 A simplified match lifecycle looks like this:
 

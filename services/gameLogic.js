@@ -19,7 +19,20 @@ function getLiveTeams(roomPlayers) {
 }
 
 
-function balanceTeams(queue, roomPlayers, maxPerTeam = 3, isLeave = false) {
+const BALANCE_MESSAGES = {
+    tr: {
+        movedToEmpty: (n) => `${n}, karşı takım boşaldığı için karşı takıma aktarıldı.`,
+        movedToEqualize: (n) => `${n}, takımları eşitlemek için karşı takıma transfer edildi.`
+    },
+    en: {
+        movedToEmpty: (n) => `${n} was moved to the other team because it became empty.`,
+        movedToEqualize: (n) => `${n} was transferred to the other team to even out the teams.`
+    }
+};
+
+function balanceTeams(queue, roomPlayers, maxPerTeam = 3, isLeave = false, lang = "tr") {
+
+    const t = BALANCE_MESSAGES[lang] || BALANCE_MESSAGES.tr;
 
     // Canlı sayıları al
     const teams = getLiveTeams(roomPlayers);
@@ -76,7 +89,7 @@ function balanceTeams(queue, roomPlayers, maxPerTeam = 3, isLeave = false) {
                 // Oyuncuyu boş takıma transfer et
                 moves.push({ playerId: highestIdPlayer.id, teamId: emptyTeamId });
 
-                announcement = `${highestIdPlayer.name}, karşı takım boşaldığı için karşı takıma aktarıldı.`;
+                announcement = t.movedToEmpty(highestIdPlayer.name);
                 shouldStopGame = false; // Oyun devam etsin
             } else {
                 // Sahada sadece 1 kişi kaldıysa (1v0) oyunu durdur ve seyirciye al
@@ -105,11 +118,9 @@ function balanceTeams(queue, roomPlayers, maxPerTeam = 3, isLeave = false) {
                 // Oyunu durdurmadan direkt boş kalan karşı takıma transfer et!
 
                 moves.push({ playerId: playerToTransfer.id, teamId: emptyTeamID })
-                announcement = `${playerToTransfer.name}, takımları eşitlemek için karşı takıma transfer edildi.`;
+                announcement = t.movedToEqualize(playerToTransfer.name);
             }
         }
-
-
 
     }
 
@@ -119,11 +130,44 @@ function balanceTeams(queue, roomPlayers, maxPerTeam = 3, isLeave = false) {
 
 
 
-function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score) {
+const MESSAGES = {
+    tr: {
+        finisher:  (n) => `${n} bitirici dokunuş. İki sayı! 🏀`,
+        dunk:      (n) => `${n} SMAÇ! 🔥`,
+        shot:      (n) => `${n} şık bir şutla İKİ SAYI atıyor! 🏀`,
+        layup:     (n) => `${n} pota altından turnike!💨`,
+        rimShake:  (n) => `${n} potayı sarsıyor!`,
+        three:     (n) => `${n} ÜÇLÜK!!`,
+        foulTouch: (n) => `${n} HATALI DOKUNUŞ!! ❌❌❌`,
+        foulShot:  (n) => `${n} HATALI ŞUT!! ❌❌❌`,
+        foulLayup: (n) => `${n} HATALI TURNIKE!! ❌❌❌`,
+        foulRim:   (n) => `${n} potayı sarsıyor! ❌❌❌`,
+        ownTwo:    `KENDİ POTASINA İKİ SAYI!!`,
+        ownThree:  `KENDİ POTASINA ÜÇLÜK!!`,
+        score:     (r, b) => `Skor : ${r} vs ${b}`
+    },
+    en: {
+        finisher:  (n) => `${n} with the finishing touch. Two points! 🏀`,
+        dunk:      (n) => `${n} SLAM DUNK! 🔥`,
+        shot:      (n) => `${n} drains a smooth shot for TWO! 🏀`,
+        layup:     (n) => `${n} with a layup under the basket! 💨`,
+        rimShake:  (n) => `${n} shakes the rim!`,
+        three:     (n) => `${n} THREE-POINTER!!`,
+        foulTouch: (n) => `${n} WRONG TOUCH!! ❌❌❌`,
+        foulShot:  (n) => `${n} BAD SHOT!! ❌❌❌`,
+        foulLayup: (n) => `${n} BAD LAYUP!! ❌❌❌`,
+        foulRim:   (n) => `${n} shakes the rim! ❌❌❌`,
+        ownTwo:    `TWO POINTS INTO YOUR OWN BASKET!!`,
+        ownThree:  `THREE POINTS INTO YOUR OWN BASKET!!`,
+        score:     (r, b) => `Score : ${r} vs ${b}`
+    }
+};
 
+function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer, score, lang = "tr") {
+
+    const t = MESSAGES[lang] || MESSAGES.tr;
     let announcement = [];
     let { scoreRed, scoreBlue } = score;
-
 
     // kırmızı takım için ikilik 
     if (team == 1 && lasttouchedPlayer && lasttouchedPlayer.team.M == 1 && touchedballX > 0) {
@@ -131,86 +175,20 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
         scoreRed = scoreRed + 2;
 
         if (yspeed > 0) {
-            // Top yukarıdan aşağıya inerek potaya girdi (Şut / İki Sayı)
-
             if (touchedballY <= -71 && yspeed <= 10) {
-
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} bitirici dokunuş. İki sayı! 🏀`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 1
-                    }
-                )
-
+                announcement.push({ message: t.finisher(lasttouchedPlayer.name), target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 1 });
             } else if (yspeed > 10) {
-
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} SMAÇ! 🔥`,
-                        target: null,
-                        color: 0x4169E1,
-                        messageType: "small-bold",
-                        messageSound: 2
-                    }
-
-                )
-
-
-            }
-
-            else if (yspeed <= 10) {
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} şık bir şutla İKİ SAYI atıyor! 🏀`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 1
-                    }
-                )
+                announcement.push({ message: t.dunk(lasttouchedPlayer.name), target: null, color: 0x4169E1, messageType: "small-bold", messageSound: 2 });
+            } else if (yspeed <= 10) {
+                announcement.push({ message: t.shot(lasttouchedPlayer.name), target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 1 });
             }
         } else if (yspeed < 0) {
-            // Top aşağıdan yukarıya çıkarak potaya girdi (Turnike)
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} pota altından turnike!💨`,
-                    target: null,
-                    color: 0x00E5FF,
-                    messageType: "small-bold",
-                    messageSound: 1
-                }
-            )
+            announcement.push({ message: t.layup(lasttouchedPlayer.name), target: null, color: 0x00E5FF, messageType: "small-bold", messageSound: 1 });
         } else {
-            // yspeed tam 0 ise (dümdüz gitmişse)
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} potayı sarsıyor!`,
-                    target: null,
-                    color: 0xFFFF00,
-                    messageType: "small-bold",
-                    messageSound: 1
-                }
-            )
+            announcement.push({ message: t.rimShake(lasttouchedPlayer.name), target: null, color: 0xFFFF00, messageType: "small-bold", messageSound: 1 });
         }
 
-
-
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
-
-
-
-
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "two_pt_made" }
     }
@@ -218,305 +196,85 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
     // kırmızı takım için üçlük
     if (team == 1 && lasttouchedPlayer && lasttouchedPlayer.team.M == 1 && touchedballX < 0) {
 
-
         scoreRed = scoreRed + 3;
 
-        announcement.push(
-            {
-                message: `${lasttouchedPlayer.name} ÜÇLÜK!!`,
-                target: null,
-                color: 0xFFD700,
-                messageType: "small-bold",
-                messageSound: 2
-            }
-        )
-
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
-
-
+        announcement.push({ message: t.three(lasttouchedPlayer.name), target: null, color: 0xFFD700, messageType: "small-bold", messageSound: 2 });
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_made" }
-
-
     }
 
     // mavi takım için ikilik 
-
     if (team == 2 && lasttouchedPlayer && lasttouchedPlayer.team.M == 2 && touchedballX < 0) {
 
         scoreBlue = scoreBlue + 2;
 
         if (yspeed > 0) {
-            // Top yukarıdan aşağıya inerek potaya girdi (Şut / İki Sayı)
             if (touchedballY <= -71 && yspeed <= 10) {
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} bitirici dokunuş. İki sayı! 🏀`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 1
-                    }
-                )
-
+                announcement.push({ message: t.finisher(lasttouchedPlayer.name), target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 1 });
             } else if (yspeed > 10) {
-
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} SMAÇ! 🔥`,
-                        target: null,
-                        color: 0x4169E1,
-                        messageType: "small-bold",
-                        messageSound: 2
-                    }
-
-                )
-
-            }
-            else if (yspeed <= 10) {
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} şık bir şutla İKİ SAYI atıyor! 🏀`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 1
-                    }
-                )
+                announcement.push({ message: t.dunk(lasttouchedPlayer.name), target: null, color: 0x4169E1, messageType: "small-bold", messageSound: 2 });
+            } else if (yspeed <= 10) {
+                announcement.push({ message: t.shot(lasttouchedPlayer.name), target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 1 });
             }
         } else if (yspeed < 0) {
-            // Top aşağıdan yukarıya çıkarak potaya girdi (Turnike)
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} pota altından turnike! 💨`,
-                    target: null,
-                    color: 0x00E5FF,
-                    messageType: "small-bold",
-                    messageSound: 1
-                }
-            )
+            announcement.push({ message: t.layup(lasttouchedPlayer.name), target: null, color: 0x00E5FF, messageType: "small-bold", messageSound: 1 });
         } else {
-            // yspeed tam 0 ise (dümdüz gitmişse)
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} potayı sarsıyor!`,
-                    target: null,
-                    color: 0xFFFF00,
-                    messageType: "small-bold",
-                    messageSound: 1
-                }
-            )
+            announcement.push({ message: t.rimShake(lasttouchedPlayer.name), target: null, color: 0xFFFF00, messageType: "small-bold", messageSound: 1 });
         }
 
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
-
-
-
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "two_pt_made" }
     }
-
 
     // mavi takım için üçlük
     if (team == 2 && lasttouchedPlayer && lasttouchedPlayer.team.M == 2 && touchedballX > 0) {
 
         scoreBlue = scoreBlue + 3;
 
-        announcement.push(
-            {
-                message: `${lasttouchedPlayer.name} ÜÇLÜK!!`,
-                target: null,
-                color: 0xFFD700,
-                messageType: "small-bold",
-                messageSound: 2
-            }
-        )
-
-
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
-
-
+        announcement.push({ message: t.three(lasttouchedPlayer.name), target: null, color: 0xFFD700, messageType: "small-bold", messageSound: 2 });
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_made" }
     }
 
-
-    //**************************** */ HATALI SKORLAR ****************************************************
+    //**************************** HATALI SKORLAR ****************************
 
     // kırmızı takım için üçlük
     if (team == 1 && lasttouchedPlayer && lasttouchedPlayer.team.M != 1 && touchedballX < 0) {
 
-
         scoreRed = scoreRed + 3;
 
-        announcement.push(
-            {
-                message: `${lasttouchedPlayer.name} HATALI DOKUNUŞ!! ❌❌❌`,
-                target: null,
-                color: 0xFF007F,
-                messageType: "normal",
-                messageSound: 2
-            }
-        )
-
-        announcement.push(
-            {
-                message: `KENDİ POTASINA ÜÇLÜK!!`,
-                target: null,
-                color: 0xE60000,
-                messageType: "small-bold",
-                messageSound: 2
-            }
-        )
-
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
-
-
+        announcement.push({ message: t.foulTouch(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+        announcement.push({ message: t.ownThree, target: null, color: 0xE60000, messageType: "small-bold", messageSound: 2 });
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_own_basket" }
-
-
     }
+
     // kırmızı takım için ikilik 
     if (team == 1 && lasttouchedPlayer && lasttouchedPlayer.team.M != 1 && touchedballX > 0) {
 
-
-
         scoreRed = scoreRed + 2;
+
         if (yspeed > 0) {
-            // Top yukarıdan aşağıya inerek potaya girdi (Şut / İki Sayı)
-
             if (touchedballY <= -71) {
-
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} HATALI DOKUNUŞ!! ❌❌❌`,
-                        target: null,
-                        color: 0xFF007F,
-                        messageType: "normal",
-                        messageSound: 2
-                    }
-                )
-
-                announcement.push(
-                    {
-                        message: `KENDI POTASINA İKİ SAYI!!`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 2
-                    }
-                )
-
-
-
+                announcement.push({ message: t.foulTouch(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+                announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
             } else {
-
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} HATALI ŞUT!! ❌❌❌`,
-                        target: null,
-                        color: 0xFF007F,
-                        messageType: "normal",
-                        messageSound: 2
-                    }
-                )
-                announcement.push(
-                    {
-                        message: `KENDI POTASINA İKİ SAYI!!`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 2
-                    }
-                )
+                announcement.push({ message: t.foulShot(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+                announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
             }
         } else if (yspeed < 0) {
-            // Top aşağıdan yukarıya çıkarak potaya girdi (Turnike)
-
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} HATALI TURNIKE!! ❌❌❌`,
-                    target: null,
-                    color: 0xFF007F,
-                    messageType: "normal",
-                    messageSound: 2
-                }
-            )
-            announcement.push(
-                {
-                    message: `KENDI POTASINA İKİ SAYI!!`,
-                    target: null,
-                    color: 0xFF6600,
-                    messageType: "small-bold",
-                    messageSound: 2
-                }
-            )
+            announcement.push({ message: t.foulLayup(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+            announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
         } else {
-            // yspeed tam 0 ise (dümdüz gitmişse)
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} potayı sarsıyor! ❌❌❌`,
-                    target: null,
-                    color: 0xFF007F,
-                    messageType: "small-bold",
-                    messageSound: 1
-                }
-            )
-
-            announcement.push(
-                {
-                    message: `KENDI POTASINA İKİ SAYI!!`,
-                    target: null,
-                    color: 0xFF6600,
-                    messageType: "small-bold",
-                    messageSound: 2
-                }
-            )
+            announcement.push({ message: t.foulRim(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "small-bold", messageSound: 1 });
+            announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
         }
 
-
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "two_pt_own_basket" }
     }
@@ -524,161 +282,40 @@ function scoreCheck(touchedballX, touchedballY, yspeed, team, lasttouchedPlayer,
     // mavi takım için üçlük
     if (team == 2 && lasttouchedPlayer && lasttouchedPlayer.team.M != 2 && touchedballX > 0) {
 
-
         scoreBlue = scoreBlue + 3;
 
-        announcement.push(
-            {
-                message: `${lasttouchedPlayer.name} HATALI DOKUNUŞ!! ❌❌❌`,
-                target: null,
-                color: 0xFF007F,
-                messageType: "normal",
-                messageSound: 2
-            }
-        )
-
-        announcement.push(
-            {
-                message: `KENDİ POTASINA ÜÇLÜK!!`,
-                target: null,
-                color: 0xE60000,
-                messageType: "small-bold",
-                messageSound: 2
-            }
-        )
-
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
-
-
+        announcement.push({ message: t.foulTouch(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+        announcement.push({ message: t.ownThree, target: null, color: 0xE60000, messageType: "small-bold", messageSound: 2 });
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "three_pt_own_basket" }
     }
 
     // mavi takım için ikilik 
-
     if (team == 2 && lasttouchedPlayer && lasttouchedPlayer.team.M != 2 && touchedballX < 0) {
-
 
         scoreBlue = scoreBlue + 2;
 
         if (yspeed > 0) {
-            // Top yukarıdan aşağıya inerek potaya girdi (Şut / İki Sayı)
-
             if (touchedballY <= -71) {
-
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} HATALI DOKUNUŞ!! ❌❌❌`,
-                        target: null,
-                        color: 0xFF007F,
-                        messageType: "normal",
-                        messageSound: 2
-                    }
-                )
-
-                announcement.push(
-                    {
-                        message: `KENDI POTASINA İKİ SAYI!!`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 2
-                    }
-                )
-
-
-
+                announcement.push({ message: t.foulTouch(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+                announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
             } else {
-
-                announcement.push(
-                    {
-                        message: `${lasttouchedPlayer.name} HATALI ŞUT!! ❌❌❌`,
-                        target: null,
-                        color: 0xFF007F,
-                        messageType: "normal",
-                        messageSound: 2
-                    }
-                )
-                announcement.push(
-                    {
-                        message: `KENDI POTASINA İKİ SAYI!!`,
-                        target: null,
-                        color: 0xFF6600,
-                        messageType: "small-bold",
-                        messageSound: 2
-                    }
-                )
+                announcement.push({ message: t.foulShot(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+                announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
             }
         } else if (yspeed < 0) {
-            // Top aşağıdan yukarıya çıkarak potaya girdi (Turnike)
-
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} HATALI TURNIKE!! ❌❌❌`,
-                    target: null,
-                    color: 0xFF007F,
-                    messageType: "normal",
-                    messageSound: 2
-                }
-            )
-            announcement.push(
-                {
-                    message: `KENDI POTASINA İKİ SAYI!!`,
-                    target: null,
-                    color: 0xFF6600,
-                    messageType: "small-bold",
-                    messageSound: 2
-                }
-            )
+            announcement.push({ message: t.foulLayup(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "normal", messageSound: 2 });
+            announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
         } else {
-            // yspeed tam 0 ise (dümdüz gitmişse)
-            announcement.push(
-                {
-                    message: `${lasttouchedPlayer.name} potayı sarsıyor! ❌❌❌`,
-                    target: null,
-                    color: 0xFF007F,
-                    messageType: "small-bold",
-                    messageSound: 1
-                }
-            )
-
-            announcement.push(
-                {
-                    message: `KENDI POTASINA İKİ SAYI!!`,
-                    target: null,
-                    color: 0xFF6600,
-                    messageType: "small-bold",
-                    messageSound: 2
-                }
-            )
+            announcement.push({ message: t.foulRim(lasttouchedPlayer.name), target: null, color: 0xFF007F, messageType: "small-bold", messageSound: 1 });
+            announcement.push({ message: t.ownTwo, target: null, color: 0xFF6600, messageType: "small-bold", messageSound: 2 });
         }
 
-
-        announcement.push(
-            {
-                message: `Skor : ${scoreRed} vs ${scoreBlue}`,
-                target: null,
-                color: 0xEEEEEE,
-                messageType: "normal",
-                messageSound: 1
-            }
-        )
-
-
-
+        announcement.push({ message: t.score(scoreRed, scoreBlue), target: null, color: 0xEEEEEE, messageType: "normal", messageSound: 1 });
 
         return { announcement, scoreRed, scoreBlue, stat: "two_pt_own_basket" }
     }
-
-
 
     return { announcement, scoreRed, scoreBlue }
 }

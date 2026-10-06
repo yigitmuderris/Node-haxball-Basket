@@ -464,7 +464,7 @@ async function main() {
             function handleBalance() {
 
                 const roomPlayers = getPlayerList();
-                const { moves, updatedQueue } = balanceTeams(queue, roomPlayers, 3);
+                const { moves, updatedQueue } = balanceTeams(queue, roomPlayers, 3, lang = "en");
 
                 moves.forEach(
                     m => {
@@ -668,7 +668,7 @@ async function main() {
 
                 const roomPlayers = getPlayerList();
 
-                const result = balanceTeams(queue, roomPlayers, 3, true)
+                const result = balanceTeams(queue, roomPlayers, 3, true, lang = "en")
 
                 if (result && Array.isArray(result.moves)) {
                     result.moves.forEach(move => {
@@ -969,7 +969,7 @@ async function main() {
 
                 let score = { scoreBlue, scoreRed }
 
-                const result = scoreCheck(shotX, shotY, yspeed, team, shooter, score)
+                const result = scoreCheck(shotX, shotY, yspeed, team, shooter, score, lang = "en")
 
                 scoreBlue = result.scoreBlue;
                 scoreRed = result.scoreRed;

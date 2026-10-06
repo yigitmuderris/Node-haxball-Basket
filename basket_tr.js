@@ -483,7 +483,7 @@ async function main() {
             function handleBalance() {
 
                 const roomPlayers = getPlayerList();
-                const { moves, updatedQueue } = balanceTeams(queue, roomPlayers, 3);
+                const { moves, updatedQueue } = balanceTeams(queue, roomPlayers, 3, lang = "tr");
 
                 moves.forEach(
                     m => {
@@ -705,7 +705,7 @@ async function main() {
 
                 const roomPlayers = getPlayerList();
 
-                const result = balanceTeams(queue, roomPlayers, 3, true)
+                const result = balanceTeams(queue, roomPlayers, 3, true, lang = "tr")
 
                 if (result && Array.isArray(result.moves)) {
                     result.moves.forEach(move => {
@@ -1059,7 +1059,7 @@ async function main() {
                 // ŞUT çekilen konum ve son topa dokulan konum aynı mı?
                 let score = { scoreBlue, scoreRed }
 
-                const result = scoreCheck(shotX, shotY, yspeed, team, shooter, score)
+                const result = scoreCheck(shotX, shotY, yspeed, team, shooter, score, lang = "tr")
 
                 scoreBlue = result.scoreBlue;
                 scoreRed = result.scoreRed;

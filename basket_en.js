@@ -604,7 +604,7 @@ async function main() {
                             room.sendAnnouncement(
                                 user.registered
                                     ? `✅ Automatically logged in.`
-                                    : "To make your account permanent, type !kayit password, or !giris password if you already have an account.",
+                                    : "To make your account permanent, type !register password, or !login password if you already have an account.",
                                 player.id,
                                 user.registered
                                     ? 0x00FF00

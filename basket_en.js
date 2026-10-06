@@ -501,7 +501,7 @@ async function main() {
                         ));
                         const inRoom = results.filter((r) => room.getPlayer(r.playerId));
                         inRoom.forEach((r) => sessions.set(r.playerId, r.user));
-                        buildEloAnnouncements(inRoom, "en").forEach((a) =>
+                        buildEloAnnouncements(inRoom, 'en').forEach((a) =>
                             room.sendAnnouncement(a.message, a.playerId, a.color)
                         );
 

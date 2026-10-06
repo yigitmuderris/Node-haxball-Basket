@@ -10,7 +10,6 @@ COPY package.json package-lock.json ./
 
 RUN npm ci --omit=dev
 
-COPY basket_yedek.js ./
 COPY db ./db
 COPY migrations ./migrations
 COPY repositories ./repositories

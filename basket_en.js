@@ -83,7 +83,7 @@ async function main() {
         maxPlayerCount: 9,
         token: tokenForRoom,
         stadium: Basket,
-        geo: { code: "DE", lat: 50.9353, lon: 6.9531 },
+        geo: { flag: "UN", lat: 50.9353, lon: 6.9531 },
     }, {
         storage: {
             player_name: "wxyz-abcd",

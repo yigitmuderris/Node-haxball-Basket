@@ -440,7 +440,7 @@ async function main() {
                         text,
 
                     },
-                        lang = 'en');
+                        lang);
 
                     room.sendAnnouncement(a.message, null, a.color, "normal", 1);
 

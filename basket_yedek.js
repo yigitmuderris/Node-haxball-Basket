@@ -21,7 +21,8 @@ const { buildEloAnnouncements,
     buildAccountCommandUsage,
     buildCommandCooldownAnnouncement,
     buildHelpAnnouncement,
-    buildLeaderboardAnnouncement } = require('./services/chatLogic')
+    buildLeaderboardAnnouncement,
+    buildMvpAnnouncement } = require('./services/chatLogic')
 const eloLogic = require('./services/eloLogic');
 const userService = require('./services/userService');
 
@@ -90,7 +91,7 @@ async function main() {
         maxPlayerCount: 9,
         token: tokenForRoom,
         stadium: Basket,
-        geo: { code: "TR", lat: 39.9199, lon: 32.8543 }, 
+        geo: { code: "TR", lat: 39.9199, lon: 32.8543 },
     }, {
         storage: {
             player_name: "wxyz-abcd",
@@ -536,6 +537,17 @@ async function main() {
                             room.sendAnnouncement(a.message, a.playerId, a.color)
                         );
 
+                        // 🏆 MVP anonsu
+                        const mvpAnnouncement = buildMvpAnnouncement(results);
+
+                        if (mvpAnnouncement) {
+                            room.sendAnnouncement(
+                                mvpAnnouncement,
+                                null,
+                                0xFFD700,
+                                "bold"
+                            );
+                        }
 
                     })
                     .catch((err) => console.error("recordMatch hatası:", err));
@@ -1185,10 +1197,10 @@ async function main() {
 
                 kicks.forEach(({ playerId, reason, warning, kick }) => {
 
-                    if(room.players.length > 2){
-                    room.sendAnnouncement(warning, playerId, 0xFF0000, "bold", 2);
+                    if (room.players.length > 2) {
+                        room.sendAnnouncement(warning, playerId, 0xFF0000, "bold", 2);
 
-                    if (kick) room.kickPlayer(playerId, reason, false);
+                        if (kick) room.kickPlayer(playerId, reason, false);
 
                     }
                 });

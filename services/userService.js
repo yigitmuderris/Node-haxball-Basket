@@ -338,12 +338,24 @@ async function recordMatch({ winners, losers }) {
     const w = dedupe(winners);
     const l = dedupe(losers);
 
+
+
     if (
         w.length < eloLogic.MIN_PLAYERS_PER_TEAM ||
         l.length < eloLogic.MIN_PLAYERS_PER_TEAM
     ) {
         return null;
     }
+
+    const players = [...w, ...l];
+
+    const maxPoints = Math.max(
+        ...players.map(p => Number(p.points) || 0)
+    );
+
+    const mvps = players.filter(
+        p => Number(p.points) === maxPoints
+    );
 
     return withTransaction(async (tx) => {
 
@@ -381,6 +393,10 @@ async function recordMatch({ winners, losers }) {
 
             const isWin = c.result === "win";
 
+            const isMvp = mvps.some(
+                mvp => String(mvp.userId) === String(c.userId)
+            );
+
             const user = await userRepo.applyMatchResult(
                 tx,
                 c.userId,
@@ -391,7 +407,8 @@ async function recordMatch({ winners, losers }) {
                     loss: isWin ? 0 : 1,
 
                     // 🔥 STREAK
-                    winStreak: isWin ? 1 : 0
+                    winStreak: isWin ? 1 : 0,
+                    mvp: isMvp ? 1 : 0
                 }
             );
 
@@ -400,6 +417,7 @@ async function recordMatch({ winners, losers }) {
                 oldElo: c.elo,
                 newElo: c.newElo,
                 delta: c.delta,
+                isMvp,
 
                 // stats komutlarında kullanabilmek için
                 user

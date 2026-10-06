@@ -108,6 +108,24 @@ function buildEloAnnouncements(results) {
     });
 }
 
+
+/**
+ * recordMatch sonucundan MVP duyurusunu üretir.
+ */
+function buildMvpAnnouncement(results) {
+    const mvps = results
+        .filter((r) => r.isMvp)
+        .map((r) => r.user.username);
+
+    if (mvps.length === 0) {
+        return null;
+    }
+
+    const names = mvps.join(" & ");
+
+    return `🏆 MVP: ${names}`;
+}
+
 function getEloRankColor(elo) {
     if (!elo) return 0xFFFFFF; // Elo verisi yoksa varsayılan beyaz
 
@@ -409,6 +427,7 @@ function buildLeaderboardAnnouncement(players) {
 module.exports = {
     buildEloAnnouncements,
     buildChatAnnouncement,
+    buildMvpAnnouncement,
     hasBannedWord,
     controlSpam,
     buildStatsAnnouncement,

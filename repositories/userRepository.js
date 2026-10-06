@@ -56,7 +56,7 @@ async function findByIdsForUpdate(db, ids) {
 async function applyMatchResult(
     db,
     id,
-    { eloDelta, win, loss, winStreak }
+    { eloDelta, win, loss, winStreak, mvp }
 ) {
     const { rows } = await db.query(
         `UPDATE users
@@ -75,7 +75,9 @@ async function applyMatchResult(
                     WHEN $5 = 1
                         THEN GREATEST(best_win_streak, win_streak + 1)
                     ELSE best_win_streak
-                END
+                END,
+                
+                mvp_count = mvp_count + $6
 
           WHERE id = $1
       RETURNING *`,
@@ -84,12 +86,15 @@ async function applyMatchResult(
             eloDelta,
             win,
             loss,
-            winStreak
+            winStreak,
+            mvp
         ]
     );
 
     return rows[0];
 }
+
+
 
 async function updateUsername(db, id, username) {
     const { rows } = await db.query(

@@ -1185,9 +1185,12 @@ async function main() {
 
                 kicks.forEach(({ playerId, reason, warning, kick }) => {
 
+                    if(room.players.length > 2){
                     room.sendAnnouncement(warning, playerId, 0xFF0000, "bold", 2);
 
                     if (kick) room.kickPlayer(playerId, reason, false);
+
+                    }
                 });
 
 

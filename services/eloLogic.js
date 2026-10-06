@@ -89,15 +89,6 @@ function calculateMatch({ winners, losers }) {
     });
 }
 
-/* ---------------- rank ---------------- */
-function getRank(elo) {
-    return RANKS.find((r) => elo >= r.min) || RANKS[RANKS.length - 1];
-}
-
-function formatTag(elo) {
-    const rank = getRank(elo);
-    return `[${rank.emoji} ${rank.name} ${elo}]`;
-}
 
 module.exports = {
     START_ELO,
@@ -105,6 +96,5 @@ module.exports = {
     MIN_PLAYERS_PER_TEAM,
     STAT_POINTS,
     calculateMatch,
-    getRank,
-    formatTag,
+    
 };

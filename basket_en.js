@@ -136,7 +136,7 @@ async function main() {
 
                     // Oturum ve dil belirleme (Varsayılan 'tr', hesap/komut tercihlerine göre 'en')
                     const user = sessions.get(playerId);
-                    const lang ='en';
+                    const lang = 'en';
 
                     // ============================================================
                     // HESAP KOMUTLARI (!kayit, !register, !giris, !login)
@@ -438,7 +438,9 @@ async function main() {
                         teamId: p.team ? p.team.id : 0,
                         user: sessions.get(playerId),
                         text,
-                    });
+
+                    },
+                        lang = 'en');
 
                     room.sendAnnouncement(a.message, null, a.color, "normal", 1);
 

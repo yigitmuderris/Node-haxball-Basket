@@ -1,4 +1,3 @@
-const { STAT_POINTS, formatTag, getRank } = require('./eloLogic');
 
 // Kısa/belirsiz kelimeler: sadece TAM kelime olarak eşleşir (ek almış halleri de yaz)
 const EXACT_WORDS = new Set([
@@ -112,15 +111,7 @@ function getRankInfo(elo, lang = 'tr') {
     return { name: isEn ? "Coal 🪵" : "Kömür 🪵", color: 0x666666 };
 }
 
-function getEloRankColor(elo) {
-    if (!elo) return 0xFFFFFF; // Elo verisi yoksa varsayılan beyaz
 
-    if (elo >= 1500) return 0x00FF7F; // Zümrüt
-    if (elo >= 1300) return 0x00FFFF; // Elmas
-    if (elo >= 1150) return 0xFFD700; // Altın
-    if (elo >= 1000) return 0xE5E8E8; // Gümüş
-    return 0xCD7F32;                  // Bronz
-}
 
 /** recordMatch sonucundan oyunculara gidecek duyuruları üretir. */
 function buildEloAnnouncements(results, lang = 'tr') {
@@ -160,13 +151,13 @@ function buildMvpAnnouncement(results, lang = 'tr') {
 }
 
 /** Sohbet mesajını elo etiketiyle duyuru satırına çevirir. */
-function buildChatAnnouncement({ name, teamId, user, text }) {
-    const tag = user ? formatTag(user.elo) : "[...]";
+function buildChatAnnouncement({ name, teamId, user, text}, lang = 'tr') {
+    const tag = user ? getRankInfo(user.elo, lang) : "[...]";
 
     // Kullanıcı varsa Elo rütbe rengini, yoksa varsayılan takım rengini seçer
-    const messageColor = user ? getEloRankColor(user.elo) : (TEAM_COLORS[teamId] ?? TEAM_COLORS[0]);
+    const messageColor = user ? tag.color : (TEAM_COLORS[teamId] ?? TEAM_COLORS[0]);
 
-    return { message: `${tag} ${name}: ${text}`, color: messageColor };
+    return { message: `${tag.name} ${name}: ${text}`, color: messageColor };
 }
 
 /**

@@ -1,7 +1,5 @@
 const { STAT_POINTS, formatTag, getRank } = require('./eloLogic');
 
-
-
 // Kısa/belirsiz kelimeler: sadece TAM kelime olarak eşleşir (ek almış halleri de yaz)
 const EXACT_WORDS = new Set([
     "sik", "siktir", "sikerim", "sikeyim", "sikik", "oe", "oc", "pic", "pij", "got", "goto",
@@ -9,7 +7,6 @@ const EXACT_WORDS = new Set([
     "orsp", "ursp", "aptal", "sokuk", "ucube", "pclik", "aptaloc", "pasatoc", "aptaloe", "pasatoe", "susoc", "malmk", "malamk", "yazmaanneiskeirmn", "kafasiz", "kafasız",
     "benannenisikim", "siktiler", "salaksinb", "anasi", "osovbucoco", "bacina", "it", "enigi", "bacini", "deseyim", "valideni", "anmnnnenui", "bogharim",
     "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik", "sikicem"
-
 ]);
 
 // Uzun ve belirsizliği düşük kökler: kelime BU İLE BAŞLIYORSA yakalar (ekleri de kapsar)
@@ -18,7 +15,7 @@ const PREFIX_WORDS = [
     "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm", "skcem", "skcm" ,"anasini", "siktigimin", "allhini ",
+    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm", "skcem", "skcm", "anasini", "siktigimin", "allhini ",
     "anasini"
 ];
 
@@ -39,12 +36,11 @@ function hasBannedWord(text) {
         EXACT_WORDS.has(word) ||
         PREFIX_WORDS.some(root => word.startsWith(root))
     );
-
 }
+
 // 🛑 FLOODING (SPAM) KONTROLÜ 
 
 const lastMessageTime = new Map();
-
 const spamStrikes = new Map();       // oyuncu -> ihlal sayısı
 const lastStrikeTime = new Map();    // oyuncu -> son ihlal zamanı
 
@@ -53,8 +49,7 @@ const COOLDOWN_STEP = 2000;          // her ihlalde eklenecek süre (ms)
 const MAX_COOLDOWN = 20000;          // üst sınır (ms)
 const STRIKE_RESET_TIME = 60000;     // bu kadar süre temiz kalırsa ihlaller sıfırlanır (ms)
 
-function controlSpam(playerId) {
-
+function controlSpam(playerId, lang = 'tr') {
     let announcement = "";
     let messageSendStatus = true;
     const now = Date.now();
@@ -77,42 +72,81 @@ function controlSpam(playerId) {
 
         const newCooldown = Math.min(BASE_COOLDOWN + (strikes + 1) * COOLDOWN_STEP, MAX_COOLDOWN);
         const remaining = Math.ceil((cooldown - elapsed) / 1000);
+        const nextCooldownSec = Math.ceil(newCooldown / 1000);
 
-        announcement = `Spam yapma! Bir dahaki spamda bekleme süren ${Math.ceil(newCooldown / 1000)} saniyeye çıktı. (${remaining} sn daha bekle)`;
+        if (lang === 'en') {
+            announcement = `Don't spam! Next cooldown increased to ${nextCooldownSec} seconds. (Wait ${remaining}s more)`;
+        } else {
+            announcement = `Spam yapma! Bir dahaki spamda bekleme süren ${nextCooldownSec} saniyeye çıktı. (${remaining} sn daha bekle)`;
+        }
 
         messageSendStatus = false;
     } else {
-
         lastMessageTime.set(playerId, now);
-
     }
 
-
-
-    return { announcement, messageSendStatus }
-
+    return { announcement, messageSendStatus };
 }
+
 const TEAM_COLORS = { 0: 0xCCCCCC, 1: 0xFF6666, 2: 0x66B2FF };
 
+function getRankInfo(elo, lang = 'tr') {
+    const isEn = lang === 'en';
+
+    if (elo >= 1500) {
+        return { name: isEn ? "Legend 👑" : "Efsane 👑", color: 0xFFD700 };
+    }
+    if (elo >= 1300) {
+        return { name: isEn ? "Diamond 💎" : "Elmas 💎", color: 0x00FFFF };
+    }
+    if (elo >= 1150) {
+        return { name: isEn ? "Gold 🥇" : "Altın 🥇", color: 0xFFD700 };
+    }
+    if (elo >= 1000) {
+        return { name: isEn ? "Silver 🥈" : "Gümüş 🥈", color: 0xC0C0C0 };
+    }
+    if (elo >= 850) {
+        return { name: isEn ? "Bronze 🥉" : "Bronz 🥉", color: 0xCD7F32 };
+    }
+
+    return { name: isEn ? "Coal 🪵" : "Kömür 🪵", color: 0x666666 };
+}
+
+function getEloRankColor(elo) {
+    if (!elo) return 0xFFFFFF; // Elo verisi yoksa varsayılan beyaz
+
+    if (elo >= 1500) return 0x00FF7F; // Zümrüt
+    if (elo >= 1300) return 0x00FFFF; // Elmas
+    if (elo >= 1150) return 0xFFD700; // Altın
+    if (elo >= 1000) return 0xE5E8E8; // Gümüş
+    return 0xCD7F32;                  // Bronz
+}
+
 /** recordMatch sonucundan oyunculara gidecek duyuruları üretir. */
-function buildEloAnnouncements(results) {
+function buildEloAnnouncements(results, lang = 'tr') {
+    const isEn = lang === 'en';
+
     return results.map((r) => {
-        const oldRank = getRank(r.oldElo).name;
-        const newRank = getRank(r.newElo).name;
+        const oldRank = getRankInfo(r.oldElo, lang).name;
+        const newRank = getRankInfo(r.newElo, lang).name;
         const sign = r.delta > 0 ? "+" : "";
         let message = `📈 ELO: ${r.oldElo} → ${r.newElo} (${sign}${r.delta})`;
+
         if (oldRank !== newRank) {
-            message += r.delta > 0 ? ` 🎉 Yeni rank: ${newRank}` : ` 📉 Rank düştü: ${newRank}`;
+            if (r.delta > 0) {
+                message += isEn ? ` 🎉 New rank: ${newRank}` : ` 🎉 Yeni rank: ${newRank}`;
+            } else {
+                message += isEn ? ` 📉 Rank demoted: ${newRank}` : ` 📉 Rank düştü: ${newRank}`;
+            }
         }
         return { playerId: r.playerId, message, color: r.delta > 0 ? 0x00FF00 : 0xFF6666 };
     });
 }
 
-
 /**
  * recordMatch sonucundan MVP duyurusunu üretir.
  */
-function buildMvpAnnouncement(results) {
+function buildMvpAnnouncement(results, lang = 'tr') {
     const mvps = results
         .filter((r) => r.isMvp)
         .map((r) => r.user.username);
@@ -122,20 +156,7 @@ function buildMvpAnnouncement(results) {
     }
 
     const names = mvps.join(" & ");
-
     return `🏆 MVP: ${names}`;
-}
-
-function getEloRankColor(elo) {
-    if (!elo) return 0xFFFFFF; // Elo verisi yoksa varsayılan beyaz
-
-    if (elo >= 1500) return 0x00FF7F; //  : Zümrüt (Büyüleyici Yeşil)
-    if (elo >= 1300) return 0x00FFFF; //  : Elmas (Canlı Turkuaz/Siyan)
-    if (elo >= 1150) return 0xFFD700; //  : Altın (Parlak Altın Sarısı)
-    if (elo >= 1000) return 0xE5E8E8; //  : Gümüş (Cıvıl Cıvıl Parlak Platin/Gümüş) ✨
-    if (elo >= 850) return 0xCD7F32;  // 0-899    : Bronz (Sıcak Bakır/Bronz)
-
-    return 0xCD7F32;                  //    : Bronz (Sıcak Bakır/Bronz)
 }
 
 /** Sohbet mesajını elo etiketiyle duyuru satırına çevirir. */
@@ -148,40 +169,18 @@ function buildChatAnnouncement({ name, teamId, user, text }) {
     return { message: `${tag} ${name}: ${text}`, color: messageColor };
 }
 
-
-function getRankInfo(elo) {
-    if (elo >= 1500) {
-        return { name: "Efsane 👑", color: 0xFFD700 };
-    }
-
-    if (elo >= 1300) {
-        return { name: "Elmas 💎", color: 0x00FFFF };
-    }
-
-    if (elo >= 1150) {
-        return { name: "Altın 🥇", color: 0xFFD700 };
-    }
-
-    if (elo >= 1000) {
-        return { name: "Gümüş 🥈", color: 0xC0C0C0 };
-    }
-
-    if (elo >= 850) {
-        return { name: "Bronz 🥉", color: 0xCD7F32 };
-    }
-
-    return { name: "Kömür 🪵", color: 0x666666 };
-}
-
-
 /**
  * !stats
  * Oyuncunun detaylı istatistiklerini hazırlar.
  */
-function buildStatsAnnouncement(user) {
+function buildStatsAnnouncement(user, lang = 'tr') {
+    const isEn = lang === 'en';
+
     if (!user) {
         return {
-            message: "❌ Hesabın henüz yüklenmedi. Birkaç saniye sonra tekrar dene.",
+            message: isEn
+                ? "❌ Account not loaded yet. Please try again in a few seconds."
+                : "❌ Hesabın henüz yüklenmedi. Birkaç saniye sonra tekrar dene.",
             color: 0xFF0000
         };
     }
@@ -198,7 +197,24 @@ function buildStatsAnnouncement(user) {
     const currentStreak = Number(user.win_streak) || 0;
     const bestStreak = Number(user.best_win_streak) || 0;
 
-    const rank = getRankInfo(elo);
+    const rank = getRankInfo(elo, lang);
+
+    if (isEn) {
+        return {
+            message:
+                `📊 YOUR STATS\n` +
+                `━━━━━━━━━━━━━━\n` +
+                `🏀 ELO: ${elo}\n` +
+                `🏅 Rank: ${rank.name}\n` +
+                `🎮 Matches: ${games}\n` +
+                `✅ Wins: ${wins}\n` +
+                `❌ Losses: ${losses}\n` +
+                `📈 Win Rate: %${winRate}\n` +
+                `🔥 Win streak: ${currentStreak}\n` +
+                `🏆 Best streak: ${bestStreak}`,
+            color: rank.color
+        };
+    }
 
     return {
         message:
@@ -216,15 +232,16 @@ function buildStatsAnnouncement(user) {
     };
 }
 
-
 /**
  * !rank
  * Daha kısa rank bilgisi.
  */
-function buildRankAnnouncement(user) {
+function buildRankAnnouncement(user, lang = 'tr') {
+    const isEn = lang === 'en';
+
     if (!user) {
         return {
-            message: "❌ Hesabın henüz yüklenmedi.",
+            message: isEn ? "❌ Account not loaded yet." : "❌ Hesabın henüz yüklenmedi.",
             color: 0xFF0000
         };
     }
@@ -234,13 +251,22 @@ function buildRankAnnouncement(user) {
     const losses = Number(user.losses) || 0;
 
     const games = wins + losses;
-
     const winRate = games > 0
         ? ((wins / games) * 100).toFixed(1)
         : "0.0";
 
     const streak = Number(user.win_streak) || 0;
-    const rank = getRankInfo(elo);
+    const rank = getRankInfo(elo, lang);
+
+    if (isEn) {
+        return {
+            message:
+                `🏅 ${rank.name} | ${elo} ELO | ` +
+                `${wins}W-${losses}L | %${winRate} WR | ` +
+                `🔥 ${streak} streak`,
+            color: rank.color
+        };
+    }
 
     return {
         message:
@@ -251,16 +277,18 @@ function buildRankAnnouncement(user) {
     };
 }
 
-
 /**
  * !vs <oyuncu>
- *
- * Burada H2H değil, kariyer istatistikleri karşılaştırılır.
+ * Kariyer istatistikleri karşılaştırılır.
  */
-function buildVsAnnouncement(user1, user2, name1, name2) {
+function buildVsAnnouncement(user1, user2, name1, name2, lang = 'tr') {
+    const isEn = lang === 'en';
+
     if (!user1 || !user2) {
         return {
-            message: "❌ Karşılaştırılacak oyuncunun hesabı bulunamadı.",
+            message: isEn
+                ? "❌ Player account to compare was not found."
+                : "❌ Karşılaştırılacak oyuncunun hesabı bulunamadı.",
             color: 0xFF0000
         };
     }
@@ -277,16 +305,31 @@ function buildVsAnnouncement(user1, user2, name1, name2) {
     const games1 = wins1 + losses1;
     const games2 = wins2 + losses2;
 
-    const wr1 = games1 > 0
-        ? ((wins1 / games1) * 100).toFixed(1)
-        : "0.0";
+    const wr1 = games1 > 0 ? ((wins1 / games1) * 100).toFixed(1) : "0.0";
+    const wr2 = games2 > 0 ? ((wins2 / games2) * 100).toFixed(1) : "0.0";
 
-    const wr2 = games2 > 0
-        ? ((wins2 / games2) * 100).toFixed(1)
-        : "0.0";
+    const rank1 = getRankInfo(elo1, lang);
+    const rank2 = getRankInfo(elo2, lang);
 
-    const rank1 = getRankInfo(elo1);
-    const rank2 = getRankInfo(elo2);
+    if (isEn) {
+        return {
+            message:
+                `⚔️ PLAYER COMPARISON\n` +
+                `━━━━━━━━━━━━━━\n` +
+                `👤 ${name1}\n` +
+                `🏅 ${rank1.name} | ${elo1} ELO\n` +
+                `🎮 ${games1} matches | ${wins1}W-${losses1}L\n` +
+                `📈 %${wr1} WR\n` +
+                `🔥 ${Number(user1.win_streak) || 0} streak\n` +
+                `\n` +
+                `👤 ${name2}\n` +
+                `🏅 ${rank2.name} | ${elo2} ELO\n` +
+                `🎮 ${games2} matches | ${wins2}W-${losses2}L\n` +
+                `📈 %${wr2} WR\n` +
+                `🔥 ${Number(user2.win_streak) || 0} streak`,
+            color: 0xFFD700
+        };
+    }
 
     return {
         message:
@@ -307,15 +350,16 @@ function buildVsAnnouncement(user1, user2, name1, name2) {
     };
 }
 
-
 // ============================================================
 // HESAP KOMUTLARI
 // ============================================================
 
-function buildAccountCommandAnnouncement(cmd, result) {
+function buildAccountCommandAnnouncement(cmd, result, lang = 'tr') {
+    const isEn = lang === 'en';
+
     if (result.ok) {
         return {
-            message: "✅ Başarılı!",
+            message: isEn ? "✅ Success!" : "✅ Başarılı!",
             color: 0x00FF00
         };
     }
@@ -326,37 +370,54 @@ function buildAccountCommandAnnouncement(cmd, result) {
     };
 }
 
+function buildAccountCommandUsage(cmd, lang = 'tr') {
+    const isEn = lang === 'en';
 
-function buildAccountCommandUsage(cmd) {
-    if (cmd === "!kayit") {
+    if (cmd === "!kayit" || cmd === "!register") {
         return {
-            message: "❌ Kullanım: !kayit şifre",
+            message: isEn ? "❌ Usage: !register password" : "❌ Kullanım: !kayit şifre",
             color: 0xFF0000
         };
     }
 
-    if (cmd === "!giris") {
+    if (cmd === "!giris" || cmd === "!login") {
         return {
-            message: "❌ Kullanım: !giris şifre",
+            message: isEn ? "❌ Usage: !login password" : "❌ Kullanım: !giris şifre",
             color: 0xFF0000
         };
     }
 
     return {
-        message: "❌ Geçersiz komut.",
+        message: isEn ? "❌ Invalid command." : "❌ Geçersiz komut.",
         color: 0xFF0000
     };
 }
 
-
-function buildCommandCooldownAnnouncement() {
+function buildCommandCooldownAnnouncement(lang = 'tr') {
     return {
-        message: "⏳ Biraz bekle.",
+        message: lang === 'en' ? "⏳ Please wait a moment." : "⏳ Biraz bekle.",
         color: 0xFF0000
     };
 }
 
-function buildHelpAnnouncement() {
+function buildHelpAnnouncement(lang = 'tr') {
+    if (lang === 'en') {
+        return {
+            message:
+                `📖 COMMANDS\n` +
+                `━━━━━━━━━━━━━━\n` +
+                `🔐 !register pass — Create an account\n` +
+                `🔑 !login pass — Log in to your account\n` +
+                `📊 !stats — Show your statistics\n` +
+                `🏅 !rank — Show rank and ELO\n` +
+                `⚔️ !vs player — Compare players\n` +
+                `🏆 !leaderboard — Show ELO leaderboard\n` +
+                `🏆 !leaderboard 5 — Show top 5 players\n` +
+                `❓ !help — Show commands list`,
+            color: 0x00FFFF
+        };
+    }
+
     return {
         message:
             `📖 KOMUTLAR\n` +
@@ -375,15 +436,17 @@ function buildHelpAnnouncement() {
     };
 }
 
+function buildLeaderboardAnnouncement(players, lang = 'tr') {
+    const isEn = lang === 'en';
 
-function buildLeaderboardAnnouncement(players) {
     if (!Array.isArray(players) || players.length === 0) {
+        const noPlayersText = isEn ? "No registered players." : "Kayıtlı oyuncu yok.";
         return {
             message:
                 `╔════════════════════╗\n` +
                 `║   🏆 LEADERBOARD   ║\n` +
                 `╠════════════════════╣\n` +
-                `║ Kayıtlı oyuncu yok. ║\n` +
+                `║ ${noPlayersText.padEnd(18)} ║\n` +
                 `╚════════════════════╝`,
             color: 0xFFD700
         };
@@ -395,7 +458,7 @@ function buildLeaderboardAnnouncement(players) {
         const position = index + 1;
         const prefix = medals[index] || `${position}.`;
 
-        const username = player.username || "Oyuncu";
+        const username = player.username || (isEn ? "Player" : "Oyuncu");
         const elo = Number(player.elo) || 0;
         const wins = Number(player.wins) || 0;
         const losses = Number(player.losses) || 0;
@@ -417,19 +480,13 @@ function buildLeaderboardAnnouncement(players) {
     };
 }
 
-
-
-
-
-
-
-
 module.exports = {
     buildEloAnnouncements,
     buildChatAnnouncement,
     buildMvpAnnouncement,
     hasBannedWord,
     controlSpam,
+    getRankInfo,
     buildStatsAnnouncement,
     buildRankAnnouncement,
     buildVsAnnouncement,
@@ -438,6 +495,4 @@ module.exports = {
     buildCommandCooldownAnnouncement,
     buildHelpAnnouncement,
     buildLeaderboardAnnouncement
-
-
-}
+};

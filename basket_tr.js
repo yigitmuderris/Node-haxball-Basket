@@ -138,257 +138,122 @@ async function main() {
 
             // ---------- KOMUT PARSING: onBeforeOperationReceived ----------
             room.onBeforeOperationReceived = (type, msg, globalFrameNo, clientFrameNo) => {
-
-
-                const CHAT_TYPE = 4;
-                if (type === CHAT_TYPE) {
-
-                    const playerId = msg.byId;
-                    const text = (msg && msg.text) ? String(msg.text) : "";
-
-
-
-                    const normalizeCmd = (s) =>
-                        s.toLowerCase().replace(/ı/g, "i").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-                    const [rawCmd, ...args] = text.trim().split(/\s+/);
-                    const cmd = normalizeCmd(rawCmd);
-
-                    if (cmd === "!kayit" || cmd === "!giris") {
-
-                        const p = room.getPlayer(playerId);
-                        if (!p) return false;
-
-                        // Şifre denemelerini yavaşlat
-                        const now = Date.now();
-
-                        if (now - (commandCooldown.get(playerId) || 0) < 3000) {
-
-                            const announcement =
-                                buildCommandCooldownAnnouncement();
-
-                            room.sendAnnouncement(
-                                announcement.message,
-                                playerId,
-                                announcement.color
-                            );
-
-                            return false;
-                        }
-
-                        commandCooldown.set(playerId, now);
-
-                        (async () => {
-
-                            try {
-
-                                const password = args[0];
-
-                                // Şifre girilmemiş
-                                if (!password) {
-
-                                    const announcement =
-                                        buildAccountCommandUsage(cmd);
-
-                                    room.sendAnnouncement(
-                                        announcement.message,
-                                        playerId,
-                                        announcement.color
-                                    );
-
-                                    return;
-                                }
-
-                                let res;
-
-                                if (cmd === "!kayit") {
-
-                                    res = await userService.register(
-                                        p.auth,
-                                        password
-                                    );
-
-                                } else {
-
-                                    res = await userService.login(
-                                        p.auth,
-                                        password
-                                    );
-                                }
-
-                                // Başarılı giriş/kayıt sonrası
-                                // session'ı güncelle
-                                if (res.ok) {
-                                    sessions.set(playerId, res.user);
-                                }
-
-                                if (room.getPlayer(playerId)) {
-
-                                    const announcement =
-                                        buildAccountCommandAnnouncement(
-                                            cmd,
-                                            res
+            
+                            const CHAT_TYPE = 4;
+                            if (type === CHAT_TYPE) {
+            
+                                const playerId = msg.byId;
+                                const text = (msg && msg.text) ? String(msg.text) : "";
+            
+                                const normalizeCmd = (s) =>
+                                    s.toLowerCase().replace(/ı/g, "i").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            
+                                const [rawCmd, ...args] = text.trim().split(/\s+/);
+                                const cmd = normalizeCmd(rawCmd);
+            
+                                // Oturum ve dil belirleme (Varsayılan 'tr', hesap/komut tercihlerine göre 'en')
+                                const user = sessions.get(playerId);
+                                const lang ='tr';
+            
+                                // ============================================================
+                                // HESAP KOMUTLARI (!kayit, !register, !giris, !login)
+                                // ============================================================
+                                if (cmd === "!kayit" || cmd === "!giris" || cmd === "!register" || cmd === "!login") {
+            
+                                    const p = room.getPlayer(playerId);
+                                    if (!p) return false;
+            
+                                    const now = Date.now();
+            
+                                    if (now - (commandCooldown.get(playerId) || 0) < 3000) {
+                                        const announcement = buildCommandCooldownAnnouncement(lang);
+            
+                                        room.sendAnnouncement(
+                                            announcement.message,
+                                            playerId,
+                                            announcement.color
                                         );
-
-                                    room.sendAnnouncement(
-                                        announcement.message,
-                                        playerId,
-                                        announcement.color
-                                    );
+            
+                                        return false;
+                                    }
+            
+                                    commandCooldown.set(playerId, now);
+            
+                                    (async () => {
+                                        try {
+                                            const password = args[0];
+            
+                                            if (!password) {
+                                                const announcement = buildAccountCommandUsage(cmd, lang);
+            
+                                                room.sendAnnouncement(
+                                                    announcement.message,
+                                                    playerId,
+                                                    announcement.color
+                                                );
+            
+                                                return;
+                                            }
+            
+                                            let res;
+            
+                                            if (cmd === "!kayit" || cmd === "!register") {
+                                                res = await userService.register(
+                                                    p.auth,
+                                                    password
+                                                );
+                                            } else {
+                                                res = await userService.login(
+                                                    p.auth,
+                                                    password
+                                                );
+                                            }
+            
+                                            if (res.ok) {
+                                                sessions.set(playerId, res.user);
+                                            }
+            
+                                            if (room.getPlayer(playerId)) {
+                                                const announcement = buildAccountCommandAnnouncement(
+                                                    cmd,
+                                                    res,
+                                                    lang
+                                                );
+            
+                                                room.sendAnnouncement(
+                                                    announcement.message,
+                                                    playerId,
+                                                    announcement.color
+                                                );
+                                            }
+            
+                                        } catch (err) {
+                                            console.error(`${cmd} command error:`, err);
+            
+                                            if (room.getPlayer(playerId)) {
+                                                const errMsg = lang === 'en'
+                                                    ? "❌ An error occurred during the operation."
+                                                    : "❌ İşlem sırasında bir hata oluştu.";
+            
+                                                room.sendAnnouncement(
+                                                    errMsg,
+                                                    playerId,
+                                                    0xFF0000
+                                                );
+                                            }
+                                        }
+                                    })();
+            
+                                    return false;
                                 }
-
-                            } catch (err) {
-
-                                console.error(
-                                    `${cmd} komut hatası:`,
-                                    err
-                                );
-
-                                if (room.getPlayer(playerId)) {
-
-                                    room.sendAnnouncement(
-                                        "❌ İşlem sırasında bir hata oluştu.",
-                                        playerId,
-                                        0xFF0000
-                                    );
-                                }
-                            }
-
-                        })();
-
-                        // Şifre hiçbir zaman normal chatte görünmez
-                        return false;
-                    }
-
-                    // ============================================================
-                    // İSTATİSTİK KOMUTLARI
-                    // ============================================================
-
-                    if (cmd === "!stats") {
-
-                        const user = sessions.get(playerId);
-
-                        const result = buildStatsAnnouncement(user);
-
-                        room.sendAnnouncement(
-                            result.message,
-                            playerId,
-                            result.color,
-                            "small-bold",
-                            1
-                        );
-
-                        return false;
-                    }
-
-
-                    if (cmd === "!rank") {
-
-                        const user = sessions.get(playerId);
-
-                        const result = buildRankAnnouncement(user);
-
-                        room.sendAnnouncement(
-                            result.message,
-                            playerId,
-                            result.color,
-                            "small-bold",
-                            1
-                        );
-
-                        return false;
-                    }
-
-
-                    if (cmd === "!vs") {
-
-                        const p = room.getPlayer(playerId);
-
-                        if (!p) return false;
-
-                        const targetName = args.join(" ").trim();
-
-                        if (!targetName) {
-
-                            room.sendAnnouncement(
-                                "❌ Kullanım: !vs oyuncu",
-                                playerId,
-                                0xFF0000
-                            );
-
-                            return false;
-                        }
-
-                        // İsim eşleşmesi
-                        const target = room.players
-                            .map(p => room.getPlayer(p.id))
-                            .filter(Boolean)
-                            .find(
-                                p =>
-                                    p.name.toLowerCase() ===
-                                    targetName.toLowerCase()
-                            );
-
-                        if (!target) {
-
-                            room.sendAnnouncement(
-                                `❌ "${targetName}" adlı oyuncu odada bulunamadı.`,
-                                playerId,
-                                0xFF0000
-                            );
-
-                            return false;
-                        }
-
-                        const user1 = sessions.get(playerId);
-                        const user2 = sessions.get(target.id);
-
-                        const result = buildVsAnnouncement(
-                            user1,
-                            user2,
-                            p.name,
-                            target.name
-                        );
-
-                        room.sendAnnouncement(
-                            result.message,
-                            playerId,
-                            result.color,
-                            "small-bold",
-                            1
-                        );
-
-                        return false;
-                    }
-
-                    // ============================================================
-                    // SIRALAMA KOMUTLARI
-                    // ============================================================
-
-
-                    if (
-                        cmd === "!leaderboard" ||
-                        cmd === "!leaderbord" ||
-                        cmd === "!lb" ||
-                        cmd === "!lider"
-                    ) {
-                        const p = room.getPlayer(playerId);
-                        if (!p) return false;
-
-                        let limit = Number(args[0]) || 10;
-
-                        // 1-10 arasında tut
-                        limit = Math.min(Math.max(limit, 1), 10);
-
-                        (async () => {
-                            try {
-                                const players =
-                                    await userService.getLeaderboard(limit);
-
-                                const result =
-                                    buildLeaderboardAnnouncement(players);
-
-                                if (room.getPlayer(playerId)) {
+            
+                                // ============================================================
+                                // !stats
+                                // ============================================================
+                                if (cmd === "!stats") {
+                                    const user = sessions.get(playerId);
+                                    const result = buildStatsAnnouncement(user, lang);
+            
                                     room.sendAnnouncement(
                                         result.message,
                                         playerId,
@@ -396,88 +261,210 @@ async function main() {
                                         "small-bold",
                                         1
                                     );
+            
+                                    return false;
                                 }
-                            } catch (err) {
-                                console.error(
-                                    "!leaderboard komut hatası:",
-                                    err
-                                );
-
-                                if (room.getPlayer(playerId)) {
+            
+                                // ============================================================
+                                // !rank
+                                // ============================================================
+                                if (cmd === "!rank") {
+                                    const user = sessions.get(playerId);
+                                    const result = buildRankAnnouncement(user, lang);
+            
                                     room.sendAnnouncement(
-                                        "❌ Leaderboard alınırken bir hata oluştu.",
+                                        result.message,
                                         playerId,
-                                        0xFF0000
+                                        result.color,
+                                        "small-bold",
+                                        1
                                     );
+            
+                                    return false;
                                 }
+            
+                                // ============================================================
+                                // !vs
+                                // ============================================================
+                                if (cmd === "!vs") {
+                                    const p = room.getPlayer(playerId);
+                                    if (!p) return false;
+            
+                                    const targetName = args.join(" ").trim();
+            
+                                    if (!targetName) {
+                                        const usageMsg = lang === 'en' ? "❌ Usage: !vs player" : "❌ Kullanım: !vs oyuncu";
+            
+                                        room.sendAnnouncement(
+                                            usageMsg,
+                                            playerId,
+                                            0xFF0000
+                                        );
+            
+                                        return false;
+                                    }
+            
+                                    const target = room.players
+                                        .map(p => room.getPlayer(p.id))
+                                        .filter(Boolean)
+                                        .find(
+                                            p => p.name.toLowerCase() === targetName.toLowerCase()
+                                        );
+            
+                                    if (!target) {
+                                        const notFoundMsg = lang === 'en'
+                                            ? `❌ Player "${targetName}" was not found in the room.`
+                                            : `❌ "${targetName}" isimli oyuncu odada bulunamadı.`;
+            
+                                        room.sendAnnouncement(
+                                            notFoundMsg,
+                                            playerId,
+                                            0xFF0000
+                                        );
+            
+                                        return false;
+                                    }
+            
+                                    const user1 = sessions.get(playerId);
+                                    const user2 = sessions.get(target.id);
+            
+                                    const result = buildVsAnnouncement(
+                                        user1,
+                                        user2,
+                                        p.name,
+                                        target.name,
+                                        lang
+                                    );
+            
+                                    room.sendAnnouncement(
+                                        result.message,
+                                        playerId,
+                                        result.color,
+                                        "small-bold",
+                                        1
+                                    );
+            
+                                    return false;
+                                }
+            
+                                // ============================================================
+                                // !leaderboard / !lb / !lider
+                                // ============================================================
+                                if (
+                                    cmd === "!leaderboard" ||
+                                    cmd === "!leaderbord" ||
+                                    cmd === "!lb" ||
+                                    cmd === "!lider"
+                                ) {
+                                    const p = room.getPlayer(playerId);
+                                    if (!p) return false;
+            
+                                    let limit = Number(args[0]) || 10;
+                                    limit = Math.min(Math.max(limit, 1), 10);
+            
+                                    (async () => {
+                                        try {
+                                            const players = await userService.getLeaderboard(limit);
+                                            const result = buildLeaderboardAnnouncement(players, lang);
+            
+                                            if (room.getPlayer(playerId)) {
+                                                room.sendAnnouncement(
+                                                    result.message,
+                                                    playerId,
+                                                    result.color,
+                                                    "small-bold",
+                                                    1
+                                                );
+                                            }
+                                        } catch (err) {
+                                            console.error("!leaderboard command error:", err);
+            
+                                            if (room.getPlayer(playerId)) {
+                                                const errMsg = lang === 'en'
+                                                    ? "❌ An error occurred while fetching the leaderboard."
+                                                    : "❌ Sıralama çekilirken bir hata oluştu.";
+            
+                                                room.sendAnnouncement(
+                                                    errMsg,
+                                                    playerId,
+                                                    0xFF0000
+                                                );
+                                            }
+                                        }
+                                    })();
+            
+                                    return false;
+                                }
+            
+                                // ============================================================
+                                // !help / !yardim / !komutlar
+                                // ============================================================
+                                if (cmd === "!help" || cmd === "!yardim" || cmd === "!komutlar") {
+                                    const announcement = buildHelpAnnouncement(lang);
+            
+                                    room.sendAnnouncement(
+                                        announcement.message,
+                                        playerId,
+                                        announcement.color,
+                                        "small-bold",
+                                        1
+                                    );
+            
+                                    return false;
+                                }
+            
+                                // Tanımsız komutlar
+                                if (/^!\p{L}+/u.test(rawCmd)) {
+                                    const unknownMsg = lang === 'en'
+                                        ? "❓ Unknown command. Type !help for available commands."
+                                        : "❓ Bilinmeyen komut. Kullanılabilir komutlar için !help yazın.";
+            
+                                    room.sendAnnouncement(unknownMsg, playerId, 0x999999);
+                                    return false;
+                                }
+            
+                                // Mute kontrolü
+                                if (mutedPlayerIds.includes(playerId)) {
+                                    return false;
+                                }
+            
+                                // Küfür / Argo filtresi
+                                if (hasBannedWord(text)) {
+                                    const bannedMsg = lang === 'en'
+                                        ? "❌ Your message was blocked because it contains profanity or insults!"
+                                        : "❌ Mesajınız küfür veya hakaret içerdiği için engellendi!";
+            
+                                    room.sendAnnouncement(bannedMsg, playerId, 0xFF0000);
+                                    return false;
+                                }
+            
+                                // Spam kontrolü
+                                const { announcement, messageSendStatus } = controlSpam(playerId, lang);
+            
+                                if (!messageSendStatus) {
+                                    room.sendAnnouncement(announcement, playerId, 0xFF0000);
+                                    return messageSendStatus;
+                                }
+            
+                                // Normal sohbet mesajı gönderimi
+                                const p = room.getPlayer(playerId);
+                                if (!p) return false;
+            
+                                const a = buildChatAnnouncement({
+                                    name: p.name,
+                                    teamId: p.team ? p.team.id : 0,
+                                    user: sessions.get(playerId),
+                                    text,
+                                });
+            
+                                room.sendAnnouncement(a.message, null, a.color, "normal", 1);
+            
+                                logChat(`${p.name}#${playerId}: ${text}`);
+                                return false;
                             }
-                        })();
-
-                        return false;
-                    }
-
-
-                    // ============================================================
-                    // HELP KOMUTLARI
-                    // ============================================================
-
-                    if (cmd === "!help" || cmd === "!yardım" || cmd === "!komutlar") {
-                        const announcement = buildHelpAnnouncement();
-
-                        room.sendAnnouncement(
-                            announcement.message,
-                            playerId,
-                            announcement.color,
-                            "small-bold",
-                            1
-                        );
-
-                        return false;
-                    }
-
-                    // Komuta benzeyen ama tanınmayan mesajlar herkese gitmesin
-                    if (/^!\p{L}+/u.test(rawCmd)) {
-                        room.sendAnnouncement("❓ Bilinmeyen komut. Komutlar için: !help", playerId, 0x999999);
-                        return false;
-                    }
-
-                    // Mute kontrolü
-                    if (mutedPlayerIds.includes(playerId)) {
-                        return false;
-                    }
-
-                    // 🛑 GELİŞMİŞ CÜMLE İÇİ KÜFÜR KONTROLÜ
-                    if (hasBannedWord(text)) {
-                        room.sendAnnouncement("❌ Mesajınız küfür veya hakaret içerdiği için engellendi!", playerId, 0xFF0000);
-                        return false; // Küfürlü mesajı engelle
-                    }
-
-                    const { announcement, messageSendStatus } = controlSpam(playerId)
-
-                    if (!messageSendStatus) {
-
-                        room.sendAnnouncement(announcement, playerId, 0xFF0000);
-                        return messageSendStatus
-                    }
-
-
-                    const p = room.getPlayer(playerId);
-                    if (!p) return false;
-
-                    const a = buildChatAnnouncement({
-                        name: p.name,
-                        teamId: p.team ? p.team.id : 0,
-                        user: sessions.get(playerId),
-                        text,
-                    });
-                    room.sendAnnouncement(a.message, null, a.color, "normal", 1);
-
-                    logChat(`${p.name}#${playerId}: ${text}`);
-                    return false;
-                }
-
-                return true;
-            };
+            
+                            return true;
+                        };
 
 
             let queue = [];

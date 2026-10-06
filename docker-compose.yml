@@ -28,6 +28,8 @@ services:
       - .env
     restart: unless-stopped
 
+    command: ["node", "basket_en.js"]
+
     depends_on:
       db:
         condition: service_healthy
@@ -53,6 +55,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    
+    command: ["node", "basket_tr.js"]
 
     environment:
       DATABASE_URL: postgres://haxball:${DB_PASSWORD}@db:5432/haxball

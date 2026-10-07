@@ -169,7 +169,7 @@ function buildChatAnnouncement({ name, teamId, user, text }, lang = 'tr') {
         };
 
     return {
-        message: `${tag.name} ${user.elo} ${name}: ${text}`,
+        message: `${tag.name} [${user.elo}] ${name}: ${text}`,
         color: tag.color
     };
 }

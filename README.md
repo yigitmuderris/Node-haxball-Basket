@@ -1,6 +1,6 @@
 # 🏀 Node Haxball Basket
 
-A **full-stack, event-driven, real-time multiplayer basketball system** built with  Node.js, PostgreSQL, React and Haxball.
+A **full-stack, event-driven, real-time multiplayer basketball system** built with Node.js, PostgreSQL, React and Haxball.
 
 The project combines a real-time Haxball game environment with a persistent backend and web interface, providing player accounts, statistics, competitive ELO ranking, match tracking, in-game chat, and real-time game logic.
 
@@ -175,7 +175,6 @@ Password handling is implemented in the service layer using Node.js cryptographi
 
 Passwords are stored as peppered hashes rather than plaintext, while a deterministic password key is separately generated for enforcing password uniqueness.
 
-Account operations are transaction-based.
 ```text
 The system supports:
 
@@ -353,8 +352,6 @@ The project is being developed toward a broader full-stack real-time game ecosys
 
 Planned or expanding areas include:
 
-* REST API
-* React dashboard
 * Interactive Website
 * Live match monitoring with WebSocket
 * Player dashboards
@@ -362,6 +359,7 @@ Planned or expanding areas include:
 * Match history
 * Additional game analytics
 * Discord integration
+* TypeScript migration and integration
 
 ---
 
@@ -377,7 +375,7 @@ The backend, database, and supporting services can be managed as separate contai
 
 **Active Development**
 
-The core game environment, player system, PostgreSQL persistence, statistics, ELO/ranking logic, chat functionality, and backend service architecture are already being developed in VPS.
+The core game environment, player system, PostgreSQL persistence, statistics, ELO/ranking logic, chat functionality, and backend service architecture are already running on a VPS.
 
 [![Live Room](https://img.shields.io/badge/🎮-Live%20Room-brightgreen)](https://www.haxball.com/play?c=soJBQZtrEqs)
 

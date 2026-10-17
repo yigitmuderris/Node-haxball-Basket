@@ -6,9 +6,9 @@ const EXACT_WORDS = new Set([
     "gotu", "pipi", "kuku", "bok", "mal", "it", "itoglu", "salak", "slak", "slaak",
     "orsp", "ursp", "aptal", "sokuk", "ucube", "pclik", "aptaloc", "pasatoc", "aptaloe", "pasatoe", "susoc", "malmk", "malamk", "yazmaanneiskeirmn", "kafasiz", "kafasız",
     "benannenisikim", "siktiler", "salaksinb", "anasi", "osovbucoco", "bacina", "it", "enigi", "bacini", "deseyim", "valideni", "anmnnnenui", "bogharim",
-    "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik", "sikicem", "m4l", "m4loglu","orevladi", "ampute","sikerler"
-    ,"4n4nis23erim","maloc","anasisikikorospuevladi","aglamaoç","fakiroc","amciginisikerim","kesoc","sikmek","orcogcu","orspcocgi"
-    ,"4n4ni","4n4n","0c","k4s4r","0rcocgnu","değiştiraminakodumunçicuğu","ksmer","04cicgu","s2yorum","YARADANINI","yaradanini"
+    "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik", "sikicem", "m4l", "m4loglu", "orevladi", "ampute", "sikerler"
+    , "4n4nis23erim", "maloc", "anasisikikorospuevladi", "aglamaoç", "fakiroc", "amciginisikerim", "kesoc", "sikmek", "orcogcu", "orspcocgi"
+    , "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "değiştiraminakodumunçicuğu", "ksmer", "04cicgu", "s2yorum", "YARADANINI", "yaradanini"
 ]);
 
 // Uzun ve belirsizliği düşük kökler: kelime BU İLE BAŞLIYORSA yakalar (ekleri de kapsar)
@@ -18,8 +18,8 @@ const PREFIX_WORDS = [
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
     "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm", "skcem", "skcm", "anasini", "siktigimin", "allhini",
-    "anasini", "4n4ni", "tecavüz", "kasar","m4l","s2sinler" ,"s2iş","sikerler","s4kt4r","ananda","anan", "evladi", "kaşar","maloc","oc"
-    ,"kes","sikmek","sikmem","sik","orcogcu","4n4ni","4n4n","0c","k4s4r","0rcocgnu","s2yorum","YARADANINI","yaradanini"
+    "anasini", "4n4ni", "tecavüz", "kasar", "m4l", "s2sinler", "s2iş", "sikerler", "s4kt4r", "ananda", "anan", "evladi", "kaşar", "maloc", "oc"
+    , "kes", "sikmek", "sikmem", "sik", "orcogcu", "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "s2yorum", "YARADANINI", "yaradanini"
 ];
 
 function normalize(text) {
@@ -30,15 +30,65 @@ function normalize(text) {
         .replace(/[^a-z0-9\s]/g, "");   // boşlukları KORU
 }
 
+function normalizeLeet(text) {
+    return text
+        .replace(/1/g, "i")
+        .replace(/3/g, "e")
+        .replace(/4/g, "a")
+        .replace(/5/g, "s")
+        .replace(/0/g, "o")
+        .replace(/7/g, "t");
+}
+
 function hasBannedWord(text) {
     if (!text) return false;
 
-    const words = normalize(text).split(/\s+/).filter(Boolean);
+    const normalized = normalize(text);
+    const leetNormalized = normalizeLeet(normalized);
 
-    return words.some(word =>
+    const words = leetNormalized
+        .split(/\s+/)
+        .filter(Boolean);
+
+    const isBannedWord = word =>
         EXACT_WORDS.has(word) ||
-        PREFIX_WORDS.some(root => word.startsWith(root))
-    );
+        PREFIX_WORDS.some(root => word.startsWith(root));
+
+    // Normal + leet kontrolü
+    if (words.some(isBannedWord)) {
+        return true;
+    }
+
+    // Kelime parçalama kontrolü
+    for (let i = 0; i < words.length; i++) {
+        let combined = "";
+
+        for (let j = i; j < words.length; j++) {
+            combined += words[j];
+
+
+            if (isBannedWord(combined)) {
+                return true;
+            }
+        }
+    }
+
+    // Boşlukları tamamen kaldır
+    const compact = leetNormalized.replace(/\s+/g, "");
+
+    if (
+        [...EXACT_WORDS].some(word =>
+            compact.includes(word)
+        ) ||
+        PREFIX_WORDS.some(root =>
+            compact.includes(root)
+        )
+    ) {
+        return true;
+    }
+
+
+    return false;
 }
 
 // 🛑 FLOODING (SPAM) KONTROLÜ 

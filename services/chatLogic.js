@@ -19,7 +19,7 @@ const PREFIX_WORDS = [
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
     "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm", "skcem", "skcm", "anasini", "siktigimin", "allhini",
     "anasini", "4n4ni", "tecavüz", "kasar", "m4l", "s2sinler", "s2iş", "sikerler", "s4kt4r", "ananda", "anan", "evladi", "kaşar", "maloc", "oc"
-    , "kes", "sikmek", "sikmem", "sik", "orcogcu", "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "s2yorum", "YARADANINI", "yaradanini"
+    , "kes", "sikmek", "sikmem", "sik", "orcogcu", "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "s2yorum", "YARADANINI", "yaradanini","BIJI"
 ];
 
 function normalize(text) {

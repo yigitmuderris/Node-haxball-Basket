@@ -3,12 +3,14 @@ const { STAT_POINTS, formatTag, getRank } = require('./eloLogic');
 // Kısa/belirsiz kelimeler: sadece TAM kelime olarak eşleşir (ek almış halleri de yaz)
 const EXACT_WORDS = new Set([
     "sik", "siktir", "sikerim", "sikeyim", "sikik", "oe", "oc", "pic", "pij", "got", "goto",
-    "gotu", "pipi", "kuku", "bok", "mal", "it", "itoglu", "salak", "slak", "slaak",
+    "gotu", "pipi", "kuku", "bok", "mal","itoglu", "salak", "slak", "slaak",
     "orsp", "ursp", "aptal", "sokuk", "ucube", "pclik", "aptaloc", "pasatoc", "aptaloe", "pasatoe", "susoc", "malmk", "malamk", "yazmaanneiskeirmn", "kafasiz", "kafasız",
     "benannenisikim", "siktiler", "salaksinb", "anasi", "osovbucoco", "bacina", "it", "enigi", "bacini", "deseyim", "valideni", "anmnnnenui", "bogharim",
     "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik", "sikicem", "m4l", "m4loglu", "orevladi", "ampute", "sikerler"
     , "4n4nis23erim", "maloc", "anasisikikorospuevladi", "aglamaoç", "fakiroc", "amciginisikerim", "kesoc", "sikmek", "orcogcu", "orspcocgi"
-    , "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "değiştiraminakodumunçicuğu", "ksmer", "04cicgu", "s2yorum", "YARADANINI", "yaradanini"
+    , "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "değiştiraminakodumunçicuğu", "ksmer", "04cicgu", "s2yorum","yaradanini",
+    "nani","ikeyim"
+    
 ]);
 
 // Uzun ve belirsizliği düşük kökler: kelime BU İLE BAŞLIYORSA yakalar (ekleri de kapsar)
@@ -16,10 +18,11 @@ const PREFIX_WORDS = [
     "orospu", "oruspu", "yarrak", "kahpe", "gavat", "pezevenk", "gerizekali",
     "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
-    "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "oe", "oc", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm", "skerm", "sikerm", "annanabasarim", "annnei", "bnecericem", "skm", "skcem", "skcm", "anasini", "siktigimin", "allhini",
-    "anasini", "4n4ni", "tecavüz", "kasar", "m4l", "s2sinler", "s2iş", "sikerler", "s4kt4r", "ananda", "anan", "evladi", "kaşar", "maloc", "oc"
-    , "kes", "sikmek", "sikmem", "sik", "orcogcu", "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "s2yorum", "YARADANINI", "yaradanini","BIJI"
+    "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
+    "skrm", "skerm", "annanabasarim", "annnei", "bnecericem", "skm", "skcem", "skcm", "anasini", "siktigimin", "allhini",
+    "anasini", "4n4ni", "tecavüz", "kasar", "m4l", "s2sinler", "s2iş", "sikerler", "s4kt4r", "ananda", "anan", "evladi", "maloc",
+    , "sikmek", "sikmem", "sik", "orcogcu", "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "s2yorum", "yaradanini","BIJI","nani","ikeyim",
+    "am;ni","yalarim","y;larim"
 ];
 
 function normalize(text) {

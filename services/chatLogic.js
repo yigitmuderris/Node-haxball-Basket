@@ -9,8 +9,8 @@ const EXACT_WORDS = new Set([
     "anana", "karini", "anen", "allahin", "peygamberin", "annen", "amcik", "sikicem", "m4l", "m4loglu", "orevladi", "ampute", "sikerler"
     , "4n4nis23erim", "maloc", "anasisikikorospuevladi", "aglamaoç", "fakiroc", "amciginisikerim", "kesoc", "sikmek", "orcogcu", "orspcocgi"
     , "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "değiştiraminakodumunçicuğu", "ksmer", "04cicgu", "s2yorum","yaradanini",
-    "nani","ikeyim"
-    
+    "nani","ikeyim","valide","skin","skn","sllahini","llahini","lahini","anne","annecig","annecik","rahmini","dogurani",
+    "yarramin","oroopuiçcu","90rs09cpgugu","sn4sini","síktím","sík ","yarrram","sllah1","aik3rim","ansni","bcsni","fahise","nni","nnni"
 ]);
 
 // Uzun ve belirsizliği düşük kökler: kelime BU İLE BAŞLIYORSA yakalar (ekleri de kapsar)
@@ -19,10 +19,10 @@ const PREFIX_WORDS = [
     "serefsiz", "aptalevladi", "amkkurdu", "amkturku", "amini",
     "anani", "anneni", "babani", "bacini", "allahini", "alahini", "allani",
     "tanrini", "dinini", "kitabini", "ataturkunu", "peygamberini", "muhammedini", "anana", "orsp", "enigi", "oananiskerim", "aptaluincocugus",
-    "skrm", "skerm", "annanabasarim", "annnei", "bnecericem", "skm", "skcem", "skcm", "anasini", "siktigimin", "allhini",
+    "skrm", "skerm", "annanabasarim", "annnei", "bnecericem", "skm","skn", "skcem", "skcm", "anasini", "siktigimin", "allhini",
     "anasini", "4n4ni", "tecavüz", "kasar", "m4l", "s2sinler", "s2iş", "sikerler", "s4kt4r", "ananda", "anan", "evladi", "maloc",
     , "sikmek", "sikmem", "sik", "orcogcu", "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "s2yorum", "yaradanini","BIJI","nani","ikeyim",
-    "am;ni","yalarim","y;larim"
+    "am;ni","yalarim","y;larim","valide","llahini","lahini","sík","αnαni"
 ];
 
 function normalize(text) {

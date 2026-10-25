@@ -588,6 +588,15 @@ async function main() {
                 log("Player joined: " + player.name);
                 logJoin(`${player.name} joined the room.`);
 
+                    if (hasBannedWord(player.name)) {
+                        const bannedMsg = lang === 'en'
+                            ? "❌ Your name was blocked because it contains profanity or insults!"
+                            : "❌ İsminiz küfür veya hakaret içerdiği için engellendi!";
+
+                        room.kickPlayer(player.id, bannedMsg, false);
+                        return false;
+                    }
+
                 if (player.auth) {
                     userService.findOrCreateByAuth(player.auth)
                         .then(async user => {

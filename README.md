@@ -377,7 +377,7 @@ The backend, database, and supporting services can be managed as separate contai
 
 The core game environment, player system, PostgreSQL persistence, statistics, ELO/ranking logic, chat functionality, and backend service architecture are already running on a VPS.
 
-[![Live Room](https://img.shields.io/badge/🎮-Live%20Room-brightgreen)](https://www.haxball.com/play?c=k__k3hn15Kg)
+[![Live Room](https://img.shields.io/badge/🎮-Live%20Room-brightgreen)](https://www.haxball.com/play?c=5O7GNl3Skss)
 
 The full-stack web layer and external integrations are being expanded alongside the core system.
 

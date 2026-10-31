@@ -386,14 +386,6 @@ The full-stack web layer and external integrations are being expanded alongside 
 ## 🎯 Project Direction
 
 The long-term goal is to turn the project from a traditional Haxball room script into a complete **real-time multiplayer game system** 
-```
 
-The architecture is designed to keep real-time gameplay, application logic, persistence, and external interfaces separated while allowing them to work together as a single system.
-
----
-
-## 📄 License
-
-License information will be added as the project is prepared for public release.
 
 

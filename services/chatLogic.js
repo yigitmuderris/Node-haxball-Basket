@@ -11,7 +11,7 @@ const EXACT_WORDS = new Set([
     , "4n4ni", "4n4n", "0c", "k4s4r", "0rcocgnu", "değiştiraminakodumunçicuğu", "ksmer", "04cicgu", "s2yorum","yaradanini",
     "nani","ikeyim","valide","skin","skn","sllahini","llahini","lahini","anne","annecig","annecik","rahmini","dogurani",
     "yarramin","oroopuiçcu","90rs09cpgugu","sn4sini","síktím","sík ","yarrram","sllah1","aik3rim","ansni","bcsni","fahise","nni","nnni",
-     "oospu","avladi","vladi","evldi","avldi","sktm","ᴀʟʟᴀʜıɴı","anscigini"
+     "oospu","avladi","vladi","evldi","avldi","sktm","ᴀʟʟᴀʜıɴı","anscigini","allahi","orev","anscigin","ansnla","anayin","ansnla"
 ]);
 
 // Uzun ve belirsizliği düşük kökler: kelime BU İLE BAŞLIYORSA yakalar (ekleri de kapsar)

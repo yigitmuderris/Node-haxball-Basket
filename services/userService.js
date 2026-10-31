@@ -353,9 +353,13 @@ async function recordMatch({ winners, losers }) {
         ...players.map(p => Number(p.points) || 0)
     );
 
-    const mvps = maxPoints > 0 ?  players.filter(
+    const topPlayers = maxPoints > 0 ? players.filter(
         p => Number(p.points) === maxPoints
     ) : [];
+
+    const mvps = topPlayers.length > 1
+        ? topPlayers.filter(p => p.team.id === winnerteamid)
+        : topPlayers;
 
     return withTransaction(async (tx) => {
 

@@ -1,0 +1,767 @@
+[2.11.2026 01:32:43] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 06:24:06] SAYI takım=2 oyuncu=XzMaxthxz#170 stat=two_pt_own_basket x=-499 y=190 vy=7.89 skor=0-2 sonDokunuşlar=XzMaxthxz(vuruş)>XzMaxthxz(çarpışma)>XzMaxthxz(vuruş)
+[2.11.2026 06:24:18] SAYI takım=1 oyuncu=XzMaxthxz#170 stat=three_pt_made x=-287 y=223 vy=2.44 skor=3-2 sonDokunuşlar=XzMaxthxz(çarpışma)>XzMaxthxz(çarpışma)>XzMaxthxz(vuruş)
+[2.11.2026 06:25:40] MAÇ BİTTİ skor=3-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[170]
+[2.11.2026 06:26:31] SAYI takım=2 oyuncu=XzMaxthxz#170 stat=three_pt_made x=0 y=-47 vy=6.42 skor=0-3 sonDokunuşlar=XzMaxthxz(çarpışma)>XzMaxthxz(vuruş)>XzMaxthxz(vuruş)
+[2.11.2026 06:26:43] SAYI takım=2 oyuncu=XzMaxthxz#170 stat=two_pt_made x=-505 y=112 vy=-6.63 skor=0-5 sonDokunuşlar=XzMaxthxz(vuruş)>XzMaxthxz(çarpışma)>XzMaxthxz(vuruş)
+[2.11.2026 06:27:03] SAYI takım=1 oyuncu=XzMaxthxz#170 stat=two_pt_own_basket x=429 y=235 vy=-4.96 skor=2-5 sonDokunuşlar=XzMaxthxz(çarpışma)>XzMaxthxz(çarpışma)>XzMaxthxz(vuruş)
+[2.11.2026 06:27:44] MAÇ BİTTİ skor=2-5 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[170]
+[2.11.2026 06:28:29] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 06:28:32] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 06:56:31] SAYI takım=1 oyuncu=mesiii#173 stat=two_pt_made x=645 y=79 vy=-6.79 skor=2-0 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 06:57:15] SAYI takım=1 oyuncu=mesiii#173 stat=two_pt_made x=541 y=-182 vy=4.00 skor=4-0 sonDokunuşlar=mesiii(vuruş)>mesiii(vuruş)>mesiii(çarpışma)
+[2.11.2026 06:57:40] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[173]
+[2.11.2026 06:58:06] SAYI takım=1 oyuncu=mesiii#173 stat=two_pt_made x=575 y=148 vy=-12.19 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 06:59:17] SAYI takım=1 oyuncu=mesiii#173 stat=two_pt_made x=594 y=156 vy=-5.52 skor=4-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 06:59:43] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[173]
+[2.11.2026 07:00:25] SAYI takım=1 oyuncu=mesiii#173 stat=two_pt_own_basket x=450 y=1 vy=6.27 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:00:35] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[174]
+[2.11.2026 07:16:40] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 07:16:40] SAYI takım=1 oyuncu=mesiii#175 stat=two_pt_made x=561 y=113 vy=-10.97 skor=0-0 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:19:28] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[175]
+[2.11.2026 07:19:28] SAYI takım=2 oyuncu=mesiii#175 stat=two_pt_made x=-565 y=-206 vy=4.58 skor=0-0 sonDokunuşlar=mesiii(vuruş)>mesiii(vuruş)>mesiii(çarpışma)
+[2.11.2026 07:20:54] SAYI takım=1 oyuncu=mesiii#175 stat=two_pt_made x=535 y=-228 vy=2.43 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(çarpışma)
+[2.11.2026 07:21:24] SAYI takım=1 oyuncu=mesiii#175 stat=two_pt_made x=612 y=271 vy=-5.56 skor=4-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:21:31] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[175]
+[2.11.2026 07:21:53] SAYI takım=2 oyuncu=mesiii#175 stat=two_pt_made x=-447 y=204 vy=3.97 skor=0-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:23:22] SAYI takım=2 oyuncu=mesiii#175 stat=three_pt_made x=5 y=-34 vy=5.76 skor=0-5 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 07:23:35] MAÇ BİTTİ skor=0-5 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[175]
+[2.11.2026 07:24:16] SAYI takım=2 oyuncu=mesiii#175 stat=two_pt_made x=-639 y=82 vy=-11.70 skor=0-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:24:46] SAYI takım=2 oyuncu=mesiii#175 stat=two_pt_made x=-496 y=88 vy=5.76 skor=0-4 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:25:38] MAÇ BİTTİ skor=0-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[175]
+[2.11.2026 07:26:56] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 07:37:52] SAYI takım=1 oyuncu=mesiii#176 stat=two_pt_made x=616 y=26 vy=-11.33 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 07:38:26] SAYI takım=1 oyuncu=mesiii#176 stat=two_pt_made x=620 y=135 vy=-12.76 skor=4-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:39:36] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[176]
+[2.11.2026 07:39:58] SAYI takım=2 oyuncu=sasaa#177 stat=three_pt_made x=58 y=186 vy=6.33 skor=0-3 sonDokunuşlar=sasaa(çarpışma)>sasaa(çarpışma)>sasaa(vuruş)
+[2.11.2026 07:40:02] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[176]
+[2.11.2026 07:41:04] SAYI takım=2 oyuncu=mesiii#176 stat=two_pt_made x=-485 y=-17 vy=2.40 skor=0-2 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:42:06] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[176]
+[2.11.2026 07:42:57] SAYI takım=1 oyuncu=mesiii#176 stat=two_pt_own_basket x=500 y=191 vy=-6.14 skor=2-0 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:43:54] SAYI takım=2 oyuncu=mesiii#176 stat=two_pt_made x=-652 y=200 vy=-9.68 skor=2-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:44:41] MAÇ BİTTİ skor=2-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[176]
+[2.11.2026 07:44:41] SAYI takım=2 oyuncu=mesiii#176 stat=two_pt_made x=-114 y=271 vy=5.07 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:45:10] SAYI takım=2 oyuncu=mesiii#176 stat=two_pt_made x=-481 y=187 vy=7.46 skor=0-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:45:20] SAYI takım=2 oyuncu=mesiii#176 stat=two_pt_made x=-518 y=-253 vy=1.74 skor=0-4 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)
+[2.11.2026 07:45:56] SAYI takım=2 oyuncu=mesiii#176 stat=two_pt_made x=-515 y=-239 vy=11.22 skor=0-6 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 07:46:45] MAÇ BİTTİ skor=0-6 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[176]
+[2.11.2026 07:47:25] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 08:46:48] SAYI takım=2 oyuncu=pqwtstr#178 stat=three_pt_own_basket x=451 y=-191 vy=8.15 skor=0-3 sonDokunuşlar=pqwtstr(çarpışma)>pqwtstr(çarpışma)>pqwtstr(vuruş)
+[2.11.2026 08:47:23] SAYI takım=1 oyuncu=pqwtstr#178 stat=three_pt_made x=-277 y=-124 vy=8.72 skor=3-3 sonDokunuşlar=pqwtstr(çarpışma)>pqwtstr(çarpışma)>pqwtstr(vuruş)
+[2.11.2026 08:47:33] MAÇ BİTTİ skor=3-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 09:27:53] SAYI takım=2 oyuncu=merhaba#180 stat=three_pt_made x=380 y=133 vy=5.41 skor=0-3 sonDokunuşlar=merhaba(çarpışma)>merhaba(çarpışma)>merhaba(vuruş)
+[2.11.2026 09:28:18] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[180,179]
+[2.11.2026 09:29:22] SAYI takım=2 oyuncu=merhaba#180 stat=two_pt_made x=-610 y=159 vy=-8.28 skor=0-2 sonDokunuşlar=merhaba(vuruş)>merhaba(çarpışma)>merhaba(vuruş)
+[2.11.2026 09:30:21] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[180,179]
+[2.11.2026 09:31:04] SAYI takım=1 oyuncu=merhaba#180 stat=three_pt_made x=-356 y=-30 vy=2.77 skor=3-0 sonDokunuşlar=merhaba(çarpışma)>merhaba(çarpışma)>merhaba(vuruş)
+[2.11.2026 09:31:13] SAYI takım=1 oyuncu=merhaba#180 stat=two_pt_made x=400 y=38 vy=6.86 skor=5-0 sonDokunuşlar=merhaba(vuruş)
+[2.11.2026 09:32:12] SAYI takım=2 oyuncu=YOKOT#179 stat=three_pt_made x=222 y=-183 vy=7.68 skor=5-3 sonDokunuşlar=merhaba(vuruş)>YOKOT(çarpışma)>YOKOT(vuruş)
+[2.11.2026 09:32:25] MAÇ BİTTİ skor=5-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[180,179]
+[2.11.2026 09:32:48] SAYI takım=1 oyuncu=merhaba#180 stat=two_pt_made x=622 y=107 vy=-12.14 skor=2-0 sonDokunuşlar=merhaba(çarpışma)>merhaba(çarpışma)>merhaba(vuruş)
+[2.11.2026 09:33:06] SAYI takım=1 oyuncu=merhaba#180 stat=two_pt_made x=390 y=140 vy=4.83 skor=4-0 sonDokunuşlar=merhaba(vuruş)>merhaba(çarpışma)>merhaba(vuruş)
+[2.11.2026 09:34:07] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[180]
+[2.11.2026 09:34:12] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 09:45:52] SAYI takım=1 oyuncu=mesiii#181 stat=two_pt_made x=462 y=256 vy=-2.17 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 09:47:23] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181]
+[2.11.2026 09:47:35] SAYI takım=1 oyuncu=mesiii#181 stat=two_pt_made x=559 y=-173 vy=4.42 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(çarpışma)
+[2.11.2026 09:48:42] SAYI takım=1 oyuncu=mesiii#181 stat=two_pt_made x=648 y=74 vy=-13.88 skor=4-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 09:49:13] SAYI takım=1 oyuncu=mesiii#181 stat=two_pt_made x=411 y=-35 vy=5.84 skor=6-0 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 09:49:26] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181]
+[2.11.2026 09:50:22] SAYI takım=2 oyuncu=mesiii#181 stat=two_pt_made x=-645 y=68 vy=-3.48 skor=0-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 09:51:30] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181]
+[2.11.2026 09:55:31] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181]
+[2.11.2026 09:55:31] SAYI takım=2 oyuncu=mesiii#181 stat=two_pt_made x=-555 y=198 vy=-9.15 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 10:06:02] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181]
+[2.11.2026 10:06:02] SAYI takım=1 oyuncu=mesiii#181 stat=two_pt_made x=575 y=78 vy=-11.00 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:06:17] SAYI takım=1 oyuncu=mesiii#181 stat=two_pt_made x=634 y=96 vy=-14.05 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:06:35] SAYI takım=1 oyuncu=mesiii#181 stat=three_pt_made x=-386 y=61 vy=5.39 skor=5-0 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:06:51] SAYI takım=1 oyuncu=mesiii#181 stat=three_pt_made x=-56 y=104 vy=3.13 skor=8-0 sonDokunuşlar=mesiii(vuruş)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 10:08:05] MAÇ BİTTİ skor=8-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181]
+[2.11.2026 10:09:02] SAYI takım=2 oyuncu=mesiii#181 stat=three_pt_made x=223 y=-12 vy=7.59 skor=0-3 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:09:23] SAYI takım=2 oyuncu=mesiii#181 stat=two_pt_made x=-386 y=196 vy=7.19 skor=0-5 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:09:54] SAYI takım=2 oyuncu=mesiii#181 stat=three_pt_made x=357 y=83 vy=2.81 skor=0-8 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:10:09] MAÇ BİTTİ skor=0-8 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181]
+[2.11.2026 10:11:13] SAYI takım=2 oyuncu=noname#182 stat=three_pt_made x=326 y=-182 vy=2.11 skor=0-3 sonDokunuşlar=mesiii(vuruş)>noname(çarpışma)>noname(vuruş)
+[2.11.2026 10:11:21] SAYI takım=1 oyuncu=mesiii#181 stat=three_pt_made x=-399 y=22 vy=6.60 skor=3-3 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:12:52] MAÇ BİTTİ skor=6-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181,182]
+[2.11.2026 10:12:52] SAYI takım=1 oyuncu=mesiii#181 stat=three_pt_made x=-219 y=284 vy=2.57 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:13:32] SAYI takım=2 oyuncu=mesiii#181 stat=two_pt_made x=-485 y=204 vy=-9.19 skor=0-2 sonDokunuşlar=noname(çarpışma)>noname(vuruş)>mesiii(vuruş)
+[2.11.2026 10:14:06] SAYI takım=2 oyuncu=mesiii#181 stat=three_pt_made x=376 y=186 vy=5.76 skor=0-5 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:14:55] MAÇ BİTTİ skor=0-5 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[181,182]
+[2.11.2026 10:15:49] SAYI takım=2 oyuncu=mesiii#181 stat=two_pt_own_basket x=-564 y=-332 vy=5.98 skor=0-2 sonDokunuşlar=noname(vuruş)>Aleksey Batrakov(vuruş)>mesiii(çarpışma)
+[2.11.2026 10:16:46] SAYI takım=2 oyuncu=Aleksey Batrakov#183 stat=two_pt_made x=-196 y=-127 vy=8.51 skor=0-4 sonDokunuşlar=Aleksey Batrakov(çarpışma)>Aleksey Batrakov(çarpışma)>Aleksey Batrakov(vuruş)
+[2.11.2026 10:16:59] MAÇ BİTTİ skor=0-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[182,183,181]
+[2.11.2026 10:20:08] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[183,182]
+[2.11.2026 10:20:08] SAYI takım=2 oyuncu=Aleksey Batrakov#183 stat=two_pt_made x=-363 y=-166 vy=6.72 skor=0-0 sonDokunuşlar=Aleksey Batrakov(çarpışma)>Aleksey Batrakov(vuruş)>Aleksey Batrakov(vuruş)
+[2.11.2026 10:23:22] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[185,183]
+[2.11.2026 10:23:22] SAYI takım=2 oyuncu=mesiii#185 stat=two_pt_made x=-556 y=-239 vy=5.14 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(çarpışma)
+[2.11.2026 10:25:33] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[183,185]
+[2.11.2026 10:25:33] SAYI takım=2 oyuncu=mesiii#185 stat=two_pt_own_basket x=-644 y=61 vy=-13.25 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 10:27:43] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[183,185]
+[2.11.2026 10:27:43] SAYI takım=1 oyuncu=Aleksey Batrakov#183 stat=two_pt_made x=373 y=127 vy=5.92 skor=0-0 sonDokunuşlar=mesiii(vuruş)>Aleksey Batrakov(çarpışma)>Aleksey Batrakov(vuruş)
+[2.11.2026 10:27:58] SAYI takım=2 oyuncu=mesiii#185 stat=two_pt_own_basket x=-630 y=114 vy=-23.50 skor=0-2 sonDokunuşlar=Aleksey Batrakov(çarpışma)>Aleksey Batrakov(vuruş)>mesiii(vuruş)
+[2.11.2026 10:29:46] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[183,185]
+[2.11.2026 10:31:33] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 10:32:23] SAYI takım=1 oyuncu=Aleksey Batrakov#183 stat=two_pt_made x=249 y=147 vy=6.18 skor=2-0 sonDokunuşlar=Aleksey Batrakov(vuruş)>Aleksey Batrakov(çarpışma)>Aleksey Batrakov(vuruş)
+[2.11.2026 10:33:36] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[183]
+[2.11.2026 10:34:53] SAYI takım=2 oyuncu=Aleksey Batrakov#183 stat=two_pt_made x=-395 y=-162 vy=6.44 skor=0-2 sonDokunuşlar=Aleksey Batrakov(çarpışma)>Aleksey Batrakov(vuruş)>Aleksey Batrakov(vuruş)
+[2.11.2026 10:35:40] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[183]
+[2.11.2026 10:36:14] SAYI takım=2 oyuncu=Aleksey Batrakov#183 stat=two_pt_made x=-278 y=-148 vy=6.67 skor=0-2 sonDokunuşlar=Aleksey Batrakov(vuruş)>Aleksey Batrakov(vuruş)>Aleksey Batrakov(vuruş)
+[2.11.2026 10:36:41] SAYI takım=1 oyuncu=Aleksey Batrakov#183 stat=two_pt_own_basket x=569 y=-198 vy=5.30 skor=2-2 sonDokunuşlar=Aleksey Batrakov(vuruş)>Aleksey Batrakov(vuruş)>Aleksey Batrakov(çarpışma)
+[2.11.2026 10:37:28] SAYI takım=2 oyuncu=Aleksey Batrakov#183 stat=two_pt_made x=-586 y=189 vy=-9.66 skor=2-4 sonDokunuşlar=Aleksey Batrakov(çarpışma)>Aleksey Batrakov(çarpışma)>Aleksey Batrakov(vuruş)
+[2.11.2026 10:37:43] MAÇ BİTTİ skor=2-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[183]
+[2.11.2026 10:47:44] MATCH FINISHED score=3-0 training=true winner=[undefined] loser=[undefined] eligible=[30,31]
+[2.11.2026 10:47:44] SCORE team=1 player=BorisWeetje#30 stat=three_pt_made x=-296 y=152 vy=2.70 score=0-0 lastTouches=BorisWeetje(collision)>BorisWeetje(collision)>BorisWeetje(kick)
+[2.11.2026 10:48:07] SCORE team=2 player=BorisWeetje#30 stat=three_pt_made x=253 y=-128 vy=8.86 score=0-3 lastTouches=BorisWeetje(collision)>BorisWeetje(collision)>BorisWeetje(kick)
+[2.11.2026 10:48:34] SCORE team=2 player=BorisWeetje#30 stat=two_pt_made x=-552 y=-217 vy=4.89 score=0-5 lastTouches=BorisWeetje(kick)>BorisWeetje(collision)>BorisWeetje(collision)
+[2.11.2026 10:48:42] SCORE team=2 player=BorisWeetje#30 stat=two_pt_made x=-625 y=194 vy=-10.11 score=0-7 lastTouches=BorisWeetje(collision)>BorisWeetje(collision)>BorisWeetje(kick)
+[2.11.2026 10:49:03] MATCH FINISHED score=0-7 training=true winner=[undefined] loser=[undefined] eligible=[30]
+[2.11.2026 10:49:57] SCORE team=2 player=BorisWeetje#30 stat=two_pt_own_basket x=-562 y=243 vy=-7.59 score=0-2 lastTouches=BorisWeetje(collision)>BorisWeetje(collision)>BorisWeetje(kick)
+[2.11.2026 10:50:07] SCORE team=2 player=BorisWeetje#30 stat=two_pt_own_basket x=-531 y=176 vy=-6.22 score=0-4 lastTouches=BorisWeetje(collision)>BorisWeetje(collision)>BorisWeetje(kick)
+[2.11.2026 10:51:07] MATCH FINISHED score=0-4 training=true winner=[undefined] loser=[undefined] eligible=[30]
+[2.11.2026 10:59:17] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 10:59:55] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 10:59:55] SAYI takım=1 oyuncu=H#186 stat=two_pt_made x=528 y=-421 vy=1.77 skor=0-0 sonDokunuşlar=H(çarpışma)>H(vuruş)>H(çarpışma)
+[2.11.2026 11:00:32] SAYI takım=2 oyuncu=H#186 stat=two_pt_made x=-572 y=-341 vy=2.00 skor=0-2 sonDokunuşlar=H(çarpışma)>H(vuruş)>H(çarpışma)
+[2.11.2026 11:00:45] SAYI takım=2 oyuncu=H#186 stat=two_pt_made x=-155 y=-234 vy=9.46 skor=0-4 sonDokunuşlar=H(vuruş)>H(çarpışma)>H(vuruş)
+[2.11.2026 11:01:08] SAYI takım=2 oyuncu=H#186 stat=two_pt_made x=-427 y=-161 vy=7.24 skor=0-6 sonDokunuşlar=H(vuruş)>H(çarpışma)>H(vuruş)
+[2.11.2026 11:01:59] MAÇ BİTTİ skor=0-6 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[186]
+[2.11.2026 11:02:17] SAYI takım=2 oyuncu=H#186 stat=three_pt_made x=233 y=36 vy=2.78 skor=0-3 sonDokunuşlar=H(çarpışma)>H(çarpışma)>H(vuruş)
+[2.11.2026 11:02:42] SAYI takım=2 oyuncu=H#186 stat=two_pt_made x=-494 y=142 vy=6.11 skor=0-5 sonDokunuşlar=H(çarpışma)>H(çarpışma)>H(vuruş)
+[2.11.2026 11:02:44] MAÇ BİTTİ skor=0-5 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 11:38:16] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 11:53:46] SAYI takım=1 oyuncu=ewe#187 stat=two_pt_made x=607 y=275 vy=-3.59 skor=2-0 sonDokunuşlar=ewe(çarpışma)>ewe(çarpışma)>ewe(vuruş)
+[2.11.2026 11:53:55] SAYI takım=1 oyuncu=ewe#187 stat=two_pt_made x=647 y=132 vy=-4.79 skor=4-0 sonDokunuşlar=ewe(çarpışma)>ewe(çarpışma)>ewe(vuruş)
+[2.11.2026 11:54:16] SAYI takım=1 oyuncu=ewe#187 stat=two_pt_made x=187 y=-291 vy=8.82 skor=6-0 sonDokunuşlar=ewe(çarpışma)>ewe(çarpışma)>ewe(vuruş)
+[2.11.2026 11:54:24] SAYI takım=1 oyuncu=ewe#187 stat=two_pt_made x=472 y=209 vy=-10.75 skor=8-0 sonDokunuşlar=ewe(çarpışma)>ewe(çarpışma)>ewe(vuruş)
+[2.11.2026 11:54:37] MAÇ BİTTİ skor=8-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 12:13:18] SAYI takım=1 oyuncu=mesiii#188 stat=two_pt_made x=451 y=-99 vy=6.46 skor=2-0 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:14:39] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[188]
+[2.11.2026 12:16:37] SAYI takım=1 oyuncu=mesiii#188 stat=two_pt_made x=468 y=-160 vy=7.83 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:16:43] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[188]
+[2.11.2026 12:17:17] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 12:20:47] SAYI takım=1 oyuncu=mesiii#189 stat=three_pt_made x=-239 y=129 vy=5.55 skor=3-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:20:55] SAYI takım=1 oyuncu=mesiii#189 stat=two_pt_made x=400 y=186 vy=2.70 skor=5-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 12:21:51] MAÇ BİTTİ skor=5-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[189]
+[2.11.2026 12:22:04] SAYI takım=1 oyuncu=mesiii#189 stat=two_pt_made x=555 y=-200 vy=4.57 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(çarpışma)
+[2.11.2026 12:22:45] SAYI takım=1 oyuncu=mesiii#189 stat=two_pt_made x=178 y=-127 vy=6.13 skor=4-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 12:23:27] SAYI takım=1 oyuncu=mesiii#189 stat=two_pt_made x=509 y=128 vy=-9.09 skor=6-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:23:54] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[189]
+[2.11.2026 12:29:48] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[189]
+[2.11.2026 12:29:48] SAYI takım=1 oyuncu=mesiii#189 stat=two_pt_made x=279 y=60 vy=6.22 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 12:31:58] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[189]
+[2.11.2026 12:31:58] SAYI takım=2 oyuncu=ezgk#190 stat=two_pt_own_basket x=-300 y=79 vy=2.65 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>ezgk(vuruş)
+[2.11.2026 12:34:20] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[189,190]
+[2.11.2026 12:34:20] SAYI takım=2 oyuncu=mesiii#189 stat=two_pt_made x=-161 y=-48 vy=5.02 skor=0-0 sonDokunuşlar=mesiii(vuruş)>ezgk(vuruş)>mesiii(vuruş)
+[2.11.2026 12:34:34] SAYI takım=1 oyuncu=mesiii#189 stat=two_pt_made x=521 y=-250 vy=1.94 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(çarpışma)
+[2.11.2026 12:35:12] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[190]
+[2.11.2026 12:35:17] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 12:37:07] SAYI takım=1 oyuncu=mesiii#191 stat=two_pt_made x=2 y=44 vy=7.35 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:37:49] SAYI takım=1 oyuncu=mesiii#191 stat=two_pt_made x=450 y=-154 vy=1.69 skor=4-0 sonDokunuşlar=mesiii(vuruş)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 12:39:03] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[191]
+[2.11.2026 12:39:13] SAYI takım=1 oyuncu=mesiii#191 stat=- x=0 y=-32 vy=7.29 skor=0-0 sonDokunuşlar=mesiii(vuruş)
+[2.11.2026 12:39:54] SAYI takım=1 oyuncu=mesiii#191 stat=two_pt_made x=547 y=-193 vy=4.30 skor=2-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(çarpışma)
+[2.11.2026 12:40:03] SAYI takım=1 oyuncu=mesiii#191 stat=two_pt_made x=576 y=-219 vy=6.03 skor=4-0 sonDokunuşlar=mesiii(vuruş)>mesiii(vuruş)>mesiii(çarpışma)
+[2.11.2026 12:40:16] SAYI takım=1 oyuncu=mesiii#191 stat=two_pt_made x=572 y=-224 vy=5.64 skor=6-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(çarpışma)
+[2.11.2026 12:41:06] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[191]
+[2.11.2026 12:41:48] SAYI takım=2 oyuncu=mesiii#191 stat=two_pt_made x=-237 y=-13 vy=8.62 skor=0-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:42:55] SAYI takım=2 oyuncu=mesiii#191 stat=three_pt_made x=221 y=86 vy=6.70 skor=0-5 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:43:03] SAYI takım=1 oyuncu=YaşlıRegista#192 stat=three_pt_made x=-400 y=34 vy=6.29 skor=3-5 sonDokunuşlar=YaşlıRegista(çarpışma)>YaşlıRegista(çarpışma)>YaşlıRegista(vuruş)
+[2.11.2026 12:43:09] MAÇ BİTTİ skor=3-5 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[191,192]
+[2.11.2026 12:43:38] SAYI takım=2 oyuncu=YaşlıRegista#192 stat=three_pt_made x=290 y=76 vy=3.13 skor=0-3 sonDokunuşlar=mesiii(çarpışma)>YaşlıRegista(çarpışma)>YaşlıRegista(vuruş)
+[2.11.2026 12:44:57] SAYI takım=1 oyuncu=YaşlıRegista#192 stat=two_pt_own_basket x=607 y=103 vy=-25.07 skor=2-3 sonDokunuşlar=YaşlıRegista(çarpışma)>mesiii(vuruş)>YaşlıRegista(vuruş)
+[2.11.2026 12:45:12] MAÇ BİTTİ skor=2-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[192,191]
+[2.11.2026 12:47:31] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[191,192]
+[2.11.2026 12:47:31] SAYI takım=2 oyuncu=YaşlıRegista#192 stat=two_pt_own_basket x=-23 y=-5 vy=-6.98 skor=0-0 sonDokunuşlar=YaşlıRegista(çarpışma)>YaşlıRegista(çarpışma)>YaşlıRegista(vuruş)
+[2.11.2026 12:48:18] SAYI takım=2 oyuncu=YaşlıRegista#192 stat=two_pt_made x=-68 y=144 vy=1.78 skor=0-2 sonDokunuşlar=YaşlıRegista(çarpışma)>YaşlıRegista(çarpışma)>YaşlıRegista(vuruş)
+[2.11.2026 12:49:34] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[192,191]
+[2.11.2026 12:50:54] SAYI takım=1 oyuncu=YaşlıRegista#192 stat=two_pt_made x=142 y=-287 vy=7.41 skor=2-0 sonDokunuşlar=YaşlıRegista(çarpışma)>mesiii(vuruş)>YaşlıRegista(vuruş)
+[2.11.2026 12:51:37] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[192,193,191]
+[2.11.2026 12:51:45] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 12:52:22] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 12:55:49] SAYI takım=1 oyuncu=mesiii#194 stat=two_pt_made x=461 y=-262 vy=5.80 skor=2-0 sonDokunuşlar=mesiii(vuruş)>mesiii(vuruş)>mesiii(çarpışma)
+[2.11.2026 12:56:36] SAYI takım=1 oyuncu=mesiii#194 stat=three_pt_made x=-593 y=-378 vy=5.87 skor=5-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 12:56:52] MAÇ BİTTİ skor=5-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[194]
+[2.11.2026 12:58:04] SAYI takım=2 oyuncu=Samet En İyi KALECİ#196 stat=three_pt_made x=444 y=-311 vy=8.44 skor=0-3 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>Samet En İyi KALECİ(çarpışma)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 12:58:35] SAYI takım=1 oyuncu=Samet En İyi KALECİ#196 stat=two_pt_own_basket x=43 y=-150 vy=3.04 skor=2-3 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>Samet En İyi KALECİ(çarpışma)
+[2.11.2026 12:58:56] MAÇ BİTTİ skor=2-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[196,194]
+[2.11.2026 13:00:21] SAYI takım=2 oyuncu=mesiii#194 stat=two_pt_made x=-491 y=210 vy=-8.45 skor=0-2 sonDokunuşlar=mesiii(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 13:00:41] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[196]
+[2.11.2026 13:02:20] SAYI takım=2 oyuncu=mesiii#197 stat=two_pt_own_basket x=-364 y=164 vy=4.25 skor=0-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 13:02:44] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[196,197]
+[2.11.2026 13:05:10] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[197,196]
+[2.11.2026 13:05:10] SAYI takım=2 oyuncu=mesiii#197 stat=three_pt_made x=190 y=-273 vy=3.21 skor=0-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>mesiii(vuruş)
+[2.11.2026 13:07:09] SAYI takım=2 oyuncu=mesiii#197 stat=two_pt_own_basket x=-245 y=61 vy=7.53 skor=0-2 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 13:07:13] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[196,197]
+[2.11.2026 13:07:26] SAYI takım=2 oyuncu=Samet En İyi KALECİ#196 stat=two_pt_own_basket x=-594 y=131 vy=-7.95 skor=0-2 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>Samet En İyi KALECİ(çarpışma)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 13:08:04] SAYI takım=1 oyuncu=Samet En İyi KALECİ#196 stat=three_pt_made x=-330 y=-344 vy=6.17 skor=3-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 13:08:18] SAYI takım=2 oyuncu=mesiii#197 stat=two_pt_made x=-282 y=-51 vy=8.79 skor=3-4 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 13:09:16] MAÇ BİTTİ skor=3-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[197,196]
+[2.11.2026 13:09:34] SAYI takım=2 oyuncu=mesiii#197 stat=two_pt_made x=-553 y=-193 vy=4.94 skor=0-2 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(çarpışma)
+[2.11.2026 13:10:30] SAYI takım=1 oyuncu=Elmina#198 stat=three_pt_made x=-235 y=-306 vy=4.68 skor=3-2 sonDokunuşlar=mesiii(vuruş)>Elmina(çarpışma)>Elmina(vuruş)
+[2.11.2026 13:11:19] MAÇ BİTTİ skor=3-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[196,198,197]
+[2.11.2026 13:12:07] SAYI takım=1 oyuncu=Samet En İyi KALECİ#196 stat=two_pt_own_basket x=478 y=181 vy=-3.03 skor=2-0 sonDokunuşlar=mesiii(vuruş)>noname(çarpışma)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 13:12:19] SAYI takım=1 oyuncu=mesiii#197 stat=two_pt_made x=318 y=143 vy=6.07 skor=4-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 13:13:22] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[197,199,196]
+[2.11.2026 13:14:06] SAYI takım=1 oyuncu=mesiii#197 stat=three_pt_made x=-35 y=52 vy=4.74 skor=3-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 13:14:22] SAYI takım=1 oyuncu=noname#199 stat=three_pt_own_basket x=-13 y=38 vy=5.91 skor=6-0 sonDokunuşlar=mesiii(çarpışma)>mesiii(vuruş)>noname(vuruş)
+[2.11.2026 13:15:25] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[197,196,199]
+[2.11.2026 13:16:20] SAYI takım=1 oyuncu=mesiii#197 stat=three_pt_made x=-397 y=124 vy=7.60 skor=3-0 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>mesiii(çarpışma)>mesiii(vuruş)
+[2.11.2026 13:17:28] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[197,196,199]
+[2.11.2026 13:18:51] SAYI takım=1 oyuncu=Samet En İyi KALECİ#196 stat=two_pt_made x=481 y=270 vy=-8.28 skor=2-0 sonDokunuşlar=Samet En İyi KALECİ(çarpışma)>Samet En İyi KALECİ(vuruş)>Samet En İyi KALECİ(çarpışma)
+[2.11.2026 13:19:15] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[196]
+[2.11.2026 13:19:29] SAYI takım=1 oyuncu=Samet En İyi KALECİ#196 stat=two_pt_own_basket x=63 y=202 vy=6.88 skor=2-0 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>Samet En İyi KALECİ(çarpışma)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 13:20:48] SAYI takım=1 oyuncu=Samet En İyi KALECİ#196 stat=two_pt_own_basket x=351 y=205 vy=4.16 skor=4-0 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>Samet En İyi KALECİ(vuruş)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 13:20:59] SAYI takım=2 oyuncu=Samet En İyi KALECİ#196 stat=three_pt_made x=280 y=130 vy=2.49 skor=4-3 sonDokunuşlar=Samet En İyi KALECİ(çarpışma)>Samet En İyi KALECİ(çarpışma)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 13:21:14] SAYI takım=1 oyuncu=Samet En İyi KALECİ#196 stat=two_pt_own_basket x=416 y=118 vy=-7.14 skor=6-3 sonDokunuşlar=Samet En İyi KALECİ(vuruş)>Samet En İyi KALECİ(çarpışma)>Samet En İyi KALECİ(vuruş)
+[2.11.2026 13:21:19] MAÇ BİTTİ skor=6-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[196]
+[2.11.2026 13:21:27] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 13:41:17] SCORE team=1 player=Harambe#33 stat=two_pt_made x=466 y=-274 vy=5.36 score=2-0 lastTouches=Harambe(collision)>Harambe(kick)>Harambe(collision)
+[2.11.2026 13:41:56] MATCH FINISHED score=2-0 training=true winner=[undefined] loser=[undefined] eligible=[33]
+[2.11.2026 13:42:11] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-598 y=123 vy=-8.64 score=0-2 lastTouches=Harambe(collision)>Harambe(kick)>Harambe(kick)
+[2.11.2026 13:42:33] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-418 y=-343 vy=7.60 score=0-4 lastTouches=Harambe(collision)>Harambe(kick)>Harambe(kick)
+[2.11.2026 13:42:46] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-458 y=-398 vy=7.05 score=0-6 lastTouches=Harambe(collision)>Harambe(kick)>Harambe(collision)
+[2.11.2026 13:43:16] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-550 y=5 vy=1.84 score=0-8 lastTouches=Harambe(kick)>Harambe(collision)>Harambe(kick)
+[2.11.2026 13:43:59] MATCH FINISHED score=0-8 training=true winner=[undefined] loser=[undefined] eligible=[33]
+[2.11.2026 13:44:16] SCORE team=2 player=Harambe#33 stat=three_pt_own_basket x=71 y=28 vy=7.65 score=0-3 lastTouches=Harambe(kick)>Harambe(collision)>Harambe(kick)
+[2.11.2026 13:44:43] SCORE team=2 player=Harambe#33 stat=two_pt_own_basket x=-470 y=122 vy=6.96 score=0-5 lastTouches=Harambe(kick)>Harambe(kick)>Harambe(kick)
+[2.11.2026 13:45:45] SCORE team=1 player=Harambe#33 stat=three_pt_made x=-225 y=59 vy=3.46 score=3-5 lastTouches=Harambe(kick)>Harambe(kick)>Harambe(kick)
+[2.11.2026 13:46:03] MATCH FINISHED score=3-5 training=true winner=[undefined] loser=[undefined] eligible=[33]
+[2.11.2026 13:46:15] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-509 y=-260 vy=4.93 score=0-2 lastTouches=Harambe(collision)>Harambe(kick)>Harambe(collision)
+[2.11.2026 13:46:36] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-584 y=265 vy=-7.82 score=0-4 lastTouches=Harambe(kick)>Harambe(collision)>Harambe(kick)
+[2.11.2026 13:46:52] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-488 y=-312 vy=5.75 score=0-6 lastTouches=Harambe(collision)>Harambe(kick)>Harambe(collision)
+[2.11.2026 13:47:15] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-551 y=-279 vy=5.37 score=0-8 lastTouches=Harambe(kick)>Harambe(kick)>Harambe(collision)
+[2.11.2026 13:47:41] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-642 y=97 vy=-13.54 score=0-10 lastTouches=Harambe(kick)>Harambe(collision)>Harambe(kick)
+[2.11.2026 13:48:06] MATCH FINISHED score=0-10 training=true winner=[undefined] loser=[undefined] eligible=[33]
+[2.11.2026 13:48:39] SCORE team=1 player=Harambe#33 stat=two_pt_made x=161 y=48 vy=8.22 score=2-0 lastTouches=Harambe(kick)>Harambe(collision)>Harambe(kick)
+[2.11.2026 13:50:10] MATCH FINISHED score=2-0 training=true winner=[undefined] loser=[undefined] eligible=[33]
+[2.11.2026 13:50:33] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-218 y=205 vy=7.87 score=0-2 lastTouches=Harambe(kick)>Harambe(collision)>Harambe(kick)
+[2.11.2026 13:50:51] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-495 y=-292 vy=5.00 score=0-4 lastTouches=Harambe(kick)>Harambe(kick)>Harambe(collision)
+[2.11.2026 13:51:03] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-401 y=-266 vy=2.85 score=0-6 lastTouches=Harambe(collision)>Harambe(kick)>Harambe(kick)
+[2.11.2026 13:51:37] SCORE team=2 player=Harambe#33 stat=two_pt_made x=-436 y=-4 vy=6.17 score=0-8 lastTouches=Harambe(kick)>Harambe(kick)>Harambe(kick)
+[2.11.2026 13:52:13] MATCH FINISHED score=0-8 training=true winner=[undefined] loser=[undefined] eligible=[33]
+[2.11.2026 13:53:43] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 14:20:06] SAYI takım=1 oyuncu=MOSALAH31#200 stat=three_pt_made x=-100 y=89 vy=9.76 skor=3-0 sonDokunuşlar=𝐁𝐋𝐀𝐃𝟑(çarpışma)>𝐁𝐋𝐀𝐃𝟑(vuruş)>MOSALAH31(vuruş)
+[2.11.2026 14:20:30] SAYI takım=2 oyuncu=𝐁𝐋𝐀𝐃𝟑#201 stat=three_pt_made x=402 y=-73 vy=7.47 skor=3-3 sonDokunuşlar=𝐁𝐋𝐀𝐃𝟑(vuruş)>𝐁𝐋𝐀𝐃𝟑(çarpışma)>𝐁𝐋𝐀𝐃𝟑(vuruş)
+[2.11.2026 14:23:46] MAÇ BİTTİ skor=3-6 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[201,200]
+[2.11.2026 14:23:46] SAYI takım=2 oyuncu=MOSALAH31#200 stat=three_pt_own_basket x=331 y=-119 vy=7.70 skor=0-0 sonDokunuşlar=ecrin(vuruş)>MOSALAH31(çarpışma)>MOSALAH31(vuruş)
+[2.11.2026 14:26:14] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[204,203]
+[2.11.2026 14:26:14] SAYI takım=2 oyuncu=ecrin#204 stat=three_pt_made x=276 y=-95 vy=6.97 skor=0-0 sonDokunuşlar=ecrin(çarpışma)>ecrin(çarpışma)>ecrin(vuruş)
+[2.11.2026 14:26:14] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 14:26:31] SAYI takım=2 oyuncu=ecrin#204 stat=three_pt_made x=261 y=-108 vy=7.71 skor=0-3 sonDokunuşlar=ecrin(çarpışma)>ecrin(çarpışma)>ecrin(vuruş)
+[2.11.2026 14:28:14] SAYI takım=2 oyuncu=ecrin#204 stat=three_pt_made x=382 y=-331 vy=6.58 skor=0-6 sonDokunuşlar=Harambe(vuruş)>ecrin(çarpışma)>ecrin(vuruş)
+[2.11.2026 14:28:17] MAÇ BİTTİ skor=0-6 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[204,203]
+[2.11.2026 14:29:47] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 15:13:16] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 15:13:16] SAYI takım=1 oyuncu=otistik#205 stat=two_pt_made x=418 y=231 vy=4.73 skor=0-0 sonDokunuşlar=otistik(çarpışma)>otistik(çarpışma)>otistik(vuruş)
+[2.11.2026 15:14:41] SAYI takım=1 oyuncu=Dr. Strangelove#206 stat=three_pt_made x=-128 y=101 vy=6.74 skor=3-0 sonDokunuşlar=otistik(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 15:15:19] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[206,205]
+[2.11.2026 15:16:07] SAYI takım=2 oyuncu=Dr. Strangelove#206 stat=three_pt_made x=53 y=-193 vy=5.05 skor=0-3 sonDokunuşlar=otistik(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 15:17:22] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[205,206,207]
+[2.11.2026 15:19:12] SAYI takım=2 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=-350 y=-380 vy=-1.25 skor=0-2 sonDokunuşlar=FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 15:19:25] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[206,207,205]
+[2.11.2026 15:19:40] SAYI takım=2 oyuncu=FENEVİMİ SKTİLER YETİŞİN#207 stat=three_pt_made x=518 y=-412 vy=5.30 skor=0-3 sonDokunuşlar=FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)
+[2.11.2026 15:20:10] SAYI takım=1 oyuncu=otistik#205 stat=two_pt_made x=645 y=72 vy=-5.61 skor=2-3 sonDokunuşlar=otistik(çarpışma)>otistik(çarpışma)>otistik(vuruş)
+[2.11.2026 15:20:47] SAYI takım=1 oyuncu=otistik#205 stat=two_pt_made x=630 y=42 vy=-15.82 skor=4-3 sonDokunuşlar=otistik(çarpışma)>otistik(çarpışma)>otistik(vuruş)
+[2.11.2026 15:21:28] MAÇ BİTTİ skor=4-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[205,206,207]
+[2.11.2026 15:24:48] MAÇ BİTTİ skor=2-0 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[207,208,206]
+[2.11.2026 15:24:48] SAYI takım=1 oyuncu=Dr. Strangelove#206 stat=two_pt_own_basket x=336 y=33 vy=-9.85 skor=0-0 sonDokunuşlar=ardababa(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 15:24:48] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 15:24:57] SAYI takım=1 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=481 y=-305 vy=5.68 skor=2-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 15:25:18] SAYI takım=1 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=305 y=188 vy=5.01 skor=4-0 sonDokunuşlar=ardababa(çarpışma)>ardababa(vuruş)>Dr. Strangelove(vuruş)
+[2.11.2026 15:25:53] SAYI takım=1 oyuncu=GameKing(Haxball-Stayle)#212 stat=two_pt_own_basket x=497 y=-318 vy=11.42 skor=6-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)>GameKing(Haxball-Stayle)(vuruş)
+[2.11.2026 15:26:51] MAÇ BİTTİ skor=6-0 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[207,206,212]
+[2.11.2026 15:26:51] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 15:29:27] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[207,212,214,206]
+[2.11.2026 15:29:27] SAYI takım=1 oyuncu=FENEVİMİ SKTİLER YETİŞİN#207 stat=three_pt_made x=-150 y=-247 vy=2.10 skor=0-0 sonDokunuşlar=GameKing(Haxball-Stayle)(vuruş)>FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)
+[2.11.2026 15:29:27] ELO kullanıcı=913 1137->1154 (+17)
+[2.11.2026 15:29:27] ELO kullanıcı=2675 1000->1017 (+17)
+[2.11.2026 15:29:27] ELO kullanıcı=2575 1000->977 (-23)
+[2.11.2026 15:29:27] ELO kullanıcı=1044 1245->1231 (-14)
+[2.11.2026 15:30:09] SAYI takım=2 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=-566 y=77 vy=-6.72 skor=0-2 sonDokunuşlar=GameKing(Haxball-Stayle)(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 15:31:24] SAYI takım=2 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=-603 y=-559 vy=8.48 skor=0-4 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 15:31:30] MAÇ BİTTİ skor=0-4 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[206,212]
+[2.11.2026 15:31:30] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 15:32:04] SAYI takım=1 oyuncu=Dr. Strangelove#206 stat=three_pt_own_basket x=-315 y=136 vy=7.51 skor=3-0 sonDokunuşlar=GameKing(Haxball-Stayle)(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 15:32:36] SAYI takım=2 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=-526 y=35 vy=-12.24 skor=3-2 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 15:33:33] MAÇ BİTTİ skor=3-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[212,206]
+[2.11.2026 15:34:12] SAYI takım=1 oyuncu=GameKing(Haxball-Stayle)#212 stat=two_pt_own_basket x=540 y=-306 vy=6.75 skor=2-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)>GameKing(Haxball-Stayle)(çarpışma)
+[2.11.2026 15:34:23] SAYI takım=1 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=515 y=-549 vy=8.04 skor=4-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(çarpışma)>Dr. Strangelove(çarpışma)
+[2.11.2026 15:35:04] SAYI takım=1 oyuncu=Dr. Strangelove#206 stat=two_pt_made x=614 y=58 vy=-10.62 skor=6-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>GameKing(Haxball-Stayle)(vuruş)>Dr. Strangelove(vuruş)
+[2.11.2026 15:35:36] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[206,212]
+[2.11.2026 15:36:56] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 15:37:10] SAYI takım=2 oyuncu=Sane yedek kaldı#215 stat=two_pt_made x=-140 y=180 vy=4.93 skor=0-2 sonDokunuşlar=Sane yedek kaldı(vuruş)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 15:37:32] SAYI takım=2 oyuncu=Sane yedek kaldı#215 stat=two_pt_made x=-584 y=201 vy=-9.61 skor=0-4 sonDokunuşlar=Sane yedek kaldı(çarpışma)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 15:39:00] MAÇ BİTTİ skor=0-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[215]
+[2.11.2026 15:41:40] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 15:42:27] SAYI takım=2 oyuncu=Sane yedek kaldı#215 stat=two_pt_made x=-133 y=146 vy=3.85 skor=0-2 sonDokunuşlar=Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)>Sane yedek kaldı(çarpışma)
+[2.11.2026 15:43:01] SAYI takım=2 oyuncu=Sane yedek kaldı#215 stat=three_pt_made x=486 y=-470 vy=9.42 skor=0-5 sonDokunuşlar=Adebayor(vuruş)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 15:43:14] SAYI takım=1 oyuncu=Adebayor#218 stat=two_pt_made x=26 y=237 vy=7.06 skor=2-5 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 15:43:43] MAÇ BİTTİ skor=2-5 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[215,218]
+[2.11.2026 15:46:19] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[218,215]
+[2.11.2026 15:46:19] SAYI takım=1 oyuncu=Adebayor#218 stat=three_pt_made x=-412 y=46 vy=6.24 skor=0-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 15:47:13] SAYI takım=1 oyuncu=Sane yedek kaldı#215 stat=three_pt_made x=-335 y=120 vy=6.33 skor=3-0 sonDokunuşlar=Sane yedek kaldı(çarpışma)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 15:48:22] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[215,218]
+[2.11.2026 15:49:00] SAYI takım=1 oyuncu=Sane yedek kaldı#215 stat=two_pt_own_basket x=497 y=237 vy=-9.11 skor=2-0 sonDokunuşlar=Adebayor(vuruş)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 15:49:40] SAYI takım=2 oyuncu=Sane yedek kaldı#215 stat=three_pt_made x=226 y=46 vy=7.05 skor=2-3 sonDokunuşlar=Sane yedek kaldı(çarpışma)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 15:50:25] MAÇ BİTTİ skor=2-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[215,218]
+[2.11.2026 15:50:47] SAYI takım=1 oyuncu=Adebayor#218 stat=two_pt_made x=526 y=-276 vy=2.09 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 15:50:54] SAYI takım=1 oyuncu=Adebayor#218 stat=two_pt_made x=463 y=165 vy=-6.66 skor=4-0 sonDokunuşlar=Sane yedek kaldı(çarpışma)>Sane yedek kaldı(çarpışma)>Adebayor(vuruş)
+[2.11.2026 15:52:29] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[218,215]
+[2.11.2026 15:53:47] SAYI takım=1 oyuncu=Adebayor#218 stat=two_pt_made x=562 y=-133 vy=2.36 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 15:54:32] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[218,215]
+[2.11.2026 15:59:59] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[218,215]
+[2.11.2026 15:59:59] SAYI takım=2 oyuncu=Sane yedek kaldı#215 stat=two_pt_own_basket x=-155 y=195 vy=-5.42 skor=0-0 sonDokunuşlar=Adebayor(vuruş)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 16:00:07] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 16:06:00] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 16:06:00] SAYI takım=1 oyuncu=H#219 stat=two_pt_made x=491 y=230 vy=5.06 skor=0-0 sonDokunuşlar=H(çarpışma)>H(çarpışma)>H(vuruş)
+[2.11.2026 16:06:24] SAYI takım=2 oyuncu=H#219 stat=two_pt_made x=-581 y=-516 vy=8.48 skor=0-2 sonDokunuşlar=H(vuruş)>H(vuruş)>H(çarpışma)
+[2.11.2026 16:06:36] SAYI takım=2 oyuncu=H#219 stat=two_pt_made x=-483 y=-537 vy=3.09 skor=0-4 sonDokunuşlar=H(çarpışma)>H(çarpışma)>H(çarpışma)
+[2.11.2026 16:07:40] SAYI takım=1 oyuncu=H#219 stat=two_pt_own_basket x=562 y=-199 vy=4.39 skor=2-4 sonDokunuşlar=H(çarpışma)>H(vuruş)>H(çarpışma)
+[2.11.2026 16:07:48] SAYI takım=1 oyuncu=H#219 stat=two_pt_own_basket x=463 y=182 vy=5.64 skor=4-4 sonDokunuşlar=H(vuruş)>H(vuruş)
+[2.11.2026 16:08:16] MAÇ BİTTİ skor=4-6 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[219]
+[2.11.2026 16:08:16] SAYI takım=2 oyuncu=H#219 stat=two_pt_made x=-527 y=-415 vy=7.06 skor=0-0 sonDokunuşlar=H(çarpışma)>H(vuruş)>H(çarpışma)
+[2.11.2026 16:08:22] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 16:26:59] SAYI takım=2 oyuncu=ecrin#221 stat=three_pt_made x=381 y=-93 vy=3.85 skor=0-3 sonDokunuşlar=Adebayor(vuruş)>ecrin(çarpışma)>ecrin(vuruş)
+[2.11.2026 16:27:32] SAYI takım=2 oyuncu=ecrin#221 stat=three_pt_made x=404 y=-153 vy=8.57 skor=0-6 sonDokunuşlar=king(vuruş)>ecrin(çarpışma)>ecrin(vuruş)
+[2.11.2026 16:27:35] SCORE team=2 player=BATRAKAOV#34 stat=two_pt_own_basket x=-615 y=65 vy=-9.08 score=0-2 lastTouches=BATRAKAOV(kick)>BATRAKAOV(collision)>BATRAKAOV(kick)
+[2.11.2026 16:27:50] SCORE team=1 player=BATRAKAOV#34 stat=two_pt_made x=532 y=-155 vy=3.34 score=2-2 lastTouches=BATRAKAOV(kick)>BATRAKAOV(kick)>BATRAKAOV(kick)
+[2.11.2026 16:28:03] MAÇ BİTTİ skor=0-6 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[221,222]
+[2.11.2026 16:28:16] SCORE team=1 player=BATRAKAOV#34 stat=two_pt_made x=535 y=236 vy=-6.85 score=4-2 lastTouches=BATRAKAOV(kick)>BATRAKAOV(kick)>BATRAKAOV(kick)
+[2.11.2026 16:28:17] MATCH FINISHED score=4-2 training=true winner=[undefined] loser=[undefined] eligible=[34]
+[2.11.2026 16:31:08] MATCH FINISHED score=2-0 training=true winner=[undefined] loser=[undefined] eligible=[34]
+[2.11.2026 16:31:08] SCORE team=1 player=BATRAKAOV#34 stat=two_pt_made x=177 y=131 vy=4.97 score=0-0 lastTouches=BATRAKAOV(collision)>BATRAKAOV(kick)>BATRAKAOV(kick)
+[2.11.2026 16:31:28] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[221,222]
+[2.11.2026 16:31:28] SAYI takım=2 oyuncu=ecrin#221 stat=two_pt_made x=-597 y=182 vy=-9.67 skor=0-0 sonDokunuşlar=ecrin(çarpışma)>ecrin(çarpışma)>ecrin(vuruş)
+[2.11.2026 16:31:32] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 16:31:43] SAYI takım=1 oyuncu=ecrin#221 stat=three_pt_made x=-183 y=60 vy=2.37 skor=3-0 sonDokunuşlar=ecrin(çarpışma)>ecrin(çarpışma)>ecrin(vuruş)
+[2.11.2026 16:31:59] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 16:32:26] SCORE team=2 player=BATRAKAOV#34 stat=two_pt_own_basket x=-542 y=130 vy=-6.49 score=0-2 lastTouches=BATRAKAOV(kick)>BATRAKAOV(collision)>BATRAKAOV(kick)
+[2.11.2026 16:33:03] SCORE team=1 player=BATRAKAOV#34 stat=two_pt_made x=41 y=146 vy=5.25 score=2-2 lastTouches=BATRAKAOV(kick)>BATRAKAOV(collision)>BATRAKAOV(kick)
+[2.11.2026 16:38:29] SAYI takım=1 oyuncu=boomer#223 stat=two_pt_made x=90 y=141 vy=7.83 skor=2-0 sonDokunuşlar=boomer(çarpışma)>boomer(çarpışma)>boomer(vuruş)
+[2.11.2026 16:38:42] SAYI takım=1 oyuncu=boomer#223 stat=two_pt_made x=314 y=-122 vy=6.07 skor=4-0 sonDokunuşlar=boomer(çarpışma)>boomer(vuruş)>boomer(vuruş)
+[2.11.2026 16:39:47] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[223]
+[2.11.2026 16:41:23] SAYI takım=1 oyuncu=boomer#223 stat=three_pt_made x=-210 y=169 vy=6.30 skor=3-0 sonDokunuşlar=Hayvan Lukaku(vuruş)>boomer(çarpışma)>boomer(vuruş)
+[2.11.2026 16:41:51] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[223,224]
+[2.11.2026 16:43:38] SAYI takım=1 oyuncu=abcde#225 stat=two_pt_made x=525 y=-414 vy=6.91 skor=2-0 sonDokunuşlar=boomer(vuruş)>Hayvan Lukaku(vuruş)>abcde(çarpışma)
+[2.11.2026 16:43:54] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[224,223]
+[2.11.2026 16:44:02] SAYI takım=1 oyuncu=Hayvan Lukaku#224 stat=two_pt_made x=0 y=60 vy=7.74 skor=2-0 sonDokunuşlar=Hayvan Lukaku(çarpışma)>Hayvan Lukaku(vuruş)
+[2.11.2026 16:45:57] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[224,225,223,226]
+[2.11.2026 16:46:51] SAYI takım=2 oyuncu=abcde#225 stat=two_pt_made x=-573 y=-458 vy=7.74 skor=0-2 sonDokunuşlar=abcde(vuruş)>abcde(vuruş)>abcde(çarpışma)
+[2.11.2026 16:47:13] MATCH FINISHED score=2-4 training=true winner=[undefined] loser=[undefined] eligible=[34]
+[2.11.2026 16:47:13] SCORE team=2 player=𝚁̴𝙸̴𝙾̴𝚂̴#35 stat=two_pt_made x=-107 y=60 vy=3.98 score=0-0 lastTouches=𝚁̴𝙸̴𝙾̴𝚂̴(kick)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)
+[2.11.2026 16:47:42] SCORE team=1 player=𝚁̴𝙸̴𝙾̴𝚂̴#35 stat=two_pt_made x=630 y=121 vy=-10.99 score=2-0 lastTouches=𝚁̴𝙸̴𝙾̴𝚂̴(kick)>𝚁̴𝙸̴𝙾̴𝚂̴(collision)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)
+[2.11.2026 16:47:51] SAYI takım=2 oyuncu=Hayvan Lukaku#224 stat=two_pt_own_basket x=-405 y=245 vy=-4.55 skor=0-4 sonDokunuşlar=Hayvan Lukaku(vuruş)>Hayvan Lukaku(çarpışma)>Hayvan Lukaku(vuruş)
+[2.11.2026 16:48:00] MAÇ BİTTİ skor=0-4 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[226,225,223]
+[2.11.2026 16:48:00] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 16:48:08] SAYI takım=2 oyuncu=abcde#225 stat=two_pt_made x=-508 y=-207 vy=7.92 skor=0-2 sonDokunuşlar=Mr. Hoden(vuruş)>abcde(çarpışma)>abcde(vuruş)
+[2.11.2026 16:48:17] SCORE team=1 player=𝚁̴𝙸̴𝙾̴𝚂̴#35 stat=two_pt_made x=42 y=-388 vy=5.99 score=4-0 lastTouches=𝚁̴𝙸̴𝙾̴𝚂̴(collision)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)
+[2.11.2026 16:48:44] SCORE team=1 player=𝚁̴𝙸̴𝙾̴𝚂̴#35 stat=two_pt_made x=648 y=120 vy=-12.78 score=6-0 lastTouches=𝚁̴𝙸̴𝙾̴𝚂̴(collision)>𝚁̴𝙸̴𝙾̴𝚂̴(collision)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)
+[2.11.2026 16:48:58] SCORE team=1 player=𝚁̴𝙸̴𝙾̴𝚂̴#35 stat=two_pt_made x=638 y=68 vy=-9.36 score=8-0 lastTouches=𝚁̴𝙸̴𝙾̴𝚂̴(collision)>𝚁̴𝙸̴𝙾̴𝚂̴(collision)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)
+[2.11.2026 16:49:16] SCORE team=2 player=𝚁̴𝙸̴𝙾̴𝚂̴#35 stat=two_pt_own_basket x=-526 y=-286 vy=1.74 score=8-2 lastTouches=𝚁̴𝙸̴𝙾̴𝚂̴(kick)>𝚁̴𝙸̴𝙾̴𝚂̴(kick)>𝚁̴𝙸̴𝙾̴𝚂̴(collision)
+[2.11.2026 16:49:16] MATCH FINISHED score=8-2 training=true winner=[undefined] loser=[undefined] eligible=[35,34]
+[2.11.2026 16:49:19] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 16:49:21] SAYI takım=2 oyuncu=abcde#225 stat=two_pt_made x=-384 y=-386 vy=10.46 skor=0-4 sonDokunuşlar=abcde(çarpışma)>abcde(çarpışma)>abcde(vuruş)
+[2.11.2026 16:50:03] MAÇ BİTTİ skor=0-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[225,223,226]
+[2.11.2026 16:50:44] SAYI takım=2 oyuncu=abcde#225 stat=two_pt_made x=-168 y=-137 vy=6.79 skor=0-2 sonDokunuşlar=Mr. Hoden(vuruş)>Mr. Hoden(çarpışma)>abcde(vuruş)
+[2.11.2026 16:50:56] SAYI takım=2 oyuncu=Mr. Hoden#226 stat=three_pt_made x=29 y=195 vy=5.90 skor=0-5 sonDokunuşlar=Mr. Hoden(çarpışma)>Mr. Hoden(çarpışma)>Mr. Hoden(vuruş)
+[2.11.2026 16:51:23] SAYI takım=1 oyuncu=Mr. Hoden#226 stat=two_pt_own_basket x=441 y=114 vy=-3.84 skor=2-5 sonDokunuşlar=Mr. Hoden(çarpışma)>Mr. Hoden(çarpışma)>Mr. Hoden(vuruş)
+[2.11.2026 16:51:33] SAYI takım=2 oyuncu=abcde#225 stat=two_pt_made x=-461 y=-190 vy=4.23 skor=2-7 sonDokunuşlar=Mr. Hoden(vuruş)>Mr. Hoden(vuruş)>abcde(çarpışma)
+[2.11.2026 16:51:42] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 16:52:06] MAÇ BİTTİ skor=2-7 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[225,226,223]
+[2.11.2026 16:52:13] SAYI takım=1 oyuncu=abcde#225 stat=three_pt_made x=0 y=59 vy=2.13 skor=3-0 sonDokunuşlar=Mr. Hoden(çarpışma)>abcde(vuruş)
+[2.11.2026 16:52:43] SAYI takım=1 oyuncu=abcde#225 stat=two_pt_made x=489 y=-470 vy=5.72 skor=5-0 sonDokunuşlar=abcde(çarpışma)>abcde(çarpışma)>abcde(çarpışma)
+[2.11.2026 16:54:09] MAÇ BİTTİ skor=5-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[226,225,223]
+[2.11.2026 16:56:29] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[226,227,225,223]
+[2.11.2026 16:56:29] SAYI takım=2 oyuncu=boomer#223 stat=two_pt_own_basket x=-583 y=42 vy=-18.75 skor=0-0 sonDokunuşlar=boomer(çarpışma)>boomer(vuruş)>boomer(vuruş)
+[2.11.2026 17:02:25] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[226,227,225,223,228]
+[2.11.2026 17:02:25] SAYI takım=2 oyuncu=pqwtstr#228 stat=two_pt_own_basket x=-646 y=44 vy=-12.61 skor=0-0 sonDokunuşlar=pqwtstr(çarpışma)>pqwtstr(vuruş)>pqwtstr(vuruş)
+[2.11.2026 17:02:25] ELO kullanıcı=2277 974->984 (+10)
+[2.11.2026 17:02:25] ELO kullanıcı=1016 1068->1078 (+10)
+[2.11.2026 17:02:25] ELO kullanıcı=115 1129->1139 (+10)
+[2.11.2026 17:02:25] ELO kullanıcı=2586 1000->983 (-17)
+[2.11.2026 17:02:25] ELO kullanıcı=1989 1000->983 (-17)
+[2.11.2026 17:02:40] SAYI takım=2 oyuncu=Mr. Hoden#226 stat=two_pt_own_basket x=-569 y=65 vy=-4.28 skor=0-2 sonDokunuşlar=Jackie(vuruş)>abcde(vuruş)>Mr. Hoden(çarpışma)
+[2.11.2026 17:03:39] SAYI takım=1 oyuncu=ibrahima balde#231 stat=two_pt_made x=538 y=-214 vy=2.02 skor=2-2 sonDokunuşlar=ibrahima balde(çarpışma)>ibrahima balde(çarpışma)>ibrahima balde(çarpışma)
+[2.11.2026 17:03:49] SAYI takım=1 oyuncu=Mr. Hoden#226 stat=three_pt_made x=-462 y=-325 vy=7.03 skor=5-2 sonDokunuşlar=ibrahima balde(vuruş)>Mr. Hoden(çarpışma)>Mr. Hoden(vuruş)
+[2.11.2026 17:04:25] SAYI takım=2 oyuncu=Mr. Hoden#226 stat=two_pt_own_basket x=-548 y=-31 vy=-10.13 skor=5-4 sonDokunuşlar=Mr. Hoden(çarpışma)>Mr. Hoden(çarpışma)>Mr. Hoden(vuruş)
+[2.11.2026 17:04:28] MAÇ BİTTİ skor=5-4 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[225,226,223,231]
+[2.11.2026 17:04:28] ELO kullanıcı=115 1139->1148 (+9)
+[2.11.2026 17:04:28] ELO kullanıcı=2277 984->993 (+9)
+[2.11.2026 17:04:28] ELO kullanıcı=2586 983->963 (-20)
+[2.11.2026 17:04:28] ELO kullanıcı=1561 985->978 (-7)
+[2.11.2026 17:07:21] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[225,226,231,223]
+[2.11.2026 17:07:21] SAYI takım=2 oyuncu=abcde#225 stat=two_pt_made x=-566 y=-144 vy=11.09 skor=0-0 sonDokunuşlar=Mr. Hoden(çarpışma)>Mr. Hoden(vuruş)>abcde(vuruş)
+[2.11.2026 17:07:21] ELO kullanıcı=115 1148->1159 (+11)
+[2.11.2026 17:07:21] ELO kullanıcı=2277 993->999 (+6)
+[2.11.2026 17:07:21] ELO kullanıcı=1561 978->969 (-9)
+[2.11.2026 17:07:21] ELO kullanıcı=2586 963->949 (-14)
+[2.11.2026 17:07:54] SAYI takım=2 oyuncu=ibrahima balde#231 stat=three_pt_made x=406 y=-147 vy=8.09 skor=0-3 sonDokunuşlar=Mr. Hoden(vuruş)>ibrahima balde(çarpışma)>ibrahima balde(vuruş)
+[2.11.2026 17:09:24] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[231,226]
+[2.11.2026 17:09:24] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 17:10:13] SAYI takım=2 oyuncu=ibrahima balde#231 stat=two_pt_made x=-17 y=-128 vy=7.58 skor=0-2 sonDokunuşlar=ibrahima balde(çarpışma)>ibrahima balde(çarpışma)>ibrahima balde(vuruş)
+[2.11.2026 17:11:27] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[231,234]
+[2.11.2026 17:12:01] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 17:12:32] SAYI takım=1 oyuncu=ibrahima balde#231 stat=two_pt_made x=552 y=-125 vy=-3.76 skor=2-0 sonDokunuşlar=ibrahima balde(çarpışma)>ibrahima balde(vuruş)>ibrahima balde(çarpışma)
+[2.11.2026 17:13:48] SAYI takım=1 oyuncu=ibrahima balde#231 stat=two_pt_made x=323 y=15 vy=6.91 skor=4-0 sonDokunuşlar=ibrahima balde(çarpışma)>ibrahima balde(çarpışma)>ibrahima balde(vuruş)
+[2.11.2026 17:14:01] SAYI takım=1 oyuncu=ibrahima balde#231 stat=two_pt_made x=614 y=120 vy=-12.15 skor=6-0 sonDokunuşlar=ibrahima balde(çarpışma)>ibrahima balde(çarpışma)>ibrahima balde(vuruş)
+[2.11.2026 17:14:05] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[231]
+[2.11.2026 17:14:17] SAYI takım=2 oyuncu=ibrahima balde#231 stat=two_pt_made x=-514 y=-286 vy=5.49 skor=0-2 sonDokunuşlar=ibrahima balde(çarpışma)>ibrahima balde(vuruş)>ibrahima balde(çarpışma)
+[2.11.2026 17:14:27] SAYI takım=2 oyuncu=ibrahima balde#231 stat=two_pt_made x=-491 y=-129 vy=6.72 skor=0-4 sonDokunuşlar=ibrahima balde(vuruş)>ibrahima balde(vuruş)
+[2.11.2026 17:14:36] SAYI takım=2 oyuncu=ibrahima balde#231 stat=two_pt_made x=-400 y=49 vy=6.48 skor=0-6 sonDokunuşlar=ibrahima balde(vuruş)
+[2.11.2026 17:14:45] SAYI takım=2 oyuncu=ibrahima balde#231 stat=two_pt_made x=-496 y=-279 vy=2.93 skor=0-8 sonDokunuşlar=ibrahima balde(vuruş)>ibrahima balde(çarpışma)
+[2.11.2026 17:14:54] SAYI takım=2 oyuncu=ibrahima balde#231 stat=two_pt_made x=-400 y=44 vy=7.13 skor=0-10 sonDokunuşlar=ibrahima balde(vuruş)
+[2.11.2026 17:14:57] MAÇ BİTTİ skor=0-10 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 17:29:04] SAYI takım=1 oyuncu=Adebayor#235 stat=two_pt_made x=32 y=175 vy=6.18 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:29:32] SAYI takım=1 oyuncu=Adebayor#235 stat=two_pt_made x=499 y=-299 vy=6.28 skor=4-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 17:30:15] SAYI takım=1 oyuncu=Adebayor#235 stat=three_pt_made x=-231 y=57 vy=3.47 skor=7-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:30:30] MAÇ BİTTİ skor=7-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[235]
+[2.11.2026 17:30:33] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 17:31:39] SAYI takım=1 oyuncu=Adebayor#235 stat=two_pt_made x=623 y=63 vy=-6.54 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:31:47] SAYI takım=1 oyuncu=Adebayor#235 stat=two_pt_made x=400 y=147 vy=4.27 skor=4-0 sonDokunuşlar=Adebayor(vuruş)
+[2.11.2026 17:32:37] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[235]
+[2.11.2026 17:32:50] SAYI takım=2 oyuncu=Adebayor#235 stat=two_pt_made x=-424 y=4 vy=-11.98 skor=0-2 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:33:01] SAYI takım=2 oyuncu=Adebayor#235 stat=two_pt_made x=-534 y=-269 vy=5.85 skor=0-4 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 17:33:39] SAYI takım=2 oyuncu=Adebayor#235 stat=two_pt_made x=-565 y=-306 vy=5.97 skor=0-6 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 17:33:51] SAYI takım=2 oyuncu=Adebayor#235 stat=two_pt_made x=-568 y=-177 vy=4.68 skor=0-8 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 17:34:40] MAÇ BİTTİ skor=0-8 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[235]
+[2.11.2026 17:36:46] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[235]
+[2.11.2026 17:36:46] SAYI takım=1 oyuncu=Adebayor#235 stat=three_pt_made x=-182 y=48 vy=2.09 skor=0-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:37:51] SAYI takım=1 oyuncu=Adebayor#235 stat=two_pt_made x=557 y=150 vy=-10.59 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:38:00] SAYI takım=1 oyuncu=Adebayor#235 stat=two_pt_made x=605 y=109 vy=-10.06 skor=4-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:38:09] SAYI takım=2 oyuncu=Adebayor#235 stat=three_pt_own_basket x=311 y=127 vy=2.01 skor=4-3 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:38:20] SAYI takım=1 oyuncu=Adebayor#235 stat=three_pt_made x=-375 y=71 vy=5.84 skor=7-3 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:38:49] MAÇ BİTTİ skor=7-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[235]
+[2.11.2026 17:39:29] SAYI takım=2 oyuncu=Adebayor#235 stat=two_pt_made x=-634 y=32 vy=-9.50 skor=0-2 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:40:05] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 17:44:07] MATCH FINISHED score=2-0 training=true winner=[undefined] loser=[undefined] eligible=[36]
+[2.11.2026 17:44:07] SCORE team=1 player=Cesc#36 stat=two_pt_made x=461 y=-3 vy=5.31 score=0-0 lastTouches=Cesc(collision)>Cesc(kick)>Cesc(kick)
+[2.11.2026 17:44:27] SCORE team=2 player=Cesc#36 stat=three_pt_made x=284 y=-71 vy=6.95 score=0-3 lastTouches=Cesc(kick)>Cesc(collision)>Cesc(kick)
+[2.11.2026 17:44:29] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 17:46:10] MATCH FINISHED score=0-3 training=true winner=[undefined] loser=[undefined] eligible=[36]
+[2.11.2026 17:46:44] SCORE team=2 player=Cesc#36 stat=two_pt_made x=-47 y=201 vy=5.55 score=0-2 lastTouches=Cesc(collision)>Cesc(collision)>Cesc(kick)
+[2.11.2026 17:47:07] SAYI takım=1 oyuncu=Adebayor#238 stat=two_pt_made x=559 y=-233 vy=5.67 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(vuruş)>Adebayor(çarpışma)
+[2.11.2026 17:47:26] SAYI takım=1 oyuncu=Adebayor#238 stat=three_pt_made x=-331 y=-40 vy=7.40 skor=5-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:47:44] SCORE team=2 player=Cesc#36 stat=two_pt_made x=-456 y=142 vy=4.66 score=0-4 lastTouches=Cesc(kick)>Cesc(kick)>Cesc(kick)
+[2.11.2026 17:47:52] SCORE team=2 player=Cesc#36 stat=two_pt_made x=-400 y=64 vy=6.15 score=0-6 lastTouches=Cesc(kick)
+[2.11.2026 17:48:14] MATCH FINISHED score=0-6 training=true winner=[undefined] loser=[undefined] eligible=[36]
+[2.11.2026 17:48:21] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 17:48:47] SAYI takım=1 oyuncu=Adebayor#238 stat=two_pt_made x=178 y=6 vy=7.76 skor=7-0 sonDokunuşlar=Adebayor(vuruş)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:48:53] MAÇ BİTTİ skor=7-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[238]
+[2.11.2026 17:49:16] SAYI takım=2 oyuncu=Adebayor#238 stat=three_pt_own_basket x=23 y=228 vy=2.02 skor=0-3 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(vuruş)>Adebayor(çarpışma)
+[2.11.2026 17:49:46] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 17:53:41] MATCH FINISHED score=3-0 training=true winner=[undefined] loser=[undefined] eligible=[37]
+[2.11.2026 17:53:41] SCORE team=1 player=pechass#37 stat=three_pt_made x=-267 y=-86 vy=7.69 score=0-0 lastTouches=pechass(kick)>pechass(collision)>pechass(kick)
+[2.11.2026 17:54:03] SAYI takım=1 oyuncu=Adebayor#239 stat=three_pt_made x=-154 y=21 vy=7.81 skor=3-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:54:16] SCORE team=1 player=pechass#37 stat=two_pt_made x=511 y=-346 vy=6.42 score=2-0 lastTouches=pechass(kick)>pechass(kick)>pechass(collision)
+[2.11.2026 17:54:47] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=499 y=176 vy=-10.12 skor=5-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:55:03] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=652 y=169 vy=-10.26 skor=7-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:55:11] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=400 y=93 vy=5.62 skor=9-0 sonDokunuşlar=Adebayor(vuruş)
+[2.11.2026 17:55:31] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=597 y=83 vy=-3.67 skor=11-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:55:32] MAÇ BİTTİ skor=11-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[239]
+[2.11.2026 17:55:44] MATCH FINISHED score=2-0 training=true winner=[undefined] loser=[undefined] eligible=[37]
+[2.11.2026 17:55:55] SCORE team=2 player=pechass#37 stat=two_pt_made x=-116 y=185 vy=7.31 score=0-2 lastTouches=pechass(collision)>pechass(collision)>pechass(kick)
+[2.11.2026 17:56:29] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=551 y=202 vy=-2.12 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:56:57] SAYI takım=1 oyuncu=Adebayor#239 stat=three_pt_made x=-114 y=227 vy=6.65 skor=5-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:57:22] SAYI takım=1 oyuncu=Adebayor#239 stat=three_pt_made x=-441 y=-11 vy=1.89 skor=8-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:57:35] MAÇ BİTTİ skor=8-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[239]
+[2.11.2026 17:57:37] SCORE team=1 player=zly#38 stat=two_pt_made x=554 y=-243 vy=2.56 score=2-2 lastTouches=zly(collision)>zly(kick)>zly(collision)
+[2.11.2026 17:57:53] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=524 y=-279 vy=5.43 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 17:58:11] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=330 y=-264 vy=5.18 skor=4-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 17:58:16] MATCH FINISHED score=2-5 training=true winner=[undefined] loser=[undefined] eligible=[37,38]
+[2.11.2026 17:58:16] SCORE team=2 player=pechass#37 stat=three_pt_made x=467 y=-418 vy=1.92 score=0-0 lastTouches=zly(kick)>pechass(collision)>pechass(kick)
+[2.11.2026 17:58:21] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=473 y=-272 vy=1.96 skor=6-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(vuruş)>Adebayor(çarpışma)
+[2.11.2026 17:58:28] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 17:59:10] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=569 y=-224 vy=5.09 skor=8-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(çarpışma)
+[2.11.2026 17:59:39] MAÇ BİTTİ skor=8-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[239]
+[2.11.2026 18:00:57] SAYI takım=2 oyuncu=Adebayor#239 stat=three_pt_made x=430 y=-19 vy=-1.14 skor=0-3 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 18:01:21] SAYI takım=2 oyuncu=Adebayor#239 stat=three_pt_made x=418 y=85 vy=3.59 skor=0-6 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(çarpışma)>Adebayor(vuruş)
+[2.11.2026 18:01:42] MAÇ BİTTİ skor=0-6 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[239]
+[2.11.2026 18:03:04] SAYI takım=1 oyuncu=Adebayor#239 stat=two_pt_made x=644 y=44 vy=-9.56 skor=2-0 sonDokunuşlar=Adebayor(çarpışma)>Adebayor(vuruş)>Adebayor(vuruş)
+[2.11.2026 18:03:46] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[239,240]
+[2.11.2026 18:05:16] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 18:05:49] SAYI takım=1 oyuncu=Giorgi Mamardaşvili [GK]#240 stat=three_pt_made x=-337 y=209 vy=5.92 skor=3-0 sonDokunuşlar=Giorgi Mamardaşvili [GK](çarpışma)>Giorgi Mamardaşvili [GK](çarpışma)>Giorgi Mamardaşvili [GK](vuruş)
+[2.11.2026 18:05:54] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 18:06:22] SAYI takım=2 oyuncu=NESRİN#241 stat=two_pt_own_basket x=-556 y=-138 vy=3.50 skor=0-2 sonDokunuşlar=NESRİN(çarpışma)>NESRİN(vuruş)>NESRİN(çarpışma)
+[2.11.2026 18:08:02] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[242,241]
+[2.11.2026 18:08:41] SAYI takım=1 oyuncu=karikatür#242 stat=two_pt_own_basket x=135 y=154 vy=-9.56 skor=2-0 sonDokunuşlar=NESRİN(çarpışma)>NESRİN(vuruş)>karikatür(vuruş)
+[2.11.2026 18:10:05] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[241,242]
+[2.11.2026 18:10:24] SAYI takım=2 oyuncu=karikatür#242 stat=two_pt_made x=-66 y=37 vy=3.67 skor=0-2 sonDokunuşlar=karikatür(çarpışma)>karikatür(çarpışma)>karikatür(vuruş)
+[2.11.2026 18:12:07] SAYI takım=2 oyuncu=karikatür#242 stat=two_pt_made x=-169 y=37 vy=8.05 skor=0-4 sonDokunuşlar=karikatür(çarpışma)>karikatür(çarpışma)>karikatür(vuruş)
+[2.11.2026 18:12:08] MAÇ BİTTİ skor=0-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[242,241]
+[2.11.2026 18:13:42] SAYI takım=1 oyuncu=NESRİN#241 stat=three_pt_made x=-111 y=101 vy=7.78 skor=3-0 sonDokunuşlar=NESRİN(çarpışma)>NESRİN(çarpışma)>NESRİN(vuruş)
+[2.11.2026 18:14:09] SAYI takım=1 oyuncu=NESRİN#241 stat=three_pt_made x=-625 y=-388 vy=-1.25 skor=6-0 sonDokunuşlar=NESRİN(çarpışma)>karikatür(çarpışma)>NESRİN(vuruş)
+[2.11.2026 18:14:12] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[241,242]
+[2.11.2026 18:15:56] SAYI takım=1 oyuncu=karikatür#242 stat=three_pt_made x=-131 y=72 vy=2.86 skor=3-0 sonDokunuşlar=karikatür(çarpışma)>karikatür(çarpışma)>karikatür(vuruş)
+[2.11.2026 18:16:15] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[242,241]
+[2.11.2026 18:17:02] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 18:17:33] SAYI takım=1 oyuncu=karikatür#242 stat=two_pt_made x=541 y=244 vy=-7.38 skor=2-0 sonDokunuşlar=karikatür(çarpışma)>karikatür(çarpışma)>karikatür(vuruş)
+[2.11.2026 18:17:37] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 18:37:42] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 18:45:15] SAYI takım=1 oyuncu=gasse#245 stat=two_pt_made x=520 y=96 vy=8.11 skor=2-0 sonDokunuşlar=gasse(vuruş)>gasse(çarpışma)>gasse(vuruş)
+[2.11.2026 18:45:36] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[245]
+[2.11.2026 18:46:36] SAYI takım=1 oyuncu=gasse#245 stat=two_pt_made x=521 y=115 vy=-8.83 skor=2-0 sonDokunuşlar=gasse(vuruş)>gasse(çarpışma)>gasse(vuruş)
+[2.11.2026 18:47:12] SAYI takım=1 oyuncu=gasse#245 stat=two_pt_made x=437 y=67 vy=5.40 skor=4-0 sonDokunuşlar=gasse(vuruş)>gasse(vuruş)>gasse(vuruş)
+[2.11.2026 18:47:34] SAYI takım=1 oyuncu=gasse#245 stat=two_pt_made x=601 y=90 vy=-7.37 skor=6-0 sonDokunuşlar=gasse(çarpışma)>gasse(çarpışma)>gasse(vuruş)
+[2.11.2026 18:47:39] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[245]
+[2.11.2026 18:48:28] SAYI takım=1 oyuncu=gasse#245 stat=two_pt_own_basket x=411 y=-68 vy=8.05 skor=2-0 sonDokunuşlar=gasse(çarpışma)>gasse(çarpışma)>gasse(vuruş)
+[2.11.2026 18:49:43] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[245]
+[2.11.2026 18:49:48] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 19:12:58] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 19:24:17] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=444 y=-28 vy=4.91 skor=2-0 sonDokunuşlar=H(çarpışma)>H(vuruş)>H(vuruş)
+[2.11.2026 19:24:52] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=329 y=9 vy=8.50 skor=4-0 sonDokunuşlar=H(vuruş)>H(çarpışma)>H(vuruş)
+[2.11.2026 19:25:11] SAYI takım=2 oyuncu=H#248 stat=two_pt_own_basket x=-474 y=-3 vy=7.74 skor=4-2 sonDokunuşlar=H(çarpışma)>H(çarpışma)>H(vuruş)
+[2.11.2026 19:25:58] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=15 y=-355 vy=9.25 skor=6-2 sonDokunuşlar=H(vuruş)>H(çarpışma)>H(vuruş)
+[2.11.2026 19:26:11] MAÇ BİTTİ skor=6-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[248]
+[2.11.2026 19:26:19] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=5 y=38 vy=3.08 skor=2-0 sonDokunuşlar=H(çarpışma)>H(vuruş)
+[2.11.2026 19:26:47] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=508 y=-527 vy=9.09 skor=4-0 sonDokunuşlar=H(vuruş)>H(vuruş)>H(vuruş)
+[2.11.2026 19:26:59] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=379 y=127 vy=5.41 skor=6-0 sonDokunuşlar=Dominik livakovic(çarpışma)>H(vuruş)>H(vuruş)
+[2.11.2026 19:27:36] MAÇ BİTTİ skor=6-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[248]
+[2.11.2026 19:28:10] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=421 y=225 vy=-6.97 skor=2-0 sonDokunuşlar=offf(çarpışma)>H(çarpışma)>H(vuruş)
+[2.11.2026 19:28:17] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=565 y=160 vy=-10.46 skor=4-0 sonDokunuşlar=offf(vuruş)>H(çarpışma)>H(vuruş)
+[2.11.2026 19:29:40] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[248]
+[2.11.2026 19:31:47] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[251,252,248]
+[2.11.2026 19:31:47] SAYI takım=1 oyuncu=Tiérney#251 stat=two_pt_made x=487 y=180 vy=-8.68 skor=0-0 sonDokunuşlar=Tiérney(çarpışma)>Tiérney(çarpışma)>Tiérney(vuruş)
+[2.11.2026 19:32:11] SAYI takım=1 oyuncu=Tiérney#251 stat=three_pt_made x=-444 y=76 vy=5.16 skor=3-0 sonDokunuşlar=Tiérney(çarpışma)>Tiérney(çarpışma)>Tiérney(vuruş)
+[2.11.2026 19:32:52] SAYI takım=2 oyuncu=H#248 stat=three_pt_made x=78 y=15 vy=3.20 skor=3-3 sonDokunuşlar=H(çarpışma)>H(çarpışma)>H(vuruş)
+[2.11.2026 19:33:38] SAYI takım=1 oyuncu=Tiérney#251 stat=two_pt_made x=262 y=-268 vy=7.60 skor=5-3 sonDokunuşlar=H(çarpışma)>H(vuruş)>Tiérney(vuruş)
+[2.11.2026 19:33:51] MAÇ BİTTİ skor=5-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[251,248]
+[2.11.2026 19:34:10] SAYI takım=1 oyuncu=Tiérney#251 stat=two_pt_made x=650 y=137 vy=-13.53 skor=2-0 sonDokunuşlar=Tiérney(çarpışma)>Tiérney(çarpışma)>Tiérney(vuruş)
+[2.11.2026 19:34:59] SAYI takım=1 oyuncu=Tiérney#251 stat=three_pt_made x=-349 y=-131 vy=7.60 skor=5-0 sonDokunuşlar=Tiérney(çarpışma)>Tiérney(çarpışma)>Tiérney(vuruş)
+[2.11.2026 19:35:54] MAÇ BİTTİ skor=5-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[251,248]
+[2.11.2026 19:36:33] SAYI takım=1 oyuncu=H#248 stat=two_pt_made x=336 y=152 vy=7.73 skor=2-0 sonDokunuşlar=Tiérney(vuruş)>H(çarpışma)>H(vuruş)
+[2.11.2026 19:37:57] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[248,251]
+[2.11.2026 19:38:00] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 19:38:06] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 19:43:56] SAYI takım=2 oyuncu=TheOwner#253 stat=two_pt_own_basket x=-196 y=171 vy=6.37 skor=0-2 sonDokunuşlar=TheOwner(vuruş)>TheOwner(çarpışma)>TheOwner(vuruş)
+[2.11.2026 19:44:20] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 20:16:28] SAYI takım=1 oyuncu=Sane yedek kaldı#254 stat=two_pt_made x=583 y=165 vy=-9.35 skor=2-0 sonDokunuşlar=Sane yedek kaldı(çarpışma)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 20:16:39] SAYI takım=1 oyuncu=Sane yedek kaldı#254 stat=two_pt_made x=643 y=226 vy=-11.52 skor=4-0 sonDokunuşlar=Sane yedek kaldı(çarpışma)>Sane yedek kaldı(çarpışma)>Sane yedek kaldı(vuruş)
+[2.11.2026 20:16:49] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 20:31:10] MATCH FINISHED score=2-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 20:31:10] SCORE team=1 player=larrylachance#39 stat=two_pt_made x=187 y=85 vy=2.60 score=0-0 lastTouches=larrylachance(kick)>larrylachance(kick)>larrylachance(kick)
+[2.11.2026 20:31:14] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 20:33:50] SAYI takım=1 oyuncu=king#255 stat=two_pt_made x=561 y=-170 vy=2.06 skor=2-0 sonDokunuşlar=king(çarpışma)>king(vuruş)>king(çarpışma)
+[2.11.2026 20:34:02] SAYI takım=1 oyuncu=king#255 stat=two_pt_made x=541 y=18 vy=5.41 skor=4-0 sonDokunuşlar=king(vuruş)>king(vuruş)
+[2.11.2026 20:34:05] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 21:09:16] SAYI takım=1 oyuncu=FENEVİMİ SKTİLER YETİŞİN#256 stat=two_pt_made x=648 y=71 vy=-11.58 skor=2-0 sonDokunuşlar=FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)
+[2.11.2026 21:09:55] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[256]
+[2.11.2026 21:10:16] SAYI takım=1 oyuncu=FENEVİMİ SKTİLER YETİŞİN#256 stat=three_pt_own_basket x=-147 y=72 vy=6.19 skor=3-0 sonDokunuşlar=FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)
+[2.11.2026 21:11:12] SAYI takım=2 oyuncu=messi#257 stat=two_pt_own_basket x=-578 y=73 vy=-2.62 skor=3-2 sonDokunuşlar=messi(çarpışma)>messi(vuruş)>messi(çarpışma)
+[2.11.2026 21:11:58] MAÇ BİTTİ skor=3-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[257,256]
+[2.11.2026 21:14:41] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[256,257]
+[2.11.2026 21:14:41] SAYI takım=2 oyuncu=FENEVİMİ SKTİLER YETİŞİN#256 stat=three_pt_made x=525 y=-593 vy=6.45 skor=0-0 sonDokunuşlar=FENEVİMİ SKTİLER YETİŞİN(vuruş)>FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)
+[2.11.2026 21:15:07] SAYI takım=1 oyuncu=Lua Lua#259 stat=two_pt_made x=295 y=129 vy=2.46 skor=2-0 sonDokunuşlar=Lua Lua(çarpışma)>Lua Lua(çarpışma)>Lua Lua(vuruş)
+[2.11.2026 21:15:19] SAYI takım=2 oyuncu=sza#258 stat=two_pt_made x=-322 y=213 vy=5.57 skor=2-2 sonDokunuşlar=FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)>sza(vuruş)
+[2.11.2026 21:15:55] SAYI takım=1 oyuncu=FENEVİMİ SKTİLER YETİŞİN#256 stat=three_pt_made x=-212 y=-509 vy=7.32 skor=5-2 sonDokunuşlar=FENEVİMİ SKTİLER YETİŞİN(çarpışma)>FENEVİMİ SKTİLER YETİŞİN(vuruş)>FENEVİMİ SKTİLER YETİŞİN(vuruş)
+[2.11.2026 21:16:44] MAÇ BİTTİ skor=5-2 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[256,259,260,258,257,261]
+[2.11.2026 21:16:45] ELO kullanıcı=913 1154->1165 (+11)
+[2.11.2026 21:16:45] ELO kullanıcı=1216 1075->1085 (+10)
+[2.11.2026 21:16:45] ELO kullanıcı=2697 1000->1011 (+11)
+[2.11.2026 21:16:45] ELO kullanıcı=2696 1000->989 (-11)
+[2.11.2026 21:16:45] ELO kullanıcı=2695 1000->981 (-19)
+[2.11.2026 21:16:45] ELO kullanıcı=10 977->966 (-11)
+[2.11.2026 21:17:34] SAYI takım=1 oyuncu=sza#258 stat=three_pt_own_basket x=-422 y=-65 vy=3.08 skor=3-0 sonDokunuşlar=messi(vuruş)>Lua Lua(çarpışma)>sza(vuruş)
+[2.11.2026 21:18:19] SAYI takım=2 oyuncu=sza#258 stat=two_pt_made x=-341 y=28 vy=1.84 skor=3-2 sonDokunuşlar=messi(vuruş)>sza(vuruş)>sza(vuruş)
+[2.11.2026 21:18:48] MAÇ BİTTİ skor=3-2 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[259,263,258,257]
+[2.11.2026 21:18:48] ELO kullanıcı=1216 1085->1097 (+12)
+[2.11.2026 21:18:48] ELO kullanıcı=1116 908->927 (+19)
+[2.11.2026 21:18:48] ELO kullanıcı=2696 989->970 (-19)
+[2.11.2026 21:18:48] ELO kullanıcı=2695 981->962 (-19)
+[2.11.2026 21:19:30] SAYI takım=1 oyuncu=zcaas#265 stat=three_pt_made x=-480 y=91 vy=5.24 skor=3-0 sonDokunuşlar=zcaas(çarpışma)>zcaas(çarpışma)>zcaas(vuruş)
+[2.11.2026 21:20:51] MAÇ BİTTİ skor=3-0 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[263,265,258,257]
+[2.11.2026 21:20:51] ELO kullanıcı=1116 927->936 (+9)
+[2.11.2026 21:20:51] ELO kullanıcı=1 1296->1305 (+9)
+[2.11.2026 21:20:51] ELO kullanıcı=2696 970->958 (-12)
+[2.11.2026 21:20:51] ELO kullanıcı=2695 962->950 (-12)
+[2.11.2026 21:21:14] SAYI takım=2 oyuncu=messi#257 stat=two_pt_own_basket x=-644 y=48 vy=-8.75 skor=0-2 sonDokunuşlar=messi(vuruş)>messi(çarpışma)>messi(vuruş)
+[2.11.2026 21:21:46] SAYI takım=1 oyuncu=zcaas#265 stat=two_pt_made x=514 y=-1 vy=7.36 skor=2-2 sonDokunuşlar=zcaas(çarpışma)>sza(vuruş)>zcaas(vuruş)
+[2.11.2026 21:22:22] SAYI takım=1 oyuncu=zcaas#265 stat=two_pt_made x=537 y=-319 vy=6.37 skor=4-2 sonDokunuşlar=zcaas(çarpışma)>zcaas(çarpışma)>zcaas(çarpışma)
+[2.11.2026 21:22:32] SAYI takım=1 oyuncu=zcaas#265 stat=two_pt_made x=362 y=41 vy=8.13 skor=6-2 sonDokunuşlar=gh(vuruş)>zcaas(vuruş)
+[2.11.2026 21:22:54] MAÇ BİTTİ skor=6-2 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[265,257,263]
+[2.11.2026 21:22:54] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 21:23:12] SAYI takım=1 oyuncu=gh#263 stat=two_pt_own_basket x=621 y=101 vy=-8.70 skor=2-0 sonDokunuşlar=zcaas(çarpışma)>zcaas(vuruş)>gh(çarpışma)
+[2.11.2026 21:24:57] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[265,263]
+[2.11.2026 21:25:15] SAYI takım=2 oyuncu=zcaas#265 stat=two_pt_made x=-332 y=116 vy=4.28 skor=0-2 sonDokunuşlar=Neyapimacaba(vuruş)>zcaas(vuruş)>zcaas(vuruş)
+[2.11.2026 21:25:24] SAYI takım=2 oyuncu=zcaas#265 stat=two_pt_made x=-536 y=-213 vy=4.78 skor=0-4 sonDokunuşlar=Neyapimacaba(vuruş)>zcaas(çarpışma)
+[2.11.2026 21:27:00] MAÇ BİTTİ skor=0-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263,265,266]
+[2.11.2026 21:28:38] SAYI takım=2 oyuncu=zcaas#265 stat=three_pt_made x=403 y=-54 vy=6.20 skor=0-3 sonDokunuşlar=zcaas(çarpışma)>zcaas(çarpışma)>zcaas(vuruş)
+[2.11.2026 21:29:03] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263,265,266]
+[2.11.2026 21:29:36] SAYI takım=1 oyuncu=gh#263 stat=three_pt_made x=-99 y=-127 vy=5.23 skor=3-0 sonDokunuşlar=zcaas(çarpışma)>zcaas(vuruş)>gh(vuruş)
+[2.11.2026 21:30:05] SAYI takım=2 oyuncu=zcaas#265 stat=two_pt_made x=-489 y=98 vy=-1.99 skor=3-2 sonDokunuşlar=zcaas(çarpışma)>zcaas(vuruş)>zcaas(vuruş)
+[2.11.2026 21:30:35] SAYI takım=2 oyuncu=gh#263 stat=two_pt_own_basket x=-635 y=117 vy=-3.77 skor=3-4 sonDokunuşlar=zcaas(çarpışma)>zcaas(vuruş)>gh(çarpışma)
+[2.11.2026 21:31:06] MAÇ BİTTİ skor=3-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[265,263]
+[2.11.2026 21:31:35] SAYI takım=1 oyuncu=zcaas#265 stat=two_pt_made x=199 y=24 vy=5.86 skor=2-0 sonDokunuşlar=zcaas(çarpışma)>zcaas(vuruş)>zcaas(çarpışma)
+[2.11.2026 21:31:51] SAYI takım=2 oyuncu=Dr. Strangelove#267 stat=three_pt_made x=166 y=39 vy=6.12 skor=2-3 sonDokunuşlar=zcaas(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 21:32:00] SAYI takım=1 oyuncu=zcaas#265 stat=three_pt_made x=-385 y=-11 vy=6.01 skor=5-3 sonDokunuşlar=zcaas(çarpışma)>zcaas(çarpışma)>zcaas(vuruş)
+[2.11.2026 21:33:09] MAÇ BİTTİ skor=5-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263,265,267]
+[2.11.2026 21:33:52] SAYI takım=2 oyuncu=Dr. Strangelove#267 stat=three_pt_made x=369 y=-347 vy=2.50 skor=0-3 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)
+[2.11.2026 21:34:11] SAYI takım=1 oyuncu=Dr. Strangelove#267 stat=three_pt_own_basket x=-83 y=139 vy=2.73 skor=3-3 sonDokunuşlar=gh(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 21:34:40] SAYI takım=2 oyuncu=Dr. Strangelove#267 stat=two_pt_made x=-462 y=-576 vy=7.63 skor=3-5 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 21:35:01] SAYI takım=2 oyuncu=Dr. Strangelove#267 stat=two_pt_made x=-543 y=-564 vy=8.76 skor=3-7 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 21:35:12] MAÇ BİTTİ skor=3-7 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[267,263]
+[2.11.2026 21:35:22] SAYI takım=2 oyuncu=Dr. Strangelove#267 stat=two_pt_made x=-590 y=-467 vy=7.11 skor=0-2 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(çarpışma)>Dr. Strangelove(çarpışma)
+[2.11.2026 21:37:10] SAYI takım=2 oyuncu=gh#263 stat=two_pt_own_basket x=-560 y=-121 vy=2.94 skor=0-4 sonDokunuşlar=gh(çarpışma)>gh(çarpışma)>gh(çarpışma)
+[2.11.2026 21:37:16] MAÇ BİTTİ skor=0-4 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[267,263]
+[2.11.2026 21:37:28] SAYI takım=1 oyuncu=Dr. Strangelove#267 stat=two_pt_made x=622 y=-427 vy=2.50 skor=2-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 21:38:56] SAYI takım=1 oyuncu=gh#263 stat=two_pt_own_basket x=630 y=252 vy=-8.32 skor=4-0 sonDokunuşlar=gh(çarpışma)>gh(çarpışma)>gh(vuruş)
+[2.11.2026 21:39:19] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[267,263]
+[2.11.2026 21:39:39] SAYI takım=1 oyuncu=irishpubb#269 stat=two_pt_made x=656 y=207 vy=-6.25 skor=2-0 sonDokunuşlar=irishpubb(vuruş)>irishpubb(çarpışma)>irishpubb(çarpışma)
+[2.11.2026 21:41:22] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263,269,267]
+[2.11.2026 21:41:44] SAYI takım=1 oyuncu=RONALDO#270 stat=three_pt_made x=-578 y=-371 vy=3.54 skor=3-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)>RONALDO(vuruş)
+[2.11.2026 21:42:20] SAYI takım=1 oyuncu=RONALDO#270 stat=three_pt_made x=-425 y=-204 vy=7.04 skor=6-0 sonDokunuşlar=irishpubb(vuruş)>RONALDO(çarpışma)>RONALDO(vuruş)
+[2.11.2026 21:43:06] SAYI takım=1 oyuncu=irishpubb#269 stat=two_pt_made x=555 y=-198 vy=4.95 skor=8-0 sonDokunuşlar=gh(vuruş)>irishpubb(vuruş)>irishpubb(çarpışma)
+[2.11.2026 21:43:25] MAÇ BİTTİ skor=8-0 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[269,270,267,263]
+[2.11.2026 21:43:25] ELO kullanıcı=2700 1000->1022 (+22)
+[2.11.2026 21:43:25] ELO kullanıcı=2701 1000->1028 (+28)
+[2.11.2026 21:43:25] ELO kullanıcı=1044 1231->1216 (-15)
+[2.11.2026 21:43:25] ELO kullanıcı=1116 936->911 (-25)
+[2.11.2026 21:44:06] SAYI takım=1 oyuncu=Dr. Strangelove#267 stat=two_pt_made x=298 y=-170 vy=9.00 skor=2-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 21:45:28] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[267,263,269]
+[2.11.2026 21:46:37] SAYI takım=1 oyuncu=gh#263 stat=two_pt_own_basket x=435 y=-89 vy=6.94 skor=2-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)>gh(vuruş)
+[2.11.2026 21:46:46] SAYI takım=1 oyuncu=Dr. Strangelove#267 stat=two_pt_made x=400 y=21 vy=7.97 skor=4-0 sonDokunuşlar=Dr. Strangelove(vuruş)
+[2.11.2026 21:47:31] MAÇ BİTTİ skor=4-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[267,269,263]
+[2.11.2026 21:47:44] SAYI takım=1 oyuncu=Dr. Strangelove#267 stat=two_pt_made x=473 y=-365 vy=2.35 skor=2-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 21:48:57] SAYI takım=1 oyuncu=gh#263 stat=two_pt_own_basket x=541 y=-289 vy=5.76 skor=4-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)>gh(çarpışma)
+[2.11.2026 21:49:18] SAYI takım=2 oyuncu=asadasdasdas#271 stat=two_pt_own_basket x=-571 y=-196 vy=2.36 skor=4-2 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(çarpışma)
+[2.11.2026 21:49:34] MAÇ BİTTİ skor=4-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[267,263]
+[2.11.2026 21:49:48] SAYI takım=2 oyuncu=asadasdasdas#271 stat=two_pt_own_basket x=-615 y=113 vy=-10.79 skor=0-2 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(vuruş)
+[2.11.2026 21:49:56] SAYI takım=2 oyuncu=asadasdasdas#271 stat=two_pt_own_basket x=-527 y=-180 vy=4.12 skor=0-4 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(çarpışma)
+[2.11.2026 21:50:11] SAYI takım=2 oyuncu=asadasdasdas#271 stat=two_pt_own_basket x=-618 y=75 vy=-14.72 skor=0-6 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(vuruş)
+[2.11.2026 21:50:20] SAYI takım=2 oyuncu=asadasdasdas#271 stat=two_pt_own_basket x=-622 y=78 vy=-14.93 skor=0-8 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(vuruş)
+[2.11.2026 21:50:44] SAYI takım=2 oyuncu=asadasdasdas#271 stat=three_pt_own_basket x=309 y=-14 vy=4.89 skor=0-11 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(vuruş)
+[2.11.2026 21:50:52] SAYI takım=2 oyuncu=asadasdasdas#271 stat=two_pt_own_basket x=-532 y=-163 vy=4.03 skor=0-13 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(çarpışma)
+[2.11.2026 21:51:16] SAYI takım=2 oyuncu=asadasdasdas#271 stat=three_pt_made x=62 y=131 vy=5.60 skor=0-16 sonDokunuşlar=asadasdasdas(çarpışma)>asadasdasdas(çarpışma)>asadasdasdas(vuruş)
+[2.11.2026 21:51:37] MAÇ BİTTİ skor=0-16 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[271,263]
+[2.11.2026 21:51:41] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 21:53:48] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263]
+[2.11.2026 21:53:48] SAYI takım=2 oyuncu=gh#263 stat=three_pt_made x=177 y=59 vy=6.99 skor=0-0 sonDokunuşlar=gh(vuruş)>gh(çarpışma)>gh(vuruş)
+[2.11.2026 21:54:08] SAYI takım=1 oyuncu=gh#263 stat=two_pt_made x=408 y=168 vy=4.88 skor=2-0 sonDokunuşlar=gh(vuruş)>gh(çarpışma)>gh(vuruş)
+[2.11.2026 21:55:52] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263]
+[2.11.2026 21:58:02] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263]
+[2.11.2026 21:58:02] SAYI takım=2 oyuncu=gh#263 stat=two_pt_made x=-538 y=113 vy=-10.36 skor=0-0 sonDokunuşlar=gh(vuruş)>gh(çarpışma)>gh(vuruş)
+[2.11.2026 21:58:12] SAYI takım=2 oyuncu=gh#263 stat=- x=0 y=16 vy=5.67 skor=0-0 sonDokunuşlar=gh(vuruş)
+[2.11.2026 22:07:16] SCORE team=2 player=Raiden#40 stat=two_pt_own_basket x=-414 y=-163 vy=7.31 score=0-2 lastTouches=Raiden(kick)>Raiden(kick)>Raiden(kick)
+[2.11.2026 22:07:16] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[263]
+[2.11.2026 22:07:16] SAYI takım=1 oyuncu=eros okları#273 stat=two_pt_made x=488 y=232 vy=7.37 skor=0-0 sonDokunuşlar=eros okları(çarpışma)>eros okları(çarpışma)>eros okları(vuruş)
+[2.11.2026 22:07:22] MATCH FINISHED score=0-2 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 22:09:54] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[273,263]
+[2.11.2026 22:09:54] SAYI takım=2 oyuncu=eros okları#273 stat=three_pt_made x=103 y=0 vy=2.48 skor=0-0 sonDokunuşlar=gh(vuruş)>eros okları(çarpışma)>eros okları(vuruş)
+[2.11.2026 22:10:04] SAYI takım=2 oyuncu=gh#263 stat=two_pt_made x=-2 y=71 vy=4.59 skor=0-2 sonDokunuşlar=gh(çarpışma)>gh(vuruş)
+[2.11.2026 22:10:49] SAYI takım=1 oyuncu=gh#263 stat=two_pt_own_basket x=488 y=277 vy=-5.75 skor=2-2 sonDokunuşlar=gh(çarpışma)>gh(çarpışma)>gh(vuruş)
+[2.11.2026 22:12:01] MAÇ BİTTİ skor=4-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[273,263]
+[2.11.2026 22:12:01] SAYI takım=1 oyuncu=eros okları#273 stat=two_pt_made x=588 y=130 vy=-9.14 skor=0-0 sonDokunuşlar=eros okları(vuruş)>eros okları(çarpışma)>eros okları(vuruş)
+[2.11.2026 22:14:25] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[273,263]
+[2.11.2026 22:14:25] SAYI takım=1 oyuncu=eros okları#273 stat=two_pt_made x=111 y=96 vy=-9.94 skor=0-0 sonDokunuşlar=eros okları(çarpışma)>eros okları(çarpışma)>eros okları(vuruş)
+[2.11.2026 22:14:57] SAYI takım=1 oyuncu=eros okları#273 stat=two_pt_own_basket x=649 y=84 vy=-14.91 skor=2-0 sonDokunuşlar=eros okları(çarpışma)>eros okları(çarpışma)>eros okları(vuruş)
+[2.11.2026 22:15:35] SAYI takım=2 oyuncu=eros okları#273 stat=two_pt_made x=-350 y=29 vy=7.99 skor=2-2 sonDokunuşlar=gh(çarpışma)>eros okları(çarpışma)>eros okları(vuruş)
+[2.11.2026 22:19:55] MAÇ BİTTİ skor=2-5 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[273,263]
+[2.11.2026 22:19:55] SAYI takım=2 oyuncu=gh#263 stat=three_pt_own_basket x=297 y=179 vy=5.54 skor=0-0 sonDokunuşlar=Dman(vuruş)>gh(çarpışma)>gh(vuruş)
+[2.11.2026 22:20:10] SAYI takım=2 oyuncu=Dman#275 stat=two_pt_made x=-461 y=-126 vy=1.86 skor=0-2 sonDokunuşlar=gh(vuruş)>gh(çarpışma)>Dman(vuruş)
+[2.11.2026 22:20:31] MATCH FINISHED score=2-0 training=true winner=[undefined] loser=[undefined] eligible=[41,43,42]
+[2.11.2026 22:20:31] SCORE team=1 player=marwan99#41 stat=two_pt_made x=316 y=-281 vy=7.99 score=0-0 lastTouches=marwan99(collision)>marwan99(kick)>marwan99(kick)
+[2.11.2026 22:20:48] SCORE team=1 player=marwan99#41 stat=two_pt_made x=434 y=-333 vy=7.43 score=2-0 lastTouches=taree(collision)>taree(kick)>marwan99(kick)
+[2.11.2026 22:21:58] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[276,275,273]
+[2.11.2026 22:21:58] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 22:22:23] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 22:22:34] MATCH FINISHED score=2-0 training=false winner=[undefined] loser=[undefined] eligible=[41,44,42,43]
+[2.11.2026 22:22:34] ELO user=847 1015->1039 (+24)
+[2.11.2026 22:22:34] ELO user=453 1000->1015 (+15)
+[2.11.2026 22:22:34] ELO user=1735 1000->980 (-20)
+[2.11.2026 22:22:34] ELO user=2705 1000->980 (-20)
+[2.11.2026 22:22:41] SCORE team=1 player=marwan99#41 stat=two_pt_own_basket x=486 y=177 vy=-7.86 score=2-0 lastTouches=marwan99(collision)>marwan99(collision)>marwan99(kick)
+[2.11.2026 22:22:46] SAYI takım=2 oyuncu=q7#276 stat=three_pt_own_basket x=137 y=152 vy=7.14 skor=0-3 sonDokunuşlar=q7(çarpışma)>q7(çarpışma)>q7(vuruş)
+[2.11.2026 22:24:26] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[276]
+[2.11.2026 22:24:37] MATCH FINISHED score=2-0 training=false winner=[undefined] loser=[undefined] eligible=[42,44,41]
+[2.11.2026 22:24:37] ELO was not recorded: there were not enough eligible players on the teams
+[2.11.2026 22:26:04] SAYI takım=1 oyuncu=Yerli Curry#278 stat=three_pt_made x=-372 y=-107 vy=4.77 skor=3-0 sonDokunuşlar=q7(çarpışma)>q7(vuruş)>Yerli Curry(vuruş)
+[2.11.2026 22:26:24] SCORE team=2 player=./#44 stat=two_pt_own_basket x=-650 y=249 vy=-5.31 score=0-2 lastTouches=./(collision)>./(collision)>./(kick)
+[2.11.2026 22:26:29] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[278,277,276]
+[2.11.2026 22:26:40] MATCH FINISHED score=0-2 training=true winner=[undefined] loser=[undefined] eligible=[41,42,44]
+[2.11.2026 22:27:30] SCORE team=1 player=marwan99#41 stat=three_pt_made x=-71 y=-167 vy=4.05 score=3-0 lastTouches=./(collision)>./(kick)>marwan99(kick)
+[2.11.2026 22:27:52] SCORE team=1 player=Cesc#42 stat=two_pt_made x=563 y=-157 vy=4.23 score=5-0 lastTouches=Cesc(collision)>Cesc(collision)>Cesc(collision)
+[2.11.2026 22:28:26] SAYI takım=1 oyuncu=gh#277 stat=two_pt_own_basket x=298 y=-277 vy=-0.72 skor=2-0 sonDokunuşlar=q7(çarpışma)>q7(vuruş)>gh(vuruş)
+[2.11.2026 22:28:27] SCORE team=1 player=./#44 stat=two_pt_own_basket x=468 y=234 vy=-6.74 score=7-0 lastTouches=Cesc(kick)>./(collision)>./(kick)
+[2.11.2026 22:28:32] MAÇ BİTTİ skor=2-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[278,276,277]
+[2.11.2026 22:28:43] MATCH FINISHED score=7-0 training=true winner=[undefined] loser=[undefined] eligible=[42,41,44]
+[2.11.2026 22:30:07] SAYI takım=2 oyuncu=Yerli Curry#278 stat=three_pt_made x=177 y=224 vy=6.31 skor=0-3 sonDokunuşlar=Yerli Curry(çarpışma)>Yerli Curry(çarpışma)>Yerli Curry(vuruş)
+[2.11.2026 22:30:24] SCORE team=2 player=./#44 stat=two_pt_own_basket x=-517 y=-236 vy=8.88 score=0-2 lastTouches=marwan99(kick)>./(collision)>./(kick)
+[2.11.2026 22:30:36] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[278,276]
+[2.11.2026 22:30:46] MATCH FINISHED score=0-2 training=true winner=[undefined] loser=[undefined] eligible=[41,42,44]
+[2.11.2026 22:31:08] SAYI takım=2 oyuncu=Yerli Curry#278 stat=three_pt_made x=146 y=30 vy=6.33 skor=0-3 sonDokunuşlar=q7(çarpışma)>Yerli Curry(çarpışma)>Yerli Curry(vuruş)
+[2.11.2026 22:31:34] SCORE team=1 player=marwan99#41 stat=two_pt_made x=505 y=-188 vy=8.58 score=2-0 lastTouches=marwan99(collision)>./(collision)>marwan99(kick)
+[2.11.2026 22:32:22] SCORE team=1 player=marwan99#41 stat=two_pt_made x=282 y=-74 vy=2.00 score=4-0 lastTouches=marwan99(kick)>marwan99(collision)>marwan99(kick)
+[2.11.2026 22:32:36] SCORE team=2 player=marwan99#41 stat=two_pt_own_basket x=-645 y=156 vy=-4.15 score=4-2 lastTouches=marwan99(collision)>marwan99(kick)>marwan99(collision)
+[2.11.2026 22:32:39] MAÇ BİTTİ skor=0-3 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[278,276,280]
+[2.11.2026 22:32:49] MATCH FINISHED score=4-2 training=true winner=[undefined] loser=[undefined] eligible=[41,42]
+[2.11.2026 22:34:53] MATCH FINISHED score=0-3 training=true winner=[undefined] loser=[undefined] eligible=[41,42]
+[2.11.2026 22:34:53] SCORE team=2 player=marwan99#41 stat=three_pt_made x=384 y=-333 vy=4.08 score=0-0 lastTouches=Cesc(kick)>marwan99(collision)>marwan99(kick)
+[2.11.2026 22:35:08] MAÇ BİTTİ skor=0-2 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[278,281,283,276,280,285]
+[2.11.2026 22:35:08] SAYI takım=2 oyuncu=Dr. Strangelove#281 stat=two_pt_made x=-600 y=-459 vy=7.11 skor=0-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 22:35:08] ELO kullanıcı=913 1165->1171 (+6)
+[2.11.2026 22:35:08] ELO kullanıcı=1044 1216->1226 (+10)
+[2.11.2026 22:35:08] ELO kullanıcı=1322 1000->1010 (+10)
+[2.11.2026 22:35:08] ELO kullanıcı=2707 1000->987 (-13)
+[2.11.2026 22:35:08] ELO kullanıcı=228 1001->993 (-8)
+[2.11.2026 22:35:08] ELO kullanıcı=2710 1000->987 (-13)
+[2.11.2026 22:35:11] SCORE team=1 player=Cesc#42 stat=two_pt_own_basket x=142 y=203 vy=4.73 score=2-0 lastTouches=marwan99(collision)>Cesc(kick)>Cesc(kick)
+[2.11.2026 22:35:53] SCORE team=2 player=Cesc#42 stat=three_pt_made x=64 y=-184 vy=2.27 score=2-3 lastTouches=marwan99(collision)>marwan99(kick)>Cesc(kick)
+[2.11.2026 22:36:15] SAYI takım=2 oyuncu=neox#283 stat=three_pt_own_basket x=29 y=-292 vy=3.61 skor=0-3 sonDokunuşlar=rdm(vuruş)>Yerli Curry(vuruş)>neox(çarpışma)
+[2.11.2026 22:36:56] MATCH FINISHED score=2-3 training=true winner=[undefined] loser=[undefined] eligible=[42,41]
+[2.11.2026 22:37:11] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[278,281,283,285]
+[2.11.2026 22:37:11] ELO kullanıcı=913 1171->1177 (+6)
+[2.11.2026 22:37:11] ELO kullanıcı=1044 1226->1232 (+6)
+[2.11.2026 22:37:11] ELO kullanıcı=1322 1010->1000 (-10)
+[2.11.2026 22:37:11] ELO kullanıcı=2710 987->977 (-10)
+[2.11.2026 22:37:52] SAYI takım=2 oyuncu=Dr. Strangelove#281 stat=three_pt_made x=82 y=-444 vy=4.56 skor=0-3 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)
+[2.11.2026 22:38:55] SCORE team=1 player=Cesc#42 stat=three_pt_made x=-197 y=-45 vy=1.72 score=3-0 lastTouches=Cesc(kick)>Cesc(collision)>Cesc(kick)
+[2.11.2026 22:38:59] MATCH FINISHED score=3-0 training=true winner=[undefined] loser=[undefined] eligible=[42,41]
+[2.11.2026 22:39:14] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[281,283,285,278]
+[2.11.2026 22:39:14] ELO kullanıcı=1044 1232->1245 (+13)
+[2.11.2026 22:39:14] ELO kullanıcı=1322 1000->1013 (+13)
+[2.11.2026 22:39:14] ELO kullanıcı=2710 977->959 (-18)
+[2.11.2026 22:39:14] ELO kullanıcı=913 1177->1166 (-11)
+[2.11.2026 22:40:19] SAYI takım=2 oyuncu=Dr. Strangelove#281 stat=three_pt_made x=582 y=-535 vy=4.06 skor=0-3 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 22:40:41] SAYI takım=2 oyuncu=neox#283 stat=two_pt_made x=-73 y=-97 vy=2.94 skor=0-5 sonDokunuşlar=rdm(vuruş)>neox(çarpışma)>neox(vuruş)
+[2.11.2026 22:40:44] SCORE team=2 player=marwan99#41 stat=three_pt_made x=8 y=34 vy=2.16 score=0-3 lastTouches=Cesc(kick)>marwan99(collision)>marwan99(kick)
+[2.11.2026 22:40:55] SCORE team=1 player=Cesc#42 stat=three_pt_made x=-398 y=35 vy=-1.53 score=3-3 lastTouches=Cesc(collision)>Cesc(collision)>Cesc(kick)
+[2.11.2026 22:41:18] MAÇ BİTTİ skor=0-5 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[281,283,285,278]
+[2.11.2026 22:41:18] ELO kullanıcı=1044 1245->1255 (+10)
+[2.11.2026 22:41:18] ELO kullanıcı=1322 1013->1028 (+15)
+[2.11.2026 22:41:18] ELO kullanıcı=2710 959->943 (-16)
+[2.11.2026 22:41:18] ELO kullanıcı=913 1166->1156 (-10)
+[2.11.2026 22:43:07] MATCH FINISHED score=5-3 training=true winner=[undefined] loser=[undefined] eligible=[42,41]
+[2.11.2026 22:43:07] SCORE team=1 player=Cesc#42 stat=two_pt_made x=580 y=-211 vy=7.30 score=0-0 lastTouches=Cesc(collision)>Cesc(kick)>Cesc(collision)
+[2.11.2026 22:43:18] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
+[2.11.2026 22:43:49] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[278,285,283,281,287]
+[2.11.2026 22:43:49] SAYI takım=2 oyuncu=Dr. Strangelove#281 stat=three_pt_own_basket x=350 y=-411 vy=5.01 skor=0-0 sonDokunuşlar=rdm(vuruş)>neox(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 22:43:49] ELO kullanıcı=913 1156->1170 (+14)
+[2.11.2026 22:43:49] ELO kullanıcı=2710 943->966 (+23)
+[2.11.2026 22:43:49] ELO kullanıcı=1322 1028->1005 (-23)
+[2.11.2026 22:43:49] ELO kullanıcı=1044 1255->1241 (-14)
+[2.11.2026 22:43:49] ELO kullanıcı=2712 1000->977 (-23)
+[2.11.2026 22:44:48] SAYI takım=2 oyuncu=rdm#285 stat=three_pt_made x=494 y=-203 vy=6.17 skor=0-3 sonDokunuşlar=Ser3(çarpışma)>Ser3(vuruş)>rdm(çarpışma)
+[2.11.2026 22:45:53] MAÇ BİTTİ skor=0-3 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[278,285,283,281,287]
+[2.11.2026 22:45:53] ELO kullanıcı=913 1170->1181 (+11)
+[2.11.2026 22:45:53] ELO kullanıcı=2710 966->995 (+29)
+[2.11.2026 22:45:53] ELO kullanıcı=1322 1005->1023 (+18)
+[2.11.2026 22:45:53] ELO kullanıcı=1044 1241->1227 (-14)
+[2.11.2026 22:45:53] ELO kullanıcı=2712 977->953 (-24)
+[2.11.2026 22:46:14] SAYI takım=1 oyuncu=Dr. Strangelove#281 stat=two_pt_made x=520 y=-548 vy=6.25 skor=2-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)
+[2.11.2026 22:47:00] SAYI takım=1 oyuncu=Dr. Strangelove#281 stat=two_pt_made x=47 y=-58 vy=-4.14 skor=4-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 22:47:41] SAYI takım=1 oyuncu=Dr. Strangelove#281 stat=two_pt_made x=470 y=-25 vy=-8.99 skor=6-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>Raulante(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 22:47:56] MAÇ BİTTİ skor=6-0 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[281,278,283]
+[2.11.2026 22:47:56] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 22:48:45] SAYI takım=1 oyuncu=Dr. Strangelove#281 stat=two_pt_made x=96 y=84 vy=7.71 skor=2-0 sonDokunuşlar=Dr. Strangelove(çarpışma)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 22:49:40] SAYI takım=2 oyuncu=Yerli Curry#278 stat=three_pt_made x=442 y=-336 vy=2.35 skor=2-3 sonDokunuşlar=neox(çarpışma)>neox(çarpışma)>Yerli Curry(vuruş)
+[2.11.2026 22:49:59] MAÇ BİTTİ skor=2-3 antrenman=false kazanan=[undefined] kaybeden=[undefined] sayılan=[278,281,283]
+[2.11.2026 22:49:59] ELO yazılmadı: takımlarda yeterli sayılan oyuncu yok
+[2.11.2026 22:51:36] SAYI takım=2 oyuncu=Dr. Strangelove#281 stat=two_pt_made x=-210 y=94 vy=-5.64 skor=0-2 sonDokunuşlar=neox(çarpışma)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 22:52:02] MAÇ BİTTİ skor=0-2 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[283,281,278]
+[2.11.2026 22:52:10] SAYI takım=1 oyuncu=Dr. Strangelove#281 stat=two_pt_made x=645 y=68 vy=-14.08 skor=2-0 sonDokunuşlar=Dr. Strangelove(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 22:53:34] SAYI takım=1 oyuncu=Dr. Strangelove#281 stat=three_pt_made x=-601 y=-531 vy=7.68 skor=5-0 sonDokunuşlar=Yerli Curry(vuruş)>Dr. Strangelove(çarpışma)>Dr. Strangelove(vuruş)
+[2.11.2026 22:54:05] MAÇ BİTTİ skor=5-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[281,278]
+[2.11.2026 22:54:42] MAÇ BİTTİ skor=0-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 22:55:03] SAYI takım=1 oyuncu=Yerli Curry#278 stat=three_pt_made x=-495 y=83 vy=3.54 skor=3-0 sonDokunuşlar=Yerli Curry(çarpışma)>Yerli Curry(çarpışma)>Yerli Curry(vuruş)
+[2.11.2026 22:55:06] MAÇ BİTTİ skor=3-0 antrenman=true kazanan=[undefined] kaybeden=[undefined] sayılan=[]
+[2.11.2026 23:31:10] MATCH FINISHED score=0-0 training=true winner=[undefined] loser=[undefined] eligible=[]
